@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Hornak Household Brief",
+  "schemaVersion": 1,
+  "description": "Hornak family weekly brief — redacted public-safe view of the week ahead, P1 tasks, meals, and The Read (news/late-night). Full detail lives in Todoist. Fixed id \"hornak-household-brief\" going forward — \"hornak-brief\" was unavailable (blocked by a leftover folder)."
+}
+</script>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hornak Weekly Brief</title>
+<style>
+  :root{
+    color-scheme: light;
+    --pine:#2E7358; --alpenglow:#B85C86; --glacier:#35699B; --dusk:#6B5591;
+    --granite:#1B2022; --scree:#6C7378; --trail:#E3E1DA; --snow:#F7F5F1;
+  }
+  * { box-sizing: border-box; }
+  body{
+    margin:0; padding:24px 12px; background:var(--trail);
+    font-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color:var(--granite);
+  }
+  .card{
+    max-width:640px; margin:0 auto; background:var(--snow);
+    border-radius:14px; padding:22px 20px 28px; box-shadow:0 1px 3px rgba(27,32,34,0.08);
+  }
+  .wordmark{font-weight:500; letter-spacing:0.3em; font-size:11px; color:var(--pine); text-transform:uppercase;}
+  h1{
+    font-family:'Instrument Serif', Georgia, serif; font-weight:400; font-size:32px;
+    margin:6px 0 2px; color:var(--granite); font-style:normal;
+  }
+  .tagline{font-family:'Instrument Serif', Georgia, serif; font-style:italic; font-size:16px; color:var(--scree); margin:0 0 6px;}
+  .meta{font-size:12.5px; color:var(--scree); margin-bottom:4px;}
+  .meta a{color:var(--glacier); text-decoration:none;}
+  .crosslink{font-size:12.5px; margin-bottom:4px;}
+  .crosslink a{color:var(--dusk); text-decoration:none; font-weight:500;}
+  .omitnote{
+    font-size:12px; color:var(--scree); background:var(--trail); border-radius:8px;
+    padding:8px 12px; margin:14px 0 6px; line-height:1.5;
+  }
+  .omitnote a{color:var(--glacier);}
+  .section{margin-top:22px;}
+  .label{
+    font-weight:500; font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--pine); margin-bottom:8px; display:block;
+  }
+  a.label{text-decoration:none;}
+  .row{
+    border-bottom:1px solid var(--trail); padding:9px 0; font-size:15px; line-height:1.45;
+  }
+  .row:last-child{border-bottom:none;}
+  .row a.item{color:var(--granite); font-weight:500; text-decoration:none; border-bottom:1px dotted var(--glacier);}
+  .row .who{color:var(--scree); font-size:13px;}
+  .p1{
+    display:flex; gap:8px; padding:9px 0; border-bottom:1px solid var(--trail); font-size:15px;
+  }
+  .p1:last-child{border-bottom:none;}
+  .dot{color:var(--alpenglow); flex-shrink:0;}
+  .p1 a{color:var(--granite); font-weight:500; text-decoration:none; border-bottom:1px dotted var(--alpenglow);}
+  .pill-row{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:6px;}
+  .pill{
+    background:var(--trail); border-radius:20px; padding:4px 12px; font-size:12.5px; color:var(--granite);
+  }
+  .read-item{font-size:14.5px; line-height:1.55; margin-bottom:10px;}
+  .read-item b{color:var(--pine); font-weight:500;}
+  .read-item a{color:var(--glacier); text-decoration:none; border-bottom:1px dotted var(--glacier);}
+  .divider{border:none; border-top:1px solid var(--trail); margin:26px 0;}
+  .footer{font-size:11.5px; color:var(--scree); text-align:center; margin-top:26px;}
+
+  @media (min-width:880px){
+    .card{max-width:880px; padding:34px 40px 40px;}
+    h1{font-size:40px;}
+    .grid{display:grid; grid-template-columns:1fr 1fr; gap:0 40px;}
+    .grid .section{margin-top:20px;}
+    .full{grid-column:1 / -1;}
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="wordmark">HORNAK HOUSEHOLD</div>
+  <h1>Weekly Brief</h1>
+  <p class="tagline">Next 7 days, Aug 1 – Aug 7</p>
+  <p class="meta">Full detail (incl. this week's Todoist-only items) lives in <a href="https://app.todoist.com/app/project/6h62Jmrp3GpJjQwW" target="_blank" rel="noopener">Todoist</a>.</p>
+  <p class="crosslink">→ <a href="https://deadnak.github.io/hornak-brief/" target="_blank" rel="noopener">Tonight's Evening Brief</a></p>
+
+  <div class="omitnote">🔒 6 items are Todoist-only this week (a travel note, weather, fun options, and a couple of scheduling flags) — see the <a href="https://app.todoist.com/app/task/6h9rgHjjmGGvHFFW" target="_blank" rel="noopener">full brief</a>.</div>
+
+  <div class="grid">
+  <div class="section full">
+    <a class="label" href="https://calendar.google.com/calendar/u/0?cid=ZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ" target="_blank" rel="noopener">The Week Ahead</a>
+    <div class="row"><span class="who">Sat, Aug 1 —</span> <a class="item" href="https://www.google.com/calendar/event?eid=NW9pY3JxdWhxNWY0bmFpa2lhdGducG9jcm8gZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw&ctz=America/Edmonton" target="_blank" rel="noopener">Dinner 5:30</a> <span class="who">(family)</span></div>
+    <div class="row"><span class="who">Sun, Aug 2 —</span> <a class="item" href="https://www.google.com/calendar/event?eid=ajZsOGc3a2RvNGptamlmMTkzZXF0OG1qamtfMjAyNjA4MDIgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw&ctz=America/Edmonton" target="_blank" rel="noopener">🎂 Stacy's Birthday</a> <span class="who">(all day)</span></div>
+    <div class="row"><span class="who">Mon, Aug 3 —</span> <a class="item" href="https://www.google.com/calendar/event?eid=NWM4ZHBhZDdrN2g0OW41aTRxdjM2NWVlbWMgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw&ctz=America/Edmonton" target="_blank" rel="noopener">Appointment 12:45</a> <span class="who">(Julian)</span></div>
+    <div class="row"><span class="who">Tue, Aug 4 —</span> nothing on the calendar</div>
+    <div class="row"><span class="who">Wed, Aug 5 —</span> nothing on the calendar</div>
+    <div class="row"><span class="who">Thu, Aug 6 —</span> <a class="item" href="https://www.google.com/calendar/event?eid=Y3BqM2NjYjZjb3E2Y2JiNjY1Z21hYjlrY2dvNmNiOW82OHI2Y2JiMTY5aDMwZGI1NjloMzhkajE3MF8yMDI2MDgwNiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn&ctz=America/Edmonton" target="_blank" rel="noopener">🎂 Sean's Birthday</a> <span class="who">(all day)</span></div>
+    <div class="row"><span class="who">Fri, Aug 7 —</span> <a class="item" href="https://www.google.com/calendar/event?eid=bGUwODJjbW05czk3bzR2aWhwMGg0ajRvZHNfMjAyNjA4MDcgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw&ctz=America/Edmonton" target="_blank" rel="noopener">House cleaning</a></div>
+  </div>
+
+  <div class="section">
+    <a class="label" href="https://app.todoist.com/app/project/6h5mX4qrJG8Gf528" target="_blank" rel="noopener">Needs You</a>
+    <div class="p1"><span class="dot">●</span> <a href="https://app.todoist.com/app/task/6h6Q2XvP658gF3Wv" target="_blank" rel="noopener">Library LOST books — Chicas</a></div>
+    <div class="p1"><span class="dot">●</span> <a href="https://app.todoist.com/app/task/6h9GMCC23M3pMxFg" target="_blank" rel="noopener">Library digital hold — borrow or suspend</a></div>
+    <div class="p1"><span class="dot">●</span> <a href="https://app.todoist.com/app/task/6h5xXQR54CrF5pFf" target="_blank" rel="noopener">Call R&A Dentistry</a></div>
+    <div class="p1"><span class="dot">●</span> <a href="https://app.todoist.com/app/task/6h69CQXGqH3cgfJf" target="_blank" rel="noopener">Call Respiratory Homecare</a></div>
+    <div class="p1"><span class="dot">●</span> <a href="https://app.todoist.com/app/task/6h65RqMGh7R8J767" target="_blank" rel="noopener">Put adult laundry away</a></div>
+    <div class="p1"><span class="dot">●</span> <a href="https://app.todoist.com/app/task/6h8W6w4h44gR62r8" target="_blank" rel="noopener">Sell or trade Julian's car</a></div>
+    <div class="p1"><span class="dot">●</span> <a href="https://app.todoist.com/app/task/6h62x2M8mx2CXr77" target="_blank" rel="noopener">Dana Dedeluk photo prints</a></div>
+  </div>
+
+  <div class="section">
+    <a class="label" href="https://app.todoist.com/app/task/6h94h4Wv9cHj4c39" target="_blank" rel="noopener">Meals</a>
+    <div class="row">Sat: Dinner (family)</div>
+    <div class="row">Sun–Fri: no plan posted yet — see Todoist</div>
+  </div>
+
+  <div class="section">
+    <div class="label">Bills</div>
+    <div class="row">Credit card due today</div>
+  </div>
+
+  <div class="section full">
+    <hr class="divider">
+    <div class="label">The Read</div>
+
+    <div class="read-item"><b>🚀 Space —</b> Astronomers detected a sugar molecule in the interstellar medium for the first time — one of the building blocks of life, found drifting between the stars. <a href="https://www.sciencedaily.com/news/space_time/" target="_blank" rel="noopener">ScienceDaily</a></div>
+
+    <div class="read-item"><b>💻 Tech —</b> OpenAI released its first open-source model this month, and Chinese labs (Zhipu's GLM, Moonshot's Kimi) are following DeepSeek's open-source playbook — a real shift in how the AI race is being run. <a href="https://techcrunch.com/category/artificial-intelligence/" target="_blank" rel="noopener">TechCrunch</a></div>
+
+    <div class="read-item"><b>👨‍👩‍👧 Parenting —</b> New America's 2026 National Parent Survey heard from over 5,400 U.S. parents of kids under 6 on childcare and leave — alongside a pushback trend against "snowplow parenting," with a recent poll finding three-quarters of parents admit to clearing obstacles out of their kids' way. <a href="https://www.newamerica.org/insights/2026-national-parent-survey/" target="_blank" rel="noopener">New America</a></div>
+
+    <div class="read-item"><b>💼 Business —</b> Carvana posted record Q2 profits and now expects up to $3B in earnings for 2026 — a wild turnaround for a company that was flirting with bankruptcy a few years back. <a href="https://www.cnbc.com/business/" target="_blank" rel="noopener">CNBC</a></div>
+
+    <div class="pill-row">
+      <span class="pill">📍 Calgary: Heritage Day hours + long-weekend festivals (Days of Yore, Taste of Calgary, Blues Fest) this weekend</span>
+      <span class="pill">🍁 Canada: WestJet flight attendants could strike as early as Aug 2, 12:01am MT — talks ongoing</span>
+      <span class="pill">🇺🇸 US: A Gaza deal was announced for Hamas disarmament and Israeli withdrawal; Nebraska became the first state to roll out Medicaid work requirements</span>
+    </div>
+
+    <div class="read-item"><b>🌙 Late night —</b> John Oliver's most recent episode covered the Trump family's crypto ventures. Seth Meyers has four new episodes this week: Marcello Hernández & Minka Kelly (Mon), Leslie Jones & Jo Firestone (Tue), Tracee Ellis Ross (Wed), Rosie O'Donnell & James Norton (Thu). The Late Show ended its 33-year run back in May, so Colbert's off the board for now — Fallon and Kimmel round things out most nights. <a href="https://www.hbomax.com/shows/last-week-tonight-with-john-oliver" target="_blank" rel="noopener">HBO Max</a> · <a href="https://latenighter.com/lineups-by-show/" target="_blank" rel="noopener">Lineups</a></div>
+  </div>
+  </div>
+
+  <div class="footer">Generated Saturday, August 1, 2026 at 12:05 PM MDT</div>
+</div>
+</body>
+</html>
