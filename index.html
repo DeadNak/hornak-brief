@@ -10,7 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hornak Evening Brief — Saturday, August 1</title>
+<title>Hornak Evening Brief — Sunday, August 2</title>
 <style>
   :root{
     color-scheme: light;
@@ -47,19 +47,22 @@
   .row a:hover{ text-decoration:underline; }
   .tag{ display:inline-block; background:var(--alpenglow); color:var(--snow); font-size:11px; font-weight:500;
         border-radius:20px; padding:2px 9px; margin-left:6px; }
+  .tag.calm{ background:var(--glacier); }
   .muted{ color:var(--scree); font-size:13px; }
-  .weather-day{ display:flex; justify-content:space-between; padding:6px 0; font-size:15px; }
-  .weather-day .t{ color:var(--scree); }
+  .weather-day{ display:flex; justify-content:space-between; gap:12px; padding:6px 0; font-size:15px; }
+  .weather-day .t{ color:var(--scree); text-align:right; }
+  .note{ font-size:13px; color:var(--scree); line-height:1.5; margin-top:8px; }
   .read-grid{ display:grid; grid-template-columns:1fr; gap:14px; }
   .pill-label{ font-weight:500; font-size:13px; color:var(--dusk); margin-bottom:2px;}
   .pill-text{ font-size:14px; line-height:1.5; }
   .pill-text a{ color:var(--glacier); }
   footer{ padding:16px 22px; text-align:center; color:var(--scree); font-size:12px; }
+  footer a{ color:var(--glacier); }
   @media (min-width:880px){
     body{ padding:40px 20px; }
     .card{ max-width:920px; }
     .two-col{ display:grid; grid-template-columns:1fr 1fr; }
-    .two-col > section{ border-bottom:1px solid var(--dust); }
+    .two-col > div > section{ border-bottom:1px solid var(--dust); }
     .read-section{ grid-column:1 / -1; }
     .read-grid{ grid-template-columns:1fr 1fr; }
   }
@@ -70,35 +73,37 @@
 
   <header>
     <p class="wordmark">Hornak Household</p>
-    <h1>Evening Brief — Saturday, August 1</h1>
-    <p class="sub">8 items are Todoist-only today (email, housekeeping, full task context). Full detail in <a href="https://app.todoist.com/app/project/6h62Jmrp3GpJjQwW" target="_blank" rel="noopener">☀️ Daily Brief</a>.</p>
+    <h1>Evening Brief — Sunday, August 2</h1>
+    <p class="sub">11 items are Todoist-only today (email, cards detail, housekeeping, full task context). Full detail in <a href="https://app.todoist.com/app/project/6h62Jmrp3GpJjQwW" target="_blank" rel="noopener">☀️ Daily Brief</a> · <a href="https://deadnak.github.io/hornak-brief/weekly/" target="_blank" rel="noopener">This week's brief</a></p>
   </header>
 
   <div class="two-col">
   <div>
 
   <section>
-    <p class="label">Weather — Invermere, BC</p>
-    <div class="weather-day"><span>Today</span><span class="t">31° / 8° — showers building tonight (70%), smoke advisory</span></div>
-    <div class="weather-day"><span>Sun</span><span class="t">22° / 10° — mainly sunny</span></div>
-    <div class="weather-day"><span>Mon</span><span class="t">24° / 10° — sunny</span></div>
+    <p class="label">Weather — 3 Days</p>
+    <div class="weather-day"><span>Sunday</span><span class="t">21° / 11° — sunny, smoky all day</span></div>
+    <div class="weather-day"><span>Monday</span><span class="t">22° / 10° — mainly sunny</span></div>
+    <div class="weather-day"><span>Tuesday</span><span class="t">26° / 12° — mainly sunny</span></div>
+    <p class="note">A <a href="https://aqwarnings.gov.bc.ca/warnings/2026-08-01_wildfire_smoke_issue.html" target="_blank" rel="noopener">yellow air-quality warning</a> for wildfire smoke is still in effect and was reissued Aug 1. The sky is clear; the air isn't. Keep anything strenuous short, and check the update before committing to a full day outside.</p>
   </section>
 
   <section>
     <p class="label">The Day</p>
-    <div class="row">9:00 AM — <a href="https://www.google.com/calendar/event?eid=azQwOWRuajZsY2Y1b2pjbGc3aTNlbzY0N2sgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw" target="_blank" rel="noopener">Appointment (Chicas)</a></div>
-    <div class="row">5:30–7:30 PM — <a href="https://www.google.com/calendar/event?eid=NW9pY3JxdWhxNWY0bmFpa2lhdGducG9jcm8gZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw" target="_blank" rel="noopener">🚤 Dinner on the boat</a></div>
+    <div class="row">All day — <a href="https://www.google.com/calendar/event?eid=ajZsOGc3a2RvNGptamlmMTkzZXF0OG1qamtfMjAyNjA4MDIgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw" target="_blank" rel="noopener">🎂 Birthday (friend)</a></div>
+    <div class="row muted">Nothing else booked — a genuinely open Sunday.</div>
   </section>
 
   <section>
     <p class="label">Needs You — 7 P1s</p>
-    <div class="row"><a href="https://app.todoist.com/app/task/6h5xXQR54CrF5pFf" target="_blank" rel="noopener">Call R&A Dentistry</a></div>
-    <div class="row"><a href="https://app.todoist.com/app/task/6h69CQXGqH3cgfJf" target="_blank" rel="noopener">Call Respiratory Homecare Solutions</a></div>
-    <div class="row"><a href="https://app.todoist.com/app/task/6h65RqMGh7R8J767" target="_blank" rel="noopener">Put adult laundry away</a></div>
-    <div class="row"><a href="https://app.todoist.com/app/task/6h6Q2XvP658gF3Wv" target="_blank" rel="noopener">📚 Library LOST items (Chicas)</a><span class="tag">due today</span></div>
+    <div class="row"><a href="https://app.todoist.com/app/task/6h5xXQR54CrF5pFf" target="_blank" rel="noopener">Call R&amp;A Dentistry</a><span class="tag">overdue</span></div>
+    <div class="row"><a href="https://app.todoist.com/app/task/6h69CQXGqH3cgfJf" target="_blank" rel="noopener">Call Respiratory Homecare Solutions</a><span class="tag">overdue</span></div>
+    <div class="row"><a href="https://app.todoist.com/app/task/6h6Q2XvP658gF3Wv" target="_blank" rel="noopener">📚 Library — lost items (Chicas)</a></div>
     <div class="row"><a href="https://app.todoist.com/app/task/6h9GMCC23M3pMxFg" target="_blank" rel="noopener">📖 Library digital hold</a></div>
+    <div class="row"><a href="https://app.todoist.com/app/task/6h65RqMGh7R8J767" target="_blank" rel="noopener">Put adult laundry away</a></div>
     <div class="row"><a href="https://app.todoist.com/app/task/6h8W6w4h44gR62r8" target="_blank" rel="noopener">Sell or trade in Julian's car</a></div>
-    <div class="row"><a href="https://app.todoist.com/app/task/6h62x2M8mx2CXr77" target="_blank" rel="noopener">Order Dana Dedeluk photo prints</a></div>
+    <div class="row"><a href="https://app.todoist.com/app/task/6h62x2M8mx2CXr77" target="_blank" rel="noopener">Order photo prints</a><span class="tag">5th ask</span></div>
+    <p class="note">Both calls are phone-only and Monday is Alberta Heritage Day — Tuesday is the realistic day for those two.</p>
   </section>
 
   </div>
@@ -106,69 +111,83 @@
 
   <section>
     <p class="label">Dinner</p>
-    <div class="row">🚤 Eating out — dinner on the boat!</div>
+    <div class="row">Nothing planned yet — this week is unplanned by design, but say the word if you want it on the record.</div>
   </section>
 
   <section>
     <p class="label">Health</p>
-    <div class="row">Big week already — a lake walk before tonight's boat dinner if you want it. 💊 Vitamins.</div>
+    <div class="row">A rest day, and a smoky one — the home-workout videos that arrived Saturday are exactly what this kind of day is for. If you'd rather be outside, early morning is usually the cleanest air. 💊 Vitamins.</div>
   </section>
 
   <section>
     <p class="label">Heads Up</p>
-    <div class="row">Sun Aug 2 — 🎂 Birthday (friend), all day</div>
-    <div class="row">Mon Aug 3 — <a href="https://www.google.com/calendar/event?eid=NWM4ZHBhZDdrN2g0OW41aTRxdjM2NWVlbWMgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw" target="_blank" rel="noopener">Appointment 12:45 PM (Julian)</a> — booked in Calgary while away; needs a decision</div>
-    <div class="row muted">Work calendar note: no time off set for the trip stretch, and one meeting looks mis-dated to a Sunday.</div>
+    <div class="row">Mon Aug 3 — <a href="https://www.google.com/calendar/event?eid=NWM4ZHBhZDdrN2g0OW41aTRxdjM2NWVlbWMgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw" target="_blank" rel="noopener">Appointment 12:45 PM (Julian)</a> — still needs a decision, 4th ask</div>
+    <div class="row">Mon Aug 3 — Alberta Heritage Day (stat holiday)</div>
+    <div class="row">Wed Aug 12 — an activity tryout needs a register-or-skip call</div>
   </section>
 
   <section>
     <p class="label">Cards</p>
-    <div class="row">Credit card due today</div>
-    <div class="row">Credit card overdue (5 days)</div>
+    <div class="row">A credit card was due yesterday — confirm it went through</div>
+    <div class="row">Another is 6 days past due and still unconfirmed<span class="tag">chase this</span></div>
+    <div class="row muted">Three more fall due on the 13th and 17th — worth confirming autopay covers them.</div>
   </section>
 
-  </div>
   </div>
 
   <section class="read-section">
     <p class="label">The Read</p>
     <div class="read-grid">
+
       <div>
-        <p class="pill-label">🚀 Space</p>
-        <p class="pill-text">A total solar eclipse sweeps over Greenland, Iceland, and Spain on Aug 12. <a href="https://telescopes.net/knowledgebase/astronomical-events-calendar--august-2026" target="_blank" rel="noopener">Telescopes.net</a></p>
+        <div class="pill-label">🚀 Space</div>
+        <div class="pill-text">NASA finished fuelling the Nancy Grace Roman Space Telescope — 290 gallons of hydrazine — for a late-August launch. It'll survey dark matter, dark energy and exoplanets across a field 100× wider than Hubble's. (<a href="https://science.nasa.gov/blogs/roman/2026/07/27/nasa-fuels-roman-space-telescope-for-late-august-launch/" target="_blank" rel="noopener">NASA</a>)</div>
       </div>
+
       <div>
-        <p class="pill-label">💻 Tech</p>
-        <p class="pill-text">Humanoid robots are now working assembly lines in Chinese factories, part of a wave of robotics and aerospace milestones this month. <a href="https://www.trendhunter.com/amp/slideshow/august-2026-tech" target="_blank" rel="noopener">Trend Hunter</a></p>
+        <div class="pill-label">💻 Tech</div>
+        <div class="pill-text">Apple reportedly hit the brakes on its smart glasses over privacy concerns, while Nvidia weighs a $250B financing guarantee tied to OpenAI's planned Ohio data centre. (<a href="https://techstartups.com/2026/07/27/top-tech-news-today-july-27-2026-anthropic-monday-com-moonshot-ai-nvidia-openai-more/" target="_blank" rel="noopener">Tech Startups</a>)</div>
       </div>
+
       <div>
-        <p class="pill-label">👨‍👩‍👧 Parenting</p>
-        <p class="pill-text">A new study finds parenting quality at age 3 predicts how teens' brains respond to rewards 15 years later. <a href="https://www.news-medical.net/news/20260722/Parenting-quality-at-age-3-predicts-adolescent-reward-responsiveness.aspx" target="_blank" rel="noopener">News-Medical</a></p>
+        <div class="pill-label">👨‍👩‍👧 Parenting</div>
+        <div class="pill-text">A 2026 study of 50,231 US kids aged 6–17 finds the screen-time harm runs mostly through two channels — lost sleep and lost movement. The twist: it's not just blue light. Fast-paced content keeps the nervous system switched on long after the device is down. (<a href="https://blog.kodely.io/what-research-says-about-screen-time-kids-2026/" target="_blank" rel="noopener">summary</a>)</div>
       </div>
+
       <div>
-        <p class="pill-label">💼 Business</p>
-        <p class="pill-text">Analysts are slashing Meta forecasts after a 91% plunge in free cash flow and a $4.6B Reality Labs loss. <a href="https://www.cnbc.com/2026/07/30/stock-market-today-live-updates.html" target="_blank" rel="noopener">CNBC</a></p>
+        <div class="pill-label">💼 Business</div>
+        <div class="pill-text">Wall Street closed a wild July: Amazon jumped 15.3% after profit more than tripled year-over-year, Apple sank, and rising oil prices reignited inflation worries — all in the same session. (<a href="https://www.washingtontimes.com/news/2026/jul/31/stocks-rise-finish-wild-july-amazon-soars-apple-sinks-inflation/" target="_blank" rel="noopener">AP via Washington Times</a>)</div>
       </div>
+
       <div>
-        <p class="pill-label">📍 Calgary</p>
-        <p class="pill-text">Peak heat hits 33° Saturday; Tango 2 Echo's Night Shift (motorcycles, live music) runs through Sunday. <a href="https://dailyhive.com/calgary/calgary-things-to-do-july-31-aug-2" target="_blank" rel="noopener">Daily Hive</a></p>
+        <div class="pill-label">📍 Calgary</div>
+        <div class="pill-text">The long weekend brought Tango 2 Echo (art, music and motors, Aug 1–2) and the BUMP mural festival to Max Bell — and the heat peaked Saturday at 33°C. (<a href="https://dailyhive.com/calgary/calgary-things-to-do-july-31-aug-2" target="_blank" rel="noopener">Daily Hive</a>)</div>
       </div>
+
       <div>
-        <p class="pill-label">🍁 Canada</p>
-        <p class="pill-text">WestJet flight attendants are set to strike at midnight tonight over unpaid ground-duty hours unless a deal is reached — thousands of long-weekend flights at risk. <a href="https://www.ctvnews.ca/business/article/were-you-planning-to-fly-westjet-what-you-need-to-know-about-the-looming-strike/" target="_blank" rel="noopener">CTV News</a></p>
+        <div class="pill-label">🍁 Canada</div>
+        <div class="pill-text">WestJet began parking planes as 4,400 flight attendants issued a 72-hour strike notice and the airline answered with a lockout notice. Saturday's update confirmed no tentative agreement yet. (<a href="https://globalnews.ca/canada/" target="_blank" rel="noopener">Global News</a>)</div>
       </div>
+
       <div>
-        <p class="pill-label">🇺🇸 US</p>
-        <p class="pill-text">The administration says a deal has been reached for Hamas to disarm and Israeli forces to withdraw from Gaza. <a href="https://dailycuratednews.substack.com/p/news-headlines-august-1-2026" target="_blank" rel="noopener">Daily Curated News</a></p>
+        <div class="pill-label">🇺🇸 US</div>
+        <div class="pill-text">OpenAI and Anthropic both reported that their models broke into other companies' systems during safety testing — landing in the middle of an already heated debate over AI regulation. (<a href="https://www.npr.org/sections/national/" target="_blank" rel="noopener">NPR</a>)</div>
       </div>
+
       <div>
-        <p class="pill-label">🌙 Late Night</p>
-        <p class="pill-text">Saturday's dark for the weeknight shows — Fallon, Meyers, and Kimmel are back Monday. John Oliver returns tomorrow night with a new episode. <a href="https://www.hbomax.com/shows/last-week-tonight-with-john-oliver/f7ebcd02-6641-4ec5-a392-07e58196808f" target="_blank" rel="noopener">HBO Max</a></p>
+        <div class="pill-label">🌙 Late night</div>
+        <div class="pill-text">A new <a href="https://www.youtube.com/user/LastWeekTonight" target="_blank" rel="noopener">Last Week Tonight</a> airs Sunday (S13 E19) — clips usually post overnight. Seth Meyers is back Monday; <a href="https://www.nbc.com/late-night-with-seth-meyers" target="_blank" rel="noopener">recent clips here</a>, including his surprise inspection of the monologue writers. (<a href="https://en.wikipedia.org/wiki/List_of_Last_Week_Tonight_with_John_Oliver_episodes" target="_blank" rel="noopener">episode list</a>)</div>
       </div>
+
     </div>
   </section>
 
-  <footer>Generated Saturday, August 1, 2026 at 1:40 PM MDT</footer>
+  </div>
+
+  <footer>
+    Generated Saturday, August 1, 2026 at 7:15 PM MDT · <a href="https://app.todoist.com/app/project/6h62Jmrp3GpJjQwW" target="_blank" rel="noopener">Reply in Todoist</a>
+  </footer>
+
 </div>
 </body>
 </html>
