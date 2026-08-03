@@ -3,7 +3,7 @@
 {
   "name": "Hornak Household Brief",
   "schemaVersion": 1,
-  "description": "Hornak family weekly brief — redacted public-safe view of the week ahead, P1 tasks, meals, and The Read (news/late-night). Full detail lives in Todoist. Fixed id \"hornak-household-brief\" going forward — \"hornak-brief\" was unavailable (blocked by a leftover folder)."
+  "description": "Hornak family weekly brief — redacted public-safe view of the week ahead, P1 tasks, meals, and The Read (news/late-night). Full detail lives in Todoist."
 }
 </script>
 <html lang="en">
@@ -54,6 +54,7 @@
   .row:last-child{border-bottom:none;}
   .row a.item{color:var(--granite); font-weight:500; text-decoration:none; border-bottom:1px dotted var(--glacier);}
   .row .who{color:var(--scree); font-size:13px;}
+  .flag{color:var(--alpenglow); font-size:13px;}
   .p1{
     display:flex; gap:8px; padding:9px 0; border-bottom:1px solid var(--trail); font-size:15px;
   }
@@ -62,7 +63,8 @@
   .p1 a{color:var(--granite); font-weight:500; text-decoration:none; border-bottom:1px dotted var(--alpenglow);}
   .pill-row{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:6px;}
   .pill{
-    background:var(--trail); border-radius:20px; padding:4px 12px; font-size:12.5px; color:var(--granite);
+    background:var(--trail); border-radius:20px; padding:4px 12px; font-size:12.5px;
+    color:var(--granite); text-decoration:none; display:inline-block;
   }
   .read-item{font-size:14.5px; line-height:1.55; margin-bottom:10px;}
   .read-item b{color:var(--pine); font-weight:500;}
@@ -83,69 +85,78 @@
 <div class="card">
   <div class="wordmark">HORNAK HOUSEHOLD</div>
   <h1>Weekly Brief</h1>
-  <p class="tagline">Next 7 days, Aug 1 – Aug 7</p>
+  <p class="tagline">Next 7 days, Aug 3 &ndash; Aug 9</p>
   <p class="meta">Full detail (incl. this week's Todoist-only items) lives in <a href="https://app.todoist.com/app/project/6h62Jmrp3GpJjQwW" target="_blank" rel="noopener">Todoist</a>.</p>
-  <p class="crosslink">→ <a href="https://deadnak.github.io/hornak-brief/" target="_blank" rel="noopener">Tonight's Evening Brief</a></p>
+  <p class="crosslink">&rarr; <a href="https://deadnak.github.io/hornak-brief/" target="_blank" rel="noopener">Tonight's Evening Brief</a></p>
 
-  <div class="omitnote">🔒 6 items are Todoist-only this week (a travel note, weather, fun options, and a couple of scheduling flags) — see the <a href="https://app.todoist.com/app/task/6h9rgHjjmGGvHFFW" target="_blank" rel="noopener">full brief</a>.</div>
+  <div class="omitnote">&#128274; 9 items are Todoist-only this week (weather, meals detail, fun options, an invoice, and several scheduling flags) &mdash; see the <a href="https://app.todoist.com/app/task/6hCM3rG7jmPhjFW4" target="_blank" rel="noopener">full brief</a>.</div>
 
   <div class="grid">
   <div class="section full">
     <a class="label" href="https://calendar.google.com/calendar/u/0?cid=ZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ" target="_blank" rel="noopener">The Week Ahead</a>
-    <div class="row"><span class="who">Sat, Aug 1 —</span> <a class="item" href="https://www.google.com/calendar/event?eid=NW9pY3JxdWhxNWY0bmFpa2lhdGducG9jcm8gZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw&ctz=America/Edmonton" target="_blank" rel="noopener">Dinner 5:30</a> <span class="who">(family)</span></div>
-    <div class="row"><span class="who">Sun, Aug 2 —</span> <a class="item" href="https://www.google.com/calendar/event?eid=ajZsOGc3a2RvNGptamlmMTkzZXF0OG1qamtfMjAyNjA4MDIgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw&ctz=America/Edmonton" target="_blank" rel="noopener">🎂 Stacy's Birthday</a> <span class="who">(all day)</span></div>
-    <div class="row"><span class="who">Mon, Aug 3 —</span> <a class="item" href="https://www.google.com/calendar/event?eid=NWM4ZHBhZDdrN2g0OW41aTRxdjM2NWVlbWMgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw&ctz=America/Edmonton" target="_blank" rel="noopener">Appointment 12:45</a> <span class="who">(Julian)</span></div>
-    <div class="row"><span class="who">Tue, Aug 4 —</span> nothing on the calendar</div>
-    <div class="row"><span class="who">Wed, Aug 5 —</span> nothing on the calendar</div>
-    <div class="row"><span class="who">Thu, Aug 6 —</span> <a class="item" href="https://www.google.com/calendar/event?eid=Y3BqM2NjYjZjb3E2Y2JiNjY1Z21hYjlrY2dvNmNiOW82OHI2Y2JiMTY5aDMwZGI1NjloMzhkajE3MF8yMDI2MDgwNiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn&ctz=America/Edmonton" target="_blank" rel="noopener">🎂 Sean's Birthday</a> <span class="who">(all day)</span></div>
-    <div class="row"><span class="who">Fri, Aug 7 —</span> <a class="item" href="https://www.google.com/calendar/event?eid=bGUwODJjbW05czk3bzR2aWhwMGg0ajRvZHNfMjAyNjA4MDcgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw&ctz=America/Edmonton" target="_blank" rel="noopener">House cleaning</a></div>
+    <div class="row"><span class="who">Mon, Aug 3 &mdash;</span> <a class="item" href="https://www.google.com/calendar/event?eid=NWM4ZHBhZDdrN2g0OW41aTRxdjM2NWVlbWMgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Appointment 12:45</a> <span class="who">(Julian)</span> <span class="flag">&mdash; needs following up</span></div>
+    <div class="row"><span class="who">Tue, Aug 4 &mdash;</span> <a class="item" href="https://www.google.com/calendar/event?eid=XzY4bzNhY3E2NnQyNGNiOWc2MHFqYWI5azhnb2oyYjlvNmNzM2NiOXA4OHA0OGRhNTg0cTNhaDlnNjAgd2RlZGVsdWtAbQ&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Focus block 10:00</a> <span class="who">(Whitney)</span></div>
+    <div class="row"><span class="who">Wed, Aug 5 &mdash;</span> nothing on the calendar</div>
+    <div class="row"><span class="who">Thu, Aug 6 &mdash;</span> <a class="item" href="https://www.google.com/calendar/event?eid=Y3BqM2NjYjZjb3E2Y2JiNjY1Z21hYjlrY2dvNmNiOW82OHI2Y2JiMTY5aDMwZGI1NjloMzhkajE3MF8yMDI2MDgwNiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn&amp;ctz=America/Edmonton" target="_blank" rel="noopener">&#127874; Birthday</a> <span class="who">(all day)</span> &middot; <a class="item" href="https://www.google.com/calendar/event?eid=M3VvajZkcW9zNGxybnN2YmhtcjllamttZ2sgd2RlZGVsdWtAbQ&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Meeting 1:00</a> <span class="who">(Julian's &mdash; RSVP outstanding)</span></div>
+    <div class="row"><span class="who">Fri, Aug 7 &mdash;</span> <a class="item" href="https://www.google.com/calendar/event?eid=bGUwODJjbW05czk3bzR2aWhwMGg0ajRvZHNfMjAyNjA4MDcgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw&amp;ctz=America/Edmonton" target="_blank" rel="noopener">House cleaning</a></div>
+    <div class="row"><span class="who">Sat, Aug 8 &mdash;</span> nothing on the calendar</div>
+    <div class="row"><span class="who">Sun, Aug 9 &mdash;</span> nothing on the calendar &mdash; packing reminder 6:00 PM</div>
   </div>
 
   <div class="section">
-    <a class="label" href="https://app.todoist.com/app/project/6h5mX4qrJG8Gf528" target="_blank" rel="noopener">Needs You</a>
-    <div class="p1"><span class="dot">●</span> <a href="https://app.todoist.com/app/task/6h6Q2XvP658gF3Wv" target="_blank" rel="noopener">Library LOST books — Chicas</a></div>
-    <div class="p1"><span class="dot">●</span> <a href="https://app.todoist.com/app/task/6h9GMCC23M3pMxFg" target="_blank" rel="noopener">Library digital hold — borrow or suspend</a></div>
-    <div class="p1"><span class="dot">●</span> <a href="https://app.todoist.com/app/task/6h5xXQR54CrF5pFf" target="_blank" rel="noopener">Call R&A Dentistry</a></div>
-    <div class="p1"><span class="dot">●</span> <a href="https://app.todoist.com/app/task/6h69CQXGqH3cgfJf" target="_blank" rel="noopener">Call Respiratory Homecare</a></div>
-    <div class="p1"><span class="dot">●</span> <a href="https://app.todoist.com/app/task/6h65RqMGh7R8J767" target="_blank" rel="noopener">Put adult laundry away</a></div>
-    <div class="p1"><span class="dot">●</span> <a href="https://app.todoist.com/app/task/6h8W6w4h44gR62r8" target="_blank" rel="noopener">Sell or trade Julian's car</a></div>
-    <div class="p1"><span class="dot">●</span> <a href="https://app.todoist.com/app/task/6h62x2M8mx2CXr77" target="_blank" rel="noopener">Dana Dedeluk photo prints</a></div>
+    <a class="label" href="https://app.todoist.com/app/project/6h5mX4qrJG8Gf528" target="_blank" rel="noopener">Needs You &mdash; 6 P1s</a>
+    <div class="p1"><span class="dot">&#9679;</span> <a href="https://app.todoist.com/app/task/6h6Q2XvP658gF3Wv" target="_blank" rel="noopener">Library LOST books &mdash; Chicas</a></div>
+    <div class="p1"><span class="dot">&#9679;</span> <a href="https://app.todoist.com/app/task/6h9GMCC23M3pMxFg" target="_blank" rel="noopener">Library digital hold &mdash; borrow or suspend</a></div>
+    <div class="p1"><span class="dot">&#9679;</span> <a href="https://app.todoist.com/app/task/6h5xXQR54CrF5pFf" target="_blank" rel="noopener">Call the dentist</a></div>
+    <div class="p1"><span class="dot">&#9679;</span> <a href="https://app.todoist.com/app/task/6h69CQXGqH3cgfJf" target="_blank" rel="noopener">Call the health clinic</a></div>
+    <div class="p1"><span class="dot">&#9679;</span> <a href="https://app.todoist.com/app/task/6h8W6w4h44gR62r8" target="_blank" rel="noopener">Sell or trade Julian's car</a></div>
+    <div class="p1"><span class="dot">&#9679;</span> <a href="https://app.todoist.com/app/task/6h62x2M8mx2CXr77" target="_blank" rel="noopener">Photo prints &mdash; decide or close</a></div>
+  </div>
+
+  <div class="section">
+    <div class="label">Decisions This Week</div>
+    <div class="row">Bowling league &mdash; declare intent to return <b>by Fri, Aug 7</b></div>
+    <div class="row">Gymnastics tryouts Aug 12 &mdash; register or skip</div>
+    <div class="row">An invoice is past due &mdash; see Todoist</div>
+    <div class="row">Photo gallery &mdash; reopen it or close the task</div>
   </div>
 
   <div class="section">
     <a class="label" href="https://app.todoist.com/app/task/6h94h4Wv9cHj4c39" target="_blank" rel="noopener">Meals</a>
-    <div class="row">Sat: Dinner (family)</div>
-    <div class="row">Sun–Fri: no plan posted yet — see Todoist</div>
+    <div class="row">No plan posted for Aug 3&ndash;9 &mdash; see Todoist</div>
+    <div class="row"><span class="who">Next grocery box cutoff:</span> Wed Aug 19</div>
   </div>
 
   <div class="section">
-    <div class="label">Bills</div>
-    <div class="row">Credit card due today</div>
+    <div class="label">Coming Up</div>
+    <div class="row"><a class="item" href="https://www.google.com/calendar/event?eid=c3FlbXM4NjIxazdqcWNjc3U5aDlzdTdodGtfMjAyNjA4MTAgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Camp starts Mon Aug 10</a> <span class="who">(Chicas, 9:00&ndash;3:30)</span></div>
+    <div class="row">Credit cards due the 13th and 17th</div>
+    <div class="row">Bills this week: none</div>
   </div>
 
   <div class="section full">
     <hr class="divider">
     <div class="label">The Read</div>
 
-    <div class="read-item"><b>🚀 Space —</b> Astronomers detected a sugar molecule in the interstellar medium for the first time — one of the building blocks of life, found drifting between the stars. <a href="https://www.sciencedaily.com/news/space_time/" target="_blank" rel="noopener">ScienceDaily</a></div>
+    <div class="read-item"><b>&#128640; Space &mdash;</b> The Nancy Grace Roman Space Telescope is set to launch Aug 30 on a Falcon Heavy from Kennedy &mdash; and there's a total solar eclipse on Aug 12 crossing northern Russia, Greenland, Iceland and northern Spain, partial across parts of the U.S. <a href="https://www.nasa.gov/2026-news-releases/" target="_blank" rel="noopener">NASA</a></div>
 
-    <div class="read-item"><b>💻 Tech —</b> OpenAI released its first open-source model this month, and Chinese labs (Zhipu's GLM, Moonshot's Kimi) are following DeepSeek's open-source playbook — a real shift in how the AI race is being run. <a href="https://techcrunch.com/category/artificial-intelligence/" target="_blank" rel="noopener">TechCrunch</a></div>
+    <div class="read-item"><b>&#128187; Tech &mdash;</b> OpenAI's next model, Astra, reportedly solved ten open mathematics problems for about $2,000 of compute &mdash; the line between "AI does tasks" and "AI does original research" got noticeably blurrier this week. <a href="https://www.buildfastwithai.com/blogs/ai-news-today-august-2-2026" target="_blank" rel="noopener">AI News Today</a></div>
 
-    <div class="read-item"><b>👨‍👩‍👧 Parenting —</b> New America's 2026 National Parent Survey heard from over 5,400 U.S. parents of kids under 6 on childcare and leave — alongside a pushback trend against "snowplow parenting," with a recent poll finding three-quarters of parents admit to clearing obstacles out of their kids' way. <a href="https://www.newamerica.org/insights/2026-national-parent-survey/" target="_blank" rel="noopener">New America</a></div>
+    <div class="read-item"><b>&#128104;&#8205;&#128105;&#8205;&#128103; Parenting &mdash;</b> New America's 2026 National Parent Survey &mdash; 5,472 U.S. parents of under-sixes, the largest of its kind &mdash; is out, covering childcare, leave, finances and how parents actually want to spend their time. <a href="https://www.newamerica.org/insights/2026-national-parent-survey/" target="_blank" rel="noopener">New America</a></div>
 
-    <div class="read-item"><b>💼 Business —</b> Carvana posted record Q2 profits and now expects up to $3B in earnings for 2026 — a wild turnaround for a company that was flirting with bankruptcy a few years back. <a href="https://www.cnbc.com/business/" target="_blank" rel="noopener">CNBC</a></div>
+    <div class="read-item"><b>&#128188; Business &mdash;</b> Capital One is asking a judge to permanently toss the Trump-affiliated businesses' lawsuit over closed accounts, arguing it was a months-long internal review &mdash; not Jan 6 &mdash; that shut hundreds of accounts in 2021. <a href="https://www.cnbc.com/us-news/" target="_blank" rel="noopener">CNBC</a></div>
 
     <div class="pill-row">
-      <span class="pill">📍 Calgary: Heritage Day hours + long-weekend festivals (Days of Yore, Taste of Calgary, Blues Fest) this weekend</span>
-      <span class="pill">🍁 Canada: WestJet flight attendants could strike as early as Aug 2, 12:01am MT — talks ongoing</span>
-      <span class="pill">🇺🇸 US: A Gaza deal was announced for Hamas disarmament and Israeli withdrawal; Nebraska became the first state to roll out Medicaid work requirements</span>
+      <a class="pill" href="https://www.todocanada.ca/whats-on-this-week-calgary/" target="_blank" rel="noopener">&#128205; Calgary: Marda Gras Street Festival runs in Marda Loop this week</a>
+      <a class="pill" href="https://www.netnewsledger.com/2026/08/03/ontario-wildfire-report-45-active-fires-in-northeast-region/" target="_blank" rel="noopener">&#127809; Canada: 45 active wildfires in Ontario's northeast; Alberta pharmacists cleared to give free fall COVID shots to 12+</a>
+      <a class="pill" href="https://www.npr.org/sections/national/" target="_blank" rel="noopener">&#127482;&#127480; U.S.: largest measles outbreak in 30 years; Spokane fires uncontained, half the city's neighbourhoods evacuated or at risk</a>
     </div>
 
-    <div class="read-item"><b>🌙 Late night —</b> John Oliver's most recent episode covered the Trump family's crypto ventures. Seth Meyers has four new episodes this week: Marcello Hernández & Minka Kelly (Mon), Leslie Jones & Jo Firestone (Tue), Tracee Ellis Ross (Wed), Rosie O'Donnell & James Norton (Thu). The Late Show ended its 33-year run back in May, so Colbert's off the board for now — Fallon and Kimmel round things out most nights. <a href="https://www.hbomax.com/shows/last-week-tonight-with-john-oliver" target="_blank" rel="noopener">HBO Max</a> · <a href="https://latenighter.com/lineups-by-show/" target="_blank" rel="noopener">Lineups</a></div>
+    <div class="read-item"><b>&#127909; Late night &mdash;</b> Almost everyone's dark. <a href="https://latenighter.com/news/late-night-seth-meyers-summer-break/" target="_blank" rel="noopener">Seth Meyers is midway through a seven-week break</a> (back Sept 21) and <a href="https://latenighter.com/news/colberts-late-show-is-taking-a-three-week-end-of-summer-break/" target="_blank" rel="noopener">Colbert's Late Show goes on hiatus Aug 7</a> (back Sept 2). John Oliver came back from his own break and gave <a href="https://variety.com/2026/tv/news/john-oliver-expose-trump-shady-crypto-dealings-world-liberty-financial-last-week-tonight-1236821605/" target="_blank" rel="noopener">nearly a full episode to the Trump family's crypto ventures</a> &mdash; the best thing to watch this week. Kimmel returns Aug 10 with guest hosts; <a href="https://latenighter.com/news/jimmy-fallon-has-late-night-mostly-to-himself-this-week/" target="_blank" rel="noopener">Fallon has the week to himself</a>. <a href="https://latenighter.com/lineups-by-show/" target="_blank" rel="noopener">All lineups</a></div>
   </div>
   </div>
 
-  <div class="footer">Generated Saturday, August 1, 2026 at 12:05 PM MDT</div>
+  <div class="footer">Generated Monday, August 3, 2026 at 4:22 PM MDT</div>
 </div>
 </body>
 </html>
