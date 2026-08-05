@@ -3,360 +3,165 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Whitney's Day — Tuesday, August 4, 2026</title>
+<title>Whitney's Day — Wednesday, August 5, 2026</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Lexend:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Lexend:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
 :root{
   --pt-purple:#4D00CA; --pt-600:#7C3AED; --pt-wash:#F3E8FF;
   --s900:#0F172A; --s700:#334155; --s500:#64748B; --s400:#94A3B8;
   --s50:#F8FAFC; --s100:#F1F5F9; --hair:#E2E8F0;
-  --red:#EF4444; --red-wash:#FEF2F2; --green-wash:#DCFCE7;
-  --alpenglow:#B85C86; --granite:#1B2022; --scree:#6C7378;
-  --trail:#E3E1DA; --snow:#F7F5F1; --hair-snow:#DDDAD2;
+  --green:#16A34A; --green-wash:#DCFCE7; --red:#EF4444; --red-wash:#FEF2F2;
+  --amber:#B45309; --amber-wash:#FEF3C7;
+  --alpenglow:#B85C86; --granite:#1B2022; --scree:#6C7378; --trail:#E3E1DA; --snow:#F7F5F1; --hb-border:#DDDAD2;
   --font-work-head:'Lexend','Nunito',Poppins,Arial,sans-serif;
-  --font-work-body:'Inter','Segoe UI',Calibri,Arial,sans-serif;
+  --font-work-body:'Inter','Segoe UI',Calibri,sans-serif;
   --font-fam-label:'Jost','Century Gothic',Futura,-apple-system,sans-serif;
   --font-fam-head:'Instrument Serif',Georgia,'Times New Roman',serif;
 }
 *{box-sizing:border-box}
-body{margin:0;background:#fff;color:var(--s700);font-family:var(--font-work-body);
-  font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1080px;margin:0 auto;padding:26px 18px 60px}
-.mast{background:linear-gradient(157deg,#190642,#2C0A72,#4A13B2);border-radius:18px;
-  padding:28px 26px;color:#fff;margin-bottom:24px}
-.mast .eyebrow{font-family:var(--font-work-head);font-size:11px;letter-spacing:.16em;
-  text-transform:uppercase;color:#B98CFF;margin:0 0 8px}
-.mast h1{font-family:var(--font-work-head);font-weight:700;font-size:28px;line-height:1.15;
-  margin:0 0 6px;letter-spacing:-.02em}
-.mast .sub{font-size:13.5px;color:#D8CBF5;margin:0}
-.redact{display:inline-block;margin-top:13px;background:rgba(255,255,255,.13);
-  border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 14px;
-  font-family:var(--font-fam-label);font-size:12px;color:#fff}
-.snap{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;margin-bottom:28px}
-.stat{border:1px solid var(--hair);border-radius:14px;padding:13px 15px}
-.stat .n{font-family:var(--font-work-head);font-weight:700;font-size:24px;color:var(--pt-purple);
-  line-height:1.1;font-variant-numeric:tabular-nums}
-.stat .l{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--s500);margin-top:4px}
-.stat.personal .n{color:var(--alpenglow)}
-section{margin-bottom:32px}
-h2{font-family:var(--font-work-head);font-weight:700;font-size:18px;color:var(--pt-purple);
-  margin:0 0 4px;display:flex;align-items:center;gap:9px}
-h2.personal{font-family:var(--font-fam-label);font-weight:500;color:var(--alpenglow)}
-.hint{font-size:12.5px;color:var(--s500);margin:0 0 13px}
-h3{font-family:var(--font-work-head);font-weight:600;font-size:12.5px;color:var(--s500);
-  text-transform:uppercase;letter-spacing:.09em;margin:20px 0 9px}
-.card{border:1px solid var(--hair);border-left:4px solid var(--pt-purple);border-radius:12px;
-  padding:12px 15px;margin-bottom:8px}
-.card.personal{border:1px solid var(--hair-snow);border-left:4px solid var(--alpenglow);
-  background:var(--snow)}
-.card.muted{border-left-color:var(--s400);background:var(--s50)}
-.card .t{font-family:var(--font-work-head);font-weight:600;font-size:14.5px;color:var(--s900);margin:0}
-.card.personal .t{font-family:var(--font-fam-label);font-weight:500;color:var(--granite)}
-.card .m{font-size:12.5px;color:var(--s500);margin:3px 0 0}
-.card.personal .m{color:var(--scree)}
-.row{display:flex;gap:13px;align-items:flex-start}
-.time{font-family:var(--font-work-head);font-weight:600;font-size:12.5px;color:var(--pt-purple);
-  min-width:100px;flex-shrink:0;font-variant-numeric:tabular-nums;padding-top:1px}
-.card.personal .time{color:var(--alpenglow);font-family:var(--font-fam-label)}
-.card.muted .time{color:var(--s400)}
-.badge{display:inline-block;border-radius:999px;padding:2px 10px;font-size:10px;
-  letter-spacing:.07em;text-transform:uppercase;font-weight:600;vertical-align:2px}
+body{margin:0;background:#EFEDE8;color:var(--s700);font-family:var(--font-work-body);line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:20px 16px 56px}
+a{color:inherit;text-decoration:none;border-bottom:1px dotted rgba(100,116,139,.55)}
+a:hover{border-bottom-style:solid}
+.hero{background:linear-gradient(157deg,#190642,#2C0A72,#4A13B2);border-radius:18px;padding:26px 24px;color:#fff;margin-bottom:18px}
+.hero .eyebrow{font-family:var(--font-work-head);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#B98CFF;margin:0 0 8px}
+.hero h1{font-family:var(--font-work-head);font-weight:700;font-size:25px;line-height:1.15;margin:0 0 6px;letter-spacing:-.01em}
+.hero p{margin:0;font-size:13px;color:#D9CCFF}
+section{background:#fff;border:1px solid var(--hair);border-radius:16px;padding:18px;margin-bottom:14px}
+section.personal{background:var(--snow);border-color:var(--hb-border)}
+h2{font-family:var(--font-work-head);font-weight:700;font-size:15px;color:var(--pt-purple);margin:0 0 12px;display:flex;align-items:center;gap:8px}
+section.personal h2{font-family:var(--font-fam-label);font-weight:500;letter-spacing:.06em;text-transform:uppercase;font-size:13px;color:var(--alpenglow)}
+.badge{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2.5px 7px;border-radius:999px;vertical-align:middle}
 .badge-work{background:var(--pt-wash);color:var(--pt-purple);font-family:var(--font-work-head)}
-.badge-personal{background:var(--trail);color:var(--alpenglow);font-family:var(--font-fam-label)}
-.pill{display:inline-block;border-radius:999px;padding:1px 9px;font-size:10px;font-weight:600;
-  letter-spacing:.05em;text-transform:uppercase;margin-left:6px;font-family:var(--font-work-head)}
-.p-urgent{background:var(--red-wash);color:#B91C1C}
-.p-high{background:#FFEDD5;color:#C2410C}
+.badge-personal{background:var(--trail);color:var(--alpenglow);font-family:var(--font-fam-label);font-weight:500}
+.snap{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.stat{background:var(--s50);border:1px solid var(--hair);border-radius:12px;padding:11px 10px;text-align:center}
+.stat .n{font-family:var(--font-work-head);font-weight:700;font-size:22px;color:var(--pt-purple);line-height:1}
+.stat .l{font-size:10px;color:var(--s500);text-transform:uppercase;letter-spacing:.07em;margin-top:5px;font-weight:600}
+.card{border-left:3px solid var(--pt-purple);background:var(--s50);border-radius:0 10px 10px 0;padding:9px 12px;margin-bottom:7px}
+.card.personal{border-left-color:var(--alpenglow);background:#fff;border:1px solid var(--hb-border);border-left:3px solid var(--alpenglow)}
+.card.free{border-left-color:var(--green);background:var(--green-wash)}
+.card.warn{border-left-color:var(--amber);background:var(--amber-wash)}
+.card.hot{border-left-color:var(--red);background:var(--red-wash)}
+.card .t{font-family:var(--font-work-head);font-weight:600;font-size:13px;color:var(--s900)}
+.card.personal .t{font-family:var(--font-fam-label);font-weight:500;color:var(--granite)}
+.card .m{font-size:11.5px;color:var(--s500);margin-top:2px}
+.card.personal .m{color:var(--scree)}
+.time{font-family:var(--font-work-head);font-weight:700;font-size:12px;color:var(--pt-purple);min-width:92px;display:inline-block}
+.trow{display:flex;gap:9px;align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--s100)}
+.trow:last-child{border-bottom:none}
+.pill{flex:none;font-family:var(--font-work-head);font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:999px;margin-top:2px}
+.p-urgent{background:var(--red-wash);color:var(--red)}
+.p-high{background:var(--pt-wash);color:var(--pt-purple)}
 .p-norm{background:var(--s100);color:var(--s500)}
-.p-over{background:var(--red);color:#fff}
-.p-soon{background:var(--green-wash);color:#15803D}
-a.deep{color:inherit;text-decoration:none;border-bottom:1px dotted var(--s400)}
-a.deep:hover{border-bottom-style:solid;border-bottom-color:var(--pt-purple)}
-.verdict{background:linear-gradient(135deg,var(--snow),#fff);border:1px solid var(--hair-snow);
-  border-radius:14px;padding:18px 20px}
-.verdict .h{font-family:var(--font-fam-head);font-style:italic;font-size:21px;color:var(--alpenglow);
-  margin:0 0 7px;line-height:1.3}
-.verdict p{margin:0;font-family:var(--font-fam-label);font-size:13.5px;color:var(--granite)}
-.other{display:inline-block;margin-top:6px;font-family:var(--font-fam-label);font-size:13px;
-  color:var(--alpenglow);text-decoration:none;border-bottom:1px dotted var(--alpenglow)}
-footer{border-top:1px solid var(--hair);margin-top:40px;padding-top:16px;font-size:11.5px;
-  color:var(--s400);line-height:1.7}
-@media (min-width:820px){
-  .snap{grid-template-columns:repeat(4,1fr)}
-  .cols{display:grid;grid-template-columns:1fr 1fr;gap:0 28px;align-items:start}
-  .mast h1{font-size:32px}
-}
+.p-low{background:var(--s100);color:var(--s400)}
+.tbody{flex:1}
+.tbody .tt{font-size:12.5px;color:var(--s900);font-weight:500}
+.tbody .tm{font-size:11px;color:var(--s500);margin-top:2px}
+.due-late{color:var(--red);font-weight:600}
+.due-today{color:var(--amber);font-weight:600}
+.verdict{background:linear-gradient(135deg,var(--snow),#fff);border:1px solid var(--hb-border);border-radius:12px;padding:14px 16px;margin-top:10px}
+.verdict .h{font-family:var(--font-fam-head);font-style:italic;font-size:19px;color:var(--alpenglow);line-height:1.25;margin-bottom:6px}
+.verdict p{margin:0;font-size:12px;color:var(--scree);font-family:var(--font-fam-label)}
+.note{font-size:11px;color:var(--s400);font-style:italic;margin:10px 0 0}
+.foot{text-align:center;font-size:11px;color:var(--s400);margin-top:22px;font-family:var(--font-work-head)}
+@media(max-width:520px){.snap{grid-template-columns:repeat(2,1fr)}.time{display:block;min-width:0}}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-<div class="mast">
-  <p class="eyebrow">Whitney's Day</p>
-  <h1>Tuesday, August 4, 2026</h1>
-  <p class="sub">Pecan Tree &middot; COO &amp; Petroleum Engineer &nbsp;|&nbsp; All times Mountain</p>
-  <span class="redact">Public view — names, figures and detail sit behind a login</span>
+<div class="hero">
+  <p class="eyebrow">Whitney's Day &middot; public view</p>
+  <h1>Wednesday, August 5, 2026</h1>
+  <p>Six work commitments &middot; one calendar collision &middot; one external deadline Friday &middot; smoke advisory in the valley</p>
 </div>
-
-<div class="snap">
-  <div class="stat"><div class="n">2h 45m</div><div class="l">Meetings on a PTO day</div></div>
-  <div class="stat"><div class="n">6</div><div class="l">Overdue work items</div></div>
-  <div class="stat personal"><div class="n">6</div><div class="l">Personal P1s open</div></div>
-  <div class="stat"><div class="n">4</div><div class="l">Threads in play</div></div>
-</div>
-
-<div class="cols">
-<div>
 
 <section>
-  <h2>Today's Schedule</h2>
-  <p class="hint">Four work blocks between 8:15 and 11:00. Clear after that.</p>
-
-  <div class="card muted">
-    <div class="row"><span class="time">All day</span><div>
-      <p class="t"><a class="deep" href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgAD3T9RCwAA&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">PTO</a> <span class="badge badge-work">Work</span></p>
-    </div></div>
-  </div>
-
-  <div class="card">
-    <div class="row"><span class="time">8:15 – 9:00</span><div>
-      <p class="t"><a class="deep" href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgADlcpr%2BgAA&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">External call — H.</a> <span class="badge badge-work">Work</span></p>
-      <p class="m">Three outside parties. Agenda circulated yesterday. Revised source data landed
-      late last night — read it first.</p>
-    </div></div>
-  </div>
-
-  <div class="card">
-    <div class="row"><span class="time">9:00 – 10:00</span><div>
-      <p class="t"><a class="deep" href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgAD8XZVpQAA&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Model Updates and Claude — Engineering Sync</a> <span class="badge badge-work">Work</span></p>
-      <p class="m">Internal, you are organising. Starts the moment the previous call ends.</p>
-    </div></div>
-  </div>
-
-  <div class="card muted">
-    <div class="row"><span class="time">9:30 – 9:45</span><div>
-      <p class="t"><a class="deep" href="https://outlook.office365.com/owa/?itemid=AAkBOQAICN7xu1PIQAAuAAAAAB2EAxGqZhHNm8gAqgAvxFoNANgnf%2FAaSwRHmKCwTnvH12YAAZfzfzQAABA%3D&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Weekly Company Coffee</a> — <span style="color:#B91C1C">cancelled</span></p>
-    </div></div>
-  </div>
-
-  <div class="card">
-    <div class="row"><span class="time">10:00 – 10:30</span><div>
-      <p class="t"><a class="deep" href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgAD8XZVpgAA&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Revenue data load</a> <span class="badge badge-work">Work</span></p>
-      <p class="m">Internal, one colleague. Accepted overnight.</p>
-    </div></div>
-  </div>
-
-  <div class="card">
-    <div class="row"><span class="time">10:30 – 11:00</span><div>
-      <p class="t"><a class="deep" href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgAD9sxF%2FAAA&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Update goals (OG focus)</a> <span class="badge badge-work">Work</span></p>
-      <p class="m">Solo block. A duplicate copy on another calendar reads 30 minutes earlier —
-      the two disagree.</p>
-    </div></div>
+  <h2>Snapshot</h2>
+  <div class="snap">
+    <div class="stat"><div class="n">6</div><div class="l">Meetings</div></div>
+    <div class="stat"><div class="n">2h30</div><div class="l">Free time</div></div>
+    <div class="stat"><div class="n">5</div><div class="l">Due today</div></div>
+    <div class="stat"><div class="n">6</div><div class="l">Overdue</div></div>
   </div>
 </section>
 
 <section>
-  <h2>ClickUp Tasks &amp; Priorities</h2>
-  <p class="hint">Open items assigned to you. Client names reduced to initials; figures omitted.</p>
-
-  <h3>Overdue &amp; urgent</h3>
-  <div class="card">
-    <p class="t"><a class="deep" href="https://app.clickup.com/t/868k92bnw" target="_blank" rel="noopener">W. upside — final deliverable</a>
-      <span class="pill p-urgent">Urgent</span><span class="pill p-over">7 days over</span></p>
-    <p class="m">In progress. Same account as this morning's calls.</p>
-  </div>
-  <div class="card">
-    <p class="t"><a class="deep" href="https://app.clickup.com/t/868kghvyn" target="_blank" rel="noopener">Consulting final — R.P.</a>
-      <span class="pill p-urgent">Urgent</span><span class="pill p-over">4 days over</span></p>
-  </div>
-  <div class="card">
-    <p class="t">Contractor invoices — 3 open <span class="pill p-urgent">Urgent</span><span class="pill p-over">up to 35 days over</span></p>
-    <p class="m">A commitment to settle was made on your behalf yesterday.
-      <a class="deep" href="https://app.clickup.com/t/868jwjd7v" target="_blank" rel="noopener">1</a> ·
-      <a class="deep" href="https://app.clickup.com/t/868jwjebc" target="_blank" rel="noopener">2</a> ·
-      <a class="deep" href="https://app.clickup.com/t/868k7u3x4" target="_blank" rel="noopener">3</a></p>
-  </div>
-  <div class="card">
-    <p class="t"><a class="deep" href="https://app.clickup.com/t/868jn713m" target="_blank" rel="noopener">M.W. contract renewal</a>
-      <span class="pill p-urgent">Urgent</span><span class="pill p-over">47 days over</span></p>
-    <p class="m">Blocked / stalled. A newer duplicate is already closed — likely stale.</p>
-  </div>
-
-  <h3>Due this week</h3>
-  <div class="card">
-    <p class="t"><a class="deep" href="https://app.clickup.com/t/868khzazw" target="_blank" rel="noopener">Vendor BD follow-up — S.K.</a>
-      <span class="pill p-high">High</span><span class="pill p-soon">Due tomorrow</span></p>
-    <p class="m">Scheduling only.</p>
-  </div>
-  <div class="card">
-    <p class="t"><a class="deep" href="https://app.clickup.com/t/868j1kuzf" target="_blank" rel="noopener">Ad scope + test budget</a>
-      <span class="pill p-norm">Normal</span><span class="pill p-soon">Thu Aug 6</span></p>
-  </div>
-  <div class="card">
-    <p class="t"><a class="deep" href="https://app.clickup.com/t/868kjxcgr" target="_blank" rel="noopener">T&amp;C — well-cap language</a>
-      <span class="pill p-norm">Normal</span><span class="pill p-soon">Fri Aug 7</span></p>
-  </div>
-
-  <h3>Next up</h3>
-  <div class="card">
-    <p class="t"><a class="deep" href="https://app.clickup.com/t/868k5mckv" target="_blank" rel="noopener">Appraisal final — R.H.</a>
-      <span class="pill p-urgent">Urgent</span><span class="pill p-norm">Mon Aug 10</span></p>
-    <p class="m">Deliverable already sent; invoice follows acceptance.</p>
-  </div>
-  <div class="card">
-    <p class="t"><a class="deep" href="https://app.clickup.com/t/868kjx521" target="_blank" rel="noopener">BD intro / demo — B.G.</a>
-      <span class="pill p-high">High</span><span class="pill p-norm">Fri Aug 14</span></p>
-  </div>
-  <div class="card">
-    <p class="t"><a class="deep" href="https://app.clickup.com/t/868kay45b" target="_blank" rel="noopener">Trust-channel BD follow-up — S.L.</a>
-      <span class="pill p-high">High</span><span class="pill p-norm">Sat Aug 15</span></p>
-    <p class="m">Tagged for standup.</p>
-  </div>
-  <div class="card muted">
-    <p class="t">Recurring bookkeeping task <span class="pill p-norm">Normal</span><span class="pill p-over">7 open copies</span></p>
-    <p class="m">Stacked back to May. An expired accounting-system connection is the likely cause of
-    all seven.</p>
-  </div>
-
-  <p class="hint" style="margin-top:13px">⚠️ Still the flat priority-then-due-date sort — a placeholder
-  until the backlog refinement work is done.</p>
+  <h2>Today's Schedule <span class="badge badge-work">Work</span></h2>
+  <div class="card"><div class="t"><span class="time">8:30 – 9:15</span> <a href="https://outlook.office365.com/owa/?itemid=AAkBOQAICN7w8ilegAAuAAAAAB2EAxGqZhHNm8gAqgAvxFoNANgnf%2FAaSwRHmKCwTnvH12YAA20uDcAAABA%3D&exvsurl=1&path=/calendar/item" target="_blank" rel="noopener">Revenue Ops Check-In</a></div><div class="m">Internal</div></div>
+  <div class="card free"><div class="t"><span class="time">9:15 – 10:45</span> Open — 90 minutes</div><div class="m">The only real focus block today</div></div>
+  <div class="card warn"><div class="t"><span class="time">10:45 – 11:30</span> <a href="https://outlook.office365.com/owa/?itemid=AAkBOQAICN7yhH4yAAAuAAAAAB2EAxGqZhHNm8gAqgAvxFoNANgnf%2FAaSwRHmKCwTnvH12YAAaGQkXgAABA%3D&exvsurl=1&path=/calendar/item" target="_blank" rel="noopener">Revenue Ops Level 0 &amp; Backlog</a></div><div class="m">Internal &middot; tentative &middot; ⚠️ collides 11:00–11:30 with the block below</div></div>
+  <div class="card warn"><div class="t"><span class="time">11:00 – 12:00</span> <a href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgAD8XZVpwAA&exvsurl=1&path=/calendar/item" target="_blank" rel="noopener">Client follow-up block</a></div><div class="m">Self-scheduled &middot; ⚠️ 30-minute overlap — one needs to move</div></div>
+  <div class="card free"><div class="t"><span class="time">12:00 – 1:00</span> Open — 60 minutes</div><div class="m">Lunch gap</div></div>
+  <div class="card"><div class="t"><span class="time">1:00 – 2:00</span> <a href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgADlcpr1QAA&exvsurl=1&path=/calendar/item" target="_blank" rel="noopener">Intro call — Z.M. / N.L. (N.M.)</a></div><div class="m">External</div></div>
+  <div class="card"><div class="t"><span class="time">2:00 – 2:30</span> <a href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgAD5ukkRQAA&exvsurl=1&path=/calendar/item" target="_blank" rel="noopener">Strategy — internal</a></div><div class="m">Internal</div></div>
+  <div class="card"><div class="t"><span class="time">2:30 – 3:00</span> <a href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgAD8XZVqgAA&exvsurl=1&path=/calendar/item" target="_blank" rel="noopener">Client variance report</a></div><div class="m">Self-scheduled</div></div>
+  <div class="card"><div class="t"><span class="time">3:00 – 4:00</span> <a href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgAD8XZVqQAA&exvsurl=1&path=/calendar/item" target="_blank" rel="noopener">Insider Check-In &amp; Units Layer on Map</a></div><div class="m">Internal</div></div>
+  <div class="card free"><div class="t"><span class="time">4:00 onward</span> Clear</div><div class="m">Nothing scheduled on either calendar</div></div>
 </section>
 
-</div>
-<div>
-
 <section>
-  <h2 class="personal">
-    <svg width="18" height="18" viewBox="20 13 254 254" fill="none" stroke-linejoin="round" aria-hidden="true">
-      <circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle>
-      <polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon>
-      <polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon>
-      <polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon>
-    </svg>Life Balance</h2>
+  <h2>Tasks &amp; Priorities <span class="badge badge-work">Work</span></h2>
+  <div class="trow"><span class="pill p-urgent">Urgent</span><div class="tbody"><div class="tt"><a href="https://app.clickup.com/t/868k92bnw" target="_blank" rel="noopener">Client upside — final deliverable</a></div><div class="tm">In progress &middot; <span class="due-late">8 days overdue</span></div></div></div>
+  <div class="trow"><span class="pill p-high">High</span><div class="tbody"><div class="tt"><a href="https://app.clickup.com/t/868khzazw" target="_blank" rel="noopener">Partner BD — schedule follow-up</a></div><div class="tm"><span class="due-today">Due today</span></div></div></div>
+  <div class="trow"><span class="pill p-low">Low</span><div class="tbody"><div class="tt">Operator reply batch — 4 tasks</div><div class="tm">All in progress, all <span class="due-today">due today</span> &middot; batch in one sitting</div></div></div>
+  <div class="trow"><span class="pill p-low">Low</span><div class="tbody"><div class="tt"><a href="https://app.clickup.com/t/868khttnr" target="_blank" rel="noopener">Division order — return executed, release suspense</a></div><div class="tm">Waiting (external) &middot; <span class="due-today">hard deadline Fri Aug 7</span></div></div></div>
+  <div class="trow"><span class="pill p-norm">Normal</span><div class="tbody"><div class="tt"><a href="https://app.clickup.com/t/868kjxcgr" target="_blank" rel="noopener">Terms — add well-cap language</a></div><div class="tm">Due Fri Aug 7</div></div></div>
+  <div class="trow"><span class="pill p-norm">Normal</span><div class="tbody"><div class="tt"><a href="https://app.clickup.com/t/868j1kuzf" target="_blank" rel="noopener">Ad scope + small test budget</a></div><div class="tm">Due Thu Aug 6</div></div></div>
+  <div class="trow"><span class="pill p-urgent">Urgent</span><div class="tbody"><div class="tt"><a href="https://app.clickup.com/t/868k5mckv" target="_blank" rel="noopener">Appraisal final — R.H.</a></div><div class="tm">In progress &middot; due Mon Aug 10 &middot; client confirmed receipt Aug 4</div></div></div>
+  <div class="trow"><span class="pill p-urgent">Urgent</span><div class="tbody"><div class="tt">Contractor invoice backlog — 3 tasks</div><div class="tm">All <span class="due-late">overdue</span> &middot; nothing blocking</div></div></div>
+  <div class="trow"><span class="pill p-urgent">Urgent</span><div class="tbody"><div class="tt"><a href="https://app.clickup.com/t/868jn713m" target="_blank" rel="noopener">Partner contract renewal</a></div><div class="tm">Blocked / stalled &middot; <span class="due-late">overdue since mid-June</span> &middot; possible stale duplicate</div></div></div>
+  <div class="trow"><span class="pill p-high">High</span><div class="tbody"><div class="tt"><a href="https://app.clickup.com/t/868kjx521" target="_blank" rel="noopener">BD intro/demo — B.G. (P.O.)</a></div><div class="tm">Fri Aug 14 &middot; invite accepted</div></div></div>
+  <div class="trow"><span class="pill p-high">High</span><div class="tbody"><div class="tt"><a href="https://app.clickup.com/t/868kay45b" target="_blank" rel="noopener">BD follow-up — S.L. (A.T.C.)</a></div><div class="tm">Due Sat Aug 15 &middot; tagged for standup</div></div></div>
+  <div class="trow"><span class="pill p-low">Low</span><div class="tbody"><div class="tt">First outreach batch — 3 operators, same county</div><div class="tm">Due Wed Aug 12</div></div></div>
+  <div class="trow"><span class="pill p-norm">Normal</span><div class="tbody"><div class="tt"><a href="https://app.clickup.com/t/868kggkzc" target="_blank" rel="noopener">Bookkeeping update</a> — recurring</div><div class="tm">7 open instances stacked up &middot; the pile is the signal</div></div></div>
+  <p class="note">Ordering is a flat priority-then-due-date sort, a known placeholder pending a real backlog-refinement methodology. Recurring duplicates collapsed.</p>
+</section>
 
+<section class="personal">
+  <h2><svg width="18" height="18" viewBox="20 13 254 254" fill="none" stroke-linejoin="round" style="flex:none"><circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle><polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon><polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon><polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon></svg>Life Balance <span class="badge badge-personal">Personal</span></h2>
+  <div class="card personal"><div class="t">Personal appointments today: none</div><div class="m">Nothing on the family or personal calendars for you.</div></div>
+  <div class="card personal"><div class="t">Day 5 of the trip</div><div class="m">⚠️ The end date on the calendar was inferred, not confirmed, and the flag has gone unanswered across four briefs.</div></div>
   <div class="verdict">
-    <p class="h">Go out at 7:00, not at 4:00.</p>
-    <p>A full hour, 7:00 – 8:00 AM, before the first call and before air quality declines through the
-    day. The usual late-afternoon slot is the wrong call today.</p>
-  </div>
-
-  <div class="card personal" style="margin-top:9px">
-    <p class="t">Your own appointments today: none</p>
-    <p class="m">Nothing personal on the calendar. Nothing there needs you.</p>
-  </div>
-  <div class="card personal">
-    <p class="t">Activity target</p>
-    <p class="m">Nothing logged yet against 3 per week.</p>
+    <div class="h">Today is an indoors day, and that is not a failure.</div>
+    <p>Around 27&deg;C with afternoon sun, which would normally be a clear "go outside." But the region is under a provincial air quality warning for wildfire smoke running through late tonight, so the outdoor recommendation is withdrawn rather than relocated. If you want the movement, take the 9:15&ndash;10:45 window and do it inside. No calendar changes have been made.</p>
   </div>
 </section>
 
 <section>
-  <h2>Email</h2>
-  <p class="hint">External threads only. Counts and status; senders as initials.</p>
-
-  <h3>You owe the reply — 2</h3>
-  <div class="card">
-    <p class="t">P.P. (C.P.) — corrected source data</p>
-    <p class="m">Arrived last night, upstream of this morning's external call. Acknowledge and confirm
-    the revised figure is the one in your agenda.</p>
-  </div>
-  <div class="card">
-    <p class="t">Vendor billing — overdue account notice</p>
-    <p class="m">Sent to you and one colleague with their account manager copied. No reply on the thread yet.</p>
-  </div>
-  <div class="card muted">
-    <p class="t">⚠️ One lookalike-domain "urgent payment" message flagged</p>
-    <p class="m">Different domain from the genuine vendor thread, with an attachment. Classic
-    invoice-fraud pattern — action only through the verified channel.</p>
-  </div>
-
-  <h3>Waiting on their reply — 2</h3>
-  <div class="card">
-    <p class="t">R.H. (R.O.G.) — full deliverable sent</p>
-    <p class="m">Sent yesterday late morning. Under 24 hours, and he has been responsive throughout.</p>
-  </div>
-  <div class="card">
-    <p class="t">J.G. (R.P.) — figures reconciliation</p>
-    <p class="m">He asked, you answered yesterday morning, nothing back since. A colleague on the same
-    account did reach you separately later and that call happened.</p>
-  </div>
+  <h2>Replies Owed <span class="badge badge-work">Work</span></h2>
+  <div class="card hot"><div class="t">G.G. (W.M.C.)</div><div class="m">Gave availability for <strong>tomorrow</strong>; nothing has gone back. A two-line reply that expires if it sits.</div></div>
+  <div class="card"><div class="t">R.H. (R.O.G.)</div><div class="m">Confirmed receipt of a delivered package Aug 4 and flagged a longer-horizon follow-up. Short close-out reply owed.</div></div>
+  <div class="card"><div class="t">B.W.</div><div class="m">Aug 3 &middot; contains an actual decision question. Two days unanswered by anyone on the thread — take it or hand it over explicitly.</div></div>
+  <div class="card"><div class="t">P.P. (C.P.)</div><div class="m">Aug 3 &middot; sent a corrected data file. Thin, but directly upstream of the 2:30 report.</div></div>
+  <p class="note">External senders only. Internal mail, cold outreach and marketing excluded. Determined from a paginated sweep of Sent Items across a four-week window, not just the newest page.</p>
 </section>
 
 <section>
-  <h2 class="personal">
-    <svg width="18" height="18" viewBox="20 13 254 254" fill="none" stroke-linejoin="round" aria-hidden="true">
-      <circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle>
-      <polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon>
-      <polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon>
-      <polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon>
-    </svg>Personal Emails</h2>
-  <div class="card personal">
-    <p class="t">An invoice three days past due, unread</p>
-  </div>
-  <div class="card personal">
-    <p class="t">A registration deadline this Friday</p>
-    <p class="m">Plus an equipment-order cutoff later in the month. Unread since Sunday.</p>
-  </div>
+  <h2>Waiting on You <span class="badge badge-work">Work</span></h2>
+  <div class="card hot"><div class="t">Foundation signature chain</div><div class="m">Sent Jul 29 &middot; approval needed before signing &middot; <strong>hard deadline Friday</strong>. Two days, two people, neither of them you. Worth a phone call.</div></div>
+  <div class="card"><div class="t">J.G. (R.P.)</div><div class="m">Two threads &middot; 5 days and 2 days silent &middot; a colleague on the same deals has been responsive, so route through him.</div></div>
+  <div class="card"><div class="t">D. &amp; J. (R.R.)</div><div class="m">Jul 30 &middot; 6 days &middot; already a second attempt. Call, or let it go.</div></div>
+  <div class="card"><div class="t">B. &amp; S. (F.)</div><div class="m">Aug 1 &middot; 4 days &middot; ties to two open payment tasks.</div></div>
+  <div class="card"><div class="t">L.G. (F.N.)</div><div class="m">Aug 2 &middot; scheduling question &middot; she has emailed since on another thread, so likely lost rather than ignored.</div></div>
+</section>
+
+<section class="personal">
+  <h2><svg width="18" height="18" viewBox="20 13 254 254" fill="none" stroke-linejoin="round" style="flex:none"><circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle><polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon><polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon><polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon></svg>Home Front <span class="badge badge-personal">Personal</span></h2>
+  <div class="card personal"><div class="t">One overdue invoice</div><div class="m">Was due Aug 1; reminder landed Aug 4. The only personal item running late on money.</div></div>
+  <div class="card personal"><div class="t">Two decisions expire tonight and tomorrow</div><div class="m">A meal-box skip/unskip with an 11:59 PM cutoff tonight, and a short survey closing tomorrow night. Both small; both quietly become "missed."</div></div>
+  <div class="card personal"><div class="t">Six priority-1 tasks open, five overdue</div><div class="m">Library items for the kids, two calls to book, a photo gallery that expired, a lapsed hold, and a vehicle decision that is really your partner's. All already carry full context — four are 15-minute phone calls that need a phone-call-shaped slot.</div></div>
+  <div class="card personal"><div class="t">Appointment next Tuesday afternoon</div><div class="m">Lands mid-trip — needs moving or a drive back.</div></div>
 </section>
 
 <section>
-  <h2>Reminders</h2>
-  <div class="card">
-    <p class="t">No out-of-office set for Aug 5 – 22</p>
-    <p class="m">Two minutes now saves three weeks of chasing.</p>
-  </div>
-  <div class="card">
-    <p class="t">Accounting sync has expired</p>
-    <p class="m">Data stopped flowing yesterday. Likely the cause of the stacked bookkeeping tasks.</p>
-  </div>
-  <div class="card">
-    <p class="t">Three declined card charges yesterday</p>
-    <p class="m">All vendor renewals. Worth a look before something lapses.</p>
-  </div>
-  <div class="card personal">
-    <p class="t">Two cards past due</p>
-    <p class="m">One 8 days over and unconfirmed across seven briefs; another due Aug 1. Confirm autopay
-    covers the rest of the month.</p>
-  </div>
-  <div class="card personal">
-    <p class="t">Six P1s open — two are phone calls</p>
-    <p class="m">Both places are open today and your morning frees at 11:00. Both have been riding
-    since Jul 29. The rest can wait.</p>
-  </div>
-  <div class="card personal">
-    <p class="t">A scheduling flag has now gone unanswered across five briefs</p>
-    <p class="m">Some dates in the calendar don't reconcile with each other. Worth ten minutes.</p>
-  </div>
+  <h2>Worth Knowing</h2>
+  <div class="card"><div class="t">Wildfire smoke, and it is regional</div><div class="m">Over 130 active wildfires in B.C. this week, with shifting winds pushing smoke across the province. No fires in the local townsites, but larger fires continue about 100 km south and the whole valley is under the provincial air quality warning. <a href="https://aqwarnings.gov.bc.ca/warnings/2026-08-01_wildfire_smoke_issue.html" target="_blank" rel="noopener">B.C. air quality warnings</a></div></div>
+  <div class="card"><div class="t">Sector read</div><div class="m">A widely-circulated note this week argues recent large acquisitions are a bet on inventory quality and capital efficiency rather than on current production — useful framing for the inventory-review work.</div></div>
 </section>
 
-<section>
-  <h2>News</h2>
-  <div class="card">
-    <p class="t"><a class="deep" href="https://www.federalregister.gov/documents/2026/06/24/2026-12738/royalty-for-oil-and-gas-lost-from-onshore-federal-and-indian-leases" target="_blank" rel="noopener">BLM royalty rule on lost oil and gas — comments close Aug 24</a></p>
-    <p class="m">Royalty owed on production lost from onshore federal and Indian leases.</p>
-  </div>
-  <div class="card">
-    <p class="t"><a class="deep" href="https://www.suredividend.com/royalty-trusts-list/" target="_blank" rel="noopener">Royalty trust Q1 2026 results came in weak</a></p>
-    <p class="m">Net profit income down 62% on the reporting trusts, with oil and gas volumes both
-    sharply lower year over year.</p>
-  </div>
-  <div class="card">
-    <p class="t"><a class="deep" href="https://www.deseret.com/environment/2026/02/09/new-oil-and-gas-royalties-cost-taxpayers-hundreds-millions-study/" target="_blank" rel="noopener">Federal royalty changes and state revenue</a></p>
-    <p class="m">Ongoing analysis of what the revised structure means for producing states.</p>
-  </div>
-</section>
-
-<a class="other" href="https://deadnak.github.io/hornak-brief/" target="_blank" rel="noopener">Tonight's household brief →</a>
-
-</div>
-</div>
-
-<footer>
-  <p>Redacted public view of a private dashboard. External people and companies appear as initials.
-  Client names, deal terms, figures, meeting links, file names and message contents are never shown here.
-  Family members are unnamed and health detail is omitted. Links open records that require a login.</p>
-  <p>Generated Tuesday, August 4, 2026 at 4:04 AM MDT.</p>
-</footer>
+<p class="foot">Generated Wednesday, August 5, 2026 at 4:20 AM MDT &middot; redacted public view &middot; detail sits behind login</p>
 
 </div>
 </body>
