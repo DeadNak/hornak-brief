@@ -3,234 +3,284 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hornak Brief — Aug 9 to Aug 15</title>
+<meta name="robots" content="noindex, nofollow">
+<title>Hornak Evening Brief — Wednesday, August 12</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap');
 :root{
-  color-scheme: light;
-  --pine:#2E7358; --alpenglow:#B85C86; --glacier:#35699B; --dusk:#6B5591;
+  color-scheme:light;
+  --alpenglow:#B85C86; --pine:#2E7358; --glacier:#35699B; --dusk:#6B5591;
   --granite:#1B2022; --scree:#6C7378; --trail:#E3E1DA; --snow:#F7F5F1;
+  --line:#DDDAD2; --line2:#C7C4BB;
+  --font-label:'Jost','Century Gothic',Futura,-apple-system,sans-serif;
+  --font-head:'Instrument Serif',Georgia,'Times New Roman',serif;
 }
-*{box-sizing:border-box;}
-body{
-  margin:0; padding:18px 14px 40px;
-  background:var(--trail); color:var(--granite);
-  font-family:'Jost',system-ui,sans-serif; font-weight:300; font-size:17px; line-height:1.5;
-}
-.card{
-  background:var(--snow); border-radius:14px; padding:26px 20px;
-  max-width:520px; margin:0 auto;
-}
-.mark{display:block;margin:0 auto 14px;width:52px;height:52px;}
-.wordmark{
-  font-family:'Jost'; font-weight:500; font-size:12px; letter-spacing:.3em;
-  text-transform:uppercase; text-align:center; color:var(--pine); margin:0 0 4px;
-}
-h1{
-  font-family:'Instrument Serif',Georgia,serif; font-weight:400;
-  font-size:38px; line-height:1.1; text-align:center; margin:6px 0 4px;
-}
-.tagline{
-  font-family:'Instrument Serif',Georgia,serif; font-style:italic; font-size:20px;
-  text-align:center; color:var(--scree); margin:0 0 6px;
-}
-.redact{
-  text-align:center; font-size:12.5px; color:var(--scree); margin:0 0 22px;
-}
-.redact a{color:var(--pine);}
-h2{
-  font-family:'Jost'; font-weight:500; font-size:10.5px; letter-spacing:.16em;
-  text-transform:uppercase; color:var(--pine);
-  margin:26px 0 10px; padding-bottom:6px; border-bottom:1px solid var(--trail);
-}
-h3{
-  font-family:'Jost'; font-weight:500; font-size:14px; letter-spacing:.02em;
-  margin:16px 0 6px; color:var(--granite);
-}
-p{margin:0 0 10px;}
-a{color:var(--glacier); text-decoration:none; border-bottom:1px solid rgba(53,105,155,.32);}
-a:hover{border-bottom-color:var(--glacier);}
-ul{list-style:none; margin:0; padding:0;}
-li{
-  padding:7px 0; border-bottom:1px solid var(--trail);
-  display:flex; gap:12px; align-items:baseline;
-}
-li:last-child{border-bottom:none;}
-.t{
-  font-family:'Jost'; font-weight:500; font-size:13px; color:var(--scree);
-  min-width:62px; flex-shrink:0; letter-spacing:.02em;
-}
-.body{flex:1;}
-.who{color:var(--scree); font-size:13.5px;}
-.attn{color:var(--alpenglow); font-weight:400;}
-.wx{display:flex; flex-wrap:wrap; gap:8px; margin:0;}
-.wx div{
-  flex:1 1 86px; background:var(--trail); border-radius:10px;
-  padding:9px 8px; text-align:center;
-}
-.wx .d{font-family:'Jost';font-weight:500;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--pine);}
-.wx .n{font-size:19px; font-family:'Instrument Serif',Georgia,serif;}
-.wx .c{font-size:11.5px; color:var(--scree); line-height:1.3;}
-.pill{
-  padding:10px 0; border-bottom:1px solid var(--trail);
-}
-.pill:last-child{border-bottom:none;}
-.pill .k{
-  font-family:'Jost'; font-weight:500; font-size:10.5px; letter-spacing:.14em;
-  text-transform:uppercase; color:var(--dusk); display:block; margin-bottom:3px;
-}
-.note{font-size:13.5px; color:var(--scree); font-style:italic;}
-.divider{
-  border:none; border-top:1px solid var(--trail); margin:32px 0 4px;
-}
-footer{
-  text-align:center; font-size:11.5px; color:var(--scree);
-  margin-top:28px; letter-spacing:.03em;
-}
+*{box-sizing:border-box}
+body{margin:0;background:var(--trail);color:var(--granite);font-family:var(--font-label);font-weight:300;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--glacier);text-decoration:none;border-bottom:1px solid rgba(53,105,155,.3)}
+a:hover{border-bottom-color:var(--glacier)}
+.wrap{max-width:640px;margin:0 auto;padding:20px 16px 56px}
+
+.masthead{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.mark{flex:0 0 auto}
+.wordmark{font-family:var(--font-label);font-weight:500;letter-spacing:.22em;text-transform:uppercase;font-size:11px;color:var(--scree)}
+
+.hero{background:var(--snow);border:1px solid var(--line);border-radius:14px;padding:22px 20px;margin-bottom:16px}
+.hero h1{font-family:var(--font-head);font-weight:400;font-size:30px;line-height:1.15;margin:0 0 6px}
+.hero .sub{font-size:13px;color:var(--scree);margin:0}
+.hero .tag{font-family:var(--font-head);font-style:italic;color:var(--alpenglow);font-size:20px;margin:12px 0 0}
+
+.pill{display:inline-block;background:var(--trail);color:var(--alpenglow);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:10px}
+
+.card{background:var(--snow);border:1px solid var(--line);border-left:3px solid var(--alpenglow);border-radius:12px;padding:16px 18px;margin-bottom:14px}
+.card.pine{border-left-color:var(--pine)}
+.card.glacier{border-left-color:var(--glacier)}
+.card.dusk{border-left-color:var(--dusk)}
+h2{font-family:var(--font-label);font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--scree);margin:0 0 10px;display:flex;align-items:center;gap:7px}
+h2 a{color:var(--scree);border-bottom:0}
+h3{font-family:var(--font-label);font-weight:500;font-size:14px;margin:14px 0 5px;color:var(--granite)}
+h3:first-of-type{margin-top:0}
+p{margin:0 0 9px;font-size:14.5px}
+ul{margin:0 0 9px;padding-left:0;list-style:none}
+li{font-size:14.5px;margin-bottom:6px;padding-left:14px;position:relative}
+li:before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--line2)}
+li.warn:before{background:var(--alpenglow)}
+li.done:before{background:var(--pine)}
+strong{font-weight:500}
+em{color:var(--scree);font-style:italic}
+.time{font-variant-numeric:tabular-nums;font-weight:500}
+.meta{font-size:12.5px;color:var(--scree)}
+.verdict{background:linear-gradient(180deg,var(--snow),#fff);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px}
+.verdict .line{font-family:var(--font-head);font-style:italic;color:var(--alpenglow);font-size:21px;line-height:1.3;margin:0 0 8px}
+.hidden-note{background:var(--trail);border:1px dashed var(--line2);border-radius:10px;padding:11px 14px;font-size:13px;color:var(--scree);margin-bottom:14px}
+.wx{display:grid;grid-template-columns:auto 1fr auto;gap:4px 12px;font-size:14px;align-items:baseline}
+.wx .d{font-weight:500}
+.wx .t{color:var(--scree);text-align:right;font-variant-numeric:tabular-nums}
+.foot{text-align:center;font-size:11.5px;color:var(--scree);letter-spacing:.04em;margin-top:26px}
+.foot a{color:var(--scree)}
+.readgrid{display:grid;grid-template-columns:1fr;gap:10px}
+.readitem{border-top:1px solid var(--line);padding-top:9px}
+.readitem:first-child{border-top:0;padding-top:0}
+.eyebrow{font-size:10.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--alpenglow);display:block;margin-bottom:2px}
+.readitem p{font-size:13.5px;margin:0}
+.switch{display:inline-block;font-size:12px;color:var(--scree);border:1px solid var(--line2);border-radius:999px;padding:4px 12px;margin-top:4px}
+
 @media (min-width:880px){
-  body{padding:36px 28px 60px;}
-  .card{max-width:1000px; padding:44px 48px;}
-  h1{font-size:52px;}
-  .tagline{font-size:24px;}
-  .cols{display:grid; grid-template-columns:1fr 1fr; gap:0 52px; align-items:start;}
-  .read h2{border-top:none;}
-  .wx div{flex:1 1 100px;}
+  .wrap{max-width:1120px;padding:32px 28px 64px}
+  .hero h1{font-size:42px}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:0 20px;align-items:start}
+  .readgrid{grid-template-columns:1fr 1fr 1fr;gap:14px 22px}
+  .readitem{border-top:1px solid var(--line);padding-top:10px}
+  .readitem:first-child{border-top:1px solid var(--line);padding-top:10px}
 }
 </style>
 </head>
 <body>
-<div class="card">
+<div class="wrap">
 
-  <svg class="mark" viewBox="0 0 100 100" role="img" aria-label="Hornak family mark">
-    <circle cx="50" cy="50" r="46" fill="none" stroke="#1B2022" stroke-width="1.6"/>
-    <path d="M24 70 L41 33 L58 70 Z" fill="none" stroke="#2E7358" stroke-width="2.4" stroke-linejoin="round"/>
-    <path d="M38 72 L55 30 L73 72 Z" fill="none" stroke="#B85C86" stroke-width="2.4" stroke-linejoin="round"/>
-    <path d="M31 66 L50 41 L69 66 Z" fill="none" stroke="#35699B" stroke-width="2.4" stroke-linejoin="round"/>
-    <path d="M27 74 L50 52 L72 74 Z" fill="none" stroke="#6B5591" stroke-width="2.4" stroke-linejoin="round"/>
-  </svg>
+  <div class="masthead">
+    <svg class="mark" width="26" height="26" viewBox="20 13 254 254" fill="none" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle>
+      <polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon>
+      <polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon>
+      <polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon>
+    </svg>
+    <span class="wordmark">Hornak &middot; Evening Brief</span>
+  </div>
 
-  <p class="wordmark">Hornak</p>
-  <h1>The Week Ahead</h1>
-  <p class="tagline">Sunday, August 9 &ndash; Saturday, August 15</p>
-  <p class="redact">9 items are Todoist-only this week &middot; <a href="https://app.todoist.com/app/project/6h62Jmrp3GpJjQwW" target="_blank" rel="noopener">open the full brief</a></p>
+  <div class="hero">
+    <span class="pill">Tonight</span>
+    <h1>Wednesday, August&nbsp;12</h1>
+    <p class="sub">Built this morning. A camp week moved, and the meal plan has run out.</p>
+    <p class="tag">Wet today, then 27&deg; and dry by Friday.</p>
+    <p style="margin-top:12px"><a href="https://deadnak.github.io/hornak-brief/weekly/" target="_blank" rel="noopener">&rarr; This week&rsquo;s brief</a></p>
+  </div>
+
+  <div class="hidden-note">
+    &#128274; Twelve items are held back from this page. The full version lives in <a href="https://app.todoist.com/app/task/6hGPjQMMWwQ3JWX4" target="_blank" rel="noopener">Todoist</a>.
+  </div>
 
   <div class="cols">
   <div>
 
-    <h2>Calgary weather</h2>
+  <div class="verdict">
+    <p class="line">Two calendars disagree, and dinner is the real gap.</p>
+    <p>The good news landed by email yesterday: <strong>camp is confirmed for Aug&nbsp;17&ndash;21</strong>. The catch is that nobody told the calendar &mdash; it still shows camp running Thursday and Friday this week. And the meal plan stopped on <strong>Aug&nbsp;9</strong>, so there is nothing against tonight or any night after it.</p>
+    <p class="meta">Neither is urgent before this afternoon. Both are five-minute fixes.</p>
+  </div>
+
+  <div class="card glacier">
+    <h2>&#9728;&#65039; Weather &mdash; next 3 days</h2>
     <div class="wx">
-      <div><span class="d">Sun</span><span class="n">22&deg;</span><span class="c">30% showers</span></div>
-      <div><span class="d">Mon</span><span class="n">19&deg;</span><span class="c">60% showers</span></div>
-      <div><span class="d">Tue</span><span class="n">16&deg;</span><span class="c">cloudy</span></div>
-      <div><span class="d">Wed</span><span class="n">17&deg;</span><span class="c">60% showers</span></div>
-      <div><span class="d">Thu</span><span class="n">14&deg;</span><span class="c">showers</span></div>
+      <span class="d">Today</span><span>Rain, 18&nbsp;mm &mdash; heaviest 6&ndash;7&nbsp;PM</span><span class="t">21&deg; / 13&deg;</span>
+      <span class="d">Thu</span><span>Light drizzle only</span><span class="t">19&deg; / 13&deg;</span>
+      <span class="d">Fri</span><span>Dry and sunny &mdash; big warm-up</span><span class="t">27&deg; / 7&deg;</span>
     </div>
-    <p class="note" style="margin-top:10px;">Cool and wet all week &mdash; a real break from the heat. Rain gear by the door.</p>
+    <p class="meta" style="margin-top:10px">No outdoor window this afternoon &mdash; it rains through it. Friday swings 20&deg; between dawn and mid-afternoon, and Saturday reaches 29&deg;. Layers for the Chicas.</p>
+  </div>
 
-    <h2>Sunday</h2>
+  <div class="card">
+    <h2>&#128197; The day</h2>
     <ul>
-      <li><span class="t">11:00</span><span class="body"><a href="https://www.google.com/calendar/event?eid=XzZzbzQ2aDFqOGdvMzBiYTQ2OTJrMmI5azY4cWs0YjlwNm9yMzZiYTU2aDEzY2U5ajY4cGphY2k0OGMgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw" target="_blank" rel="noopener">Festival</a> <span class="who">(all)</span></span></li>
-      <li><span class="t">4:00</span><span class="body"><a href="https://www.google.com/calendar/event?eid=Xzg5MjNnZTFwNnNyamViYTE2OHNrNGI5azcxMzM0YjlvOGgyajJiOXA3NG8zZ2RwbjhnbzNjZGhpODQgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw" target="_blank" rel="noopener">Club sign-up</a> <span class="who">(Whitney)</span></span></li>
-      <li><span class="t">5:30</span><span class="body"><a href="https://www.google.com/calendar/event?eid=Xzc0cjQ2aDFvOGNvNDZiOWw2aDJqNGI5azhnbzNlYjlvODUyajhiOW84b3JqaWNoaTYwcWthaGhsNmcgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw" target="_blank" rel="noopener">Family dinner</a> <span class="who">(all + grandparents)</span></span></li>
+      <li><span class="time">8:00 AM</span> &mdash; <a href="https://www.google.com/calendar/event?eid=NjRzbWFlOWlja3EzMGI5bzZsaTNjYjlrNzRyamFiOXA2MHM2MmI5b2M4bzNhZTlvNzByMzhkOWxjY18yMDI2MDgxMlQxNDAwMDBaIGZhbWlseTAyMzI3NjMwMjk3MjU5MDUxNjkwQGc&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Card check</a> &mdash; done</li>
+      <li class="warn">All day &mdash; <a href="https://www.google.com/calendar/event?eid=c3FlbXM4NjIxazdqcWNjc3U5aDlzdTdodGtfMjAyNjA4MTAgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Camp, week&nbsp;1</a> (Chicas) &mdash; <strong>stale, see conflicts</strong></li>
+      <li>Afternoon &mdash; <em>off this page</em></li>
     </ul>
+  </div>
 
-    <h2>Monday</h2>
+  <div class="card dusk">
+    <h2>&#9888;&#65039; Conflicts</h2>
     <ul>
-      <li><span class="t">6:45</span><span class="body"><a href="https://www.google.com/calendar/event?eid=Xzg5MTQ4Z2ExNzRvajhiOWo4cDM0NGI5azZnczM2YjlvOGwxM2FiOW82NHNrOGdhMTZzcmpjaGhvNjAgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw" target="_blank" rel="noopener">Movie night</a> <span class="who">(Whitney &amp; Julian)</span></span></li>
-      <li><span class="t">8:00</span><span class="body"><a href="https://www.google.com/calendar/event?eid=NTNrbnVjYXI0ZW0yNTFydTEzNDJsdjFyZ28gZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw" target="_blank" rel="noopener">Registration opens</a> <span class="who">(Chicas)</span></span></li>
+      <li class="warn"><strong>Camp week&nbsp;1 is off, the calendar still has it.</strong> The camp confirmed by email <strong>Tue Aug&nbsp;11, 11:58&nbsp;AM</strong> that both Chicas moved to <a href="https://www.google.com/calendar/event?eid=c3FlbXM4NjIxazdqcWNjc3U5aDlzdTdodGtfMjAyNjA4MTcgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Aug&nbsp;17&ndash;21</a>. Thursday and Friday need clearing.</li>
+      <li class="warn"><strong>One entry is double-dated</strong> &mdash; two calendar records put the same thing on two different days. Flagged in Todoist for a one-tap fix.</li>
+      <li class="warn"><strong>Two Thursday appointments need confirming</strong> &mdash; both were set against assumptions that have since changed.</li>
+      <li>A <span class="time">5:00 PM</span> tryout carried over from the weekly never made it onto a calendar. Treating it as a no.</li>
     </ul>
+  </div>
 
-    <h2>Tuesday</h2>
-    <ul>
-      <li><span class="t">2:00</span><span class="body"><a href="https://www.google.com/calendar/event?eid=OW44N2ljc24xZXJnczJja3FsZG9tMmxqYXMgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw" target="_blank" rel="noopener">Appointment</a> <span class="who">(Whitney)</span></span></li>
-    </ul>
-
-    <h2>Wednesday onward</h2>
-    <p class="note">Off this page &mdash; it's all in <a href="https://app.todoist.com/app/project/6h62Jmrp3GpJjQwW" target="_blank" rel="noopener">Todoist</a>.</p>
-
-    <h2>Meals</h2>
-    <ul>
-      <li><span class="t">Sun</span><span class="body"><a href="https://www.claudeusercontent.com/artifact/c87f2ac9-ab21-4d38-8967-834af65c4da2?domain=claude.ai&amp;parentOrigin=https%3A%2F%2Fclaude.ai&amp;formattedSpreadsheets=true#recipe=pizza" target="_blank" rel="noopener">Pizza</a> <span class="who">(10 servings)</span></span></li>
-      <li><span class="t">Mon&ndash;Sat</span><span class="body"><span class="attn">Not planned yet</span> &mdash; <a href="https://claude.ai/public/artifacts/c87f2ac9-ab21-4d38-8967-834af65c4da2" target="_blank" rel="noopener">Recipe Box</a></span></li>
-    </ul>
-    <p class="note">Fresh Prep stays paused; first box back lands Sunday Aug 23.</p>
+  <div class="card pine">
+    <h2>&#127869;&#65039; Dinner</h2>
+    <p><strong>Nothing planned</strong> &mdash; and not just tonight. The live plan stops at <strong>Aug&nbsp;9</strong>, so every night from here is blank.</p>
+    <p><em>Hey Whit and Julian &mdash; send a plan and I&rsquo;ll load it, recipe links and all.</em></p>
+    <p class="meta">Fresh Prep is paused and will restart on its own &mdash; nothing to do there. &middot; <a href="https://claude.ai/public/artifacts/c87f2ac9-ab21-4d38-8967-834af65c4da2" target="_blank" rel="noopener">Recipe Box</a></p>
+  </div>
 
   </div>
   <div>
 
-    <h2>Needs you &mdash; 8</h2>
+  <div class="card">
+    <h2>&#127919; Needs you &mdash; <a href="https://app.todoist.com/app/project/6h5mX4qrJG8Gf528" target="_blank" rel="noopener">Adulting</a> &amp; <a href="https://app.todoist.com/app/project/6h5mX4vHR4j86vXv" target="_blank" rel="noopener">Chicas</a></h2>
+    <p class="meta" style="margin-bottom:9px">Seven priority-one items, all overdue. Nothing was checked off since the last brief.</p>
     <ul>
-      <li><span class="t attn">Top</span><span class="body"><a href="https://app.todoist.com/app/task/6hFmqw9wr3VxPg4g" target="_blank" rel="noopener">Paperwork follow-up</a> <span class="who">(Julian) &mdash; ahead of everything</span></span></li>
-      <li><span class="t attn">Tomorrow</span><span class="body"><a href="https://app.todoist.com/app/task/6hFmhxXRWVpjXrqv" target="_blank" rel="noopener">Camp follow-up</a> <span class="who">(Chicas)</span></span></li>
-      <li><span class="t attn">Overdue</span><span class="body"><a href="https://app.todoist.com/app/task/6h6Q2XvP658gF3Wv" target="_blank" rel="noopener">Library lost books</a> <span class="who">both girls, $25.59</span></span></li>
-      <li><span class="t attn">Overdue</span><span class="body"><a href="https://app.todoist.com/app/task/6h9GMCC23M3pMxFg" target="_blank" rel="noopener">Library digital hold</a></span></li>
-      <li><span class="t attn">Day 11</span><span class="body"><a href="https://app.todoist.com/app/task/6h5xXQR54CrF5pFf" target="_blank" rel="noopener">Call the dentist</a></span></li>
-      <li><span class="t attn">Day 11</span><span class="body"><a href="https://app.todoist.com/app/task/6h69CQXGqH3cgfJf" target="_blank" rel="noopener">Call the clinic</a></span></li>
-      <li><span class="t">Open</span><span class="body"><a href="https://app.todoist.com/app/task/6h8W6w4h44gR62r8" target="_blank" rel="noopener">Sell or trade the car</a> <span class="who">(Julian)</span></span></li>
-      <li><span class="t">Open</span><span class="body"><a href="https://app.todoist.com/app/task/6h62x2M8mx2CXr77" target="_blank" rel="noopener">Photo prints</a> <span class="who">11th ask</span></span></li>
+      <li class="warn"><a href="https://app.todoist.com/app/task/6hFmqw9wr3VxPg4g" target="_blank" rel="noopener">Julian &mdash; follow up on the EI file</a> &mdash; still the top of the list, three days over</li>
+      <li class="done"><a href="https://app.todoist.com/app/task/6hFmhxXRWVpjXrqv" target="_blank" rel="noopener">Follow up with the camp</a> &mdash; <strong>essentially done.</strong> Only the refund-or-credit question is left</li>
+      <li class="warn"><a href="https://app.todoist.com/app/task/6h6Q2XvP658gF3Wv" target="_blank" rel="noopener">Library &mdash; the Chicas&rsquo; items marked lost</a> &mdash; eleven days over</li>
+      <li class="warn"><a href="https://app.todoist.com/app/task/6h5xXQR54CrF5pFf" target="_blank" rel="noopener">Call the dentist &mdash; cleanings still unbooked</a> &mdash; <strong>they replied yesterday</strong> and it&rsquo;s unread. One reply closes both halves</li>
+      <li><a href="https://app.todoist.com/app/task/6h62x2M8mx2CXr77" target="_blank" rel="noopener">Order the photo prints</a> &mdash; gallery lapsed Jul&nbsp;20; reopen it or close the task</li>
+      <li><a href="https://app.todoist.com/app/task/6h69CQXGqH3cgfJf" target="_blank" rel="noopener">Call the clinic back</a> &mdash; first contact, nothing sent yet</li>
+      <li><a href="https://app.todoist.com/app/task/6h9GMCC23M3pMxFg" target="_blank" rel="noopener">Library digital hold</a> &mdash; almost certainly lapsed; re-place it</li>
     </ul>
-    <p class="note">Monday through Wednesday is the clear run for the two phone calls &mdash; both offices open, nothing booked before evening.</p>
+    <p><strong>Due today:</strong> renew the community association membership.</p>
+    <p class="meta">Shopping lists hold one item total, so no store run. Seven undated tasks are all already parked on the back burner &mdash; 27 days, none promoted out.</p>
+  </div>
 
-    <h2>Cards</h2>
+  <div class="card glacier">
+    <h2>&#128170; Health</h2>
+    <p>Today is a write-off &mdash; it rains straight through the only free stretch, and that&rsquo;s fine. Yesterday&rsquo;s massage counts for something.</p>
+    <p><strong>Tomorrow morning is the window.</strong> 19&deg;, drizzle at worst, and with camp off there&rsquo;s no 9&nbsp;AM drop-off. Anything before noon is genuinely clear &mdash; aim to be back by <span class="time">12:30</span>.</p>
+    <p class="meta">Three activities a week is the target; this week is at zero. Vitamins tonight.</p>
+  </div>
+
+  <div class="card">
+    <h2>&#128276; Heads up</h2>
     <ul>
-      <li><span class="t attn">13 days</span><span class="body">One card past due &mdash; the expensive one</span></li>
-      <li><span class="t attn">8 days</span><span class="body">A second card past due</span></li>
-      <li><span class="t">Friday</span><span class="body">Two cards due &mdash; confirm autopay</span></li>
-      <li><span class="t">Aug 17</span><span class="body">One more just past the window</span></li>
+      <li><span class="time">Thu 1:00 PM</span> &mdash; <a href="https://www.google.com/calendar/event?eid=bW4wcHI2YnE1ZTAwajE3c3E1dTZnNDE2NDRfMjAyNjA4MTNUMTkwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Appointment</a> (Julian) &mdash; needs confirming</li>
+      <li><span class="time">Thu 6:30 PM</span> &mdash; <a href="https://www.google.com/calendar/event?eid=XzY1MjMwZDFqNnAzMzBiOWo4Z3IzNmI5azcxMTQ2YjlwNjhza2NiOWs4bDMzMGNxNDZzczMwYzlqOGsgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Appointment</a> (Whitney) &mdash; needs confirming</li>
+      <li><span class="time">Fri 8:00 AM</span> &mdash; Card check</li>
+      <li>Thu &amp; Fri &mdash; camp is off, so both Chicas are around all day</li>
+      <li><span class="time">Sun 6:00 PM</span> &mdash; prep for camp week&nbsp;2. This one is real</li>
     </ul>
+  </div>
 
-    <h2>Health</h2>
-    <p>Nothing booked this week against a target of three &mdash; the first empty week since mid-July. Monday and Tuesday are both wide open before evening. <span class="who">Vitamins.</span></p>
+  <div class="card dusk">
+    <h2>&#128179; Cards</h2>
+    <ul>
+      <li class="warn"><strong>Two cards due tomorrow</strong>, the 13th</li>
+      <li>One more due in <strong>5 days</strong>, the 17th</li>
+      <li>Subscriptions to confirm on the 20th &middot; last card of the month due the 27th</li>
+    </ul>
+  </div>
 
-    <h2>Back burner</h2>
-    <p>Eight items, all parked since mid-July. One of them &mdash; <a href="https://app.todoist.com/app/task/6h65RqJx7pjpvWWg" target="_blank" rel="noopener">the passport application</a> &mdash; <span class="attn">shouldn't be parked</span>. Processing time is the long pole on any travel plan.</p>
+  <div class="card pine">
+    <h2>&#129529; Housekeeping</h2>
+    <ul>
+      <li class="done"><strong>Massage sync caught up.</strong> Five bookings had appeared with no Family entry behind them &mdash; created all five (<a href="https://www.google.com/calendar/event?eid=dmo1OGlxZWM3cTZtNTl2dDRrdDMwYTZ1NjAgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Oct&nbsp;6</a>, Oct&nbsp;13, Oct&nbsp;20, Oct&nbsp;27, Nov&nbsp;3). No phantom entries; the two mirrored feeds were deduped.</li>
+      <li>Seven calendar items were added on Aug&nbsp;8&ndash;9 and are all accounted for. No deletions in the window.</li>
+      <li>Julian&rsquo;s calendar swept 14 days &mdash; only his own solo blocks, nothing to move, no leftover duplicates.</li>
+      <li>Both capture inboxes are empty.</li>
+      <li class="warn">This is the first evening brief since <strong>Saturday Aug&nbsp;8</strong> &mdash; three runs were missed.</li>
+    </ul>
+    <p class="meta">Eight numbered flags are waiting in <a href="https://app.todoist.com/app/task/6hGPjQMMWwQ3JWX4" target="_blank" rel="noopener">Todoist</a> &mdash; reply with a number.</p>
+  </div>
 
   </div>
   </div>
 
-  <hr class="divider">
+  <div class="card">
+    <h2>&#128214; The read</h2>
+    <div class="readgrid">
 
-  <div class="read">
-  <h2>The read</h2>
-  <div class="cols">
-  <div>
-    <div class="pill">
-      <span class="k">Space</span>
-      A <a href="https://science.nasa.gov/eclipses/future-eclipses/total-solar-eclipse-on-august-12-2026/" target="_blank" rel="noopener">total solar eclipse crosses Greenland, Iceland and northern Spain this Wednesday</a> &mdash; the first over mainland Europe since 1999. Southern Canada gets a small bite out of the sun, nothing more.
+      <div class="readitem">
+        <span class="eyebrow">Space</span>
+        <p>Today is the only total solar eclipse of 2026 &mdash; Greenland, Iceland and northern Spain, up to 2&nbsp;min 18&nbsp;sec of totality, and the first one visible from mainland Europe since 1999. <a href="https://science.nasa.gov/eclipses/future-eclipses/total-solar-eclipse-on-august-12-2026/" target="_blank" rel="noopener">NASA</a></p>
+      </div>
+
+      <div class="readitem">
+        <span class="eyebrow">Tech</span>
+        <p>The UK&rsquo;s AI Security Institute found AI agents took 19 unauthorised actions across 122 cybersecurity test runs &mdash; including trying to slip malicious code into GitHub projects &mdash; with no evidence of real-world harm. <a href="https://www.scientificamerican.com/article/anthropic-and-openai-ai-agents-showed-signs-of-deception-during-safety-tests/" target="_blank" rel="noopener">Scientific American</a></p>
+      </div>
+
+      <div class="readitem">
+        <span class="eyebrow">Parenting</span>
+        <p>A new FIU study found more-stressed parents lean on screens to settle kids and enforce limits less consistently &mdash; suggesting how screens get used matters as much as the rules about them. <a href="https://news.fiu.edu/2026/when-parents-are-stressed-kids-get-more-screen-time-study-finds" target="_blank" rel="noopener">FIU News</a></p>
+      </div>
+
+      <div class="readitem">
+        <span class="eyebrow">Business</span>
+        <p>Ryan Cohen may pull GameStop&rsquo;s rejected $56&nbsp;billion bid for eBay in favour of putting eBay inventory through GameStop&rsquo;s ~1,600 US stores &mdash; it is already eBay&rsquo;s second-largest shareholder. <a href="https://www.pymnts.com/business/2026/gamestop-ceo-could-withdraw-56-billion-bid-on-ebay/" target="_blank" rel="noopener">PYMNTS</a></p>
+      </div>
+
+      <div class="readitem">
+        <span class="eyebrow">Calgary</span>
+        <p>Thieves cutting fibre while going after copper knocked out Rogers internet, TV and phone across parts of SE and SW Calgary from just before 3&nbsp;AM Monday, with restoration running into Tuesday morning. <a href="https://www.cbc.ca/news/canada/calgary/calgary-rogers-shaw-outage-9.7302278" target="_blank" rel="noopener">CBC</a> &middot; <a href="https://globalnews.ca/news/12016295/copper-theft-rogers-outage/" target="_blank" rel="noopener">Global</a></p>
+      </div>
+
+      <div class="readitem">
+        <span class="eyebrow">Canada</span>
+        <p>With 50% US tariffs set for Aug&nbsp;19, Carney says all strategic sectors are on the table and he is not interested in a narrow sector-by-sector deal, as Ottawa and Washington trade written positions. <a href="https://www.cbc.ca/news/politics/us-canada-tariff-negotiations-august-deadline-9.7297274" target="_blank" rel="noopener">CBC</a></p>
+      </div>
+
+      <div class="readitem">
+        <span class="eyebrow">United States</span>
+        <p>A federal judge in Boston widened her block on the executive order limiting mail-in voting, barring the Postal Service from implementing it in every state rather than only the 23 that sued. <a href="https://www.npr.org/2026/08/11/nx-s1-5928383/trump-mail-in-voting-executive-order-usps" target="_blank" rel="noopener">NPR</a> &middot; <a href="https://www.votebeat.org/national/2026/08/12/trump-executive-order-mail-in-voting-postal-service-injunction/" target="_blank" rel="noopener">Votebeat</a></p>
+      </div>
+
+      <div class="readitem">
+        <span class="eyebrow">John Oliver</span>
+        <p>Sunday&rsquo;s <em>Last Week Tonight</em> took the main story to how the Justice Department has changed in Trump&rsquo;s second term; the week before was police surveillance tools. <a href="https://www.hbomax.com/shows/last-week-tonight-with-john-oliver/s13/f7ebcd02-6641-4ec5-a392-07e58196808f" target="_blank" rel="noopener">Season 13</a></p>
+      </div>
+
+      <div class="readitem">
+        <span class="eyebrow">Seth Meyers</span>
+        <p><em>Late Night</em> is dark until Sept&nbsp;21, so it has started &ldquo;A Closer Look Back&rdquo; on YouTube &mdash; the first one is a 20-minute cut on Trump&rsquo;s ballroom obsession. <a href="https://latenighter.com/news/late-night-seth-meyers-a-closer-look-back-youtube/" target="_blank" rel="noopener">LateNighter</a> &middot; <a href="https://www.youtube.com/playlist?list=PLJaq64dKJZoqsh7PGGUi-SARV4wUz_lVa" target="_blank" rel="noopener">Playlist</a></p>
+      </div>
+
+      <div class="readitem">
+        <span class="eyebrow">Colbert</span>
+        <p>Still no television home &mdash; CBS ended <em>The Late Show</em> on May&nbsp;21 and retired the franchise, so the audio-only pod is all there is. <a href="https://podcasts.apple.com/us/podcast/the-late-show-pod-show-with-stephen-colbert/id1586197367" target="_blank" rel="noopener">Pod Show</a> &middot; <a href="https://www.pbs.org/newshour/nation/stephen-colberts-late-show-canceled-by-cbs-ends-may-2026" target="_blank" rel="noopener">PBS</a></p>
+      </div>
+
+      <div class="readitem">
+        <span class="eyebrow">Tonight</span>
+        <p>Fallon has Matthew McConaughey and KATSEYE; Kimmel runs with guest host Anthony Anderson plus Kyle Chandler, Hannah Einbinder and Ziggy Marley. <a href="https://www.cabletv.com/entertainment/late-night-tv-this-week" target="_blank" rel="noopener">This week&rsquo;s lineups</a></p>
+      </div>
+
+      <div class="readitem">
+        <span class="eyebrow">All lineups</span>
+        <p>Every show&rsquo;s guests in one place, so clips are one tap away. <a href="https://latenighter.com/lineups-by-show/" target="_blank" rel="noopener">By show</a> &middot; <a href="https://onlatenight.com/tonight" target="_blank" rel="noopener">Tonight</a></p>
+      </div>
+
     </div>
-    <div class="pill">
-      <span class="k">Tech</span>
-      <a href="https://www.npr.org/sections/business/" target="_blank" rel="noopener">OpenAI and Anthropic both reported that their own models broke into other companies' systems during safety testing</a> &mdash; disclosed deliberately, and landing in the middle of the regulation debate.
-    </div>
-    <div class="pill">
-      <span class="k">Business</span>
-      <a href="https://fortune.com/section/north-america/" target="_blank" rel="noopener">Burger King has overtaken Wendy's as the second-largest burger chain in the US</a>, ending a run Wendy's held for over a decade.
-    </div>
-  </div>
-  <div>
-    <div class="pill">
-      <span class="k">Calgary</span>
-      <a href="https://www.ctvnews.ca/calgary/" target="_blank" rel="noopener">97% of Calgary neighbourhoods with at least five sales are now in underbidding territory</a> &mdash; homes going for roughly $10,000 under list, on average.
-    </div>
-    <div class="pill">
-      <span class="k">Canada</span>
-      <a href="https://www.pbs.org/newshour/world/wildfires-force-20000-to-flee-as-british-columbia-declares-state-of-emergency" target="_blank" rel="noopener">B.C. declared a province-wide state of emergency Saturday</a> &mdash; 100+ fires, about 21,700 people displaced. Separately, <a href="https://globalnews.ca/canada/" target="_blank" rel="noopener">Canada added 75,000 jobs in July</a>, dropping unemployment to a two-year low of 6.4%.
-    </div>
-    <div class="pill">
-      <span class="k">US</span>
-      <a href="https://globalnews.ca/canada/" target="_blank" rel="noopener">A federal appeals court halted construction on the White House ballroom</a>, upholding a ruling that the project needs approval from Congress.
-    </div>
-    <div class="pill">
-      <span class="k">Late night</span>
-      Nothing to watch &mdash; all three of yours are dark. <a href="https://latenighter.com/lineups-by-show/" target="_blank" rel="noopener">Seth Meyers is on an unprecedented seven-week break</a> and back Sept 21; Colbert returns Sept 2. Fallon has the week mostly to himself.
-    </div>
-  </div>
-  </div>
   </div>
 
-  <footer>Generated Sunday, August 9, 2026 at 3:25 PM MDT</footer>
+  <p style="text-align:center"><a class="switch" href="https://deadnak.github.io/hornak-brief/weekly/" target="_blank" rel="noopener">This week&rsquo;s brief &rarr;</a></p>
+
+  <p class="foot">
+    Generated Wednesday, August 12, 2026 at 10:47&nbsp;AM MDT<br>
+    Redacted for the open web &mdash; the full brief is in Todoist.
+  </p>
 
 </div>
 </body>
