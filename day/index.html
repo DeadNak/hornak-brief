@@ -3,200 +3,151 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<title>Whitney's Day</title>
+<title>The Day &mdash; Sunday, August 23, 2026</title>
 <style>
 :root{
   color-scheme: light;
   --pt-purple:#4D00CA; --pt-purple600:#7C3AED; --pt-wash:#F3E8FF;
   --slate900:#0F172A; --slate700:#334155; --slate500:#64748B; --hair:#E2E8F0;
   --pt-hero:linear-gradient(157deg,#190642,#2C0A72,#4A13B2);
-  --alpenglow:#B85C86; --granite:#1B2022; --scree:#6C7378; --trail:#E3E1DA;
-  --snow:#F7F5F1; --bd-snow:#DDDAD2;
+  --alpenglow:#B85C86; --granite:#1B2022; --scree:#6C7378;
+  --trail:#E3E1DA; --snow:#F7F5F1; --border-snow:#DDDAD2;
   --font-label:'Jost','Century Gothic',Futura,-apple-system,sans-serif;
   --font-head:Georgia,'Times New Roman',serif;
-  --font-work:'Lexend','Segoe UI',system-ui,sans-serif;
-  --font-body:'Segoe UI',system-ui,-apple-system,sans-serif;
+  --font-work-head:'Lexend','Segoe UI',sans-serif;
+  --font-body:'Segoe UI',-apple-system,sans-serif;
 }
 *{box-sizing:border-box}
-body{margin:0;background:#fff;color:var(--slate900);font-family:var(--font-body);line-height:1.55}
-.wrap{max-width:840px;margin:0 auto;padding:0 18px 60px}
-.banner{background:#FEF3C7;border-bottom:1px solid #FDE68A;color:#92400E;
-        font-size:.8rem;padding:10px 18px;text-align:center}
-header.hero{background:var(--pt-hero);color:#fff;padding:30px 20px 26px}
-header.hero .inner{max-width:840px;margin:0 auto}
-h1{font-family:var(--font-work);font-size:1.75rem;margin:0 0 5px;font-weight:700;letter-spacing:-.02em}
-.sub{opacity:.82;font-size:.9rem;margin:0}
-h2{font-family:var(--font-work);font-size:1.08rem;margin:32px 0 8px;font-weight:600;
-   padding-bottom:7px;border-bottom:1px solid var(--hair)}
-h2.personal{font-family:var(--font-head);font-size:1.35rem;font-weight:400;color:var(--alpenglow);border-bottom-color:var(--bd-snow)}
-.card{border:1px solid var(--hair);border-left:4px solid var(--pt-purple600);border-radius:8px;
-      padding:12px 15px;margin:0 0 9px;background:#fff}
-.card.personal{background:var(--snow);border:1px solid var(--bd-snow);border-left:4px solid var(--alpenglow)}
-.card .t{font-weight:600;font-size:.94rem;margin-bottom:3px}
-.card .m{font-size:.82rem;color:var(--slate500)}
+body{margin:0;background:#fff;color:var(--slate900);font-family:var(--font-body);font-size:16px;line-height:1.6}
+.wrap{max-width:800px;margin:0 auto;padding:0 20px 70px}
+.banner{background:#FEF9C3;border-bottom:1px solid #FDE68A;color:#713F12;font-size:13px;padding:11px 20px;text-align:center}
+.hero{background:var(--pt-hero);color:#fff;padding:34px 20px 30px;margin-bottom:26px}
+.hero-in{max-width:800px;margin:0 auto}
+.hero h1{font-family:var(--font-work-head);font-weight:600;font-size:27px;margin:0 0 5px}
+.hero .sub{opacity:.82;font-size:13px;letter-spacing:.04em;text-transform:uppercase}
+h2{font-family:var(--font-work-head);font-weight:600;font-size:18px;margin:34px 0 4px}
+h2.personal{font-family:var(--font-head);font-weight:400;font-size:22px;color:var(--granite)}
+h2 .mark{vertical-align:-3px;margin-right:7px}
+.rule{height:2px;background:var(--pt-purple);width:42px;margin:0 0 14px;border-radius:2px}
+.rule.personal{background:var(--alpenglow)}
+.card{border:1px solid var(--hair);border-left:4px solid var(--pt-purple600);border-radius:8px;padding:13px 15px;margin:0 0 9px;background:#fff}
+.card.personal{background:var(--snow);border:1px solid var(--border-snow);border-left:4px solid var(--alpenglow)}
+.card .t{font-weight:600;margin-bottom:2px}
 .card.personal .t{color:var(--granite);font-family:var(--font-label);font-weight:500}
-.card.personal .m{color:var(--scree);font-family:var(--font-label)}
-.badge{display:inline-block;font-size:.63rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-       padding:2px 7px;border-radius:99px;margin-right:6px}
-.badge-work{background:var(--pt-wash);color:var(--pt-purple);font-family:var(--font-work)}
-.badge-personal{background:var(--trail);color:var(--alpenglow);font-family:var(--font-label)}
-.badge-urgent{background:#FEE2E2;color:#B91C1C}
-.badge-high{background:#FFEDD5;color:#C2410C}
-.snapshot{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:8px 0}
-.stat{background:var(--pt-wash);border:1px solid #E9D8FF;border-radius:10px;padding:12px 14px}
-.stat .n{font-family:var(--font-work);font-size:1.45rem;font-weight:700;color:var(--pt-purple);line-height:1.1}
-.stat .l{font-size:.76rem;color:var(--slate700);margin-top:3px}
-.balance{background:linear-gradient(180deg,var(--snow),#fff);border:1px solid var(--bd-snow);
-         border-radius:12px;padding:18px 20px;margin:8px 0}
-.balance .head{font-family:var(--font-head);font-style:italic;font-size:1.35rem;color:var(--alpenglow);margin-bottom:7px}
-.balance p{font-family:var(--font-label);color:var(--granite);font-size:.92rem;margin:0 0 8px}
-.note{font-size:.8rem;color:var(--slate500);background:#F8FAFC;border:1px solid var(--hair);
-      border-radius:7px;padding:9px 12px;margin:9px 0}
-.wx{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:9px;margin:8px 0}
-.wx div{background:var(--snow);border:1px solid var(--bd-snow);border-radius:9px;padding:10px 12px;font-family:var(--font-label)}
-.wx .d{font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;color:var(--scree)}
-.wx .t{font-size:1.1rem;color:var(--granite);font-weight:500}
-.wx .c{font-size:.78rem;color:var(--scree)}
-ul{margin:5px 0 10px;padding-left:19px}li{margin-bottom:5px;font-size:.9rem}
-footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--hair);font-size:.76rem;color:var(--slate500)}
+.card .m{font-size:13px;color:var(--slate500)}
+.card.personal .m{color:var(--scree);font-family:var(--font-label);font-weight:300}
+.card .b{font-size:14.5px;color:var(--slate700);margin-top:5px}
+.card.personal .b{color:var(--granite);font-family:var(--font-label);font-weight:300}
+.badge{display:inline-block;font-size:10px;letter-spacing:.09em;text-transform:uppercase;padding:2px 7px;border-radius:99px;font-weight:700;margin-right:7px;vertical-align:1px}
+.badge-work{background:var(--pt-wash);color:var(--pt-purple)}
+.badge-personal{background:var(--trail);color:var(--alpenglow)}
+.chip{display:inline-block;font-size:11px;padding:2px 7px;border-radius:4px;margin-right:6px;font-weight:600}
+.c-urgent{background:#FEE2E2;color:#B91C1C}
+.c-high{background:#FEF3C7;color:#92400E}
+.c-late{background:#F1F5F9;color:var(--slate500)}
+.c-flag{background:var(--pt-wash);color:var(--pt-purple)}
+.c-stale{background:var(--trail);color:var(--scree)}
+.snap{background:var(--pt-wash);border:1px solid #E9D5FF;border-radius:10px;padding:16px 20px}
+.snap ul{margin:0;padding-left:18px}
+.snap li{margin:7px 0;color:var(--slate700);font-size:15px}
+.balance{background:linear-gradient(180deg,var(--snow),#fff);border:1px solid var(--border-snow);border-radius:10px;padding:19px 21px}
+.balance .lead{font-family:var(--font-head);font-style:italic;font-size:21px;color:var(--alpenglow);margin:0 0 8px}
+.balance p{font-family:var(--font-label);font-weight:300;color:var(--granite);margin:6px 0;font-size:14.5px}
+.note{font-size:12.5px;color:var(--slate500);font-style:italic;margin:6px 0 12px}
+.foot{margin-top:42px;padding-top:16px;border-top:1px solid var(--hair);font-size:12px;color:var(--slate500)}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+td{padding:7px 10px 7px 0;border-bottom:1px solid var(--hair);vertical-align:top}
+td.time{white-space:nowrap;font-weight:600;color:var(--pt-purple);width:150px}
+@media(max-width:600px){.hero h1{font-size:22px}td.time{width:auto;display:block;border:0;padding-bottom:0}td{display:block;padding-right:0}}
 </style>
 </head>
 <body>
 <div class="banner">Public page. External names appear as initials only, and amounts, subjects and links are removed. Full detail lives behind Whitney's private login.</div>
-<header class="hero"><div class="inner">
-<h1>Whitney's Day</h1>
-<p class="sub">Saturday, August 22, 2026 &middot; a travel day, heading home &middot; nothing timed on the calendar</p>
-</div></header>
+<div class="hero"><div class="hero-in">
+  <div class="sub">The Day</div>
+  <h1>Sunday, August 23, 2026</h1>
+  <div class="sub" style="text-transform:none;letter-spacing:0;margin-top:7px">Mountain Time</div>
+</div></div>
+
 <div class="wrap">
 
-<h2>Snapshot</h2>
-<div class="snapshot">
-  <div class="stat"><div class="n">0</div><div class="l">Timed commitments today</div></div>
-  <div class="stat"><div class="n">2</div><div class="l">External replies owed</div></div>
-  <div class="stat"><div class="n">4</div><div class="l">Threads waiting on others</div></div>
-  <div class="stat"><div class="n">7</div><div class="l">Overdue urgent / high items</div></div>
-  <div class="stat"><div class="n">6</div><div class="l">Monthly goals due in 9 days</div></div>
-  <div class="stat"><div class="n">2</div><div class="l">Tracker records that look wrong</div></div>
-</div>
+<h2>Snapshot</h2><div class="rule"></div>
+<div class="snap"><ul>
+  <li>No work meetings today. One family commitment in the early afternoon; the morning is genuinely open.</li>
+  <li>Two external replies are genuinely owed &mdash; a counterparty contract redline sitting since Saturday, and a second scheduling ask from a client sitting since Thursday.</li>
+  <li>Two travel bookings for a late-September trip are five days overdue and flagged urgent.</li>
+  <li>A delivery commitment lands tomorrow morning; a colleague picked it up over the weekend and it is worth confirming.</li>
+  <li>The task list is noisier than the work. One recurring bookkeeping item has eight open copies, and a batch of automated reminder entries is crowding out the real ones.</li>
+  <li>School starts a week from tomorrow. Summer camp has finished, which makes several reminders stale.</li>
+</ul></div>
 
-<div class="card">
-  <div class="t"><span class="badge badge-work">Work</span>A payroll deadline lands today at 3:00 PM</div>
-  <div class="m">Two reminders arrived yesterday with different cutoffs, one of which falls on a Saturday. Odd enough to be worth a two-minute check rather than an assumption.</div>
-</div>
+<h2>Today's Schedule</h2><div class="rule"></div>
+<table>
+  <tr><td class="time">Early afternoon</td><td><span class="badge badge-personal">Personal</span>A family commitment, roughly three hours</td></tr>
+</table>
+<p class="note">Nothing on the work calendar. Two blocks belonging to someone else's own work time were excluded. Family events are taken from one source rather than its mirror, so nothing renders twice.</p>
 
-<h2>Today</h2>
-<div class="card personal">
-  <div class="t"><span class="badge badge-personal">Personal</span>A travel day, marked free</div>
-  <div class="m">The only entry on any of the three calendars, and it's an all-day one that doesn't consume time. Two recurring blocks on the personal calendar belong to someone else in the household and are declined, so they've been dropped. No conflicts.</div>
-</div>
+<h2>Work &mdash; What's Open</h2><div class="rule"></div>
+<p class="note">Ranking is a flat sort on priority then nearest due date. That is a known placeholder, not a refined priority order.</p>
+<div class="card"><div class="t"><span class="chip c-urgent">Urgent</span><span class="chip c-late">5 days late</span>Two travel bookings for a September trip</div><div class="b">Flights and a room configuration, both still unbooked. Neither is blocked by anything.</div></div>
+<div class="card"><div class="t"><span class="chip c-urgent">Urgent</span><span class="chip c-late">10 days late</span>A platform and service agreement, in review</div><div class="b">The same decision as the top item in the inbox below. The counterparty returned a clean third version on Saturday.</div></div>
+<div class="card"><div class="t"><span class="chip c-urgent">Urgent</span><span class="chip c-late">13 days late</span>A final appraisal deliverable still open against a July list</div><div class="b">Either it closes this week or it belongs to August's numbers.</div></div>
+<div class="card"><div class="t"><span class="chip c-urgent">Urgent</span><span class="chip c-late">5+ weeks</span>An intake marked blocked since July</div><div class="b"><span class="chip c-flag">Cross-check</span>The agreement behind it was executed last week and the retainer invoice has since been acknowledged as processing. Whatever blocked this may already have cleared &mdash; worth re-reading before treating it as stalled.</div></div>
+<div class="card"><div class="t">Five business-development pushes committed for the month</div><div class="m">Eight days to month end</div><div class="b">The furthest along is gated by the contract currently sitting on her desk.</div></div>
 
-<h2>Where the work sits</h2>
-<div class="card">
-  <div class="t"><span class="badge badge-work">Work</span><span class="badge badge-urgent">Urgent</span>Seven overdue items, four of them urgent</div>
-  <div class="m">Two are travel logistics for a family business meeting next month, four days past due. Two are final invoices, twelve and twenty-two days past due. One is a contract package that moved yesterday and is now genuinely with the other side. The rest are stalled rather than active.</div>
-</div>
-<div class="card">
-  <div class="t"><span class="badge badge-work">Work</span><span class="badge badge-high">High</span>Five high-priority items are one to nine days past due</div>
-  <div class="m">Mostly business-development follow-ups: two intro calls to arrange, one channel-partner nudge, one demo that already happened and just needs closing out, and one conference-presence decision.</div>
-</div>
-<div class="card">
-  <div class="t"><span class="badge badge-work">Work</span>Six monthly goals all land on the same date, nine days out</div>
-  <div class="m">Three are in progress, three are committed but not started. One of the in-progress ones is effectively done and waiting on a counterparty's payment run.</div>
-</div>
-<div class="card">
-  <div class="t"><span class="badge badge-work">Work</span>Two tracker records disagree with the mailbox</div>
-  <div class="m">One follow-up is marked as waiting on an external party, but the last message on that thread is Whitney's own closing reply — no answer is coming, and the next action is hers. Separately, the same renewal exists as two tickets: one closed, one still open and sixty-nine days overdue. That second one is inflating the overdue count on its own.</div>
-</div>
-<div class="card">
-  <div class="t"><span class="badge badge-work">Work</span>Backlog hygiene: one task title has eight open copies</div>
-  <div class="m">A recurring bookkeeping task that never gets closed has generated eight open duplicates spanning six weeks. Separately, four low-priority follow-up tickets have sat untouched since the fifth of the month.</div>
-</div>
+<h2>Tracker Hygiene</h2><div class="rule"></div>
+<div class="card"><div class="t"><span class="chip c-flag">Direction of ball is wrong</span>A ticket marked "waiting on them"</div><div class="b">The newest message on that thread is pointed at her, not at the counterparty. The tracker and the mailbox disagree, and the tracker is the one that is wrong.</div></div>
+<div class="card"><div class="t"><span class="chip c-flag">Stale wait</span>A high-priority channel item, silent ten days</div><div class="b">An integration epic sits behind it. A nudge costs nothing.</div></div>
+<div class="card"><div class="t"><span class="chip c-flag">8 duplicates</span>One recurring bookkeeping task, eight open copies</div><div class="b">Oldest from mid-May, one due tomorrow. This is a recurrence that never gets closed, not eight pieces of work. Collapsing it would materially clean up the priority view.</div></div>
+<div class="card"><div class="t"><span class="chip c-flag">Likely closeable</span>A renewal ticket duplicated by a completed one of the same name</div></div>
+<div class="card"><div class="t"><span class="chip c-flag">Batch, not nine decisions</span>Nine operator-correspondence tickets, all 11&ndash;18 days past due</div><div class="b">All the same kind of work. One sitting clears the batch; nine separate re-reads does not.</div></div>
 
-<h2>Life Balance</h2>
+<h2 class="personal"><svg class="mark" width="18" height="18" viewBox="20 13 254 254" fill="none" stroke-linejoin="round"><circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle><polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon><polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon><polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon></svg>Life Balance</h2><div class="rule personal"></div>
 <div class="balance">
-  <div class="head">The whole day is yours.</div>
-  <p>Computed from today's calendars: no timed commitments at all, so the free window runs the full 08:00–18:00 MT. The best half hour is <strong>08:30–09:00 MT</strong> — cool, dry, and ahead of both the heat and the drive.</p>
-  <p><strong>Heat is the constraint, not the calendar.</strong> It reaches 32.8&deg;C where she is and 29.3&deg;C at home around 4 PM. Anything outdoors past mid-morning is going to be work.</p>
-  <p><strong>Fallback:</strong> 19:00–20:00 MT, once it drops back toward 26&deg;C.</p>
-  <p style="font-size:.83rem;color:var(--scree);font-style:italic">A suggestion only — nothing has been put on any calendar.</p>
-</div>
-<div class="wx">
-  <div><div class="d">Today</div><div class="t">32.8&deg; / 15.4&deg;</div><div class="c">Light drizzle possible, 30%</div></div>
-  <div><div class="d">Today &middot; at home</div><div class="t">29.3&deg; / 12.3&deg;</div><div class="c">Overcast, dry</div></div>
-  <div><div class="d">Sunday</div><div class="t">25.2&deg; / 14.8&deg;</div><div class="c">Rain, 32%</div></div>
-  <div><div class="d">Monday</div><div class="t">23.0&deg; / 12.7&deg;</div><div class="c">Drizzle, 32%</div></div>
-</div>
-<div class="note">Weather captured Aug 22, 2026 at 6:35&nbsp;AM MT. Treat as stale after about six hours.</div>
-
-<h2>Replies owed</h2>
-<div class="card">
-  <div class="t"><span class="badge badge-work">Work</span><span class="badge badge-high">High</span>G. (W.M.)</div>
-  <div class="m">Waiting two days. Following up on scheduling options sent the week before; two other advisors are copied, so four calendars are waiting on one reply.</div>
-</div>
-<div class="card">
-  <div class="t"><span class="badge badge-work">Work</span>C.S. (R.P.)</div>
-  <div class="m">Waiting one day. Documents dropped after a call, with no explicit question attached — so this may need nothing. Kept on the list rather than dropped precisely because it's ambiguous.</div>
-</div>
-<div class="note"><strong>Three more looked open and weren't.</strong> A full paginated sweep of sent mail across four weeks showed each had already been answered — one by Whitney, two by colleagues. Reading the inbox alone would have reported all three as outstanding.</div>
-
-<h2>Waiting on them</h2>
-<div class="card">
-  <div class="t"><span class="badge badge-work">Work</span>J.G. (R.P.) &mdash; contract redline</div>
-  <div class="m">Sent back yesterday afternoon, on the day it was promised, after two requests this week. The ball is theirs.</div>
-</div>
-<div class="card">
-  <div class="t"><span class="badge badge-work">Work</span>C.Q. (F.P.) &mdash; silent five days</div>
-  <div class="m">Also what's holding one project at <em>blocked</em> with a month-end due date, and she's the route into an intro call that's now eight days overdue. One nudge unblocks two things.</div>
-</div>
-<div class="card">
-  <div class="t"><span class="badge badge-work">Work</span>J. (N.F.) &mdash; silent two days</div>
-  <div class="m">A second batch of paperwork is being held back until this one clears, so there is a real queue behind it.</div>
-</div>
-<div class="card">
-  <div class="t"><span class="badge badge-work">Work</span>C.I. accounting &mdash; payment timing</div>
-  <div class="m">Everything they asked for was supplied yesterday. Nothing owed on this side.</div>
+  <p class="lead">Five clear hours before the afternoon, and nothing booked into them.</p>
+  <p><strong>Suggested window: mid-morning, thirty minutes.</strong> Derived from the day's actual calendar rather than a fixed hour. The only timed commitment starts in the early afternoon, which leaves the whole morning open and a second clear stretch afterward.</p>
+  <p><strong>Other clear stretches:</strong> a long uninterrupted run late morning, and a second window in the late afternoon.</p>
+  <p><strong>The week ahead is well protected</strong> &mdash; six personal appointments already on the calendar. The gap is today, which has nothing in it for her.</p>
+  <p style="color:var(--scree);font-size:13px;font-style:italic;margin-top:13px">Weather could not be retrieved on this run, so the poor-weather escalation was not applied.</p>
 </div>
 
-<h2 class="personal">At home</h2>
-<div class="card personal">
-  <div class="t">A meal-kit order won't ship next week</div>
-  <div class="m">Below the delivery minimum, with a Wednesday-night cutoff. Let it lapse and next week's dinners get improvised — the same week school starts.</div>
-</div>
-<div class="card personal">
-  <div class="t">A government account has unread mail flagged as needing attention</div>
-  <div class="m">Dated a week ago, reminded yesterday. You have to log in to find out what it is.</div>
-</div>
-<div class="card personal">
-  <div class="t">Two payment methods need updating</div>
-  <div class="m">An activity provider is migrating its card processing before the new season, and a separate subscription card has expired and fallen back to a backup.</div>
-</div>
-<div class="card personal">
-  <div class="t">An appointment on Monday afternoon needs confirming</div>
-  <div class="m">Rescheduling wants a day's notice, so today is the day to say if it won't work.</div>
-</div>
-<div class="card personal">
-  <div class="t">A back-to-school newsletter arrived Friday</div>
-  <div class="m">The first of the year — worth ten minutes before the week starts, since supply lists and first-week logistics usually hide in these.</div>
+<h2>Replies Owed</h2><div class="rule"></div>
+<div class="card"><div class="t"><span class="chip c-urgent">Owes reply</span>J.G. &mdash; a contract redline returned Saturday morning</div><div class="m">Second nudge; a mid-August kickoff is now eight days past</div><div class="b">They accepted every change, then redlined on top and sent it back clean. This is the same decision as the overdue ticket above.</div></div>
+<div class="card"><div class="t"><span class="chip c-high">Second ask</span>G. &mdash; a client asking to schedule a working session</div><div class="m">First asked ten days ago, followed up Thursday</div><div class="b">Low-cost reply: two or three times. Leaving a second ask unanswered is the part worth fixing.</div></div>
+<div class="card"><div class="t"><span class="chip c-late">Uncertain</span>C.S. &mdash; documents sent after a call, no explicit ask attached</div><div class="b">May already be handled verbally. Kept rather than dropped, but flagged uncertain.</div></div>
+
+<h2>Waiting on Her</h2><div class="rule"></div>
+<div class="card"><div class="t"><span class="chip c-high">3 days silent</span>J.W. &mdash; forms for signature and three open questions</div><div class="b">A further batch of paperwork is deliberately queued behind this one, so the backlog is real. Two other tickets are blocked on it.</div></div>
+<div class="card"><div class="t"><span class="chip c-late">2 days silent</span>J.J. &mdash; account statements requested from a bank</div><div class="b">Feeds a year-end close-out. Responsive contact; tracking rather than stalled.</div></div>
+<div class="card"><div class="t"><span class="chip c-late">Tracking</span>A retainer invoice, payment status</div><div class="b">Chased Friday, answered within the hour and confirmed as processing.</div></div>
+<p class="note">One adjacent item, not hers to answer: a data deliverable was promised for Monday and a colleague picked it up over the weekend. Worth a one-line confirmation before the day starts.</p>
+
+<h2 class="personal"><svg class="mark" width="18" height="18" viewBox="20 13 254 254" fill="none" stroke-linejoin="round"><circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle><polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon><polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon><polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon></svg>At Home</h2><div class="rule personal"></div>
+<div class="card personal"><div class="t">A government notice has been sitting unread for nine days</div><div class="b">Flagged as requiring attention. The only item here with a real consequence attached.</div></div>
+<div class="card personal"><div class="t">This week's grocery delivery falls below the order minimum and will not ship</div><div class="m">The recurring order reminder sits midweek</div></div>
+<div class="card personal"><div class="t">An appointment tomorrow afternoon still needs a confirmation click</div></div>
+<div class="card personal"><div class="t">A family appointment is already booked for early September</div><div class="b">Partly answers one of the overdue reminders below.</div></div>
+<div class="card personal"><div class="t">School starts a week from tomorrow</div></div>
+
+<h2 class="personal"><svg class="mark" width="18" height="18" viewBox="20 13 254 254" fill="none" stroke-linejoin="round"><circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle><polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon><polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon><polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon></svg>Reminders</h2><div class="rule personal"></div>
+<div class="card personal"><div class="t"><span class="chip c-urgent">22 days late</span>Library items are now marked lost &mdash; find and return before charges land</div></div>
+<div class="card personal"><div class="t"><span class="chip c-urgent">25 days late</span>A photo gallery expires &mdash; order or accept that it is gone</div></div>
+<div class="card personal"><div class="t"><span class="chip c-high">24 days late</span>A digital library hold to borrow or suspend</div></div>
+<div class="card personal"><div class="t"><span class="chip c-high">25 days late</span>A care provider to call about an overdue booking</div><div class="b"><span class="chip c-flag">Partly answered</span>Part of this was checking whether others in the family were also due; that side is now booked. What remains is her own.</div></div>
+<div class="card personal"><div class="t">Three health-admin items</div><div class="b">Details withheld.</div></div>
+<div class="card personal"><div class="t"><span class="chip c-late">11 days late</span>A membership renewal</div></div>
+<div class="card personal"><div class="t"><span class="chip c-stale">Overtaken by events</span>Four camp-era reminders</div><div class="b">Camp finished before any of them were actioned and the calendar shows nothing camp-related ahead. Worth closing rather than carrying.</div></div>
+<div class="card personal"><div class="t"><span class="chip c-stale">Noise</span>Roughly twenty uncompleted automated brief entries</div><div class="b">Generated faster than they get checked off, and they crowd out the reminders that actually need attention.</div></div>
+
+<h2>Backdrop</h2><div class="rule"></div>
+<div class="card"><div class="t">WTI $81.19/bbl &middot; Henry Hub $2.74/MMBtu</div><div class="m">As of August 13, 2026 &mdash; ten days stale</div><div class="b">Live pricing was not retrievable on this run. Directional only.</div></div>
+<div class="card"><div class="t">Weather &mdash; unavailable this run</div><div class="b">The forecast service did not return data, so the Life Balance suggestion above is calendar-derived only.</div></div>
+
+<div class="foot">
+  <p>Redacted mirror of a private daily dashboard. External companies and people appear as initials, colleagues are unnamed, and amounts, meeting subjects, task identifiers, county and lease names, and all deep links have been removed. The only monetary figures shown are public commodity benchmarks. Children and partner are unnamed and health detail is withheld throughout.</p>
+  <p>Generated Sunday, August 23, 2026.</p>
 </div>
 
-<h2 class="personal">Reminders</h2>
-<ul>
-<li><strong>Five genuinely open</strong> — two library items, an expiring photo order, a benefits follow-up for a household member, and a membership renewal. All between ten and twenty-four days past due.</li>
-<li><strong>Four health-admin items</strong> — appointments to book, a call to place, a result to check.</li>
-<li><strong>Three that look stale.</strong> A camp follow-up is still flagged urgent, but the calendar entry was corrected a week and a half ago and records the arrangement as already settled — and the camp finished yesterday. Two packing reminders are for trips that already happened. Close all three rather than doing them.</li>
-<li><strong>Sixteen auto-generated brief tasks</strong> going back to late July are still open, which is most of why the overdue count looks bad. The step meant to archive them isn't running.</li>
-</ul>
-
-<h2>The read</h2>
-<ul>
-<li><strong>Energy benchmarks.</strong> Most recent verified figures are from Aug 13, 2026: WTI around $81.19/bbl, Henry Hub around $2.74/MMBtu. A live close for yesterday wasn't retrievable this morning, so treat these as a week-old reference point rather than today's market.</li>
-<li><strong>Worth a look:</strong> a webhook-delivery warning arrived yesterday for a payment endpoint. Nothing has been reported broken, but failed webhooks on a billing integration tend to surface as a missing payment three weeks later.</li>
-</ul>
-
-<footer>
-Generated Saturday, August 22, 2026 at 6:35&nbsp;AM MDT. Redacted public mirror — no links, names, amounts or subjects.
-</footer>
 </div>
 </body>
 </html>
