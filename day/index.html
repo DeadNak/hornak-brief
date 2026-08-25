@@ -3,184 +3,179 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Whitney's Day</title>
+<title>Whitney's Day — Tuesday, August 25, 2026</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Lexend:wght@400;600;700&display=swap');
 :root{
   color-scheme: light;
-  --pt-purple:#4D00CA; --pt-wash:#F3E8FF;
+  --pt-purple:#4D00CA; --pt-purple600:#7C3AED; --pt-wash:#F3E8FF;
   --slate900:#0F172A; --slate700:#334155; --slate500:#64748B; --hair:#E2E8F0;
   --pt-hero:linear-gradient(157deg,#190642,#2C0A72,#4A13B2);
   --alpen:#B85C86; --pine:#2E7358; --glacier:#35699B; --dusk:#6B5591;
-  --granite:#1B2022; --scree:#6C7378; --trail:#E3E1DA; --snow:#F7F5F1; --b-snow:#DDDAD2;
-  --font-head:Georgia,'Times New Roman',serif;
-  --font-work:'Segoe UI',-apple-system,sans-serif;
-  --font-body:'Segoe UI',-apple-system,Roboto,sans-serif;
+  --granite:#1B2022; --scree:#6C7378; --dust:#E3E1DA; --snow:#F7F5F1;
+  --b-snow:#DDDAD2; --b-dust:#C7C4BB;
+  --font-label:'Jost','Century Gothic',Futura,-apple-system,sans-serif;
+  --font-head:'Instrument Serif',Georgia,'Times New Roman',serif;
+  --font-pt-head:'Lexend','Segoe UI',system-ui,sans-serif;
+  --font-body:'Segoe UI',system-ui,-apple-system,sans-serif;
 }
 *{box-sizing:border-box}
-body{margin:0;background:#FBFBFC;color:var(--slate900);font-family:var(--font-body);line-height:1.6}
-.wrap{max-width:900px;margin:0 auto;padding:0 18px 60px}
-.hero{background:var(--pt-hero);color:#fff;padding:32px 18px 36px;margin-bottom:0}
-.hero .inner{max-width:900px;margin:0 auto}
-.hero h1{font-family:var(--font-work);font-weight:600;font-size:27px;margin:0 0 5px}
-.hero .sub{color:#D6C7FF;font-size:14.5px;margin:0}
-.notice{background:#FEF3C7;border-bottom:1px solid #FDE68A;color:#78350F;font-size:12.5px;padding:11px 18px;margin-bottom:24px}
-.notice .inner{max-width:900px;margin:0 auto}
-h2{font-family:var(--font-work);font-weight:600;font-size:18px;margin:32px 0 4px;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
-h2.personal{font-family:var(--font-head);font-weight:400;font-size:23px;color:var(--granite)}
-.h2note{font-size:12.5px;color:var(--slate500);margin:0 0 13px}
-.badge{font-size:10px;letter-spacing:.09em;text-transform:uppercase;padding:3px 8px;border-radius:99px;font-weight:700}
-.badge-work{background:var(--pt-wash);color:var(--pt-purple)}
-.badge-personal{background:var(--trail);color:var(--alpen)}
-.grid{display:grid;gap:11px}
-@media(min-width:760px){.grid.two{grid-template-columns:1fr 1fr}}
-.card{background:#fff;border:1px solid var(--hair);border-left:4px solid var(--pt-purple);border-radius:10px;padding:14px 16px}
+body{margin:0;background:#FBFAF8;color:var(--slate900);font-family:var(--font-body);line-height:1.55;-webkit-text-size-adjust:100%}
+.wrap{max-width:880px;margin:0 auto;padding:0 18px 60px}
+header.hero{background:var(--pt-hero);color:#fff;padding:32px 18px 28px;margin-bottom:0}
+header.hero .inner{max-width:880px;margin:0 auto}
+header.hero h1{font-family:var(--font-pt-head);font-weight:700;font-size:clamp(23px,5vw,34px);margin:0 0 6px;letter-spacing:-.02em}
+header.hero .sub{font-size:14px;opacity:.85;margin:0}
+header.hero .stamp{font-size:12px;opacity:.65;margin-top:13px}
+.banner{background:#FEF3C7;border-bottom:1px solid #FCD34D;color:#78350F;font-size:12.5px;padding:11px 18px;text-align:center;margin-bottom:24px}
+.banner .in{max-width:880px;margin:0 auto}
+h2{font-family:var(--font-pt-head);font-weight:600;font-size:18px;margin:34px 0 4px;letter-spacing:-.01em;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+h2.personal{font-family:var(--font-head);font-weight:400;font-size:25px;color:var(--granite)}
+h2 .rule{flex:1;height:1px;background:var(--hair);min-width:20px}
+h2.personal .rule{background:var(--b-snow)}
+.subnote{font-size:12.5px;color:var(--slate500);margin:2px 0 13px}
+.badge{display:inline-block;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;padding:3px 8px;border-radius:3px;vertical-align:middle}
+.badge-work{background:var(--pt-wash);color:var(--pt-purple);font-family:var(--font-pt-head);font-weight:600}
+.badge-personal{background:var(--dust);color:var(--alpen);font-family:var(--font-label);font-weight:500}
+.card{background:#fff;border:1px solid var(--hair);border-left:4px solid var(--pt-purple);border-radius:5px;padding:13px 15px;margin-bottom:10px}
 .card.personal{background:var(--snow);border:1px solid var(--b-snow);border-left:4px solid var(--alpen)}
-.card.warn{border-left-color:#C2410C;background:#FFF7ED;border-color:#FED7AA}
-.card.muted{border-left-color:var(--slate500)}
-.card h3{margin:0 0 3px;font-size:15px;font-family:var(--font-work);font-weight:600}
-.card.personal h3{color:var(--granite)}
-.meta{font-size:12.5px;color:var(--slate500);margin:0 0 5px}
-.card.personal .meta{color:var(--scree)}
-.card p{margin:5px 0 0;font-size:13.5px;color:var(--slate700)}
+.card h3{margin:0 0 4px;font-size:14.5px;font-family:var(--font-pt-head);font-weight:600;line-height:1.35}
+.card.personal h3{font-family:var(--font-label);font-weight:500;color:var(--granite)}
+.card .meta{font-size:12.5px;color:var(--slate500)}
+.card.personal .meta{color:var(--scree);font-family:var(--font-label)}
+.card p{margin:6px 0 0;font-size:13.5px;color:var(--slate700)}
 .card.personal p{color:var(--granite)}
-.time{font-variant-numeric:tabular-nums;font-weight:600;color:var(--pt-purple);font-size:13.5px}
-.card.personal .time{color:var(--alpen)}
-.balance{background:linear-gradient(180deg,var(--snow),#fff);border:1px solid var(--b-snow);border-radius:12px;padding:18px 20px}
-.balance .lead{font-family:var(--font-head);font-style:italic;font-size:22px;color:var(--alpen);margin:0 0 7px;line-height:1.3}
-.balance p{color:var(--granite);font-size:14px;margin:5px 0 0}
-.pill{display:inline-block;font-size:12px;background:var(--trail);color:var(--granite);border-radius:99px;padding:3px 10px;margin:4px 6px 0 0}
-.snapshot{display:grid;gap:11px;grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
-.stat{background:#fff;border:1px solid var(--hair);border-radius:10px;padding:13px 15px}
-.stat .n{font-family:var(--font-work);font-weight:600;font-size:24px;color:var(--pt-purple)}
-.stat .l{font-size:11.5px;color:var(--slate500);text-transform:uppercase;letter-spacing:.06em}
-ul.tight{margin:7px 0 0;padding-left:18px}
-ul.tight li{font-size:13.5px;color:var(--slate700);margin-bottom:5px}
-.foot{margin-top:40px;padding-top:16px;border-top:1px solid var(--hair);font-size:12.5px;color:var(--slate500)}
-.mark{vertical-align:-2px}
+.card.flag{border-left-color:#B91C1C}
+.card.ctx{border-left-color:var(--slate500);background:#FAFAFB}
+.snap{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.snap .tile{background:#fff;border:1px solid var(--hair);border-radius:6px;padding:12px 14px}
+.snap .tile .k{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--slate500);font-family:var(--font-pt-head);font-weight:600}
+.snap .tile .v{font-size:21px;font-family:var(--font-pt-head);font-weight:700;margin:3px 0 1px;letter-spacing:-.02em}
+.snap .tile .d{font-size:12px;color:var(--slate500)}
+.sched{border:1px solid var(--hair);border-radius:6px;overflow:hidden;background:#fff}
+.row{display:flex;border-bottom:1px solid var(--hair)}
+.row:last-child{border-bottom:0}
+.row .t{flex:0 0 104px;padding:11px 12px;font-size:12.5px;font-family:var(--font-pt-head);font-weight:600;color:var(--slate700);background:#FCFCFD;border-right:1px solid var(--hair)}
+.row .b{padding:11px 13px;flex:1;min-width:0}
+.row .b .ti{font-size:14px;font-weight:600;font-family:var(--font-pt-head);line-height:1.35}
+.row .b .lo{font-size:12.5px;color:var(--slate500);margin-top:2px}
+.row.p{background:var(--snow)}
+.row.p .t{background:var(--dust);color:var(--granite);font-family:var(--font-label);font-weight:500;border-right-color:var(--b-snow)}
+.row.p .b .ti{font-family:var(--font-label);font-weight:500;color:var(--granite)}
+.row.p .b .lo{color:var(--scree);font-family:var(--font-label)}
+.row.gap{background:#F6FBF7}
+.row.gap .t{background:#EAF5EE;color:#256B45;border-right-color:#D6E9DD}
+.row.gap .b .ti{color:#256B45;font-size:13.5px}
+.balance{background:linear-gradient(160deg,var(--snow),#fff);border:1px solid var(--b-snow);border-radius:7px;padding:17px 18px;margin-bottom:12px}
+.balance .hd{font-family:var(--font-head);font-style:italic;font-size:22px;color:var(--alpen);margin:0 0 7px;line-height:1.25}
+.balance p{margin:5px 0;font-size:13.5px;color:var(--granite);font-family:var(--font-label)}
+.balance .alt{font-size:12.5px;color:var(--scree)}
+.mail{background:#fff;border:1px solid var(--hair);border-left:4px solid var(--pt-purple600);border-radius:5px;padding:12px 14px;margin-bottom:9px}
+.mail.w{border-left-color:#0E7490}
+.mail .who{font-size:14px;font-family:var(--font-pt-head);font-weight:600}
+.mail .ct{font-size:13px;color:var(--slate700);margin-top:5px}
+.mail .age{font-size:12px;color:var(--slate500);margin-top:5px;font-family:var(--font-pt-head)}
+.mail .tag{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;font-family:var(--font-pt-head);font-weight:600;padding:2px 7px;border-radius:3px;margin-left:6px}
+.t-high{background:#FEE2E2;color:#991B1B}.t-med{background:#FEF3C7;color:#92400E}.t-unc{background:#E0E7FF;color:#3730A3}.t-low{background:#E0F2FE;color:#075985}
+.pill{display:block;background:#fff;border:1px solid var(--hair);border-radius:5px;padding:11px 13px;margin-bottom:8px;font-size:13.5px;color:var(--slate700)}
+.pill b{color:var(--slate900);font-family:var(--font-pt-head)}
+.note{font-size:12.5px;color:var(--slate500);background:#FCFCFD;border:1px dashed var(--hair);border-radius:5px;padding:11px 13px;margin:12px 0}
+.note.warn{border-color:#FCA5A5;background:#FEF6F6;color:#7F1D1D}
+footer{margin-top:40px;padding-top:17px;border-top:1px solid var(--hair);font-size:12px;color:var(--slate500)}
+.fam{vertical-align:-3px}
+@media(min-width:820px){ .snap{grid-template-columns:repeat(4,1fr)} }
 </style>
 </head>
 <body>
 
-<div class="hero"><div class="inner">
+<header class="hero">
+ <div class="inner">
   <h1>Whitney's Day</h1>
-  <p class="sub">Monday, August 24, 2026 &nbsp;·&nbsp; Calgary</p>
-</div></div>
-<div class="notice"><div class="inner">Public page. External names appear as initials only, and amounts, subjects and links are removed. Full detail lives behind Whitney's private login.</div></div>
+  <p class="sub">Tuesday, August 25, 2026 &nbsp;·&nbsp; all times Mountain (MDT)</p>
+  <p class="stamp">Generated Tuesday, August 25, 2026 at 6:39 AM MDT</p>
+ </div>
+</header>
+
+<div class="banner"><div class="in">Public page. External names appear as initials only, and amounts, subjects and links are removed. Full detail lives behind Whitney's private login.</div></div>
 
 <div class="wrap">
 
-<h2><span class="badge badge-work">Snapshot</span></h2>
-<div class="snapshot">
-  <div class="stat"><div class="n">5</div><div class="l">Commitments today</div></div>
-  <div class="stat"><div class="n">1</div><div class="l">Double-booked hour</div></div>
-  <div class="stat"><div class="n">11</div><div class="l">Replies owed</div></div>
-  <div class="stat"><div class="n">7</div><div class="l">Waiting on others</div></div>
-  <div class="stat"><div class="n">3h</div><div class="l">Longest free block</div></div>
+<h2>Snapshot <span class="rule"></span></h2>
+<div class="snap">
+  <div class="tile"><div class="k">Calendar items today</div><div class="v">3</div><div class="d">2 work · 1 personal</div></div>
+  <div class="tile"><div class="k">Biggest free block</div><div class="v">5h 15m</div><div class="d">12:45 PM – 6:00 PM</div></div>
+  <div class="tile"><div class="k">Replies owed</div><div class="v">1</div><div class="d">flagged uncertain, not confirmed</div></div>
+  <div class="tile"><div class="k">Overdue &amp; urgent</div><div class="v">5</div><div class="d">on the work tracker</div></div>
 </div>
 
-<h2><span class="badge badge-work">Shape of the Day</span></h2>
-<div class="grid two">
-  <div class="card"><span class="time">Morning</span>
-    <h3>Three back-to-back blocks from 8:30 to 11:00</h3>
-    <p>Two are standing team meetings; the third is a self-scheduled hour, which makes it the most reclaimable slot on the board.</p></div>
-  <div class="card warn"><span class="time">2:00 PM</span>
-    <h3>The 2:00 hour is double-booked</h3>
-    <p>Two meetings sit on top of each other. One is hers to run; on the other she is only marked tentative, which makes it the cheaper one to drop.</p></div>
-  <div class="card warn"><span class="time">Mid-afternoon</span>
-    <h3>A hard administrative cut-off lands at 3:00</h3>
-    <p>Two reminders arrived for it this morning. It falls at the far end of the double-booked hour, so it needs doing before 2:00 rather than after.</p></div>
-  <div class="card personal"><span class="time">4:00 PM</span>
-    <h3>A personal appointment — a genuine hard stop</h3>
-    <p>The workday ends there today.</p></div>
+<h2>Today's Schedule <span class="rule"></span></h2>
+<p class="subnote">Three calendar sources merged and deduplicated. Declined events excluded. Subjects and attendees are removed on this page.</p>
+
+<div class="sched">
+  <div class="row"><div class="t">9:00 – 9:30</div><div class="b"><div class="ti">Internal one-to-one <span class="badge badge-work">Work</span></div><div class="lo">Video call</div></div></div>
+  <div class="row"><div class="t">9:30 – 9:45</div><div class="b"><div class="ti">Weekly team catch-up <span class="badge badge-work">Work</span></div><div class="lo">Video call · whole team</div></div></div>
+  <div class="row gap"><div class="t">9:45 – 11:45</div><div class="b"><div class="ti">↳ Clear stretch — 2h</div></div></div>
+  <div class="row p"><div class="t">11:45 – 12:45</div><div class="b"><div class="ti"><svg class="fam" width="16" height="16" viewBox="20 13 254 254" fill="none" stroke-linejoin="round"><circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle><polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon><polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon><polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon></svg> Appointment (Whitney) <span class="badge badge-personal">Personal</span></div><div class="lo">Self-care, on the books</div></div></div>
+  <div class="row gap"><div class="t">12:45 – 6:00</div><div class="b"><div class="ti">↳ Longest clear stretch — 5h 15m</div></div></div>
 </div>
 
-<h2><span class="badge badge-work">Work — where things stand</span></h2>
-<p class="h2note">Counts and shapes only. Named accounts, deal terms and amounts stay behind the login.</p>
-<div class="grid two">
-  <div class="card"><h3>Two travel-arrangement tasks are six days past due</h3>
-    <p>Both marked urgent. One may already have moved — a loyalty-programme email arrived over the weekend that suggests part of it is done.</p></div>
-  <div class="card"><h3>A contract is one reply short of signature</h3>
-    <p>The counterparty accepted every redline as-is and sent it back. The tracker still says "in review", but the ball is on her side — that mismatch is worth fixing in the tracker as much as in the inbox.</p></div>
-  <div class="card"><h3>One project marked "blocked" is probably finished</h3>
-    <p>The counterparty wrote six days ago to say they are going a different route. It reads as a "won't do" rather than a blocker.</p></div>
-  <div class="card"><h3>A recurring admin task has nine open copies</h3>
-    <p>Oldest due in May. A recurring task that never closes is a task nobody does — it wants collapsing into one.</p></div>
-  <div class="card muted"><h3>Month-end is next Monday</h3>
-    <p>Six monthly goal items land on that date.</p></div>
-  <div class="card muted"><h3>Roughly 25 bulk outreach messages are 18–19 days out</h3>
-    <p>A campaign on a normal response cadence rather than dropped balls — but at the point where a second ping is reasonable.</p></div>
-</div>
+<h2 class="personal"><svg class="fam" width="18" height="18" viewBox="20 13 254 254" fill="none" stroke-linejoin="round"><circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle><polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon><polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon><polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon></svg> Running in the background <span class="rule"></span></h2>
+<div class="card personal ctx"><h3>A weekly grocery-order reminder</h3><div class="meta">Flexible · cutoff is Wednesday night</div><p>No specific time needed today.</p></div>
 
-<h2><span class="badge badge-work">Replies owed</span></h2>
-<p class="h2note">External correspondents, initials only. Her last outgoing message was Friday afternoon, so everything since is genuinely unanswered.</p>
-<div class="grid two">
-  <div class="card"><h3>J.G. (R.P.) — two threads, both two days old</h3>
-    <p>One is the contract one reply short of signature. The other asked for technical backup data by today.</p></div>
-  <div class="card"><h3>C.S. (R.P.) — three days</h3>
-    <p>New work landed in the portal and no acknowledgement or turnaround date has gone back.</p></div>
-  <div class="card"><h3>G.G. — four days</h3>
-    <p>Waiting on meeting times promised a week and a half ago.</p></div>
-  <div class="card"><h3>Two operator relations desks — five and six days</h3>
-    <p>Both are blocked on a piece of paperwork before they can correct records. One of them is holding funds until it clears.</p></div>
-  <div class="card"><h3>L.G. (F.N.) — two threads, five and ten days</h3>
-    <p>One is a mapping request, the other a direct technical question about production behaviour.</p></div>
-  <div class="card"><h3>T.H. and P.P. (F.N.) — six days</h3>
-    <p>A numbers question neither side has closed out in writing. Possibly settled verbally last week.</p></div>
-  <div class="card muted"><h3>M.B. — nine days</h3>
-    <p>She has what was asked for and only wants to know what format to send it in. A one-line reply clears it.</p></div>
-  <div class="card muted"><h3>C.Q. (F.P.) — six days</h3>
-    <p>They are going a different route and apologised for the runaround. A gracious one-liner keeps the door open.</p></div>
-</div>
+<h2>Work Tracker <span class="badge badge-work">Work</span> <span class="rule"></span></h2>
+<div class="note"><b>Ranking caveat:</b> this list is still a placeholder sort — priority, then nearest due date. It is a starting point, not a considered recommendation.</div>
 
-<h2><span class="badge badge-work">Waiting on others</span></h2>
-<div class="grid two">
-  <div class="card"><h3>C.I. accounts payable — three days</h3>
-    <p>Payment status chased Friday, banking details sent the same morning, no date back on a signed engagement.</p></div>
-  <div class="card"><h3>J.W. — four days since the second follow-up</h3>
-    <p>Signatures and three questions only he can answer. A whole campaign is queued behind this one reply.</p></div>
-  <div class="card"><h3>R.H. — fourteen days of silence</h3>
-    <p>A delivered package plus an open question and an offer of a call. The matching tracker item is overdue on the same clock.</p></div>
-  <div class="card muted"><h3>Two more, at fourteen and nineteen days</h3>
-    <p>Both flagged uncertain — the sweep window does not reach far enough back to be sure they were not answered.</p></div>
-</div>
+<div class="card flag"><h3>An appraisal final, in progress</h3><div class="meta">Urgent · in progress</div></div>
+<div class="card flag"><h3>A contract redline, awaiting the other side</h3><div class="meta">Urgent · in review</div><p>You sent your response back yesterday evening — the ball has moved to the counterparty.</p></div>
+<div class="card flag"><h3>Two travel-booking confirmations for an upcoming trip</h3><div class="meta">Urgent · in progress</div><p>Your personal inbox shows both may already be booked and just need closing out on the tracker.</p></div>
+<div class="card"><h3>A contract-renewal conversation with a client</h3><div class="meta">Urgent · in progress</div></div>
 
-<h2 class="personal"><svg class="mark" width="18" height="18" viewBox="20 13 254 254" fill="none" stroke-linejoin="round"><circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle><polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon><polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon><polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon></svg> Life Balance <span class="badge badge-personal">Personal</span></h2>
+<h2>Status errors worth fixing <span class="badge badge-work">Work</span> <span class="rule"></span></h2>
+<p class="subnote">Where the tracker and the mailbox disagree about who is holding the ball.</p>
+<div class="card ctx"><h3>Both "waiting (external)" items check out today</h3><p>Checked against the mailbox — nothing needs fixing today.</p></div>
+
+<h2>Backlog hygiene <span class="badge badge-work">Work</span> <span class="rule"></span></h2>
+<div class="card flag"><h3>One recurring bookkeeping task has <b>9 open copies</b></h3><div class="meta">All the same title · oldest from mid-May</div><p>A recurrence that has never been closed out. Worth collapsing into one.</p></div>
+
+<h2 class="personal"><svg class="fam" width="18" height="18" viewBox="20 13 254 254" fill="none" stroke-linejoin="round"><circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle><polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon><polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon><polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon></svg> Life Balance <span class="rule"></span></h2>
 <div class="balance">
-  <p class="lead">Take 11:30 to 12:00 outside.</p>
-  <p>The biggest free stretch today runs 11:00 to 2:00 — three uninterrupted hours. Starting the walk at 11:30 rather than on the hour leaves noon to two intact for real focus work.</p>
-  <p>Calgary is mainly sunny, high 24&nbsp;°C, low 10&nbsp;°C, with a few clouds building in the afternoon. No reason to reach for a longer window on weather grounds.</p>
-  <p style="margin-top:10px"><span class="pill">11:30 – 12:00 · suggested</span><span class="pill">3:00 – 4:00 · second option</span><span class="pill">after 5:00 · evening</span></p>
-  <p style="margin-top:11px;font-size:13px;color:var(--scree)">Computed from today's actual calendar. Nothing was booked — these are suggestions only.</p>
+  <p class="hd">Take 1:15 to 1:45 and go outside.</p>
+  <p>Computed from today's actual calendar. Your largest genuine gap is <b>12:45 PM – 6:00 PM</b>; starting at 1:15 leaves a little buffer after the late-morning appointment and still hands back most of the afternoon for focus work.</p>
+  <p>Weather backs it: <b>sunny and clear, 26°C</b>. No reason to pick a different window today.</p>
+  <p class="alt"><b>Other clear stretches:</b> the rest of the afternoon is open, and the evening after 6:00 PM.</p>
 </div>
 
-<h2 class="personal"><svg class="mark" width="18" height="18" viewBox="20 13 254 254" fill="none" stroke-linejoin="round"><circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle><polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon><polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon><polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon></svg> At home <span class="badge badge-personal">Personal</span></h2>
-<div class="grid two">
-  <div class="card personal"><h3>A government notice is ten days unread</h3>
-    <p>Flagged as needing attention. The only genuinely time-sensitive item on the personal side.</p></div>
-  <div class="card personal"><h3>Nine reminders, every one past due</h3>
-    <p>Six at top priority. Two are library items now marked lost and gathering a cost; two are appointments to book; one is paperwork on someone else's behalf.</p></div>
-  <div class="card personal"><h3>Three reminders look stale rather than undone</h3>
-    <p>They describe arrangements the calendar shows have already come and gone. Worth closing rather than doing.</p></div>
-  <div class="card personal"><h3>A waiver expires in two weeks</h3>
-    <p>Two minutes online, and it is the difference between walking in and standing in the queue.</p></div>
-  <div class="card personal"><h3>An appointment on Friday wants confirming</h3>
-    <p>Twenty-four hours' notice to move it without a fee.</p></div>
-  <div class="card personal"><h3>Around twenty old brief tasks are still open</h3>
-    <p>The archiving step has not been firing. Not real work — but it is why the priority list is hard to read.</p></div>
-</div>
+<h2>Weather <span class="rule"></span></h2>
+<p class="subnote">Captured 6:39 AM MDT today. This is the one section here that cannot refresh itself — treat it as stale after about six hours, and definitely stale tomorrow.</p>
+<div class="pill"><b>Today</b> — High 26°C, low 12°C. Sunny and clear through the afternoon and overnight, light winds.</div>
 
-<h2><span class="badge badge-work">The Read</span></h2>
-<div class="grid two">
-  <div class="card"><h3>WTI crude — about $87.06 a barrel</h3><p class="meta">August 24, 2026</p></div>
-  <div class="card"><h3>Henry Hub natural gas — $2.73/MMBtu, down 1.45% on the day</h3>
-    <p class="meta">August 24, 2026</p>
-    <p>US utilities added 16 Bcf to storage last week, below both last year's 19 Bcf and the five-year average of 29 Bcf — yet inventories remain above the seasonal norm on record production. LNG feedgas steady at 17.2 Bcf/d in August, a shade under June's record.</p></div>
-</div>
+<h2>Replies You Owe <span class="badge badge-work">Work</span> <span class="rule"></span></h2>
+<p class="subnote">External contacts only, as initials. Checked against the specific threads named in the tracker's "waiting (external)" items, plus the newest inbox messages — not a full four-week paginated sweep today (see footer note).</p>
 
-<div class="foot">
-  <p>Assembled from a work calendar, a work task tracker, two personal calendars, a personal task list and two mailboxes. Redacted for public hosting: names reduced to initials, amounts and subjects removed, no links back into any source system.</p>
-  <p>Generated Monday, August 24, 2026 at 8:44 AM MDT.</p>
-</div>
+<div class="mail"><div class="who">Vendor billing case <span class="tag t-low">Low · uncertain</span></div>
+<div class="ct">After several rounds of chasing a timeline, the vendor says someone is now assigned and reviewing, with an update promised within a business day.</div>
+<div class="age">No direct question back to you — may not need a reply yet, kept rather than dropped.</div></div>
+
+<h2>Waiting on Your Reply <span class="badge badge-work">Work</span> <span class="rule"></span></h2>
+<p class="subnote">You sent last and nobody has come back. Ordered by how long the silence has run.</p>
+<div class="mail w"><div class="who">S.K. (M.) <span class="tag t-high">7 days</span></div><div class="ct">A status check on an integration and deployment. Matches the tracker's "waiting (external)" item — accurate.</div></div>
+<div class="mail w"><div class="who">Vendor invoice inquiry <span class="tag t-high">4 days</span></div><div class="ct">You asked when to expect payment on a signed retainer. Nothing back yet.</div></div>
+<div class="mail w"><div class="who">J.J. (R.) <span class="tag t-med">Second nudge, yesterday</span></div><div class="ct">A statement request, followed up twice now.</div></div>
+<div class="mail w"><div class="who">J.G. (R.P.) <span class="tag t-low">&lt;24 hours</span></div><div class="ct">A contract redline sent last night — too fresh to chase, listed for visibility only.</div></div>
+
+<h2 class="personal"><svg class="fam" width="18" height="18" viewBox="20 13 254 254" fill="none" stroke-linejoin="round"><circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle><polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon><polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon><polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon></svg> Reminders <span class="rule"></span></h2>
+<p class="subnote">Every genuinely top-priority item, regardless of due date.</p>
+<div class="card personal flag"><h3>A care-provider thread, still unread</h3><div class="meta">Top priority · 27 days over</div><p>A provider sent scheduling options 11 days ago; still unread. Covers Whitney and her partner — a related item for the kids is already handled elsewhere.</p></div>
+
+<h2>News <span class="rule"></span></h2>
+<p class="subnote">Snapshot taken 6:39 AM MDT today.</p>
+<div class="pill"><b>WTI crude ≈ $85.67/bbl · Henry Hub natural gas ≈ $3.29/MMBtu</b> — live benchmarks, Aug 25, 2026. Gas trackers disagree this week; treat as directional.</div>
+
+<footer>
+<p>Public, redacted mirror. Names appear as initials, amounts and subjects are removed, and this page carries no links back into any work or personal system. Full detail sits behind Whitney's private login.</p>
+<p>Today's "Replies You Owe" / "Waiting on Your Reply" sections came from a targeted check of specific threads rather than an exhaustive four-week paginated sweep of sent mail — the sweep itself found over 300 sent messages in that window. Treat the lists as solid for the threads named, not guaranteed-complete.</p>
+<p>Generated Tuesday, August 25, 2026 at 6:39 AM MDT.</p>
+</footer>
 
 </div>
 </body>
