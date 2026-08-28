@@ -1,271 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evening Brief — Friday, August 28</title>
-    <style>
-        :root { color-scheme: light; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.6;
-            color: #2c3e50;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
-            padding: 1rem;
-        }
-        .container {
-            max-width: 880px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem 1.5rem;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
-        header p {
-            opacity: 0.95;
-            font-size: 0.95rem;
-        }
-        .main-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0;
-            padding: 0;
-        }
-        @media (min-width: 880px) {
-            .main-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .full-width {
-                grid-column: 1 / -1;
-            }
-        }
-        section {
-            padding: 1.5rem;
-            border-bottom: 1px solid #eee;
-        }
-        @media (min-width: 880px) {
-            section {
-                border-bottom: none;
-                border-right: 1px solid #eee;
-            }
-            section:nth-child(2n) {
-                border-right: none;
-            }
-        }
-        h2 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: #667eea;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .weather-card {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 0.5rem;
-        }
-        .weather-card strong { color: #667eea; }
-        .day-label { font-weight: 600; color: #2c3e50; }
-        ul { list-style: none; padding: 0; }
-        li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #eee;
-        }
-        li:last-child { border-bottom: none; }
-        a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        a:hover { text-decoration: underline; }
-        .p1-task {
-            background: #fff3cd;
-            padding: 1rem;
-            border-left: 4px solid #ffc107;
-            border-radius: 4px;
-            margin-bottom: 0.75rem;
-        }
-        .p1-task strong { color: #856404; }
-        .time { color: #667eea; font-weight: 600; }
-        .redacted { color: #999; font-style: italic; }
-        .pill {
-            display: inline-block;
-            background: #e7f3ff;
-            color: #667eea;
-            padding: 0.25rem 0.75rem;
-            border-radius: 999px;
-            font-size: 0.85rem;
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
-        .news-item {
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #eee;
-        }
-        .news-item:last-child { border-bottom: none; }
-        .news-label { font-weight: 600; color: #667eea; font-size: 0.85rem; }
-        footer {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            text-align: center;
-            font-size: 0.85rem;
-            color: #666;
-            border-top: 1px solid #eee;
-        }
-        footer a { color: #667eea; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hornak Evening Brief — Friday, August 28</title>
+<style>
+  :root{
+    color-scheme: light;
+    --pine:#2E7358; --alpenglow:#B85C86; --glacier:#35699B; --dusk:#6B5591;
+    --granite:#1B2022; --scree:#6C7378; --dust:#E3E1DA; --snow:#F7F5F1;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:24px 12px; background:var(--dust);
+    font-family:"Century Gothic","Trebuchet MS",Futura,sans-serif;
+    color:var(--granite);
+  }
+  .card{
+    max-width:640px; margin:0 auto; background:var(--snow);
+    border-radius:14px; overflow:hidden; box-shadow:0 1px 3px rgba(27,32,34,0.08);
+  }
+  header{ padding:22px 22px 16px; border-bottom:1px solid var(--dust); }
+  .wordmark{ font-weight:500; letter-spacing:0.3em; text-transform:uppercase; font-size:11px; color:var(--pine); margin:0 0 6px; }
+  h1{
+    font-family:Georgia,"Times New Roman",serif; font-style:italic; font-weight:400;
+    font-size:28px; margin:0 0 6px; color:var(--granite);
+  }
+  .sub{ color:var(--scree); font-size:13px; margin:0; }
+  .sub a{ color:var(--glacier); }
+  section{ padding:16px 22px; border-bottom:1px solid var(--dust); }
+  section:last-of-type{ border-bottom:none; }
+  .label{
+    font-weight:500; font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--pine); margin:0 0 10px;
+  }
+  .row{ padding:8px 0; border-bottom:1px solid var(--dust); font-size:15px; line-height:1.5; }
+  .row:last-child{ border-bottom:none; }
+  .row a{ color:var(--glacier); text-decoration:none; }
+  .row a:hover{ text-decoration:underline; }
+  .tag{ display:inline-block; background:var(--alpenglow); color:var(--snow); font-size:11px; font-weight:500;
+        border-radius:20px; padding:2px 9px; margin-left:6px; }
+  .muted{ color:var(--scree); font-size:13px; }
+  .weather-day{ display:flex; justify-content:space-between; padding:6px 0; font-size:15px; }
+  .weather-day .t{ color:var(--scree); }
+  .read-grid{ display:grid; grid-template-columns:1fr; gap:14px; }
+  .pill-label{ font-weight:500; font-size:13px; color:var(--dusk); margin-bottom:2px;}
+  .pill-text{ font-size:14px; line-height:1.5; }
+  .pill-text a{ color:var(--glacier); }
+  footer{ padding:16px 22px; text-align:center; color:var(--scree); font-size:12px; }
+  .two-col{ display:grid; grid-template-columns:1fr; }
+  .read-section{ grid-column:1 / -1; }
+  @media (min-width:880px){
+    body{ padding:40px 20px; }
+    .card{ max-width:920px; }
+    .two-col{ grid-template-columns:1fr 1fr; }
+    .two-col > section{ border-bottom:1px solid var(--dust); }
+    .read-section{ grid-column:1 / -1; }
+    .read-grid{ grid-template-columns:1fr 1fr; }
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🌙 Evening Brief</h1>
-            <p>Friday, August 28, 2026 · Mountain Time</p>
-            <p style="font-size: 0.85rem; margin-top: 0.5rem;">
-                <a href="https://deadnak.github.io/hornak-brief/weekly/" style="color: rgba(255,255,255,0.9);">→ This week's brief</a>
-            </p>
-        </header>
+<div class="card">
 
-        <div class="main-grid">
-            <!-- Weather -->
-            <section>
-                <h2>☀️ Weather — 3 Days</h2>
-                <div class="weather-card">
-                    <div class="day-label">Friday (today)</div>
-                    <div>23–25°C / 8°C, mix of sun and cloud, no rain</div>
-                    <div style="margin-top: 0.5rem; font-size: 0.9rem;"><strong>4pm:</strong> decent for outdoor time</div>
-                </div>
-                <div class="weather-card">
-                    <div class="day-label">Saturday 29</div>
-                    <div>22°C, mix of sun and cloud — good day for plans</div>
-                </div>
-                <div class="weather-card" style="background: #ffe7e7;">
-                    <div class="day-label">Sunday 30</div>
-                    <div><strong style="color: #d32f2f;">⚠️ 12°C, light rain all day</strong></div>
-                    <div style="margin-top: 0.5rem; font-size: 0.9rem;">Save outdoor activities for Saturday</div>
-                </div>
-            </section>
+  <header>
+    <p class="wordmark">Hornak Household</p>
+    <h1>Evening Brief — Friday, August 28</h1>
+    <p class="sub">Todoist has full detail. <a href="https://app.todoist.com/app/project/6h62Jmrp3GpJjQwW" target="_blank" rel="noopener">☀️ Daily Brief</a> · <a href="https://deadnak.github.io/hornak-brief/weekly/" target="_blank" rel="noopener">This week</a></p>
+  </header>
 
-            <!-- Today -->
-            <section>
-                <h2>📅 Today</h2>
-                <ul>
-                    <li>
-                        <span class="time">10:00–11:00 AM</span><br>
-                        <a href="https://www.google.com/calendar/event?eid=bXM4cjgxcjlqYWplY2Q1N2lxcWs3ZmQ3aWtfMjAyNjA4MjhUMTYwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">
-                            Blowout (Whitney)
-                        </a><br>
-                        <span style="font-size: 0.85rem; color: #666;">Butter Beauty — click to confirm</span>
-                    </li>
-                    <li>
-                        <span class="time">7:15–8:45 PM</span><br>
-                        <span>Dinner reservation</span><br>
-                        <span style="font-size: 0.85rem; color: #666;">The Nash, 925 11th Street SE</span>
-                    </li>
-                </ul>
-            </section>
+  <div class="two-col">
+  <div>
 
-            <!-- Conflicts -->
-            <section>
-                <h2>⚠️ Conflicts</h2>
-                <p style="color: #27ae60; font-weight: 600;">None found</p>
-            </section>
+  <section>
+    <p class="label">Weather — 3 Days</p>
+    <div class="weather-day"><span>Fri (today)</span><span class="t">23–25° / 8° — sun & cloud, decent</span></div>
+    <div class="weather-day"><span>Sat 29</span><span class="t">22° — good outdoor day</span></div>
+    <div class="weather-day"><span>Sun 30</span><span class="t">12° — rain, plan indoors</span></div>
+  </section>
 
-            <!-- Health -->
-            <section>
-                <h2>💪 Health</h2>
-                <p><strong>Walk window:</strong> 11:00 AM–3:00 PM (clear, 23°C, breezy)</p>
-                <p style="margin-top: 0.5rem; font-size: 0.9rem;">💊 Vitamins reminder</p>
-            </section>
+  <section>
+    <p class="label">The Day</p>
+    <div class="row"><span>10:00–11:00 AM</span> — <a href="https://www.google.com/calendar/event?eid=bXM4cjgxcjlqYWplY2Q1N2lxcWs3ZmQ3aWtfMjAyNjA4MjhUMTYwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Blowout (Whitney)</a> <span class="tag">confirm</span></div>
+    <div class="row"><span>7:15–8:45 PM</span> — Dinner reservation, The Nash</div>
+  </section>
 
-            <!-- P1 Tasks (full detail on artifact) -->
-            <section class="full-width">
-                <h2>📧 Needs You — Priority 1 Tasks</h2>
-                <div class="p1-task">
-                    <strong>1. <a href="https://app.todoist.com/app/task/6h5xXQR54CrF5pFf" target="_blank" rel="noopener">Call R&A Dentistry</a></strong><br>
-                    <span style="font-size: 0.9rem;">Check whitening & bonding options (August 11 email), book your overdue cleanings. ☎️ 403-209-2299</span>
-                </div>
-                <div class="p1-task">
-                    <strong>2. <a href="https://app.todoist.com/app/task/6h69CQXGqH3cgfJf" target="_blank" rel="noopener">Call Respiratory Home Care</a></strong><br>
-                    <span style="font-size: 0.9rem;">First contact for sleep apnea testing. ☎️ 403-217-5337</span>
-                </div>
-                <div class="p1-task">
-                    <strong>3. <a href="https://app.todoist.com/app/task/6h6Q2XvP658gF3Wv" target="_blank" rel="noopener">📚 Library — girls' lost items</a></strong><br>
-                    <span style="font-size: 0.9rem;">Return to any CPL branch to reverse $25.59 charge (3 days overdue)</span>
-                </div>
-                <div class="p1-task">
-                    <strong>4. <a href="https://app.todoist.com/app/task/6h9GMCC23M3pMxFg" target="_blank" rel="noopener">📖 Library digital hold</a></strong><br>
-                    <span style="font-size: 0.9rem;"><em>People We Meet on Vacation</em> — check if still available, re-place or suspend</span>
-                </div>
-                <div class="p1-task">
-                    <strong>5. <a href="https://app.todoist.com/app/task/6h62x2M8mx2CXr77" target="_blank" rel="noopener">Order Dana photo prints</a></strong><br>
-                    <span style="font-size: 0.9rem;">Gallery expired July 20. Email or call Linh to ask if it can be reopened (no action, 39 days)</span>
-                </div>
-            </section>
+  <section>
+    <p class="label">Health</p>
+    <div class="row">Walk window: 11 AM–3 PM (clear, 23°, breezy)</div>
+    <div class="muted">💊 Vitamins reminder</div>
+  </section>
 
-            <!-- Heads Up -->
-            <section class="full-width">
-                <h2>🔜 Heads Up</h2>
-                <ul>
-                    <li><strong>Saturday, Aug 29:</strong> Clear and pleasant — good for outdoor plans with the family or solo time</li>
-                    <li><strong>Sunday, Aug 30:</strong> Wet and cool (12°C) — indoor day</li>
-                    <li><strong>Monday, Aug 31:</strong> 🏫 First day of school</li>
-                </ul>
-            </section>
+  </div>
+  <div>
 
-            <!-- The Read -->
-            <section class="full-width">
-                <h2>📰 The Read</h2>
+  <section>
+    <p class="label">Needs You — 5 P1s</p>
+    <div class="row"><a href="https://app.todoist.com/app/task/6h5xXQR54CrF5pFf" target="_blank" rel="noopener">Call R&A Dentistry</a> <span class="tag">overdue 7mo</span></div>
+    <div class="row"><a href="https://app.todoist.com/app/task/6h69CQXGqH3cgfJf" target="_blank" rel="noopener">Call Respiratory Home Care</a></div>
+    <div class="row"><a href="https://app.todoist.com/app/task/6h6Q2XvP658gF3Wv" target="_blank" rel="noopener">📚 Library — girls' lost items</a> <span class="tag">due tomorrow</span></div>
+    <div class="row"><a href="https://app.todoist.com/app/task/6h9GMCC23M3pMxFg" target="_blank" rel="noopener">📖 Library digital hold</a></div>
+    <div class="row"><a href="https://app.todoist.com/app/task/6h62x2M8mx2CXr77" target="_blank" rel="noopener">Order Dana photo prints</a> <span class="tag">39 days</span></div>
+  </section>
 
-                <div class="news-item">
-                    <div class="news-label">🚀 SPACE</div>
-                    <p><a href="https://www.sciencedaily.com/news/space_time/astronomy/" target="_blank" rel="noopener">The James Webb Space Telescope found a giant planet hiding inside a bright dust disk</a> — in one of astronomy's most-studied planetary systems. A reminder that the universe still holds surprises close to home.</p>
-                </div>
+  <section>
+    <p class="label">Heads Up</p>
+    <div class="row">Sat 29: clear & pleasant — good for outdoor plans</div>
+    <div class="row">Sun 30: rain & 12° — indoor day</div>
+    <div class="row">Mon 31: 🏫 first day of school</div>
+  </section>
 
-                <div class="news-item">
-                    <div class="news-label">💼 BUSINESS</div>
-                    <p><a href="https://www.cnbc.com/2026/08/28/stock-market-today/" target="_blank" rel="noopener">SanDisk rode the AI memory shortage up 850% this year, and is somehow still the S&P 500's best stock of 2026</a> — despite giving back 53% in the last month. A wild ride for what started as a side play on supply constraints.</p>
-                </div>
+  </div>
+  </div>
 
-                <div class="news-item">
-                    <div class="news-label">🍁 CANADA</div>
-                    <p><a href="https://www.ctvnews.ca/" target="_blank" rel="noopener">WestJet cabin crew strike could begin as early as August 30</a> if negotiations don't move. Canada sits 2nd in golds at the Glasgow Commonwealth Games — 35+ medals through the games.</p>
-                </div>
-
-                <div class="news-item">
-                    <div class="news-label">📍 CALGARY</div>
-                    <p>Heat holds through Saturday (28°+), then relief Sunday. <a href="https://www.calgarylibrary.ca/" target="_blank" rel="noopener">Calgary Public Library</a> is open all weekend for the girls' book returns.</p>
-                </div>
-
-                <div class="news-item">
-                    <div class="news-label">🎬 LATE NIGHT</div>
-                    <p><strong>John Oliver:</strong> <a href="https://www.hbomax.com/" target="_blank" rel="noopener">Last Week Tonight</a> — latest episode covers crypto trends.<br>
-                    <strong>Seth Meyers:</strong> Tonight's <a href="https://www.nbc.com/late-night" target="_blank" rel="noopener">Late Night</a> — Timothy Olyphant + Cooper Hoffman.<br>
-                    <strong>Colbert:</strong> <a href="https://www.cbs.com/shows/the-late-show-with-stephen-colbert/" target="_blank" rel="noopener">The Late Show</a> continues the week; Letterman, Kimmel, Meyers and Fallon all guesting as the franchise ends after 33 years.</p>
-                </div>
-            </section>
-        </div>
-
-        <footer>
-            <p>Generated Friday, August 28, 2026 at 10:25 AM MDT</p>
-            <p style="margin-top: 0.5rem; font-size: 0.8rem;">
-                <a href="https://app.todoist.com/app/project/6h62Jmrp3GpJjQwW" target="_blank" rel="noopener">→ Full brief in Todoist</a>
-            </p>
-        </footer>
+  <section class="read-section">
+    <p class="label">The Read</p>
+    <div class="read-grid">
+      <div>
+        <p class="pill-label">🚀 Space</p>
+        <p class="pill-text"><a href="https://www.sciencedaily.com/news/space_time/astronomy/" target="_blank" rel="noopener">Webb found a giant planet hiding in a dust disk</a> — surprises still close to home.</p>
+      </div>
+      <div>
+        <p class="pill-label">💼 Business</p>
+        <p class="pill-text"><a href="https://www.cnbc.com/2026/08/28/stock-market-today/" target="_blank" rel="noopener">SanDisk rode AI shortage up 850%, still S&P 500's best stock in 2026</a> — wild ride.</p>
+      </div>
+      <div>
+        <p class="pill-label">🍁 Canada</p>
+        <p class="pill-text"><a href="https://www.ctvnews.ca/" target="_blank" rel="noopener">WestJet cabin crew may strike Aug 30</a>. Canada 2nd in golds at Commonwealth Games.</p>
+      </div>
+      <div>
+        <p class="pill-label">📍 Calgary</p>
+        <p class="pill-text">Heat through Sat, relief Sun. <a href="https://www.calgarylibrary.ca/" target="_blank" rel="noopener">CPL open weekends</a> for returns.</p>
+      </div>
+      <div>
+        <p class="pill-label">🎬 Late Night</p>
+        <p class="pill-text"><strong>Oliver:</strong> <a href="https://www.hbomax.com/" target="_blank" rel="noopener">crypto</a> · <strong>Meyers:</strong> Olyphant + Hoffman · <strong>Colbert:</strong> farewell week with guest hosts</p>
+      </div>
     </div>
+  </section>
+
+</div>
+
+<footer>
+Generated Friday, August 28, 2026 at 10:25 AM MDT
+</footer>
 </body>
 </html>
