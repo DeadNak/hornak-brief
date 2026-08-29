@@ -3,80 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day Brief — Friday, August 28, 2026</title>
+    <title>Day Brief — Friday, August 29, 2026</title>
     <style>
+        :root {
+            --purple: #6B4E9C;
+            --green: #7FA884;
+            --orange: #E8A038;
+            --cream: #FAF6F1;
+            --text: #2D2D2D;
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Lexend', 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #2d1b3d 0%, #1a0f2e 100%);
-            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--purple) 0%, var(--green) 100%);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
             padding: 20px;
         }
-        .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 8px 32px rgba(45, 27, 61, 0.15); overflow: hidden; }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
         .header {
-            background: linear-gradient(135deg, #7b3ff2 0%, #5a2d8e 100%);
+            background: linear-gradient(135deg, var(--purple) 0%, var(--green) 100%);
             color: white;
-            padding: 30px;
+            padding: 40px 30px;
             text-align: center;
         }
-        .header h1 { font-size: 32px; margin-bottom: 10px; }
-        .header p { font-size: 14px; opacity: 0.9; }
-        .meta {
-            display: flex; justify-content: space-around; margin-top: 15px;
-            font-size: 13px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.3);
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header .date { font-size: 1.2em; opacity: 0.95; }
+        .content { padding: 30px; }
+        .section { margin-bottom: 30px; }
+        .section-header {
+            border-bottom: 3px solid var(--orange);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
-        .meta-item { text-align: center; }
-        .meta-count { font-size: 20px; font-weight: bold; display: block; }
-        section {
-            padding: 25px 30px;
-            border-bottom: 1px solid #f0f0f0;
+        .section-header h2 { font-size: 1.4em; color: var(--purple); }
+        .item {
+            background: var(--cream);
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 6px;
+            border-left: 4px solid var(--green);
         }
-        section:last-child { border-bottom: none; }
-        h2 {
-            color: #7b3ff2;
-            font-size: 20px;
-            margin-bottom: 15px;
-            display: flex; align-items: center;
-        }
-        h2::before {
-            content: '';
-            width: 4px;
-            height: 24px;
-            background: #7b3ff2;
-            border-radius: 2px;
-            margin-right: 12px;
-        }
-        .block {
-            background: #f9f7fc;
-            border-left: 3px solid #7b3ff2;
-            padding: 12px 15px;
-            margin-bottom: 10px;
-            border-radius: 4px;
-        }
-        .time { font-weight: 600; color: #2d1b3d; font-size: 13px; }
-        .title { font-weight: 500; margin-top: 4px; color: #1a0f2e; font-size: 13px; }
-        .subtitle { font-size: 12px; color: #666; margin-top: 4px; }
-        .urgent { color: #ff6b6b; font-weight: 600; }
-        .high { color: #ffa500; font-weight: 600; }
-        .due-date { font-size: 12px; color: #666; margin-top: 4px; }
-        .overdue { background: #ffcccc; color: #900; font-weight: 600; padding: 2px 6px; border-radius: 3px; }
+        .item h3 { color: var(--purple); font-size: 1em; margin-bottom: 6px; }
+        .item p { color: #666; font-size: 0.95em; }
         .flag {
-            background: #fff3cd;
-            border-left: 3px solid #ffc107;
-            padding: 12px 15px;
-            margin: 10px 0;
-            border-radius: 4px;
-            font-size: 13px;
-            line-height: 1.5;
+            background: #FFE5E5;
+            border-left: 4px solid #C0392B;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 6px;
         }
-        .action-item { font-size: 12px; color: #666; margin: 6px 0 12px 0; line-height: 1.5; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th, td { padding: 8px; text-align: left; font-size: 12px; border-bottom: 1px solid #e8e8e8; }
-        th { background: #f5f5f5; font-weight: 600; color: #333; }
+        .flag h3 { color: #C0392B; }
         .footer {
-            background: #f9f7fc;
-            padding: 15px 30px;
-            font-size: 11px;
+            background: var(--cream);
+            padding: 20px 30px;
+            border-top: 1px solid #eee;
+            font-size: 0.85em;
             color: #666;
             text-align: center;
         }
@@ -86,176 +76,111 @@
     <div class="container">
         <div class="header">
             <h1>Day Brief</h1>
-            <p>Friday, August 28, 2026</p>
-            <div class="meta">
-                <div class="meta-item"><span class="meta-count">9</span><span>Calendar Events</span></div>
-                <div class="meta-item"><span class="meta-count">82</span><span>Emails (3 days)</span></div>
-                <div class="meta-item"><span class="meta-count">50+</span><span>Active Tasks</span></div>
-                <div class="meta-item"><span class="meta-count">4</span><span>Recent Meetings</span></div>
+            <div class="date">Friday, August 29, 2026</div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <div class="section-header">
+                    <h2>🚩 Alerts</h2>
+                </div>
+                <div class="flag">
+                    <h3>Travel Evening: Reno to Seattle</h3>
+                    <p>Flight departs 7:38 PM PT, arrives 9:54 PM PT. Weekend trip. Limited availability after 4 PM MT.</p>
+                </div>
+                <div class="flag">
+                    <h3>Payroll Account Funding (Urgent)</h3>
+                    <p>Credit alert: payroll account needs funding for next run. Action required today.</p>
+                </div>
+                <div class="flag">
+                    <h3>Contractor Payments Due</h3>
+                    <p>Payment reminder for contractor invoices. Review payables dashboard.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    <h2>📅 Schedule</h2>
+                </div>
+                <div class="item">
+                    <h3>8:30 AM – Personal: App Work</h3>
+                    <p>Recurring appointment.</p>
+                </div>
+                <div class="item">
+                    <h3>8:30 PM – Personal: Video Game</h3>
+                    <p>Recurring appointment.</p>
+                </div>
+                <div class="item">
+                    <h3>7:38 PM – Travel Departs</h3>
+                    <p>Flight to Seattle.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    <h2>🎯 Recent Meetings & Actions</h2>
+                </div>
+                <div class="item">
+                    <h3>PVMM Partnership Intro</h3>
+                    <p><strong>Action:</strong> Send product demo materials and schedule technical review with partner team.</p>
+                </div>
+                <div class="item">
+                    <h3>Rev/Ops Team Stand-Up</h3>
+                    <p><strong>Actions:</strong> Monitor project timelines, track retainer time entries, finalize monthly goals for Sept–Dec, follow up on partner contract signing.</p>
+                </div>
+                <div class="item">
+                    <h3>Marketing Alignment</h3>
+                    <p><strong>Actions:</strong> Finalize advisory marketing flyers, lead strategy session with team next week, respond to materials request.</p>
+                </div>
+                <div class="item">
+                    <h3>Product UI/UX Review</h3>
+                    <p><strong>Actions:</strong> Collaborate on product messaging, suggest UI improvements for map and subscription tiers.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    <h2>💼 Work Status</h2>
+                </div>
+                <div class="item">
+                    <h3>Incoming Deposits</h3>
+                    <p>One deposit posted. Target invoicing increased to $90K (currently $52K).</p>
+                </div>
+                <div class="item">
+                    <h3>Active Agreements</h3>
+                    <p>Partner platform agreement signed; awaiting final execution on v5 contract.</p>
+                </div>
+                <div class="item">
+                    <h3>Client Projects</h3>
+                    <p>New project underway; multiple appraisals scheduled; unit refresh work in progress.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    <h2>✅ Today's Priorities</h2>
+                </div>
+                <div class="item">
+                    <h3>Must-Do (Before 4 PM)</h3>
+                    <ul style="margin-left: 20px; margin-top: 8px;">
+                        <li>Fund payroll account (urgent)</li>
+                        <li>Send partner demo materials</li>
+                        <li>Follow up on contract signing</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h3>Nice-To-Do</h3>
+                    <ul style="margin-left: 20px; margin-top: 8px;">
+                        <li>Finalize marketing flyers</li>
+                        <li>Respond to request email</li>
+                        <li>Review goals outline for Monday meeting</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
-        <section>
-            <h2>Schedule (Mountain Time)</h2>
-            <div class="block">
-                <div class="time">08:00 – 08:30</div>
-                <div class="title">Personal task</div>
-            </div>
-            <div class="block">
-                <div class="time">09:30 – 10:00</div>
-                <div class="title">Email outreach</div>
-                <div class="subtitle">4 follow-ups to key contacts</div>
-            </div>
-            <div class="block">
-                <div class="time">10:00 – 11:00</div>
-                <div class="title">⚠️ Prep meeting</div>
-                <div class="subtitle">Strategic planning session</div>
-                <div class="subtitle" style="color: #ff6b6b; font-weight: 600; margin-top: 6px;">CONFLICTS with personal appointment at same time</div>
-            </div>
-            <div class="block">
-                <div class="time">13:00 – 13:30</div>
-                <div class="title">Introduction call</div>
-                <div class="subtitle">Meeting 2 external partners + internal team lead</div>
-            </div>
-            <div class="block">
-                <div class="time">13:30 – 14:30</div>
-                <div class="title">Deal review</div>
-                <div class="subtitle">Project checkpoint</div>
-            </div>
-            <div class="block">
-                <div class="time">14:30 – 15:00</div>
-                <div class="title">Marketing task refinement</div>
-            </div>
-            <div class="block">
-                <div class="time">15:00 – 16:00</div>
-                <div class="title">Product strategy meeting</div>
-                <div class="subtitle">Weekly standing (team lead + 2 direct reports)</div>
-            </div>
-            <div class="block">
-                <div class="time">16:00 – 17:00</div>
-                <div class="title">Client engagement work</div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Priority Work Items</h2>
-            <div class="block">
-                <div style="font-weight: 600; color: #ffa500;">HIGH PRIORITY</div>
-                <div class="title">Partnership proposal — draft stage</div>
-                <div class="due-date">⏰ <strong>DUE TODAY (Aug 28)</strong></div>
-            </div>
-            <div class="block">
-                <div style="font-weight: 600; color: #ff6b6b;">URGENT</div>
-                <div class="title">Client report — mockup for review</div>
-                <div class="due-date">⏰ Due Aug 30 (this weekend)</div>
-            </div>
-            <div class="block">
-                <div style="font-weight: 600; color: #ff6b6b;">URGENT</div>
-                <div class="title">Partnership sales pitch — full proposal</div>
-                <div class="due-date">⏰ Due Sep 2 (next week)</div>
-            </div>
-            <div class="block">
-                <div style="font-weight: 600; color: #ffa500;">HIGH</div>
-                <div class="title">Portfolio review — approve draft documentation</div>
-                <div class="due-date"><span class="overdue">OVERDUE Aug 27</span> (1 day)</div>
-            </div>
-            <div class="block">
-                <div style="font-weight: 600; color: #ff6b6b;">URGENT</div>
-                <div class="title">Annual portfolio update — multi-asset analysis</div>
-                <div class="due-date"><span class="overdue">OVERDUE Aug 26</span> (2 days)</div>
-                <div class="subtitle">Shared with team colleague</div>
-            </div>
-            <div class="block">
-                <div style="font-weight: 600; color: #ff6b6b;">URGENT</div>
-                <div class="title">Travel — confirm resort & accommodations</div>
-                <div class="due-date"><span class="overdue">OVERDUE Aug 19</span> (9 days)</div>
-            </div>
-            <div class="block">
-                <div style="font-weight: 600; color: #ff6b6b;">URGENT</div>
-                <div class="title">Travel — book final flight leg (premium class requested)</div>
-                <div class="due-date"><span class="overdue">OVERDUE Aug 19</span> (9 days)</div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Recent Team Meetings (Your Action Items)</h2>
-            <div class="block">
-                <div style="font-weight: 600;">Operations & Revenue Sync</div>
-                <div class="subtitle">(Thu evening, 38 min)</div>
-                <div class="action-item">
-                    • Update task timelines across portfolio<br>
-                    • Monitor intake tracking & update models<br>
-                    • Support client integration call with team<br>
-                    • Review colleague's geographic data updates<br>
-                    • Create retainer project tracking for 2 accounts (manage hours/invoicing)<br>
-                    • Lead budget review & goal finalization with AI assistant (Monday)<br>
-                    • Contact key partner to expedite contract signing
-                </div>
-            </div>
-            <div class="block">
-                <div style="font-weight: 600;">Marketing & Demand</div>
-                <div class="subtitle">(Thu evening, 31 min)</div>
-                <div class="action-item">
-                    • Complete flyer updates for advisory channel targeting<br>
-                    • Run strategy session with team lead on family event<br>
-                    • Respond to minerals content request email<br>
-                    • Support peer with outreach messaging
-                </div>
-            </div>
-            <div class="block">
-                <div style="font-weight: 600;">Business Development Strategy</div>
-                <div class="subtitle">(Tue afternoon, 84 min)</div>
-                <div class="action-item">
-                    • Get contract docs from team lead (deal context)<br>
-                    • Prepare comprehensive sales pitch for major account (product bundle)<br>
-                    • Build branded client mockup report from existing template<br>
-                    • Follow up with foundation on participation/sponsorship<br>
-                    • Review & approve draft outreach to buyer contacts
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Incoming & Alerts</h2>
-            <div class="flag">
-                <strong>⚠️ Financial Alert:</strong> Team lead forwarded payroll processing alert — account may be underfunded. Coordinate on funding plan.
-            </div>
-            <div class="flag">
-                <strong>💰 Cash Movements:</strong> Deposit received (new client project). Vendor refund processed (locked in, delivery method TBD). Partner payment in transit. Subscription payment cleared.
-            </div>
-            <div class="flag">
-                <strong>📧 Data Collaboration Request:</strong> Colleague at financial partner asking about geographic data reconciliation to avoid duplicate work on shared client. Reply needed.
-            </div>
-            <div class="flag">
-                <strong>🎫 Event Booth Opportunities:</strong> 2 conferences reached out about sponsorship/exhibitor booth. Prospectus attached for one; details pending on other. Content/flyer support expected.
-            </div>
-            <div class="flag">
-                <strong>📊 Permit Alerts:</strong> 27 new permits detected across client mineral interests in target regions (regulatory tracking).
-            </div>
-        </section>
-
-        <section>
-            <h2>Key Flags</h2>
-            <div class="flag">
-                <strong>🚨 Schedule Conflict:</strong> Two back-to-back items at 10–11am. One is prep work, one is personal. Reschedule one.
-            </div>
-            <div class="flag">
-                <strong>📋 Overdue Backlog:</strong> 3 items past due (travel logistics: 9 days old; portfolio analysis: 2 days; documentation review: 1 day). Recommend 30-min triage block this morning.
-            </div>
-            <div class="flag">
-                <strong>🎯 Today's Critical Path:</strong> Partnership proposal due today + intro call at 1pm (external partners present) + weekly product meeting at 3pm. All three are on calendar.
-            </div>
-            <div class="flag">
-                <strong>⏰ Weekend & Early Week:</strong> Client mockup report due tomorrow (Aug 30). Comprehensive sales pitch due Sep 2. Budget review meeting with AI scheduled for Monday.
-            </div>
-            <div class="flag">
-                <strong>📍 Team Context:</strong> 4 recent sync meetings across org (40+ action items total). Your primary threads: major account renewal/sales, retainer project invoicing, budget planning, client integration work, partner contract acceleration.
-            </div>
-        </section>
-
         <div class="footer">
-            <p>Generated Aug 28, 2026</p>
-            <p style="margin-top: 8px; font-size: 11px; color: #999;">Internal names and specific amounts redacted. All task types, timelines, and action items preserved.</p>
+            Generated Friday, August 29, 2026 · Blended Work-Life Brief
         </div>
     </div>
 </body>
