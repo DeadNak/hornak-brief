@@ -1,230 +1,139 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<meta name="description" content="The Hornak evening brief.">
-<title>Hornak Brief</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Jost:wght@300;400;500&display=swap">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hornak Evening Brief — Wednesday, September 2</title>
 <style>
-  /* Hornak Family Brand Guide v1.0 — Pine leads, Alpenglow marks attention. */
   :root{
+    color-scheme: light;
     --pine:#2E7358; --alpenglow:#B85C86; --glacier:#35699B; --dusk:#6B5591;
-    --granite:#1B2022; --scree:#6C7378; --trail:#E3E1DA; --snow:#F7F5F1;
-    --ground:var(--trail); --card:var(--snow); --ink:var(--granite);
-    --muted:var(--scree); --rule:#D8D5CC; --lead:var(--pine); --mark:var(--alpenglow);
-    --chip:#EDEBE4; --shadow:0 1px 2px rgba(27,32,34,.05),0 8px 24px rgba(27,32,34,.06);
+    --granite:#1B2022; --scree:#6C7378; --dust:#E3E1DA; --snow:#F7F5F1;
   }
-  @media (prefers-color-scheme:dark){
-    :root:not([data-theme="light"]){
-      --ground:#14181A; --card:#1E2426; --ink:#EDEAE3; --muted:#9AA1A5; --rule:#2E3639;
-      --lead:#6FBF9B; --mark:#E08FB0; --glacier:#7FB0DC; --dusk:#A794CC;
-      --chip:#262D30; --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
-    }
-  }
-  :root[data-theme="dark"]{
-    --ground:#14181A; --card:#1E2426; --ink:#EDEAE3; --muted:#9AA1A5; --rule:#2E3639;
-    --lead:#6FBF9B; --mark:#E08FB0; --glacier:#7FB0DC; --dusk:#A794CC;
-    --chip:#262D30; --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
-  }
-
-  *{box-sizing:border-box}
+  *{box-sizing:border-box;}
   body{
-    margin:0; background:var(--ground); color:var(--ink);
-    font-family:Jost,"Segoe UI",system-ui,sans-serif; font-weight:400;
-    font-size:17px; line-height:1.5; padding:20px 14px 52px;
-    -webkit-font-smoothing:antialiased;
+    margin:0; padding:24px 12px; background:var(--dust);
+    font-family:"Century Gothic","Trebuchet MS",Futura,sans-serif;
+    color:var(--granite);
   }
-  .wrap{max-width:560px; margin:0 auto}
-  .card{background:var(--card); border-radius:14px; padding:26px 22px; box-shadow:var(--shadow)}
-
-  /* ---- masthead ---- */
-  .mast{display:flex; align-items:center; gap:13px; margin-bottom:22px}
-  .mast svg{width:44px; height:44px; flex:none}
-  .wordmark{font-weight:500; letter-spacing:.3em; text-transform:uppercase; font-size:12px; color:var(--lead)}
-  .dateline{font-family:"Instrument Serif",Georgia,serif; font-size:29px; line-height:1.1; margin-top:3px; text-wrap:balance}
-
-  /* ---- sections ---- */
-  .sections{display:flex; flex-direction:column; gap:26px}
+  .card{
+    max-width:640px; margin:0 auto; background:var(--snow);
+    border-radius:14px; overflow:hidden; box-shadow:0 1px 3px rgba(27,32,34,0.08);
+  }
+  header{ padding:22px 22px 16px; border-bottom:1px solid var(--dust); }
+  .wordmark{ font-weight:500; letter-spacing:0.3em; text-transform:uppercase; font-size:11px; color:var(--pine); margin:0 0 6px; }
+  h1{
+    font-family:Georgia,"Times New Roman",serif; font-style:italic; font-weight:400;
+    font-size:28px; margin:0 0 6px; color:var(--granite);
+  }
+  .sub{ color:var(--scree); font-size:13px; margin:0; }
+  .sub a{ color:var(--glacier); }
+  section{ padding:16px 22px; border-bottom:1px solid var(--dust); }
+  section:last-of-type{ border-bottom:none; }
   .label{
-    font-weight:500; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase;
-    color:var(--lead); margin-bottom:9px; display:flex; align-items:baseline; gap:8px;
+    font-weight:500; font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--pine); margin:0 0 10px;
   }
-  .label.warn{color:var(--mark)}
-  .label a{color:inherit; text-decoration:none; border-bottom:1px solid currentColor; opacity:.75}
-  .rows{display:flex; flex-direction:column}
-  .row{display:flex; gap:12px; padding:8px 0; border-top:1px solid var(--rule); align-items:baseline}
-  .row:first-child{border-top:none; padding-top:0}
-  .t{
-    font-variant-numeric:tabular-nums; color:var(--muted); font-size:14px;
-    min-width:74px; flex:none; letter-spacing:.01em;
-  }
-  .d{flex:1; min-width:0}
-  .who{color:var(--muted); font-size:14px}
-  .note{color:var(--muted); font-size:14.5px; line-height:1.45}
-  p.note{margin:6px 0 0}
-  a{color:var(--glacier); text-decoration:none; border-bottom:1px solid color-mix(in srgb,var(--glacier) 35%,transparent)}
-  a:hover{border-bottom-color:var(--glacier)}
-  a:focus-visible{outline:2px solid var(--lead); outline-offset:3px; border-radius:2px}
-
-  /* ---- weather strip ---- */
-  .wx{display:grid; grid-template-columns:repeat(3,1fr); gap:8px}
-  .wx div{background:var(--chip); border-radius:10px; padding:10px 11px}
-  .wx b{display:block; font-weight:500; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
-  .wx s{display:block; text-decoration:none; font-family:"Instrument Serif",Georgia,serif; font-size:23px; margin:2px 0 1px}
-  .wx em{font-style:normal; font-size:13px; color:var(--muted)}
-
-  /* ---- attention ---- */
-  .flag{
-    border-left:2px solid var(--mark); padding:2px 0 2px 13px;
-    display:flex; flex-direction:column; gap:9px;
-  }
-  .flag p{margin:0}
-  .due{color:var(--mark); font-weight:500}
-
-  /* ---- read ---- */
-  .readsplit{border-top:1px solid var(--rule); margin-top:32px; padding-top:26px}
-  .pills{display:flex; flex-direction:column; gap:11px}
-  .pill{display:flex; gap:11px; align-items:baseline}
-  .pk{
-    font-weight:500; font-size:10px; letter-spacing:.13em; text-transform:uppercase;
-    color:var(--muted); min-width:66px; flex:none; padding-top:3px;
-  }
-  .foot{margin-top:26px; padding-top:16px; border-top:1px solid var(--rule); color:var(--muted); font-size:13px}
-
-  /* ---- desktop: widen, two columns, Read full width ---- */
+  .row{ padding:8px 0; border-bottom:1px solid var(--dust); font-size:15px; line-height:1.5; }
+  .row:last-child{ border-bottom:none; }
+  .row a{ color:var(--glacier); text-decoration:none; }
+  .row a:hover{ text-decoration:underline; }
+  .tag{ display:inline-block; background:var(--alpenglow); color:var(--snow); font-size:11px; font-weight:500;
+        border-radius:20px; padding:2px 9px; margin-left:6px; }
+  .warning{ display:inline-block; background:#D4A574; color:var(--snow); font-size:11px; font-weight:500;
+        border-radius:20px; padding:2px 9px; margin-left:6px; }
+  .muted{ color:var(--scree); font-size:13px; }
+  .weather-day{ display:flex; justify-content:space-between; padding:6px 0; font-size:15px; }
+  .weather-day .t{ color:var(--scree); }
+  .read-grid{ display:grid; grid-template-columns:1fr; gap:14px; }
+  .pill-label{ font-weight:500; font-size:13px; color:var(--dusk); margin-bottom:2px;}
+  .pill-text{ font-size:14px; line-height:1.5; }
+  .pill-text a{ color:var(--glacier); }
+  footer{ padding:16px 22px; text-align:center; color:var(--scree); font-size:12px; }
   @media (min-width:880px){
-    body{padding:36px 28px 64px}
-    .wrap{max-width:1000px}
-    .card{padding:38px 40px}
-    .dateline{font-size:38px}
-    .cols{display:grid; grid-template-columns:1fr 1fr; gap:30px 46px; align-items:start}
-    .cols>.sections{gap:26px}
-    .pills{display:grid; grid-template-columns:1fr 1fr; gap:14px 40px}
+    body{ padding:40px 20px; }
+    .card{ max-width:920px; }
+    .two-col{ display:grid; grid-template-columns:1fr 1fr; }
+    .two-col > section{ border-bottom:1px solid var(--dust); }
+    .read-section{ grid-column:1 / -1; }
+    .read-grid{ grid-template-columns:1fr 1fr; }
   }
-  @media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
 </style>
-
 </head>
 <body>
-<div class="wrap"><div class="card">
+<div class="card">
 
-  <header class="mast">
-    <svg viewBox="0 0 64 64" aria-label="Hornak family mark" role="img">
-      <circle cx="32" cy="32" r="29" fill="none" stroke="var(--lead)" stroke-width="1.6"/>
-      <path d="M32 12 L45 38 L19 38 Z" fill="none" stroke="var(--pine)" stroke-width="2" stroke-linejoin="round"/>
-      <path d="M23 21 L37 47 L10 46 Z" fill="none" stroke="var(--alpenglow)" stroke-width="2" stroke-linejoin="round"/>
-      <path d="M42 22 L55 47 L28 46 Z" fill="none" stroke="var(--glacier)" stroke-width="2" stroke-linejoin="round"/>
-      <path d="M32 26 L43 50 L20 49 Z" fill="none" stroke="var(--dusk)" stroke-width="2" stroke-linejoin="round"/>
-    </svg>
-    <div>
-      <div class="wordmark">Hornak Brief</div>
-      <div class="dateline">Wednesday, September 2</div>
-    </div>
+  <header>
+    <p class="wordmark">Hornak Household</p>
+    <h1>Evening Brief — Wednesday, September 2</h1>
+    <p class="sub">6 items are Todoist-only today (phone context, full housekeeping log, 6 flags for clarification). Full detail in <a href="https://app.todoist.com/app/project/6h62Jmrp3GpJjQwW" target="_blank" rel="noopener">☀️ Daily Brief</a>.</p>
   </header>
 
-  <div class="cols">
-  <div class="sections">
+  <div class="two-col">
+  <div>
 
-    <section>
-      <div class="label">Weather</div>
-      <div class="wx">
-        <div><b>Wed</b><s>24°</s><em>low 12° · showers at night</em></div>
-        <div><b>Thu</b><s>22°</s><em>low 9° · clear</em></div>
-        <div><b>Fri</b><s>20°</s><em>low 12° · rain at night</em></div>
-      </div>
-      <p class="note">Dry all afternoon. <strong>4 PM verdict: good</strong> — hard stop, go be with the girls.</p>
-    </section>
+  <section>
+    <p class="label">Weather — Calgary, AB</p>
+    <div class="weather-day"><span>Today</span><span class="t">24° / 12° — sun and cloud, showers hold off until night. Good until 4 PM.</span></div>
+    <div class="weather-day"><span>Thu</span><span class="t">22° / 9° — clear night</span></div>
+    <div class="weather-day"><span>Fri</span><span class="t">20° / 12° — rain at night</span></div>
+  </section>
 
-    <section>
-      <div class="label">The day</div>
-      <div class="rows">
-        <div class="row"><div class="t">All day</div><div class="d"><a href="https://www.google.com/calendar/event?eid=XzZvcGo4ZTlqNnNxM2ViOWo2NTI0NmI5azZrcms0YjlwODUwa2FiOW43MHJqOGM5aDc0cTQyaDFnODhfMjAyNjA5MDIgd2RlZGVsdWtAbQ&amp;ctz=America/Edmonton" target="_blank" rel="noopener">A birthday</a></div></div>
-        <div class="row"><div class="t">11:00</div><div class="d"><a href="https://www.google.com/calendar/event?eid=NXNuNGo0c3BhZXB1ZzdjYXBmMXM2dnBzZ29fMjAyNjA5MDJUMTcwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Workout</a> <span class="who">(Whitney &amp; Julian)</span></div></div>
-        <div class="row"><div class="t">12:00</div><div class="d"><a href="https://www.google.com/calendar/event?eid=Z2pzdTYycDBscnVwcDRnN3Fnc2V2cDBkdHMgd2RlZGVsdWtAbQ&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Julian out until 6:30</a></div></div>
-        <div class="row"><div class="t">12:15</div><div class="d"><a href="https://www.google.com/calendar/event?eid=XzY0cDQyZTlnNzBwNDhiOW42aDMzOGI5azY4cGs2YmExNmNyazJiOWo3MHNqaWNhNDYxMGpjZDlpNmcgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Massage</a> <span class="who">(Whitney)</span></div></div>
-      </div>
-    </section>
+  <section>
+    <p class="label">The Day</p>
+    <div class="row">All day — Faisully Garçon birthday</div>
+    <div class="row">11:00 AM–12:00 PM — Workout with Michelle (Whitney & Julian)</div>
+    <div class="row">12:15–1:15 PM — Massage with Kristin (Whitney) at Provital</div>
+  </section>
 
-    <section>
-      <div class="label warn">Two things collide</div>
-      <div class="flag">
-        <p>Julian's 12:00–6:30 invite lands on top of your 12:15 massage, and you haven't answered it. Decline, or you're double-booked.</p>
-        <p>The workout moved to 11:00 tonight, so it now ends <strong>15 minutes</strong> before the massage — down from 45.</p>
-      </div>
-    </section>
+  <section>
+    <p class="label">⚠️ Conflicts</p>
+    <div class="row">Workout ends at 12:00, massage starts at 12:15 — only 15-minute buffer. Tight if not at the same location.</div>
+  </section>
 
-    <section>
-      <div class="label">Dinner</div>
-      <p class="note">No plan tonight. The meal plan still says “Aug 12 onward” and its last dated line is Aug 13.</p>
-      <p class="note"><span class="due">Wednesday 11:59 PM</span> is the FreshPrep cutoff to change or skip Sunday's box.</p>
-    </section>
-
-    <section>
-      <div class="label">Health</div>
-      <p class="note">The 11:00 workout is this week's activity — nice. Weather holds until 4, so the open window is anything after 1:15. 💊 Vitamins.</p>
-    </section>
+  <section>
+    <p class="label">Dinner</p>
+    <div class="row">Nothing planned. FreshPrep cutoff tonight at 11:59 PM for Sep 6 delivery.</div>
+  </section>
 
   </div>
-  <div class="sections">
+  <div>
 
-    <section>
-      <div class="label warn">Needs you <a href="https://app.todoist.com/app/project/6h5mX4qrJG8Gf528" target="_blank" rel="noopener">Todoist</a></div>
-      <div class="rows">
-        <div class="row"><div class="t">22 days</div><div class="d"><a href="https://app.todoist.com/app/task/6h5xXQR54CrF5pFf" target="_blank" rel="noopener">Call R&amp;A Dentistry — check if we're overdue for cleanings</a><br><span class="who">Three October options are sitting unread. The girls are already covered.</span></div></div>
-        <div class="row"><div class="t">43 days</div><div class="d"><a href="https://app.todoist.com/app/task/6h62x2M8mx2CXr77" target="_blank" rel="noopener">Order Dana Dedeluk photo prints</a><br><span class="who">Gallery expired Jul 20 — ask to reopen, or close it out.</span></div></div>
-        <div class="row"><div class="t">Open</div><div class="d"><a href="https://app.todoist.com/app/task/6h69CQXGqH3cgfJf" target="_blank" rel="noopener">Call Respiratory Home Care Solutions — ask about sleep apnea</a></div></div>
-        <div class="row"><div class="t">Open</div><div class="d"><a href="https://app.todoist.com/app/task/6h6Q2XvP658gF3Wv" target="_blank" rel="noopener">Library: overdue items for both girls now marked lost — find &amp; return them</a></div></div>
-        <div class="row"><div class="t">Open</div><div class="d"><a href="https://app.todoist.com/app/task/6h9GMCC23M3pMxFg" target="_blank" rel="noopener">Library digital hold — borrow or suspend it</a><br><span class="who">Almost certainly lapsed. Re-place the hold.</span></div></div>
-      </div>
-    </section>
+  <section>
+    <p class="label">Needs You — 5 P1s</p>
+    <div class="row"><a href="https://app.todoist.com/app/task/6h5xXQR54CrF5pFf" target="_blank" rel="noopener">Call R&A Dentistry</a> <span class="warning">overdue 22d</span></div>
+    <div class="row"><a href="https://app.todoist.com/app/task/6h69CQXGqH3cgfJf" target="_blank" rel="noopener">Call Respiratory Home Care Solutions</a></div>
+    <div class="row"><a href="https://app.todoist.com/app/task/6h62x2M8mx2CXr77" target="_blank" rel="noopener">Order Dana Dedeluk photo prints</a> <span class="warning">overdue 43d</span></div>
+    <div class="row"><a href="https://app.todoist.com/app/task/6h6Q2XvP658gF3Wv" target="_blank" rel="noopener">📚 Library — girls' LOST items</a> <span class="tag">$25.59 billed</span></div>
+    <div class="row"><a href="https://app.todoist.com/app/task/6h9GMCC23M3pMxFg" target="_blank" rel="noopener">📖 Library digital hold</a></div>
+  </section>
 
-    <section>
-      <div class="label">Parked</div>
-      <p class="note">All seven undated items are on @backburner. The only one above p3 is <a href="https://app.todoist.com/app/task/6h65RqJx7pjpvWWg" target="_blank" rel="noopener">applying for the CAD passport</a> — still parked?</p>
-    </section>
+  <section>
+    <p class="label">Health & Activity</p>
+    <div class="row">Workout with Michelle at 11:00 — this week's activity ✓</div>
+    <div class="row">Weather good before 4 PM. Open window after 1:15. 💊 Vitamins.</div>
+  </section>
 
-    <section>
-      <div class="label">Heads up</div>
-      <div class="rows">
-        <div class="row"><div class="t">Thu 9:30</div><div class="d"><a href="https://www.google.com/calendar/event?eid=OXRlMWcybTYzbHFrcG05aHV1YXUyazVwdWMgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw" target="_blank" rel="noopener">Spa</a> <span class="who">(Whitney) — added tonight</span></div></div>
-        <div class="row"><div class="t">Thu 11:00</div><div class="d"><a href="https://www.google.com/calendar/event?eid=azZrYTMzZTN0dnFkMGNtbWUzcmgxODIwOTAgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Dentist</a> <span class="who">(Chicas) — family pickup at 10:30, school notified</span></div></div>
-        <div class="row"><div class="t">Fri 10:00</div><div class="d"><a href="https://www.google.com/calendar/event?eid=bXM4cjgxcjlqYWplY2Q1N2lxcWs3ZmQ3aWtfMjAyNjA5MDRUMTYwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Blowout</a> <span class="who">(Whitney)</span></div></div>
-        <div class="row"><div class="t">Fri</div><div class="d"><a href="https://www.google.com/calendar/event?eid=bGUwODJjbW05czk3bzR2aWhwMGg0ajRvZHNfMjAyNjA5MDQgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw&amp;ctz=America/Edmonton" target="_blank" rel="noopener">House cleaner</a> <span class="who">all day</span></div></div>
-        <div class="row"><div class="t">Mon</div><div class="d">Labour Day — no school</div></div>
-        <div class="row"><div class="t">Sep 14</div><div class="d">School forms due <span class="who">— “action required” landed today</span></div></div>
-      </div>
-    </section>
+  <section>
+    <p class="label">Heads Up</p>
+    <div class="row"><strong>Thu Sep 3:</strong> Nordic Spa 9:30 AM, girls' dentist 11:00 AM</div>
+    <div class="row"><strong>Fri Sep 4:</strong> House cleaner all day, Blowout 10:00 AM</div>
+    <div class="row"><strong>Mon Sep 7:</strong> Labour Day — no school</div>
+    <div class="row"><strong>Sep 14:</strong> CBE online forms due</div>
+  </section>
 
-    <section>
-      <div class="label warn">Cards</div>
-      <p class="note"><span class="due">A credit card was due yesterday.</span> Nothing else inside seven days.</p>
-    </section>
+  <section>
+    <p class="label">Bills</p>
+    <div class="row">Amazon <span class="warning">overdue 1d</span> — was due Sep 1</div>
+  </section>
 
   </div>
   </div>
 
-  <div class="readsplit">
-    <div class="label">The read</div>
-    <div class="pills">
-      <div class="pill"><div class="pk">Space</div><div><a href="https://science.nasa.gov/image-article/apod-2026-august-31-launch-of-the-roman-space-telescope/" target="_blank" rel="noopener">The Roman Space Telescope went up Aug 30</a> on a Falcon Heavy — three months out to L2 now.</div></div>
-      <div class="pill"><div class="pk">Tech</div><div><a href="https://techstartups.com/2026/09/01/top-tech-news-today-september-1-2026-amazon-anthropic-honda-openai-sony-warner-z-ai-more/" target="_blank" rel="noopener">The EU has reclassified ChatGPT as a search engine</a>, which drags a whole regulatory regime along with it.</div></div>
-      <div class="pill"><div class="pk">Parenting</div><div><a href="https://www.sciencedaily.com/releases/2026/08/260815064803.htm" target="_blank" rel="noopener">Eight years of tracking kids' screen time</a> landed somewhere unexpected: what they watch matters more than how long.</div></div>
-      <div class="pill"><div class="pk">Business</div><div><a href="https://finance.yahoo.com/technology/live/tech-stocks-today-apple-ceo-steps-down-nvidia-mag-7-145623375.html" target="_blank" rel="noopener">Software stocks just had their best August since 1990</a> — up about 14% — while Apple quietly changed CEOs.</div></div>
-      <div class="pill"><div class="pk">Calgary</div><div><a href="https://newsroom.calgary.ca/" target="_blank" rel="noopener">Ottawa put up to $29M into the city's water system</a>, announced here yesterday.</div></div>
-      <div class="pill"><div class="pk">Canada</div><div><a href="https://www.cbc.ca/news/canada" target="_blank" rel="noopener">The Liberals are projected to take all three byelections</a>; Alberta apologised for cutting an Indigenous reference from the premier's birthday statement.</div></div>
-      <div class="pill"><div class="pk">US</div><div><a href="https://www.bloomberg.com/" target="_blank" rel="noopener">Treasury is doubling its long-dated bond buybacks</a>, which sets up a fight with the bond market.</div></div>
-      <div class="pill"><div class="pk">Late night</div><div>Nothing confirmed for last night — no lineup I could verify rather than guess. <a href="https://www.youtube.com/@LastWeekTonight/videos" target="_blank" rel="noopener">Oliver's clips</a> · <a href="https://www.youtube.com/@LateNightSeth/videos" target="_blank" rel="noopener">Meyers</a></div></div>
-    </div>
-  </div>
+  <footer>
+    Generated Tuesday, September 1, 2026 at 9:16 PM MDT
+  </footer>
 
-  <div class="foot">Generated Tuesday, September 1, 2026 at 9:16 PM MDT · <a href="https://deadnak.github.io/hornak-brief/weekly/" target="_blank" rel="noopener">This week's brief</a></div>
-
-</div></div>
-
+</div>
 </body>
 </html>
