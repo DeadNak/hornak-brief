@@ -3,114 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work Day Snapshot</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Whitney's Day — Friday, September 4, 2026</title>
     <style>
-        :root {
-            --brand: #4D00CA;
-            --wash: #F3E8FF;
-            --s900: #0F172A;
-            --s700: #334155;
-            --s500: #64748B;
-            --s50: #F8FAFC;
-            --hair: #E2E8F0;
-            --green: #16A34A;
-            --red: #EF4444;
-        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: "Segoe UI", system-ui, sans-serif; color: var(--s700); background: #FFFFFF; line-height: 1.68; padding: 2rem; max-width: 900px; margin: 0 auto; }
-        .header { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 2px solid var(--hair); }
-        .header h1 { font-family: Lexend, sans-serif; font-size: 24px; font-weight: 700; color: var(--s900); margin-bottom: 0.5rem; }
-        .subheader { font-size: 12px; color: var(--s500); font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em; }
-        .section { margin-bottom: 2rem; }
-        .section h2 { font-family: Lexend, sans-serif; font-size: 15px; font-weight: 600; color: var(--s900); margin-bottom: 0.75rem; padding-bottom: 0.4rem; border-bottom: 1.5px solid var(--brand); }
-        .event, .item { background: var(--s50); border: 1px solid var(--hair); border-radius: 8px; padding: 0.75rem; margin-bottom: 0.6rem; }
-        .event-time { font-family: Lexend, sans-serif; font-size: 11px; font-weight: 600; color: var(--brand); }
-        .event-title { font-family: Lexend, sans-serif; font-size: 12px; font-weight: 600; color: var(--s900); margin: 0.2rem 0; }
-        .event-note { font-size: 11px; color: var(--s500); }
-        .flag { background: #FEF2F2; border-left: 3px solid var(--red); padding: 0.75rem; border-radius: 6px; margin: 0.6rem 0; }
-        .flag-label { font-family: Lexend, sans-serif; font-size: 10px; font-weight: 600; color: var(--red); text-transform: uppercase; margin-bottom: 0.2rem; }
-        .count { background: var(--brand); color: white; border-radius: 12px; padding: 0.2rem 0.6rem; font-size: 10px; font-weight: 600; display: inline-block; margin-right: 0.4rem; }
-        .footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--hair); font-size: 10px; color: var(--s500); }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        header h1 { font-size: 2em; margin-bottom: 5px; }
+        header p { opacity: 0.9; }
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            padding: 20px;
+            background: #f7f7f7;
+        }
+        .stat {
+            text-align: center;
+            padding: 10px;
+            background: white;
+            border-radius: 6px;
+            border-left: 3px solid #667eea;
+        }
+        .stat .num { font-size: 1.6em; font-weight: bold; color: #667eea; }
+        section {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        section h2 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 12px;
+        }
+        .item {
+            background: #f9f9f9;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            border-left: 3px solid #764ba2;
+        }
+        .time { color: #999; font-size: 0.9em; }
+        ul { margin-left: 20px; color: #555; }
+        li { margin-bottom: 5px; }
+        footer {
+            background: #f0f0f0;
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 0.85em;
+            color: #888;
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Work Day Snapshot</h1>
-        <div class="subheader">Thursday, September 3, 2026</div>
-    </div>
+    <div class="container">
+        <header>
+            <h1>Whitney's Day</h1>
+            <p>Friday, September 4, 2026</p>
+        </header>
+        
+        <div class="summary">
+            <div class="stat">
+                <div class="num">2</div>
+                <div>Calendar Events</div>
+            </div>
+            <div class="stat">
+                <div class="num">9</div>
+                <div>Active Tasks</div>
+            </div>
+            <div class="stat">
+                <div class="num">3</div>
+                <div>Awaiting Reply</div>
+            </div>
+            <div class="stat">
+                <div class="num">5</div>
+                <div>Action Items</div>
+            </div>
+        </div>
 
-    <div class="section">
-        <h2>At a Glance</h2>
-        <p style="font-size: 12px; margin-bottom: 0.5rem;">
-            <span class="count">8</span> Calendar appointments
-            <span class="count">9</span> Active tasks
-            <span class="count">1</span> Meeting with updates
-        </p>
-    </div>
+        <section>
+            <h2>📅 Schedule</h2>
+            <div class="item">
+                <div class="time">Morning</div>
+                <strong>Work sessions scheduled</strong>
+                <p style="color: #777; margin-top: 4px;">Recurring (declined)</p>
+            </div>
+            <div class="item">
+                <div class="time">10:30 AM or 4:00 PM</div>
+                <strong>Team coordination call available</strong>
+                <p style="color: #777; margin-top: 4px;">Partner initiated meeting request to confirm timing</p>
+            </div>
+            <div class="item">
+                <div class="time">Evening</div>
+                <strong>Work sessions scheduled</strong>
+                <p style="color: #777; margin-top: 4px;">Recurring (declined)</p>
+            </div>
+        </section>
 
-    <div class="section">
-        <h2>Schedule</h2>
-        <div class="event">
-            <div class="event-time">Today</div>
-            <div class="event-title">Wellness appointment</div>
-            <div class="event-note">Personal time (morning)</div>
-        </div>
-        <div class="event">
-            <div class="event-time">Tomorrow & Friday</div>
-            <div class="event-title">Engineering sync & strategic planning</div>
-            <div class="event-note">Team meetings with leadership</div>
-        </div>
-        <div class="event">
-            <div class="event-time">Tomorrow afternoon</div>
-            <div class="event-title">Product & WDJ strategic meeting</div>
-            <div class="event-note">Internal planning sessions</div>
-        </div>
-    </div>
+        <section>
+            <h2>✅ Active Work</h2>
+            <p style="color: #666; margin-bottom: 12px;">2 in-progress items · 5 ready-to-start items</p>
+            <strong>In Progress:</strong>
+            <ul>
+                <li>Travel logistics (2 items)</li>
+            </ul>
+            <strong>Ready to Start:</strong>
+            <ul>
+                <li>Client relationship tasks</li>
+                <li>Internal follow-ups</li>
+                <li>Vendor coordination</li>
+                <li>Budget planning</li>
+                <li>Marketing materials</li>
+            </ul>
+        </section>
 
-    <div class="section">
-        <h2>Work in Flight</h2>
-        <div class="item">
-            <div class="event-title">Travel & Logistics (In Progress)</div>
-            <div class="event-note">Booking verification and resort confirmations</div>
-        </div>
-        <div class="item">
-            <div class="event-title">Marketing & Design (Backlog)</div>
-            <div class="event-note">Campaign materials and brand asset updates</div>
-        </div>
-        <div class="item">
-            <div class="event-title">Administrative Follow-Ups (Backlog)</div>
-            <div class="event-note">Budget review and vendor issue resolution</div>
-        </div>
-    </div>
+        <section>
+            <h2>💌 Replies Needed</h2>
+            <div class="item">
+                <strong>Partner A</strong> — <span class="time">Sept 4, noon</span>
+                <p style="margin-top: 5px; color: #555;">Offering two meeting time slots today for project discussion</p>
+            </div>
+            <div class="item">
+                <strong>Partner B</strong> — <span class="time">Sept 3, evening</span>
+                <p style="margin-top: 5px; color: #555;">Requesting approval on task delegation</p>
+            </div>
+            <div class="item">
+                <strong>Partner C</strong> — <span class="time">Sept 4, early morning</span>
+                <p style="margin-top: 5px; color: #555;">Sales outreach with two follow-up messages</p>
+            </div>
+        </section>
 
-    <div class="section">
-        <h2>Key Actions This Week</h2>
-        <div class="item">
-            <div class="event-title">Conference Budget Coordination</div>
-            <div class="event-note">Quarterly allocation tracking and event confirmations</div>
-        </div>
-        <div class="item">
-            <div class="event-title">Client Engagement Follow-Up</div>
-            <div class="event-note">Invoicing coordination and renewal outreach</div>
-        </div>
-        <div class="item">
-            <div class="event-title">Product Updates & QC</div>
-            <div class="event-note">Design collaboration and system improvements</div>
-        </div>
-    </div>
+        <section>
+            <h2>🎯 Focus Areas</h2>
+            <ul>
+                <li><strong>Client engagement:</strong> Multiple follow-ups in progress</li>
+                <li><strong>Project planning:</strong> Major initiative coordination needed</li>
+                <li><strong>Travel/logistics:</strong> Booking confirmations outstanding</li>
+                <li><strong>Internal coordination:</strong> Budget and strategy review due</li>
+                <li><strong>Business development:</strong> Contract renewal preparation ongoing</li>
+            </ul>
+        </section>
 
-    <div class="section">
-        <h2>Administrative Notes</h2>
-        <div class="flag">
-            <div class="flag-label">Due Tomorrow</div>
-            <div class="flag-label" style="text-transform: none; font-weight: 500; color: var(--s700); margin: 0; margin-top: 0.2rem;">Payroll processing deadline: 3:00 PM</div>
-        </div>
-        <p style="font-size: 11px; color: var(--s500); margin-top: 0.75rem;">— Coordinate with team on report readiness for payment system entry.</p>
-    </div>
-
-    <div class="footer">
-        <p>Generated Sep 3, 2026 • 7:34 AM</p>
+        <footer>
+            <p>Generated: Friday, September 4, 2026 — Redacted (no names, amounts, or sensitive detail)</p>
+        </footer>
     </div>
 </body>
 </html>
