@@ -3,65 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weekly Summary – Monday, September 7, 2026</title>
+    <title>Day — Tuesday, September 8, 2026</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', 'Lexend', -apple-system, sans-serif; background: linear-gradient(135deg, #6B3E87 0%, #8B5A9D 100%); color: #333; padding: 20px; }
-        .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
-        .header { background: linear-gradient(135deg, #6B3E87 0%, #8B5A9D 100%); color: white; padding: 30px 20px; text-align: center; }
-        .header h1 { font-size: 28px; margin-bottom: 10px; }
-        .summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 15px; text-align: center; }
-        .summary-item .number { font-size: 20px; font-weight: bold; display: block; }
-        .section { padding: 20px; border-bottom: 1px solid #eee; }
-        .section:last-child { border-bottom: none; }
-        .section h2 { font-size: 18px; color: #6B3E87; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid #E6D4E8; }
-        .item { background: #f9f7ff; border-left: 4px solid #8B5A9D; padding: 12px; margin-bottom: 10px; border-radius: 4px; font-size: 13px; }
-        .item.urgent { border-left-color: #D64545; }
-        .item.high { border-left-color: #E8A53A; }
-        .footer { background: #f5f3f8; padding: 12px 20px; font-size: 11px; color: #666; text-align: center; }
+        body {
+            font-family: 'Lexend', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #6B2D5C 0%, #8B4A7F 100%);
+            color: #1a1a1a;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+        }
+        .header {
+            background: linear-gradient(135deg, #6B2D5C 0%, #8B4A7F 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .header p {
+            font-size: 14px;
+            opacity: 0.95;
+            letter-spacing: 0.5px;
+        }
+        .content {
+            padding: 30px;
+        }
+        .section {
+            margin-bottom: 32px;
+        }
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #6B2D5C;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            border-bottom: 2px solid #E8D4E8;
+            padding-bottom: 10px;
+        }
+        .event, .item {
+            background: #F8F6FA;
+            border-left: 4px solid #8B4A7F;
+            padding: 14px;
+            margin-bottom: 12px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        .event-time {
+            font-weight: 700;
+            color: #6B2D5C;
+            margin-bottom: 4px;
+            font-size: 13px;
+        }
+        .event-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #1a1a1a;
+        }
+        .event-meta {
+            font-size: 12px;
+            color: #666;
+            margin-top: 6px;
+        }
+        .summary {
+            background: #F0E8F5;
+            border-left: 4px solid #6B2D5C;
+            padding: 16px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+        .summary strong { color: #6B2D5C; }
+        .flags {
+            background: #FEF3F5;
+            border: 1px solid #E8C2CE;
+            padding: 12px;
+            margin-top: 20px;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+        .footer {
+            background: #F8F6FA;
+            padding: 20px 30px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #E8D4E8;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>Weekly Summary</h1>
-            <div style="font-size: 14px; opacity: 0.9;">Monday, September 7, 2026</div>
+            <h1>Day</h1>
+            <p>Tuesday, September 8, 2026 | Mountain Time</p>
+        </div>
+
+        <div class="content">
             <div class="summary">
-                <div class="summary-item"><span class="number">3</span><div>Meetings</div></div>
-                <div class="summary-item"><span class="number">8</span><div>Active Items</div></div>
-                <div class="summary-item"><span class="number">20</span><div>Priorities</div></div>
-                <div class="summary-item"><span class="number">5</span><div>Follow-ups</div></div>
+                <strong>Overview:</strong> 9 work meetings scheduled (8:30 AM – 3:30 PM), including platform walkthroughs, team syncs, and partner calls. Mixed focus on internal strategy work and external stakeholder engagement.
+            </div>
+
+            <!-- SCHEDULE -->
+            <div class="section">
+                <div class="section-title">📅 Schedule</div>
+
+                <div class="event">
+                    <div class="event-time">8:30 – 9:00 AM</div>
+                    <div class="event-title">External Partner Call</div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">9:00 – 9:30 AM</div>
+                    <div class="event-title">1:1 Meeting</div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">9:30 – 9:45 AM</div>
+                    <div class="event-title">Team Standup</div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">10:00 – 10:30 AM</div>
+                    <div class="event-title">Strategic Discussion</div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">10:30 – 11:15 AM</div>
+                    <div class="event-title">Project Review</div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">12:15 – 1:00 PM</div>
+                    <div class="event-title">Operations Check-In</div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">1:00 – 2:00 PM</div>
+                    <div class="event-title">Technical Forum</div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">2:30 – 3:00 PM</div>
+                    <div class="event-title">Partner Technical Discussion</div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">3:00 – 3:30 PM</div>
+                    <div class="event-title">Client Kick-Off</div>
+                </div>
+            </div>
+
+            <!-- ACTION ITEMS -->
+            <div class="section">
+                <div class="section-title">🎯 Key Action Items</div>
+
+                <div class="item">
+                    <strong>Platform Preparation</strong>
+                    <p style="margin-top: 6px; font-size: 13px;">Reconcile system discrepancies and prepare training documentation for upcoming client session.</p>
+                </div>
+
+                <div class="item">
+                    <strong>Team Coordination</strong>
+                    <p style="margin-top: 6px; font-size: 13px;">Schedule alignment meeting to map out technical roadmap improvements.</p>
+                </div>
+
+                <div class="item">
+                    <strong>Client Engagement</strong>
+                    <p style="margin-top: 6px; font-size: 13px;">Lead training sessions and demonstrate platform capabilities.</p>
+                </div>
+            </div>
+
+            <!-- FLAGS -->
+            <div class="section">
+                <div class="section-title">⚠️ Focus Areas</div>
+
+                <div class="flags">
+                    <strong>Platform Development:</strong> Multiple meetings focused on platform features, training, and technical alignment with partners.
+                </div>
+
+                <div class="flags" style="margin-top: 12px;">
+                    <strong>Team Coordination:</strong> Back-to-back internal meetings on strategy, project ownership, and technical direction.
+                </div>
+
+                <div class="flags" style="margin-top: 12px;">
+                    <strong>External Engagement:</strong> Partner calls and client kick-offs driving near-term commitments.
+                </div>
             </div>
         </div>
-        <div class="section">
-            <h2>📅 Appointments Today</h2>
-            <div class="item">Appointment · 2:00 PM – 3:00 PM · Virtual</div>
-            <div class="item">Personal time · 4:00 PM – 5:00 PM</div>
-            <div class="item">Meeting · 9:00 PM – 10:00 PM · Virtual</div>
+
+        <div class="footer">
+            Generated Tuesday, September 8, 2026 | Day Briefing
         </div>
-        <div class="section">
-            <h2>🎯 Focus Areas</h2>
-            <div class="item urgent">Launch verification and activation tasks</div>
-            <div class="item urgent">Travel confirmations (urgent: action required)</div>
-            <div class="item high">Partnership development and engagement</div>
-            <div class="item high">Client and financial work</div>
-            <div class="item">Platform improvements and product work</div>
-        </div>
-        <div class="section">
-            <h2>📬 This Week's Incoming</h2>
-            <div class="item">Business partnership proposals and questions</div>
-            <div class="item">Industry activity and market alerts</div>
-            <div class="item">Regulatory notices and filings</div>
-            <div class="item">Meeting confirmations and scheduling</div>
-            <div class="item">Administrative reminders</div>
-        </div>
-        <div class="section">
-            <h2>⚡ Weekly Notes</h2>
-            <div class="item" style="background: #FFF8E6; border-left-color: #E8A53A;"><strong>Travel:</strong> Pending confirmations before trip</div>
-            <div class="item" style="background: #FFF8E6; border-left-color: #E8A53A;"><strong>Business:</strong> Multiple partnerships in active development</div>
-            <div class="item" style="background: #FFF8E6; border-left-color: #E8A53A;"><strong>Operations:</strong> Platform and product track continues</div>
-        </div>
-        <div class="footer">Generated Monday, September 7, 2026 · Pecan Tree Inc.</div>
     </div>
 </body>
 </html>
