@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Hornak Brief",
+  "schemaVersion": 1,
+  "description": "Hornak family evening brief for Tuesday, September 8, 2026. Weather, calendar, P1 tasks, cards, heads-up, and The Read (news, late-night clips)."
+}
+</script>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -106,6 +113,8 @@
             border-radius: 4px;
             border: 2px solid #27ae60;
         }
+        .read-item { margin-bottom: 0.9rem; }
+        .read-item .tag { font-weight: bold; }
         a { color: var(--accent); }
         a:hover { text-decoration: underline; }
         .stamp {
@@ -116,6 +125,11 @@
             padding-top: 1rem;
             border-top: 1px solid var(--border);
         }
+        .redacted-note {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -123,60 +137,65 @@
         <header>
             <h1>🌙 Evening Brief — Tuesday, September 8, 2026</h1>
             <div class="meta">
-                <a href="https://deadnak.github.io/hornak-brief/" target="_blank">Public page</a> · P1 items + phone/context are Todoist-only
+                🔒 5 items are Todoist-only (redacted or left off this page) — <a href="https://app.todoist.com/app/project/6h62Jmrp3GpJjQwW" target="_blank" rel="noopener">full brief on Todoist</a>
             </div>
         </header>
 
         <div class="sections">
             <section class="section">
-                <h2>☀️ Weather</h2>
+                <h2>☀️ Weather — 3 days</h2>
                 <div class="weather">
                     <div class="weather-day">
-                        <strong>Tuesday, Sep 8</strong>
-                        <p>20°C / 10°C</p>
-                        <p>Rain during the day, clear at night.</p>
-                        <p><em>4 PM verdict: plan indoor activities; weather clears evening.</em></p>
+                        <strong>Today, Tue Sep 8</strong>
+                        <p>21°C / 11°C</p>
+                        <p>Mix of sun & cloud, 30% chance of showers.</p>
+                        <p><em>4pm verdict: open — dance pickup isn't until 5.</em></p>
                     </div>
                     <div class="weather-day">
                         <strong>Wed, Sep 9</strong>
-                        <p>Sunny</p>
+                        <p>24°C, sunny</p>
                     </div>
                     <div class="weather-day">
                         <strong>Thu, Sep 10</strong>
-                        <p>Pleasant</p>
+                        <p>16°C, periods of rain (70% overnight)</p>
                     </div>
                 </div>
             </section>
 
             <section class="section">
                 <h2>💪 Health</h2>
-                <p>No scheduled workout today. Weather window for a walk: after rain clears, early evening. 💊 Vitamins.</p>
+                <p>Two free windows today: <strong>11:15 AM–12:15 PM</strong> and <strong>3:30–4:30 PM</strong>, both clear before the 5:00 dance drop-off. Either works for a walk. 💊 Vitamins.</p>
             </section>
 
             <section class="section">
                 <h2>📅 The Day</h2>
                 <div class="calendar-item">
                     <div class="calendar-time">12:00 PM</div>
-                    <div class="calendar-title"><a href="https://calendar.google.com" target="_blank" rel="noopener">Order FreshPrep</a> (weekly recurring)</div>
+                    <div class="calendar-title">Order FreshPrep</div>
                 </div>
                 <div class="calendar-item">
                     <div class="calendar-time">5:00–5:45 PM</div>
-                    <div class="calendar-title"><a href="https://calendar.google.com" target="_blank" rel="noopener">🎤 Junior 1 Hip Hop</a> (Addie)</div>
-                    <div style="font-size: 0.9rem;">Counterpoint Dance Academy Marda Loop · Dance pants, top, running shoes</div>
+                    <div class="calendar-title">🎤 Junior 1 Hip Hop (Addie)</div>
+                    <div style="font-size: 0.9rem;">First class of the season — Counterpoint Dance Academy Marda Loop</div>
+                </div>
+                <div class="calendar-item">
+                    <div class="calendar-time">5:00–7:00 PM</div>
+                    <div class="calendar-title">🍽️ Dinner with the Knapiks</div>
+                    <div style="font-size: 0.9rem;">Standing dance-night dinner</div>
                 </div>
                 <div class="calendar-item">
                     <div class="calendar-time">5:45–6:30 PM</div>
-                    <div class="calendar-title"><a href="https://calendar.google.com" target="_blank" rel="noopener">🎤 Junior 2 Hip Hop</a> (Ellie)</div>
-                    <div style="font-size: 0.9rem;">Counterpoint Dance Academy Marda Loop · Dance pants, top, running shoes</div>
+                    <div class="calendar-title">🎤 Junior 2 Hip Hop (Ellie)</div>
+                    <div style="font-size: 0.9rem;">First class of the season — Counterpoint Dance Academy Marda Loop</div>
                 </div>
+                <p class="redacted-note">No conflicts today.</p>
             </section>
 
             <section class="section">
                 <h2>🍽️ Dinner</h2>
                 <div class="dinner">
-                    <strong>Dinner with the Knapiks</strong> <br>
-                    5:00–7:00 PM (dance night recurring) <br>
-                    <a href="https://calendar.google.com" target="_blank" rel="noopener">View on calendar</a>
+                    <strong>Dinner with the Knapiks</strong><br>
+                    5:00–7:00 PM — no recipe needed tonight
                 </div>
             </section>
 
@@ -184,29 +203,47 @@
                 <h2>🚨 Needs You — 3 Priority-1 Tasks</h2>
                 <div class="p1-item">
                     <strong><a href="https://app.todoist.com/app/task/6h5xXQR54CrF5pFf" target="_blank" rel="noopener">Call R&A Dentistry</a></strong><br>
-                    ☎️ 403-209-2299 · Overdue cleanings for you & Julian. Oless's October options (unread since Aug 11) — reply with your date pick + ask to book hygiene cleanings. Girls already covered (Chew Chew, Sep 3).
+                    ~7 months overdue for hygiene cleanings (you & Julian). October options from the office are still awaiting your reply. Phone number in Todoist.
                 </div>
                 <div class="p1-item">
                     <strong><a href="https://app.todoist.com/app/task/6h69CQXGqH3cgfJf" target="_blank" rel="noopener">Call Respiratory Home Care Solutions</a></strong><br>
-                    ☎️ 403-217-5337 · Home sleep apnea testing · ask about physician referral, cost, AADL/Manulife coverage.
+                    First contact re: home sleep apnea testing. Phone number in Todoist.
                 </div>
                 <div class="p1-item">
                     <strong><a href="https://app.todoist.com/app/task/6h6Q2XvP658gF3Wv" target="_blank" rel="noopener">📚 Library: girls' LOST items</a></strong><br>
-                    Return books to any CPL branch to clear $25.59 charges. Barcode list in task.
+                    Return to any Calgary Public Library branch to clear the replacement charge.
                 </div>
             </section>
 
-            <section class="section full-width">
-                <h2>🎯 Heads Up</h2>
-                <ul style="margin-left: 1.5rem;">
-                    <li><strong>Wed Sep 9:</strong> FreshPrep cutoff 11:59 PM (order placed for Sunday delivery)</li>
-                    <li><strong>Thu Sep 3:</strong> Girls' dentist appointments already scheduled (Chew Chew Pediatric, 11:00 AM)</li>
+            <section class="section">
+                <h2>💳 Cards</h2>
+                <p>Two cards due in 5 days (the 13th).</p>
+            </section>
+
+            <section class="section">
+                <h2>🔜 Heads Up</h2>
+                <ul style="margin-left: 1.2rem;">
+                    <li><strong>Wed Sep 9:</strong> Workout with Michelle · Choir (girls) 6:00 PM · FreshPrep cutoff 11:59 PM</li>
+                    <li><strong>Thu Sep 10:</strong> A stacked evening — several appointments back to back</li>
                 </ul>
             </section>
         </div>
 
+        <section class="section full-width" style="margin-bottom: 2rem;">
+            <h2>📰 The Read</h2>
+            <div class="read-item"><span class="tag">🚀 Space:</span> A huge 10-sided atmospheric pattern has appeared around Saturn's south pole — a surprising southern counterpart to its famous northern hexagon, announced Sep 3. <a href="https://www.houstonpublicmedia.org/articles/shows/houston-matters/2026/09/04/560666/nasas-new-space-telescope-sept-4-2026/" target="_blank" rel="noopener">Source</a></div>
+            <div class="read-item"><span class="tag">💻 Tech:</span> OpenAI released GPT-6 "Astra" and declared the arrival of the AGI era — but the rollout was messy enough that CEO Sam Altman apologized days later. <a href="https://techstartups.com/2026/09/04/top-tech-news-today-september-4-2026-amazon-google-microsoft-nvidia-openai-tesla-more/" target="_blank" rel="noopener">Source</a></div>
+            <div class="read-item"><span class="tag">👨‍👩‍👧 Parenting:</span> 2026's parenting trends are trending calmer — families dropping "just one more activity," more comfort saying no, and a swing toward slow, unstructured "analog" childhood. <a href="https://www.newamerica.org/insights/2026-national-parent-survey/" target="_blank" rel="noopener">Source</a></div>
+            <div class="read-item"><span class="tag">💼 Business:</span> A tale of two stocks: Marathon Petroleum is trading at highs not seen since 2011, while Nike just hit a 20-year low — same week, same market. <a href="https://www.cnbc.com/2026/09/07/stock-market-today-live-updates.html" target="_blank" rel="noopener">Source</a></div>
+            <div class="read-item"><span class="tag">📍 Calgary:</span> A small plane crash in Kananaskis Country killed two people Saturday. Taste of Italy Festival runs this week. <a href="https://www.ctvnews.ca/calgary/video/" target="_blank" rel="noopener">Source</a></div>
+            <div class="read-item"><span class="tag">🍁 Canada:</span> The Bank of Canada held its key interest rate this week; the TSX moved lower on broad-based weakness. PM Carney issued a Labour Day statement. <a href="https://www.pm.gc.ca/en/news/statements/2026/09/07/statement-prime-minister-carney-labour-day" target="_blank" rel="noopener">Source</a></div>
+            <div class="read-item"><span class="tag">🇺🇸 US:</span> An armed individual attacked Ohio gubernatorial candidate Dr. Amy Acton at a campaign event near Youngstown. Tyson Foods laid off 2,500 workers, closing an Illinois meatpacking plant. (Factual only.) <a href="https://www.democracynow.org/shows/2026/9/7" target="_blank" rel="noopener">Source</a></div>
+            <div class="read-item"><span class="tag">🌙 Late night:</span> John Oliver is on break (last episode Aug 23 covered subscription models; back Sep 20). Seth Meyers tonight: Molly Shannon and Jake Johnson (<a href="https://latenighter.com/lineups-by-show/" target="_blank" rel="noopener">lineups</a>). Colbert's Late Show ended in May after 33 years — no longer airing.</div>
+        </section>
+
         <div class="stamp">
-            Generated Monday, September 7, 2026 at 5:24 PM MDT
+            <a href="https://deadnak.github.io/hornak-brief/weekly/" target="_blank" rel="noopener">This week's brief</a> ·
+            Generated Tuesday, September 8, 2026 at 12:32 AM MDT
         </div>
     </div>
 </body>
