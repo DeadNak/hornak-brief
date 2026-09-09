@@ -115,6 +115,45 @@ footer p{margin:0 0 6px}
   .row{flex-wrap:wrap}.time{min-width:100%;padding-top:0}
   .verdict p.lead{font-size:19px}
 }
+/* ---------- two lane timeline ---------- */
+.timeline{display:grid;grid-template-columns:52px 1fr 1fr;gap:0 10px;background:#fff;
+  border:1px solid var(--hair);border-radius:14px;box-shadow:0 1px 3px rgba(15,23,42,.05);
+  padding:14px 16px 18px;margin-bottom:11px}
+.tl-head{font-family:var(--font-head);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;
+  font-weight:600;padding-bottom:8px;border-bottom:1px solid var(--hair);margin-bottom:8px}
+.tl-head.g{color:var(--s400)}
+.tl-head.w{color:var(--brand)}
+.tl-head.p{color:var(--alpenglow)}
+.tl-col{position:relative;height:1008px}
+.tl-hour{position:absolute;right:0;font-size:9.5px;color:var(--s400);
+  font-variant-numeric:tabular-nums;text-align:right;transform:translateY(-5px);white-space:nowrap}
+.lane{background:repeating-linear-gradient(to bottom,transparent 0,transparent 71px,
+  #F1F5F9 71px,#F1F5F9 72px)}
+.ev{position:absolute;left:0;right:4px;border-radius:8px;padding:5px 8px;overflow:hidden}
+.ev .t{font-variant-numeric:tabular-nums;font-size:9px;letter-spacing:.03em;display:block;
+  margin-bottom:1px;opacity:.9}
+.ev .nm{font-family:var(--font-head);font-weight:600;font-size:11.5px;line-height:1.28;display:block}
+.ev .sub{display:block;font-size:9.5px;line-height:1.3;margin-top:2px;opacity:.85}
+.ev a{color:inherit;text-decoration:none;border-bottom:1px dotted currentColor}
+.ev.w{background:var(--wash);border-left:3px solid var(--brand);color:var(--brand)}
+.ev.w .nm{color:var(--s900)}
+.ev.p{background:var(--trail);border-left:3px solid var(--alpenglow);color:var(--alpenglow)}
+.ev.p .nm{color:var(--granite);font-family:var(--font-fam-label);font-weight:500}
+.ev.p .t,.ev.p .sub{font-family:var(--font-fam-label)}
+.ev.x{background:var(--s50);border-left:3px solid var(--s400);color:var(--s400)}
+.ev.x .nm{color:var(--s400);text-decoration:line-through}
+.tl-note{font-size:11.5px;color:var(--s500);margin:9px 0 0;grid-column:1 / -1;
+  padding-top:10px;border-top:1px solid var(--hair)}
+@media (max-width:700px){
+  .timeline{grid-template-columns:1fr;padding:8px 14px 14px}
+  .tl-col{height:auto}
+  .tl-head.g{display:none}
+  .tl-col.tl-hours{display:none}
+  .lane{background:none}
+  .ev{position:static;height:auto !important;left:auto !important;right:auto !important;
+    width:auto !important;top:auto !important;margin:0 0 8px}
+  .tl-head{margin-top:12px}
+}
 </style>
 
 <div class="wrap">
@@ -159,6 +198,84 @@ footer p{margin:0 0 6px}
 
 <section>
   <h2><span class="num">03</span> Today's Schedule <span class="pill pill-live">Live</span> <span class="n">7 live, 2 cancelled</span></h2>
+  <div class="timeline">
+    <div class="tl-head g">Time</div>
+    <div class="tl-head w">Work</div>
+    <div class="tl-head p">Personal</div>
+
+    <div class="tl-col tl-hours">
+      <div class="tl-hour" style="top:0px">8 AM</div>
+      <div class="tl-hour" style="top:72px">9 AM</div>
+      <div class="tl-hour" style="top:144px">10 AM</div>
+      <div class="tl-hour" style="top:216px">11 AM</div>
+      <div class="tl-hour" style="top:288px">12 PM</div>
+      <div class="tl-hour" style="top:360px">1 PM</div>
+      <div class="tl-hour" style="top:432px">2 PM</div>
+      <div class="tl-hour" style="top:504px">3 PM</div>
+      <div class="tl-hour" style="top:576px">4 PM</div>
+      <div class="tl-hour" style="top:648px">5 PM</div>
+      <div class="tl-hour" style="top:720px">6 PM</div>
+      <div class="tl-hour" style="top:792px">7 PM</div>
+      <div class="tl-hour" style="top:864px">8 PM</div>
+      <div class="tl-hour" style="top:936px">9 PM</div>
+      <div class="tl-hour" style="top:1008px">10 PM</div>
+    </div>
+
+    <div class="tl-col lane">
+      <div class="ev w" style="top:54px;height:36px">
+        <span class="t">8:45 - 9:15</span>
+        <span class="nm"><a href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgAEiju%2BFQAA&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Client Prep, Internal</a></span>
+      </div>
+      <div class="ev w" style="top:90px;height:126px">
+        <span class="t">9:15 - 11:00</span>
+        <span class="nm"><a href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgAEi1PmhwAA&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Client Working Session</a></span>
+        <span class="sub">Yours. 1h45, the longest clear stretch today. A report is due tomorrow.</span>
+      </div>
+      <div class="ev w" style="top:324px;height:36px">
+        <span class="t">12:30 - 1:00</span>
+        <span class="nm"><a href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgAEhUBvVwAA&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Data Call, T.H.</a></span>
+      </div>
+      <div class="ev x" style="top:360px;height:36px">
+        <span class="t">1:00 - 1:30</span>
+        <span class="nm">Two Meetings, Cancelled</span>
+      </div>
+      <div class="ev w" style="top:432px;height:72px">
+        <span class="t">2:00 - 3:00</span>
+        <span class="nm"><a href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgAEcspM%2FwAA&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Client Call, S.T.</a></span>
+        <span class="sub">Colleague leading, you supporting.</span>
+      </div>
+      <div class="ev w" style="top:504px;height:144px">
+        <span class="t">3:00 - 5:00</span>
+        <span class="nm"><a href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgAEi1PmiAAA&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Proposal Block</a></span>
+        <span class="sub">Yours. Ends at exactly 5:00, which is when dinner starts downtown.</span>
+      </div>
+    </div>
+
+    <div class="tl-col lane">
+      <div class="ev p" style="top:72px;height:72px">
+        <span class="t">9:00 - 10:00</span>
+        <span class="nm"><a href="https://www.google.com/calendar/event?eid=XzhwMGphZTlwODRwMzhiOW83NHFqY2I5azYwcGoyYmEyNjkxamFiOW44Z3NqNmgyNTZ0MjRhZGE0NjQgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Errand</a></span>
+        <span class="sub">Your partner. He is out this hour.</span>
+      </div>
+      <div class="ev p" style="top:216px;height:72px">
+        <span class="t">11:00 - 12:00</span>
+        <span class="nm"><a href="https://www.google.com/calendar/event?eid=NXNuNGo0c3BhZXB1ZzdjYXBmMXM2dnBzZ29fMjAyNjA5MDlUMTcwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Workout</a></span>
+        <span class="sub">Declined twice, still blocking. See flag 1.</span>
+      </div>
+      <div class="ev p" style="top:648px;height:420px;right:auto;width:51%">
+        <span class="t">5:00 - 10:00</span>
+        <span class="nm"><a href="https://www.google.com/calendar/event?eid=XzcxMGs2Z3BoNm9wM2NiOWs4Y3NqaWI5azg4cTQ4YjlwOGdxamdiYTM4aDJrYWdhNDhrcTRjY2hqODQgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Dinner With A Friend</a></span>
+        <span class="sub">Downtown. Booked generously rather than literally.</span>
+      </div>
+      <div class="ev p" style="top:720px;height:72px;left:53%;right:4px">
+        <span class="t">6:00 - 7:00</span>
+        <span class="nm"><a href="https://www.google.com/calendar/event?eid=bDFoOW5oaDMwZmNzMjl1aThlcHJmY24wOWNfMjAyNjA5MTBUMDAwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Choir, The Kids</a></span>
+        <span class="sub">Open rehearsal, parent night.</span>
+      </div>
+    </div>
+
+    <p class="tl-note">The two lanes share one time axis, so the collisions are literal. Dinner and choir sit side by side in the personal lane because they genuinely overlap, and the work lane runs right up to the moment dinner starts.</p>
+  </div>
   <div class="panel">
 
     <div class="row work"><div class="time">8:45 &ndash; 9:15 AM</div>
