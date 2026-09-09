@@ -1,212 +1,358 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day — Tuesday, September 8, 2026</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Lexend', 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #6B2D5C 0%, #8B4A7F 100%);
-            color: #1a1a1a;
-            padding: 20px;
-            min-height: 100vh;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-        }
-        .header {
-            background: linear-gradient(135deg, #6B2D5C 0%, #8B4A7F 100%);
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
-        .header h1 {
-            font-size: 28px;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        .header p {
-            font-size: 14px;
-            opacity: 0.95;
-            letter-spacing: 0.5px;
-        }
-        .content {
-            padding: 30px;
-        }
-        .section {
-            margin-bottom: 32px;
-        }
-        .section-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: #6B2D5C;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 16px;
-            border-bottom: 2px solid #E8D4E8;
-            padding-bottom: 10px;
-        }
-        .event, .item {
-            background: #F8F6FA;
-            border-left: 4px solid #8B4A7F;
-            padding: 14px;
-            margin-bottom: 12px;
-            border-radius: 6px;
-            font-size: 14px;
-        }
-        .event-time {
-            font-weight: 700;
-            color: #6B2D5C;
-            margin-bottom: 4px;
-            font-size: 13px;
-        }
-        .event-title {
-            font-weight: 600;
-            margin-bottom: 4px;
-            color: #1a1a1a;
-        }
-        .event-meta {
-            font-size: 12px;
-            color: #666;
-            margin-top: 6px;
-        }
-        .summary {
-            background: #F0E8F5;
-            border-left: 4px solid #6B2D5C;
-            padding: 16px;
-            margin-bottom: 20px;
-            border-radius: 6px;
-            font-size: 13px;
-        }
-        .summary strong { color: #6B2D5C; }
-        .flags {
-            background: #FEF3F5;
-            border: 1px solid #E8C2CE;
-            padding: 12px;
-            margin-top: 20px;
-            border-radius: 6px;
-            font-size: 13px;
-        }
-        .footer {
-            background: #F8F6FA;
-            padding: 20px 30px;
-            text-align: center;
-            font-size: 12px;
-            color: #666;
-            border-top: 1px solid #E8D4E8;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>Day</h1>
-            <p>Tuesday, September 8, 2026 | Mountain Time</p>
-        </div>
+<title>Whitney's Day</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap');
+:root{
+  --alpenglow:#B85C86;--granite:#1B2022;--scree:#6C7378;--trail:#E3E1DA;--snow:#F7F5F1;
+  --rule-snow:#DDDAD2;--rule-trail:#C7C4BB;
+  --pecan:#4D00CA;--pecan-deep:#2E0078;--pecan-wash:#F2EDFF;--pecan-rule:#D9CCFF;
+  --amber:#B4690E;--amber-wash:#FDF4E6;
+  --font-fam-label:'Jost','Century Gothic',Futura,-apple-system,sans-serif;
+  --font-fam-head:'Instrument Serif',Georgia,'Times New Roman',serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--trail);color:var(--granite);
+  font-family:var(--font-fam-label);font-size:15px;line-height:1.55}
+.wrap{max-width:700px;margin:0 auto;padding:20px 16px 56px}
+.masthead{background:var(--granite);color:var(--snow);border-radius:14px;padding:26px 24px 22px;margin-bottom:20px}
+.eyebrow{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:#A9AEB1;font-weight:500;margin:0 0 10px}
+.masthead h1{font-family:var(--font-fam-head);font-weight:400;font-size:36px;line-height:1.05;margin:0 0 4px}
+.masthead .date{font-size:14px;color:#C9CDCF;font-weight:300;margin:0}
+.counts{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{background:rgba(247,245,241,.10);border:1px solid rgba(247,245,241,.20);border-radius:999px;
+  padding:5px 12px;font-size:11.5px;letter-spacing:.04em}
+.chip b{font-weight:500}
+.chip.hot{background:rgba(184,92,134,.24);border-color:rgba(184,92,134,.5)}
+section{margin:0 0 22px}
+h2{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:var(--scree);
+  margin:0 0 12px;display:flex;align-items:center;gap:8px}
+h2 .n{color:var(--rule-trail);font-weight:400;letter-spacing:0;text-transform:none;font-size:12px}
+.panel{background:var(--snow);border:1px solid var(--rule-snow);border-radius:12px;padding:4px 0;overflow:hidden}
+.badge{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;border-radius:4px;
+  padding:2px 7px;white-space:nowrap;flex:none;margin-top:2px}
+.badge-work{background:var(--pecan-wash);color:var(--pecan-deep);border:1px solid var(--pecan-rule)}
+.badge-personal{background:var(--trail);color:var(--alpenglow);border:1px solid var(--rule-trail)}
+.row{display:flex;gap:12px;padding:12px 18px;border-top:1px solid var(--rule-snow);align-items:flex-start}
+.row:first-child{border-top:0}
+.row.work{border-left:3px solid var(--pecan);padding-left:15px}
+.row.personal{border-left:3px solid var(--alpenglow);padding-left:15px}
+.row.dead{border-left:3px solid var(--rule-trail);padding-left:15px}
+.time{font-variant-numeric:tabular-nums;font-size:12.5px;color:var(--scree);min-width:108px;flex:none;padding-top:2px}
+.body{flex:1;min-width:0}
+.title{font-size:14.5px;margin:0 0 2px}
+.meta{font-size:12px;color:var(--scree);margin:0}
+.strike .title{text-decoration:line-through;color:var(--scree)}
+a.deep{color:inherit;text-decoration:none;border-bottom:1px dotted var(--rule-trail)}
+a.deep:hover{border-bottom-style:solid;border-bottom-color:var(--scree)}
+.flag{background:var(--amber-wash);border:1px solid #EBD6AE;border-left:3px solid var(--amber);
+  border-radius:8px;padding:12px 15px;margin:0 0 10px}
+.flag:last-child{margin-bottom:0}
+.flag .fh{font-size:13.5px;font-weight:500;margin:0 0 3px;color:#6B3F05}
+.flag .fb{font-size:12.5px;color:#7A5518;margin:0}
+.verdict{background:linear-gradient(180deg,var(--snow),#fff);border:1px solid var(--rule-snow);
+  border-radius:12px;padding:20px 22px}
+.verdict p.lead{font-family:var(--font-fam-head);font-style:italic;font-size:21px;line-height:1.3;
+  color:var(--alpenglow);margin:0 0 10px}
+.verdict p{font-size:13.5px;color:var(--scree);margin:0 0 8px}
+.verdict p:last-child{margin-bottom:0}
+.verdict b{color:var(--granite);font-weight:500}
+.note{font-size:12px;color:var(--scree);padding:10px 18px;margin:0}
+.wx{display:flex;gap:10px;flex-wrap:wrap}
+.wxc{flex:1;min-width:150px;background:var(--snow);border:1px solid var(--rule-snow);
+  border-radius:12px;padding:14px 16px}
+.wxc .d{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--scree);margin:0 0 6px}
+.wxc .t{font-family:var(--font-fam-head);font-size:26px;line-height:1;margin:0 0 4px}
+.wxc .c{font-size:12px;color:var(--scree);margin:0}
+footer{margin-top:30px;padding-top:16px;border-top:1px solid var(--rule-trail);font-size:11.5px;color:var(--scree)}
+footer p{margin:0 0 5px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:12px}
+.legend span{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--scree)}
+.sw{width:11px;height:11px;border-radius:3px;flex:none}
+.other{display:inline-block;margin-top:10px;font-size:12px;color:#C9CDCF;
+  border-bottom:1px dotted rgba(247,245,241,.35);text-decoration:none}
+@media (max-width:560px){
+  .masthead h1{font-size:29px}
+  .row{flex-wrap:wrap}.time{min-width:100%;padding-top:0}
+  .verdict p.lead{font-size:18px}
+}
+</style>
 
-        <div class="content">
-            <div class="summary">
-                <strong>Overview:</strong> 9 work meetings scheduled (8:30 AM – 3:30 PM), including platform walkthroughs, team syncs, and partner calls. Mixed focus on internal strategy work and external stakeholder engagement.
-            </div>
+<div class="wrap">
 
-            <!-- SCHEDULE -->
-            <div class="section">
-                <div class="section-title">📅 Schedule</div>
+<div class="masthead">
+  <p class="eyebrow">Whitney's Day</p>
+  <h1>Wednesday</h1>
+  <p class="date">September 9, 2026 &middot; all times Mountain</p>
+  <div class="counts">
+    <span class="chip"><b>7</b> commitments</span>
+    <span class="chip hot"><b>3</b> conflicts</span>
+    <span class="chip"><b>2</b> cancelled</span>
+    <span class="chip"><b>10</b> tasks</span>
+    <span class="chip"><b>2</b> replies owed</span>
+    <span class="chip"><b>6</b> waiting</span>
+  </div>
+  <a class="other" href="https://deadnak.github.io/hornak-brief/" target="_blank" rel="noopener">Tonight's household brief</a>
+</div>
 
-                <div class="event">
-                    <div class="event-time">8:30 – 9:00 AM</div>
-                    <div class="event-title">External Partner Call</div>
-                </div>
+<section>
+  <h2>Snapshot</h2>
+  <div class="verdict">
+    <p class="lead">Two cancellations just handed you back an hour, right where you need it.</p>
+    <p>The morning is booked through noon and the afternoon is a client run: <b>a partner call at 12:30, a client call at 2:00, and your own proposal block 3:00 to 5:00</b>. Both 1:00 PM meetings cancelled, so 1:00 to 2:00 is genuinely open. That is the only real slack in the day.</p>
+    <p>The pressure point is the evening. <b>Dinner starts at 5:00 downtown and the choir open rehearsal is 6:00</b>, so those cannot both be yours, and the afternoon block ends at exactly 5:00 with no travel time. Worth settling before lunch.</p>
+    <p>Friday's partner kick off is the week's real deadline, and the prep task is still in backlog with three open items raised yesterday and no reply yet.</p>
+  </div>
+</section>
 
-                <div class="event">
-                    <div class="event-time">9:00 – 9:30 AM</div>
-                    <div class="event-title">1:1 Meeting</div>
-                </div>
+<section>
+  <h2>Weather</h2>
+  <div class="wx">
+    <div class="wxc"><p class="d">Today</p><p class="t">24&deg; / 10&deg;</p>
+      <p class="c">Mainly sunny, partly cloudy overnight. A genuinely nice one.</p></div>
+    <div class="wxc"><p class="d">Outdoor window</p><p class="t">1:00 PM</p>
+      <p class="c">Warmest, driest part of the day and now unbooked.</p></div>
+  </div>
+</section>
 
-                <div class="event">
-                    <div class="event-time">9:30 – 9:45 AM</div>
-                    <div class="event-title">Team Standup</div>
-                </div>
+<section>
+  <h2>Today's Schedule <span class="n" style="color:#2E7358">&#128260; LIVE</span> <span class="n">7 live, 2 cancelled</span></h2>
+  <div class="panel">
 
-                <div class="event">
-                    <div class="event-time">10:00 – 10:30 AM</div>
-                    <div class="event-title">Strategic Discussion</div>
-                </div>
+    <div class="row work"><div class="time">8:45 &ndash; 9:15 AM</div>
+      <div class="body"><p class="title"><a class="deep" href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgAEiju%2BFQAA&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Client prep and an approval, w/ Becca</a></p>
+      <p class="meta">Internal, 30 min. Running now.</p></div>
+      <span class="badge badge-work">Work</span></div>
 
-                <div class="event">
-                    <div class="event-time">10:30 – 11:15 AM</div>
-                    <div class="event-title">Project Review</div>
-                </div>
+    <div class="row personal"><div class="time">9:00 &ndash; 10:00 AM</div>
+      <div class="body"><p class="title"><a class="deep" href="https://www.google.com/calendar/event?eid=XzhwMGphZTlwODRwMzhiOW83NHFqY2I5azYwcGoyYmEyNjkxamFiOW44Z3NqNmgyNTZ0MjRhZGE0NjQgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Errand, your partner</a></p>
+      <p class="meta">Nothing needed from you, but he is out this hour.</p></div>
+      <span class="badge badge-personal">Personal</span></div>
 
-                <div class="event">
-                    <div class="event-time">12:15 – 1:00 PM</div>
-                    <div class="event-title">Operations Check-In</div>
-                </div>
+    <div class="row work"><div class="time">9:15 &ndash; 11:00 AM</div>
+      <div class="body"><p class="title"><a class="deep" href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgAEi1PmhwAA&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Client working session, yours</a></p>
+      <p class="meta">1h45, the longest uninterrupted stretch of the day.</p></div>
+      <span class="badge badge-work">Work</span></div>
 
-                <div class="event">
-                    <div class="event-time">1:00 – 2:00 PM</div>
-                    <div class="event-title">Technical Forum</div>
-                </div>
+    <div class="row personal"><div class="time">11:00 AM &ndash; 12:00 PM</div>
+      <div class="body"><p class="title"><a class="deep" href="https://www.google.com/calendar/event?eid=NXNuNGo0c3BhZXB1ZzdjYXBmMXM2dnBzZ29fMjAyNjA5MDlUMTcwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Workout 11:00</a></p>
+      <p class="meta">You and your partner. Invite state is unresolved, see flag 1.</p></div>
+      <span class="badge badge-personal">Personal</span></div>
 
-                <div class="event">
-                    <div class="event-time">2:30 – 3:00 PM</div>
-                    <div class="event-title">Partner Technical Discussion</div>
-                </div>
+    <div class="row work"><div class="time">12:30 &ndash; 1:00 PM</div>
+      <div class="body"><p class="title"><a class="deep" href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgAEhUBvVwAA&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Data call, T.H. (F.N.)</a></p>
+      <p class="meta">He clarified the ask by email this morning, so this call likely closes the thread.</p></div>
+      <span class="badge badge-work">Work</span></div>
 
-                <div class="event">
-                    <div class="event-time">3:00 – 3:30 PM</div>
-                    <div class="event-title">Client Kick-Off</div>
-                </div>
-            </div>
+    <div class="row dead strike"><div class="time">1:00 &ndash; 1:30 PM</div>
+      <div class="body"><p class="title">Two meetings, both cancelled</p>
+      <p class="meta" style="text-decoration:none">One of them was the monthly review you pushed to get moved earlier ahead of a deadline tomorrow. Worth checking it happened somewhere.</p></div>
+      <span class="badge badge-work">Work</span></div>
 
-            <!-- ACTION ITEMS -->
-            <div class="section">
-                <div class="section-title">🎯 Key Action Items</div>
+    <div class="row work"><div class="time">2:00 &ndash; 3:00 PM</div>
+      <div class="body"><p class="title"><a class="deep" href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgAEcspM%2FwAA&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Client call, S.T., w/ Becca</a></p>
+      <p class="meta">Becca leading, you there for support.</p></div>
+      <span class="badge badge-work">Work</span></div>
 
-                <div class="item">
-                    <strong>Platform Preparation</strong>
-                    <p style="margin-top: 6px; font-size: 13px;">Reconcile system discrepancies and prepare training documentation for upcoming client session.</p>
-                </div>
+    <div class="row work"><div class="time">3:00 &ndash; 5:00 PM</div>
+      <div class="body"><p class="title"><a class="deep" href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgAEi1PmiAAA&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Proposal block, yours</a></p>
+      <p class="meta">Two hours. Ends exactly when dinner starts downtown, see flag 2.</p></div>
+      <span class="badge badge-work">Work</span></div>
 
-                <div class="item">
-                    <strong>Team Coordination</strong>
-                    <p style="margin-top: 6px; font-size: 13px;">Schedule alignment meeting to map out technical roadmap improvements.</p>
-                </div>
+    <div class="row personal"><div class="time">5:00 PM</div>
+      <div class="body"><p class="title"><a class="deep" href="https://www.google.com/calendar/event?eid=XzcxMGs2Z3BoNm9wM2NiOWs4Y3NqaWI5azg4cTQ4YjlwOGdxamdiYTM4aDJrYWdhNDhrcTRjY2hqODQgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Dinner with a friend, downtown</a></p>
+      <p class="meta">Booked generously rather than literally.</p></div>
+      <span class="badge badge-personal">Personal</span></div>
 
-                <div class="item">
-                    <strong>Client Engagement</strong>
-                    <p style="margin-top: 6px; font-size: 13px;">Lead training sessions and demonstrate platform capabilities.</p>
-                </div>
-            </div>
+    <div class="row personal"><div class="time">6:00 &ndash; 7:00 PM</div>
+      <div class="body"><p class="title"><a class="deep" href="https://www.google.com/calendar/event?eid=bDFoOW5oaDMwZmNzMjl1aThlcHJmY24wOWNfMjAyNjA5MTBUMDAwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Choir, the kids</a></p>
+      <p class="meta">An open rehearsal night, so parent attendance. Conflicts with dinner.</p></div>
+      <span class="badge badge-personal">Personal</span></div>
 
-            <!-- FLAGS -->
-            <div class="section">
-                <div class="section-title">⚠️ Focus Areas</div>
+  </div>
+</section>
 
-                <div class="flags">
-                    <strong>Platform Development:</strong> Multiple meetings focused on platform features, training, and technical alignment with partners.
-                </div>
+<section>
+  <h2>Conflicts And Flags <span class="n">5</span></h2>
 
-                <div class="flags" style="margin-top: 12px;">
-                    <strong>Team Coordination:</strong> Back-to-back internal meetings on strategy, project ownership, and technical direction.
-                </div>
+  <div class="flag"><p class="fh">2 &middot; The 5:00 to 7:00 squeeze, three things at once</p>
+    <p class="fb">The afternoon block runs to 5:00, dinner starts at 5:00 downtown with no travel buffer, and the choir open rehearsal is 6:00 to 7:00 across town. You cannot be at both, and tonight is specifically a parent attendance rehearsal. Your partner is clear from 1:00 PM until his evening block, so he can take the kids, but somebody has to decide that. Ending the work block at 4:30 also buys you the drive.</p></div>
 
-                <div class="flags" style="margin-top: 12px;">
-                    <strong>External Engagement:</strong> Partner calls and client kick-offs driving near-term commitments.
-                </div>
-            </div>
-        </div>
+  <div class="flag"><p class="fh">1 &middot; The 11:00 workout invite is in an unresolved state</p>
+    <p class="fb">You declined this invite twice, on September 2 and again on September 7, but the Family calendar still shows your response as needsAction and it is still marking you busy on the work calendar. Either it is real and the declines were misfires, or it is stale and should come off. Right now it is quietly eating an hour either way.</p></div>
 
-        <div class="footer">
-            Generated Tuesday, September 8, 2026 | Day Briefing
-        </div>
-    </div>
-</body>
-</html>
+  <div class="flag"><p class="fh">3 &middot; Massage sync, the December 8 booking has no Family entry</p>
+    <p class="fb">The clinic feed has twelve bookings through December 8. Eleven are mirrored on Family. December 8 at 10:30 AM is not. Both subscribed feeds are identical, deduped by event id, so this is a real gap and not a mirroring artifact. Not created, since you asked for a brief rather than calendar changes.</p></div>
+
+  <div class="flag"><p class="fh">4 &middot; November times still disagree, third brief running</p>
+    <p class="fb">Nov 3 and Nov 10 sit at 9:30 AM on Family. Nov 17 and Nov 24 sit at 10:30 AM. The clinic feed says 10:30 for all four. Almost certainly their booking system assuming a November clock change that Alberta no longer makes. This needs one phone call, not another flag.</p></div>
+
+  <div class="flag"><p class="fh">5 &middot; An appointment on your partner's calendar belongs on Family</p>
+    <p class="fb">The fourteen day sweep found one September 16 evening item that meets the move test and is not on Family, so it would never reach a brief. Flagged rather than moved. Everything else of his in the window is solo study and project time, which correctly stays off.</p></div>
+</section>
+
+<section>
+  <h2>Tasks And Priorities <span class="n" style="color:#2E7358">&#128260; LIVE</span> <span class="n">top 10 by recency</span></h2>
+  <div class="panel">
+
+    <div class="row work"><div class="time">Friday</div>
+      <div class="body"><p class="title"><a class="deep" href="https://app.clickup.com/t/868m2rqr8" target="_blank" rel="noopener">R.P. BD, prep agenda for kick off</a></p>
+      <p class="meta">Backlog, shovel ready. The kick off is Friday 11:45 AM your time, both external attendees have accepted, and this is still in backlog. Yesterday's guidance: focus it on data QC, contract status, retainer housekeeping and API questions, deferring the tooling walkthrough to follow ups.</p></div>
+      <span class="badge badge-work">Work</span></div>
+
+    <div class="row work"><div class="time">In progress</div>
+      <div class="body"><p class="title"><a class="deep" href="https://app.clickup.com/t/868m2rqvg" target="_blank" rel="noopener">R.P. deal, September</a></p>
+      <p class="meta">Geometry arrived Monday and looks clean, but three items are still open before the cases can be built and there has been no reply. That is the blocker, not the modelling.</p></div>
+      <span class="badge badge-work">Work</span></div>
+
+    <div class="row work"><div class="time">In progress</div>
+      <div class="body"><p class="title"><a class="deep" href="https://app.clickup.com/t/868kzw9n7" target="_blank" rel="noopener">B.O. third party engineering consultant</a></p>
+      <p class="meta">You proposed Wednesday or Thursday this week and promised specific times. That was a week ago and no times went out. Today is that Wednesday.</p></div>
+      <span class="badge badge-work">Work</span></div>
+
+    <div class="row work"><div class="time">In progress</div>
+      <div class="body"><p class="title"><a class="deep" href="https://app.clickup.com/t/868kx60zd" target="_blank" rel="noopener">O.G.T. pitch and proposal</a> and <a class="deep" href="https://app.clickup.com/t/868kx611z" target="_blank" rel="noopener">the branded mockup report</a></p>
+      <p class="meta">What the 3:00 to 5:00 block is for. The contract anniversary notice window closes early September.</p></div>
+      <span class="badge badge-work">Work</span></div>
+
+    <div class="row work"><div class="time">In progress</div>
+      <div class="body"><p class="title"><a class="deep" href="https://app.clickup.com/t/868m2rqu8" target="_blank" rel="noopener">Monthly client report, August</a></p>
+      <p class="meta">Variance, re forecasting and exhibits. The client wants all reports by the 10th, tomorrow. This is what the 9:15 block should serve.</p></div>
+      <span class="badge badge-work">Work</span></div>
+
+    <div class="row work"><div class="time">In progress</div>
+      <div class="body"><p class="title"><a class="deep" href="https://app.clickup.com/t/868kqjr8j" target="_blank" rel="noopener">P. intro call, via a referral partner</a></p>
+      <p class="meta">Blocked on an NDA that went out September 1 and is still unsigned. Nudged yesterday.</p></div>
+      <span class="badge badge-work">Work</span></div>
+
+    <div class="row work"><div class="time">Backlog</div>
+      <div class="body"><p class="title"><a class="deep" href="https://app.clickup.com/t/868m2t13x" target="_blank" rel="noopener">Finalize budget and Rev Ops goals for rest of 2026</a></p>
+      <p class="meta">Internal. You were asked to reconcile a work in progress discrepancy and chase the hidden tasks behind it.</p></div>
+      <span class="badge badge-work">Work</span></div>
+
+    <div class="row work"><div class="time">Backlog</div>
+      <div class="body"><p class="title"><a class="deep" href="https://app.clickup.com/t/868kj46hd" target="_blank" rel="noopener">Client family meeting, marketing prep</a></p>
+      <p class="meta">Roughly two weeks out. Two travel tasks under it are both still in progress: <a class="deep" href="https://app.clickup.com/t/868krma8r" target="_blank" rel="noopener">a return flight leg</a> and <a class="deep" href="https://app.clickup.com/t/868krmagq" target="_blank" rel="noopener">the room booking</a>. Flights get worse from here.</p></div>
+      <span class="badge badge-work">Work</span></div>
+
+    <div class="row work"><div class="time">Backlog</div>
+      <div class="body"><p class="title"><a class="deep" href="https://app.clickup.com/t/868m2t0ae" target="_blank" rel="noopener">Check in with the accountants on 2025 returns</a></p>
+      <p class="meta">You followed up last Friday and have heard nothing in five days.</p></div>
+      <span class="badge badge-work">Work</span></div>
+
+    <div class="row work"><div class="time">Backlog</div>
+      <div class="body"><p class="title"><a class="deep" href="https://app.clickup.com/t/868kfu6cy" target="_blank" rel="noopener">Referral partner follow up</a>, plus two flyer tasks</p>
+      <p class="meta">The <a class="deep" href="https://app.clickup.com/t/868kfu3e4" target="_blank" rel="noopener">banks and trust flyer</a> and a <a class="deep" href="https://app.clickup.com/t/868kj40hx" target="_blank" rel="noopener">general use flyer</a>, both untouched since late April. The bank and trust channel is forming on its own, which makes that flyer more useful than its age suggests.</p></div>
+      <span class="badge badge-work">Work</span></div>
+
+  </div>
+  <p class="note">Selection is the flat recency and status sort, the known placeholder. Treat the ordering as a starting point, not a ranking.</p>
+</section>
+
+<section>
+  <h2>Life Balance</h2>
+  <div class="verdict">
+    <p class="lead">You already have a workout on the books and an hour that just opened up.</p>
+    <p><b>Your own time today:</b> the 11:00 workout, which counts toward the week whichever way the invite question resolves, and dinner with a friend at 5:00. Good balance for a Wednesday, one thing for your body and one for you.</p>
+    <p><b>Suggested outdoor window, 1:00 to 1:30 PM.</b> Both 1:00 meetings cancelled, so the hour is genuinely free rather than notionally free. Warmest, sunniest part of a 24 degree day, and it finishes a full thirty minutes before the 2:00 call. Thirty minutes outside, not a screen break.</p>
+    <p>If you would rather bank the hour for Friday prep, 12:00 to 12:30 is the fallback, though it is tighter against the 12:30 call. Vitamins.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Email <span class="n" style="color:#B4690E">&#128204; FROZEN 8:59 AM</span> <span class="n">2 owed, 6 waiting</span></h2>
+  <div class="panel">
+    <div class="row work"><div class="time">Reply owed</div>
+      <div class="body"><p class="title">T.H. (F.N.), today 8:32 AM</p>
+      <p class="meta">Clarified what he is actually after, landing after your last message. You have him at 12:30 today, so this likely wants a one line "let's take it live" rather than a written answer.</p></div>
+      <span class="badge badge-work">Work</span></div>
+
+    <div class="row work"><div class="time">Reply owed</div>
+      <div class="body"><p class="title">L.G. (F.N.), yesterday 3:02 PM</p>
+      <p class="meta">Substantive: an approval landed that shifts a suspended funds disbursement into October. One recipient has acknowledged, you have not. That timing affects the report you are building today, so it wants more than a thank you.</p></div>
+      <span class="badge badge-work">Work</span></div>
+
+    <div class="row work"><div class="time">Waiting, 1 day</div>
+      <div class="body"><p class="title">C.G. (R.P.), three open items</p>
+      <p class="meta">The one to chase this morning. The kick off is Friday and these three items are the substance of it.</p></div>
+      <span class="badge badge-work">Work</span></div>
+
+    <div class="row work"><div class="time">Waiting, 1 day</div>
+      <div class="body"><p class="title">F., an invoice</p>
+      <p class="meta">You asked when payment will land and heard nothing. Already overdue, and a colleague is on collections.</p></div>
+      <span class="badge badge-work">Work</span></div>
+
+    <div class="row work"><div class="time">Waiting, 1 day</div>
+      <div class="body"><p class="title">M.P. (P.), the NDA</p>
+      <p class="meta">Out since September 1, still unsigned on their side, which blocks the whole introduction. Eight days. There is a warm route in if the direct nudge stays quiet.</p></div>
+      <span class="badge badge-work">Work</span></div>
+
+    <div class="row work"><div class="time">Waiting, 2 days</div>
+      <div class="body"><p class="title">S.K. (M.), status check</p>
+      <p class="meta">Three questions and a request for twenty minutes, no reply. A related task also sits with you, so one message can carry both.</p></div>
+      <span class="badge badge-work">Work</span></div>
+
+    <div class="row work"><div class="time">Waiting, 5 days</div>
+      <div class="body"><p class="title">The accountants, 2025 package</p>
+      <p class="meta">Second follow up. You asked them to confirm a large attachment set actually landed, since that volume trips filters. No confirmation either way, which is the part worth pinning down.</p></div>
+      <span class="badge badge-work">Work</span></div>
+
+    <div class="row work"><div class="time">Waiting, 7 days, yours</div>
+      <div class="body"><p class="title">G.M. (B.O.)</p>
+      <p class="meta">Listed for honesty rather than blame. You promised specific times and a redacted sample. Today is the day you named and neither went out, so the ball is yours.</p></div>
+      <span class="badge badge-work">Work</span></div>
+  </div>
+  <p class="note">Thread state verified against a paginated sweep of Sent Items giving continuous coverage from September 1 to now. Every reply owed candidate is dated September 8 or 9, so no reply could be hiding on an unfetched page. This is the check that produced two false positives once before.</p>
+</section>
+
+<section>
+  <h2>Reminders</h2>
+  <div class="panel">
+    <div class="row personal"><div class="time">6 weeks late</div>
+      <div class="body"><p class="title"><a class="deep" href="https://app.todoist.com/app/task/6h5xXQR54CrF5pFf" target="_blank" rel="noopener">Call the dentist, check if we're overdue for cleanings</a></p>
+      <p class="meta">Priority one, due July 29. The practice name, number and email context are in Todoist.</p></div>
+      <span class="badge badge-personal">Personal</span></div>
+
+    <div class="row personal"><div class="time">6 weeks late</div>
+      <div class="body"><p class="title"><a class="deep" href="https://app.todoist.com/app/task/6h69CQXGqH3cgfJf" target="_blank" rel="noopener">Call a health equipment provider</a></p>
+      <p class="meta">Priority one, due July 29. Detail in Todoist. The 1:00 PM hour would clear this and the one above.</p></div>
+      <span class="badge badge-personal">Personal</span></div>
+
+    <div class="row personal"><div class="time">5 weeks late</div>
+      <div class="body"><p class="title"><a class="deep" href="https://app.todoist.com/app/task/6h6Q2XvP658gF3Wv" target="_blank" rel="noopener">Library: overdue items for the kids now marked LOST, find and return</a></p>
+      <p class="meta">Priority one, due August 1. Marked lost means charges follow. Find and return, or pay and be done, but it will not resolve itself.</p></div>
+      <span class="badge badge-personal">Personal</span></div>
+
+    <div class="row personal"><div class="time">Tick it</div>
+      <div class="body"><p class="title">Two tasks are already done</p>
+      <p class="meta">The swim lesson rebooking came through yesterday, and the appointment you were meant to book is on the calendar for tomorrow. Both Todoist tasks are still open.</p></div>
+      <span class="badge badge-personal">Personal</span></div>
+
+    <div class="row personal"><div class="time">Tonight</div>
+      <div class="body"><p class="title">Meal box changes close at 11:59 PM</p>
+      <p class="meta">Delivery is confirmed for Sunday. If the meals or the slot need touching, it is today.</p></div>
+      <span class="badge badge-personal">Personal</span></div>
+
+    <div class="row personal"><div class="time">Stale, decide</div>
+      <div class="body"><p class="title">Three priority two items nobody has moved</p>
+      <p class="meta">A community association renewal, a portal check, and a passport application with no date at all. The first two are quick. The passport has been undated long enough that it either gets a date or goes to the back burner.</p></div>
+      <span class="badge badge-personal">Personal</span></div>
+
+    <div class="row personal"><div class="time">4 days</div>
+      <div class="body"><p class="title">Two cards due September 13</p>
+      <p class="meta">Both inside the seven day window. A third on the 17th is just outside it.</p></div>
+      <span class="badge badge-personal">Personal</span></div>
+  </div>
+</section>
+
+<footer>
+  <div class="legend">
+    <span><span class="sw" style="background:#4D00CA"></span>Work</span>
+    <span><span class="sw" style="background:#B85C86"></span>Personal</span>
+    <span><span class="sw" style="background:#C7C4BB"></span>Cancelled</span>
+  </div>
+  <p><b>&#128260; LIVE</b> sections, the schedule and the task list, track their source records through the deep links. <b>&#128204; FROZEN</b> sections, everything else, were fixed at build time.</p>
+  <p>A redacted mirror. External people and companies appear as initials, and detail sits behind a login. The unredacted version is the local file.</p>
+  <p>Built Wednesday, September 9, 2026 at 8:59 AM MDT. All times Mountain.</p>
+  <p>No calendar or task changes were made. Every flag above is reported, not actioned.</p>
+</footer>
+
+</div>
