@@ -1,504 +1,281 @@
-<title>Whitney's Day</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Whitney's Day — Tuesday, September 15, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Jost:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Jost:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap');
-
 :root{
-  --brand:#4D00CA; --p600:#7C3AED; --plight:#B98CFF;
-  --wash:#F3E8FF; --s900:#0F172A; --s700:#334155; --s500:#64748B; --s400:#94A3B8;
-  --s50:#F8FAFC; --hair:#E2E8F0; --amber:#B4690E; --amber-wash:#FDF4E6;
-  --grad-dark:linear-gradient(157deg,#190642,#2C0A72,#4A13B2);
-  --font-head:'Lexend','Nunito',Arial,sans-serif;
+  --brand:#4D00CA; --p600:#7C3AED; --wash:#F3E8FF;
+  --s900:#0F172A; --s700:#334155; --s500:#64748B; --s400:#94A3B8;
+  --s50:#F8FAFC; --s100:#F1F5F9; --hair:#E2E8F0;
+  --green:#16A34A; --red:#EF4444; --redwash:#FEF2F2;
+  --amber:#B4690E; --amberwash:#FDF3E3;
+  --grad-cta:linear-gradient(135deg,#7A2BFF 0%,#4D00CA 100%);
+  --alpen:#B85C86; --granite:#1B2022; --scree:#6C7378; --trail:#E3E1DA; --snow:#F7F5F1;
+  --hair-snow:#DDDAD2;
+  --font-head:'Lexend','Segoe UI',system-ui,sans-serif;
   --font-body:'Segoe UI',system-ui,-apple-system,sans-serif;
-  --alpenglow:#B85C86; --granite:#1B2022; --scree:#6C7378; --trail:#E3E1DA; --snow:#F7F5F1;
-  --rule-snow:#DDDAD2; --rule-trail:#C7C4BB;
-  --font-fam-label:'Jost','Century Gothic',Futura,sans-serif;
+  --font-fam-label:'Jost','Century Gothic',Futura,system-ui,sans-serif;
   --font-fam-head:'Instrument Serif',Georgia,'Times New Roman',serif;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--s50);color:var(--s700);
-  font-family:var(--font-body);font-size:15px;line-height:1.68;-webkit-font-smoothing:antialiased}
-.wrap{max-width:740px;margin:0 auto;padding:22px 16px 56px}
-.masthead{background:var(--grad-dark);border-radius:16px;padding:26px 26px 24px;margin-bottom:24px;color:#fff}
-.masthead img.mark{height:30px;width:auto;display:block;margin:0 0 20px}
-.eyebrow{font-family:var(--font-head);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--plight);font-weight:600;margin:0 0 8px}
-.masthead h1{font-family:var(--font-head);font-weight:700;font-size:34px;letter-spacing:-.02em;
-  line-height:1.08;margin:0 0 5px;color:#fff}
-.masthead .date{font-size:13.5px;color:#CFC2F0;margin:0}
-.counts{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-.chip{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.20);border-radius:999px;
-  padding:5px 13px;font-size:12px;color:#fff;font-variant-numeric:tabular-nums}
-.chip b{font-weight:600;font-family:var(--font-head)}
-.chip.hot{background:rgba(122,43,255,.38);border-color:rgba(185,140,255,.6)}
-.other{display:inline-block;margin-top:16px;font-size:12px;color:#CFC2F0;
-  border-bottom:1px dotted rgba(207,194,240,.5);text-decoration:none}
-section{margin:0 0 26px}
-h2{font-family:var(--font-head);font-size:12.5px;font-weight:700;letter-spacing:-.01em;color:var(--s900);
-  margin:0 0 12px;padding-bottom:9px;border-bottom:1.5px solid var(--brand);
-  display:flex;align-items:center;gap:9px;flex-wrap:wrap}
-h2 .num{color:var(--brand);font-weight:700}
-h2 .n{margin-left:auto;font-family:var(--font-body);color:var(--s400);font-weight:400;
-  font-size:11.5px;letter-spacing:0}
-h2 svg{flex:none}
-h2.personal{border-bottom-color:var(--alpenglow);font-family:var(--font-fam-label);
-  font-weight:500;color:var(--granite)}
-.pill{font-family:var(--font-head);font-size:9px;letter-spacing:.12em;text-transform:uppercase;
-  font-weight:600;border-radius:999px;padding:3px 9px;white-space:nowrap;flex:none}
-.pill-live{background:var(--wash);color:var(--brand);border:1px solid #D9C4FF}
-.pill-frozen{background:var(--amber-wash);color:var(--amber);border:1px solid #EBD6AE}
-.badge{font-size:9px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;border-radius:999px;
-  padding:3px 9px;white-space:nowrap;flex:none;margin-top:3px}
-.badge-work{background:var(--wash);color:var(--brand);border:1px solid #D9C4FF;font-family:var(--font-head)}
-.badge-personal{background:var(--trail);color:var(--alpenglow);border:1px solid var(--rule-trail);
-  font-family:var(--font-fam-label)}
-.panel{background:#fff;border:1px solid var(--hair);border-radius:14px;
-  box-shadow:0 1px 3px rgba(15,23,42,.05);overflow:hidden}
-.panel.personal{background:var(--snow);border-color:var(--rule-snow)}
-.row{display:flex;gap:13px;padding:14px 18px;border-top:1px solid var(--hair);align-items:flex-start}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--s700);font-family:var(--font-body);font-size:15px;line-height:1.62}
+.wrap{max-width:900px;margin:0 auto;padding-block:0 60px;padding-left:20px;padding-right:20px}
+.masthead{border-bottom:3px solid var(--brand);padding:28px 0 20px}
+.eyebrow{font-family:var(--font-head);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--p600);margin:0}
+h1{font-family:var(--font-head);font-weight:700;font-size:28px;line-height:1.16;color:var(--s900);margin:12px 0 6px;letter-spacing:-.015em;text-wrap:balance}
+.sub{color:var(--s500);font-size:13.5px;margin:0}
+.redaction{margin-top:16px;background:var(--s50);border:1px solid var(--hair);border-radius:12px;padding:12px 16px;font-size:12.5px;color:var(--s500)}
+.snap{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin:24px 0 0}
+.tile{background:#fff;border:1px solid var(--hair);border-radius:14px;padding:13px 15px}
+.tile.p{border-color:var(--hair-snow);background:var(--snow)}
+.tile .n{font-family:var(--font-head);font-weight:700;font-size:24px;color:var(--brand);line-height:1.1;font-variant-numeric:tabular-nums}
+.tile.p .n{font-family:var(--font-fam-label);color:var(--alpen)}
+.tile .l{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--s500);margin-top:3px;font-family:var(--font-head);font-weight:500}
+.tile.p .l{font-family:var(--font-fam-label);color:var(--scree)}
+section{margin-top:40px}
+h2{font-family:var(--font-head);font-weight:600;font-size:18px;color:var(--s900);margin:0 0 4px;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+h2 .num{color:var(--brand);font-weight:700;font-variant-numeric:tabular-nums}
+h2.personal{font-family:var(--font-fam-label);font-weight:500;color:var(--granite)}
+.h2note{font-size:12.5px;color:var(--s500);margin:0 0 14px}
+.rule{height:2px;background:var(--brand);border:0;margin:8px 0 16px}
+.rule.personal{background:var(--alpen)}
+.panel{border:1px solid var(--hair);border-radius:14px;overflow:hidden;background:#fff}
+.panel.personal{background:var(--snow);border-color:var(--hair-snow)}
+.row{display:flex;gap:14px;padding:12px 16px;border-top:1px solid var(--hair);align-items:flex-start}
 .row:first-child{border-top:0}
-.panel.personal .row{border-top-color:var(--rule-snow)}
-.row.work{border-left:3px solid var(--brand);padding-left:15px}
-.row.personal{border-left:3px solid var(--alpenglow);padding-left:15px}
-.row.dead{border-left:3px solid var(--s400);padding-left:15px}
-.time{font-variant-numeric:tabular-nums;font-size:12.5px;color:var(--s500);min-width:116px;
-  flex:none;padding-top:2px}
-.row.personal .time{color:var(--scree);font-family:var(--font-fam-label)}
-.body{flex:1;min-width:0}
-.title{font-family:var(--font-head);font-size:14.5px;font-weight:600;color:var(--s900);
-  margin:0 0 3px;line-height:1.4}
-.row.personal .title{font-family:var(--font-fam-label);font-weight:500;color:var(--granite)}
-.meta{font-size:12.5px;color:var(--s500);margin:0;line-height:1.6}
-.row.personal .meta{color:var(--scree);font-family:var(--font-fam-label)}
-.strike .title{text-decoration:line-through;color:var(--s400)}
-b{color:var(--s900);font-weight:600}
-.row.personal b{color:var(--granite)}
+.panel.personal .row{border-top-color:var(--hair-snow)}
+.row.work{border-left:3px solid var(--brand);padding-left:14px}
+.row.pers{border-left:3px solid var(--alpen);padding-left:14px}
+.row.dead{border-left:3px solid var(--s400);padding-left:14px}
+.time{font-variant-numeric:tabular-nums;font-size:12.5px;color:var(--s500);min-width:112px;flex:none;padding-top:2px}
+.row.pers .time{color:var(--scree);font-family:var(--font-fam-label)}
+.bd{flex:1;min-width:0}
+.ttl{font-family:var(--font-head);font-size:14px;font-weight:600;color:var(--s900);margin:0;line-height:1.4}
+.row.pers .ttl{font-family:var(--font-fam-label);font-weight:500;color:var(--granite)}
+.mt{font-size:12.5px;color:var(--s500);margin:2px 0 0}
+.row.pers .mt{color:var(--scree);font-family:var(--font-fam-label)}
+.row.dead .ttl{color:var(--s400);text-decoration:line-through}
+.pill{font-family:var(--font-head);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:600;border-radius:999px;padding:3px 9px;white-space:nowrap;flex:none;margin-top:2px}
+.pill-clash{background:var(--redwash);color:#B91C1C}
+.pill-warn{background:var(--amberwash);color:var(--amber)}
+.pill-work{background:var(--wash);color:var(--brand)}
+.pill-pers{background:var(--trail);color:var(--alpen);font-family:var(--font-fam-label);font-weight:500}
 a.deep{color:inherit;text-decoration:none;border-bottom:1px dotted var(--s400)}
 a.deep:hover{border-bottom-style:solid;border-bottom-color:var(--brand)}
-.row.personal a.deep{border-bottom-color:var(--rule-trail)}
-.callout{background:var(--wash);border-left:4px solid var(--brand);border-radius:0 10px 10px 0;
-  padding:15px 18px;margin:0 0 11px}
-.callout:last-child{margin-bottom:0}
-.callout .ch{font-family:var(--font-head);font-size:13.5px;font-weight:600;color:var(--brand);margin:0 0 4px}
-.callout .cb{font-size:12.5px;color:var(--s700);margin:0;line-height:1.6}
-.snap{background:#fff;border:1px solid var(--hair);border-radius:14px;
-  box-shadow:0 1px 3px rgba(15,23,42,.05);padding:20px 22px}
-.snap .lead{font-family:var(--font-head);font-weight:700;font-size:19px;line-height:1.32;
-  color:var(--s900);margin:0 0 11px;letter-spacing:-.01em}
-.snap p{font-size:13.5px;color:var(--s700);margin:0 0 9px}
-.snap p:last-child{margin-bottom:0}
-.verdict{background:linear-gradient(180deg,var(--snow),#fff);border:1px solid var(--rule-snow);
-  border-radius:14px;padding:20px 22px}
-.verdict p.lead{font-family:var(--font-fam-head);font-style:italic;font-size:22px;line-height:1.3;
-  color:var(--alpenglow);margin:0 0 11px}
-.verdict p{font-family:var(--font-fam-label);font-size:13.5px;color:var(--scree);margin:0 0 8px}
+.row.pers a.deep:hover{border-bottom-color:var(--alpen)}
+.verdict{background:linear-gradient(180deg,var(--snow),#fff);border:1px solid var(--hair-snow);border-radius:14px;padding:18px 20px}
+.verdict h3{font-family:var(--font-fam-head);font-style:italic;font-size:21px;font-weight:400;color:var(--alpen);margin:0 0 6px;line-height:1.26;text-wrap:balance}
+.verdict p{margin:0 0 8px;font-family:var(--font-fam-label);color:var(--granite);font-size:13.5px}
 .verdict p:last-child{margin-bottom:0}
-.verdict b{color:var(--granite);font-weight:500}
-ul.sq{list-style:none;padding:0;margin:8px 0 0}
-ul.sq li{position:relative;padding-left:15px;margin-bottom:5px;font-size:12.5px;color:var(--s700)}
-ul.sq li:before{content:'';position:absolute;left:0;top:7px;width:6px;height:6px;background:var(--p600)}
-.note{font-size:12px;color:var(--s500);padding:11px 18px;margin:0;
-  border-top:1px solid var(--hair);background:var(--s50)}
-.panel.personal .note{border-top-color:var(--rule-snow);background:var(--trail);color:var(--scree)}
-.wx{display:flex;gap:11px;flex-wrap:wrap}
-.wxc{flex:1;min-width:158px;background:#fff;border:1px solid var(--hair);border-radius:14px;
-  padding:15px 17px;box-shadow:0 1px 3px rgba(15,23,42,.05)}
-.wxc .d{font-family:var(--font-head);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--p600);font-weight:600;margin:0 0 7px}
-.wxc .t{font-family:var(--font-head);font-size:27px;font-weight:700;line-height:1;margin:0 0 5px;
-  color:var(--brand);font-variant-numeric:tabular-nums}
-.wxc .c{font-size:12.5px;color:var(--s500);margin:0}
-footer{margin-top:32px;padding-top:18px;border-top:1px solid var(--hair);font-size:11.5px;color:var(--s500)}
-footer p{margin:0 0 6px}
-.legend{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:13px}
-.legend span{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--s500)}
-.sw{width:11px;height:11px;border-radius:3px;flex:none}
-
-.timeline{display:grid;grid-template-columns:52px 1fr 1fr;gap:0 10px;background:#fff;
-  border:1px solid var(--hair);border-radius:14px;box-shadow:0 1px 3px rgba(15,23,42,.05);
-  padding:14px 16px 18px;margin-bottom:11px}
-.tl-head{font-family:var(--font-head);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;
-  font-weight:600;padding-bottom:8px;border-bottom:1px solid var(--hair);margin-bottom:8px}
-.tl-head.g{color:var(--s400)}
-.tl-head.w{color:var(--brand)}
-.tl-head.p{color:var(--alpenglow)}
-.tl-col{position:relative;height:1008px}
-.tl-hour{position:absolute;right:0;font-size:9.5px;color:var(--s400);
-  font-variant-numeric:tabular-nums;text-align:right;transform:translateY(-5px);white-space:nowrap}
-.lane{background:repeating-linear-gradient(to bottom,transparent 0,transparent 71px,
-  #F1F5F9 71px,#F1F5F9 72px)}
-.ev{position:absolute;left:0;right:4px;border-radius:8px;padding:5px 8px;overflow:hidden}
-.ev .t{font-variant-numeric:tabular-nums;font-size:9px;letter-spacing:.03em;display:block;
-  margin-bottom:1px;opacity:.9}
-.ev .nm{font-family:var(--font-head);font-weight:600;font-size:11.5px;line-height:1.28;display:block}
-.ev .sub{display:block;font-size:9.5px;line-height:1.3;margin-top:2px;opacity:.85}
-.ev a{color:inherit;text-decoration:none;border-bottom:1px dotted currentColor}
-.ev.w{background:var(--wash);border-left:3px solid var(--brand);color:var(--brand)}
-.ev.w .nm{color:var(--s900)}
-.ev.p{background:var(--trail);border-left:3px solid var(--alpenglow);color:var(--alpenglow)}
-.ev.p .nm{color:var(--granite);font-family:var(--font-fam-label);font-weight:500}
-.ev.p .t,.ev.p .sub{font-family:var(--font-fam-label)}
-.ev.x{background:var(--s50);border-left:3px solid var(--s400);color:var(--s400)}
-.ev.x .nm{color:var(--s400);text-decoration:line-through}
-.ev.tiny{padding:2px 8px}
-.ev.tiny .nm{font-size:10px}
-.tl-free{position:absolute;left:0;right:4px;border-radius:8px;border:1px dashed #C9B3F5;
-  background:rgba(243,232,255,.45);color:var(--p600);padding:5px 8px;overflow:hidden}
-.tl-free .nm{font-family:var(--font-head);font-weight:600;font-size:10.5px;display:block}
-.tl-free .sub{display:block;font-size:9.5px;margin-top:1px}
-.tl-note{font-size:11.5px;color:var(--s500);margin:9px 0 0;grid-column:1 / -1;
-  padding-top:10px;border-top:1px solid var(--hair)}
-@media (max-width:700px){
-  .timeline{grid-template-columns:1fr;padding:8px 14px 14px}
-  .tl-col{height:auto}
-  .tl-head.g{display:none}
-  .tl-col.tl-hours{display:none}
-  .lane{background:none}
-  .ev,.tl-free{position:static;height:auto !important;left:auto !important;right:auto !important;
-    width:auto !important;top:auto !important;margin:0 0 8px}
-  .tl-head{margin-top:12px}
-}
+.callout{background:var(--wash);border-left:5px solid var(--brand);border-radius:0 12px 12px 0;padding:14px 18px;font-size:13.5px}
+.callout h3{font-family:var(--font-head);font-size:13.5px;font-weight:600;color:var(--brand);margin:0 0 4px}
+.callout p{margin:0}
+ul.sq{list-style:none;padding:0;margin:0}
+ul.sq li{position:relative;padding-left:16px;margin-bottom:7px;font-size:13.5px}
+ul.sq li::before{content:"";position:absolute;left:0;top:.52em;width:6px;height:6px;background:var(--p600);transform:rotate(45deg)}
+ul.sq.personal li::before{background:var(--alpen)}
+.famark{vertical-align:-3px;margin-right:3px}
+.nav{margin-top:26px;font-size:12.5px}
+.nav a{color:var(--brand);text-decoration:none;border-bottom:1px solid transparent}
+.nav a:hover{border-bottom-color:var(--brand)}
+footer{margin-top:46px;padding-top:16px;border-top:1px solid var(--hair);font-size:11.5px;color:var(--s400);font-family:var(--font-head);line-height:1.8}
 @media (max-width:560px){
-  .masthead h1{font-size:27px}
+  h1{font-size:23px}
   .row{flex-wrap:wrap}
   .time{min-width:100%;padding-top:0}
-  .verdict p.lead{font-size:19px}
 }
 </style>
-
+</head>
+<body>
 <div class="wrap">
 
-<div class="masthead">
-  <img class="mark" src="data:image/png;base64,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" alt="Pecan Tree">
+<header class="masthead">
   <p class="eyebrow">Whitney's Day</p>
-  <h1>Thursday</h1>
-  <p class="date">September 10, 2026 &middot; all times Mountain</p>
-  <div class="counts">
-    <span class="chip"><b>2</b> work meetings</span>
-    <span class="chip"><b>4</b> personal</span>
-    <span class="chip hot"><b>1</b> conflict</span>
-    <span class="chip"><b>1</b> cancelled</span>
-    <span class="chip"><b>1</b> reply owed</span>
-    <span class="chip"><b>6</b> waiting</span>
-  </div>
-  <a class="other" href="https://deadnak.github.io/hornak-brief/" target="_blank" rel="noopener">Tonight's household brief</a>
+  <h1>Tuesday, September 15, 2026</h1>
+  <p class="sub">Calgary · all times Mountain · generated 9:05 AM MDT</p>
+  <div class="redaction">Public mirror. Names, clients, figures and meeting content are redacted to initials or removed. Every item links through to the real record, which sits behind a login.</div>
+</header>
+
+<div class="snap">
+  <div class="tile"><div class="n">3</div><div class="l">Work blocks</div></div>
+  <div class="tile"><div class="n">3</div><div class="l">Conflicts</div></div>
+  <div class="tile"><div class="n">2</div><div class="l">Replies owed</div></div>
+  <div class="tile"><div class="n">8</div><div class="l">Awaiting reply</div></div>
+  <div class="tile"><div class="n">16</div><div class="l">Open tasks</div></div>
+  <div class="tile p"><div class="n">6</div><div class="l">Home events</div></div>
+  <div class="tile p"><div class="n">4</div><div class="l">Todoist P1</div></div>
 </div>
 
 <section>
-  <h2><span class="num">01</span> Snapshot <span class="pill pill-frozen">Frozen 9:41 AM</span></h2>
-  <div class="snap">
-    <p class="lead">Two work meetings and a wide open morning, then the afternoon belongs to you.</p>
-    <p>This is the lightest work day of the week. <b>A client billing call at 10:00 and the Rev/Ops standup at 12:00</b>, and a design session is cancelled. Everything from 1:00 PM onward is personal, which is why you moved a partner call to tomorrow.</p>
-    <p><b>The 10:00 just got more interesting.</b> The client wrote at 7:44 this morning saying their own managers see no new permits this year, which contradicts the portfolio update a colleague sent. That is a data question, and it is yours. Worth ten minutes before the call.</p>
-    <p><b>Tomorrow is the real deadline.</b> A partner kick-off at 11:45, and three open items you sent Monday are still unanswered. If they do not land today you go into that meeting without the cases built.</p>
+  <h2><span class="num">01</span> Snapshot</h2>
+  <hr class="rule">
+  <div class="callout">
+    <h3>Meetings end at 11:00; the afternoon is genuinely open</h3>
+    <p>A board call is running now and overlaps the next meeting by fifteen minutes. Two internal meetings were cancelled, which leaves the widest uninterrupted stretch of the week from 11:00 onward. Two items have a hard clock on them today — a school deadline that passed yesterday, and a filing deadline with an unanswered question behind it. Rain arrives early afternoon, so the walk is better at 11:00 than at 4:00.</p>
   </div>
 </section>
 
 <section>
-  <h2><span class="num">02</span> Weather <span class="pill pill-frozen">Frozen 9:41 AM</span></h2>
-  <div class="wx">
-    <div class="wxc"><p class="d">Today</p><p class="t">11&deg; then 8&deg;</p>
-      <p class="c">Cloudy morning, light rain through the afternoon and turning colder. A 16 degree drop from yesterday.</p></div>
-    <div class="wxc"><p class="d">Outdoor window</p><p class="t">10:30 AM</p>
-      <p class="c">A full hour, moved to the morning because the afternoon is wet.</p></div>
-  </div>
-</section>
-
-<section>
-  <h2><span class="num">03</span> Today's Schedule <span class="pill pill-live">Live</span> <span class="n">6 live, 1 cancelled</span></h2>
-
-  <div class="timeline">
-    <div class="tl-head g">Time</div>
-    <div class="tl-head w">Work</div>
-    <div class="tl-head p">Personal</div>
-
-    <div class="tl-col tl-hours">
-      <div class="tl-hour" style="top:0px">8 AM</div>
-      <div class="tl-hour" style="top:72px">9 AM</div>
-      <div class="tl-hour" style="top:144px">10 AM</div>
-      <div class="tl-hour" style="top:216px">11 AM</div>
-      <div class="tl-hour" style="top:288px">12 PM</div>
-      <div class="tl-hour" style="top:360px">1 PM</div>
-      <div class="tl-hour" style="top:432px">2 PM</div>
-      <div class="tl-hour" style="top:504px">3 PM</div>
-      <div class="tl-hour" style="top:576px">4 PM</div>
-      <div class="tl-hour" style="top:648px">5 PM</div>
-      <div class="tl-hour" style="top:720px">6 PM</div>
-      <div class="tl-hour" style="top:792px">7 PM</div>
-      <div class="tl-hour" style="top:864px">8 PM</div>
-      <div class="tl-hour" style="top:936px">9 PM</div>
-      <div class="tl-hour" style="top:1008px">10 PM</div>
-    </div>
-
-    <div class="tl-col lane">
-      <div class="ev x tiny" style="top:108px;height:34px">
-        <span class="t">9:30 - 10:00</span><span class="nm">Design session</span>
-      </div>
-      <div class="ev w" style="top:144px;height:34px">
-        <span class="t">10:00 - 10:30</span>
-        <span class="nm"><a href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgAEcspM%2BgAA&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Client billing, K.</a></span>
-      </div>
-      <div class="tl-free" style="top:180px;height:104px">
-        <span class="nm">Open, 10:30 to 12:00</span>
-        <span class="sub">The only real block of the day. Outdoor hour goes here, then tomorrow's prep.</span>
-      </div>
-      <div class="ev w tiny" style="top:288px;height:22px">
-        <span class="t">12:00</span><span class="nm">Rev/Ops Standup, 15 min</span>
-      </div>
-      <div class="tl-free" style="top:314px;height:44px">
-        <span class="nm">Open, 12:15 to 1:00</span>
-        <span class="sub">Last work window before the afternoon goes personal.</span>
-      </div>
-    </div>
-
-    <div class="tl-col lane">
-      <div class="ev p" style="top:360px;height:72px">
-        <span class="t">1:00 - 2:00</span>
-        <span class="nm"><a href="https://www.google.com/calendar/event?eid=bW4wcHI2YnE1ZTAwajE3c3E1dTZnNDE2NDRfMjAyNjA5MTBUMTkwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Workout</a></span>
-        <span class="sub">Your partner.</span>
-      </div>
-      <div class="ev p" style="top:522px;height:72px">
-        <span class="t">3:15 - 4:15</span>
-        <span class="nm"><a href="https://www.google.com/calendar/event?eid=XzY4cDQyZ3BqNm9xNDJiOW83NTJrNGI5azZsMWowYjlwNnNwamFiOWc2b28zNmgxZzg4cWthaGE1OGsgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Appointment</a></span>
-      </div>
-      <div class="ev p" style="top:612px;height:54px">
-        <span class="t">4:30 - 5:15</span>
-        <span class="nm"><a href="https://www.google.com/calendar/event?eid=azByajhwZXAwbDY4OWRqbDg0YmJzdGdnM2tfMjAyNjA5MTBUMjIzMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Appointment</a></span>
-        <span class="sub">Same building. See flag 2.</span>
-      </div>
-      <div class="ev p" style="top:684px;height:288px;right:auto;width:51%">
-        <span class="t">5:30 - 9:30</span>
-        <span class="nm"><a href="https://www.google.com/calendar/event?eid=NXJzZnRmZnBzZWhydnBrY2hpNGQ2bzJtazBfMjAyNjA5MTBUMjMzMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Sitter</a></span>
-        <span class="sub">4 hrs. No activity run tonight, so no driving and no pickup. Kids home.</span>
-      </div>
-      <div class="ev p" style="top:756px;height:72px;left:53%;right:4px">
-        <span class="t">6:30 - 7:30</span>
-        <span class="nm"><a href="https://www.google.com/calendar/event?eid=Ym9jamVxMXI4MzQ1cmlxYnRmbW81dTZkc2MgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw&amp;ctz=America/Edmonton" target="_blank" rel="noopener">Family commitment</a></span>
-        <span class="sub">Booked 3x, see flag 1.</span>
-      </div>
-    </div>
-
-    <p class="tl-note">The lanes share one time axis. Work stops at 12:15 and personal starts at 1:00, so today is genuinely two halves rather than an interleaved day. The dashed blocks are real free windows, not gaps between things.</p>
-  </div>
-</section>
-
-<section>
-  <h2><span class="num">04</span> Conflicts And Flags <span class="pill pill-frozen">Frozen 9:41 AM</span> <span class="n">5</span></h2>
-
-  <div class="callout"><p class="ch">1 &middot; One Evening Appointment Exists Three Times</p>
-    <p class="cb">Tonight's 6:30 slot is on the Family calendar as <b>three separate events</b>, created Sept 2, Sept 3 and Sept 9, all at the same hour. One real appointment, three entries. Not deleted, since removing calendar items is your call, but two of the three should go.</p></div>
-
-  <div class="callout"><p class="ch">2 &middot; The 4:30 Invite, Same Unresolved Pattern As Yesterday's</p>
-    <p class="cb">You declined this invite four times in early September, three of them on one day, and it still sits on the Family calendar with your response as needsAction, showing you busy. Identical to yesterday's workout invite. Either the declines are not sticking, or something is re-creating them. Worth looking at once rather than re-flagging weekly. Today it is in the same building as your 3:15, fifteen minutes apart, so if it is real it costs nothing extra.</p></div>
-
-  <div class="callout"><p class="ch">3 &middot; Tomorrow's Kick-Off Is Still Unprepped</p>
-    <p class="cb">11:45 AM tomorrow. The prep task is in backlog and the three open items sent Monday are unanswered, so the cases are not built. Yesterday's guidance was to focus the meeting on data QC, contract status, retainer housekeeping and API questions, deferring the tooling walkthrough. That agenda works even without the answers, which is the useful part.</p></div>
-
-  <div class="callout"><p class="ch">4 &middot; A Government Portal Wants Confirmation For Both Kids</p>
-    <p class="cb">Two emails landed yesterday, one per child, asking you to confirm enrollment details a provider entered. No stated deadline, which is exactly the kind of thing that sits for six weeks. Five minutes each.</p></div>
-
-  <div class="callout"><p class="ch">5 &middot; Webhook Delivery Failures On A Company Endpoint</p>
-    <p class="cb">A payments provider reported trouble delivering to a company webhook last night. If that endpoint drives subscription state, silent failures matter more than the email suggests. A colleague's territory rather than yours, but worth naming at the noon standup.</p></div>
-</section>
-
-<section>
-  <h2><span class="num">05</span> Tasks And Priorities <span class="pill pill-live">Live</span> <span class="n">top 10 by recency</span></h2>
+  <h2><span class="num">02</span> Today's Schedule</h2>
+  <p class="h2note">Work and home on one list. Three overlaps flagged.</p>
+  <hr class="rule">
   <div class="panel">
+    <div class="row dead">
+      <div class="time">9:00 – 10:00 AM</div>
+      <div class="bd"><p class="ttl"><a class="deep" href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgAEJV7l7wAA&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Placeholder hold</a></p><p class="mt">Redundant — sits on top of the real meeting below.</p></div>
+      <span class="pill pill-warn">Tidy up</span>
+    </div>
+    <div class="row work">
+      <div class="time">9:00 – 10:45 AM</div>
+      <div class="bd"><p class="ttl"><a class="deep" href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgAEmPEbkQAA&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Board meeting — N.F.</a></p><p class="mt">External, video call.</p></div>
+      <span class="pill pill-clash">Overlap</span>
+    </div>
+    <div class="row work">
+      <div class="time">10:30 – 11:00 AM</div>
+      <div class="bd"><p class="ttl"><a class="deep" href="https://outlook.office365.com/owa/?itemid=AAkBOQAICN8SvEkhwAAuAAAAAB2EAxGqZhHNm8gAqgAvxFoNANgnf%2FAaSwRHmKCwTnvH12YAA0m4ulAAABA%3D&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Internal 1:1</a></p><p class="mt">Starts fifteen minutes before the board call ends.</p></div>
+      <span class="pill pill-clash">Overlap</span>
+    </div>
+    <div class="row work">
+      <div class="time">11:00 AM – 5:00 PM</div>
+      <div class="bd"><p class="ttl">Open</p><p class="mt">Two internal meetings cancelled. No further work commitments on the calendar.</p></div>
+      <span class="pill pill-work">Free</span>
+    </div>
+    <div class="row pers">
+      <div class="time">12:00 PM</div>
+      <div class="bd"><p class="ttl"><a class="deep" href="https://www.google.com/calendar/event?eid=Y2k1Ym5tZHRtOThhMDZvZnNjNjI2cnU0cmtfMjAyNjA5MTVUMTgwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Weekly meal-box order</a></p><p class="mt">Cutoff 11:59 PM Wednesday.</p></div>
+      <span class="pill pill-pers">Home</span>
+    </div>
+    <div class="row pers">
+      <div class="time">12:30 PM</div>
+      <div class="bd"><p class="ttl"><a class="deep" href="https://www.google.com/calendar/event?eid=XzhrcmsyYzFrOGwyajBiOWc4NG9qMmI5azhnc2ppYmExNjkyM2ViOWo2Z3IzMmNoaDZncTNnZDFuOGcgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw" target="_blank" rel="noopener">Picture day tomorrow (the kids)</a></p></div>
+      <span class="pill pill-pers">Home</span>
+    </div>
+    <div class="row pers">
+      <div class="time">2:30 – 3:30 PM</div>
+      <div class="bd"><p class="ttl"><a class="deep" href="https://www.google.com/calendar/event?eid=XzYwc2oyZGE2Nm9ya2FiOWg3NTBrNGI5azg5MTM0YmEyOGQyM2diYTM4b3FrYWc5ajcwcjQyZGhuNzQgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw" target="_blank" rel="noopener">Reformer Pilates</a></p></div>
+      <span class="pill pill-pers">Home</span>
+    </div>
+    <div class="row pers">
+      <div class="time">5:00 – 7:00 PM</div>
+      <div class="bd"><p class="ttl"><a class="deep" href="https://www.google.com/calendar/event?eid=a3Z0aGtxamVlMXB0ZWo1MzZja3Z0ZHY1YzBfMjAyNjA5MTVUMjMwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Dinner with friends</a></p><p class="mt">Runs across both dance classes.</p></div>
+      <span class="pill pill-clash">Overlap</span>
+    </div>
+    <div class="row pers">
+      <div class="time">5:00 – 6:30 PM</div>
+      <div class="bd"><p class="ttl"><a class="deep" href="https://www.google.com/calendar/event?eid=YzFodG03aDdiazRnNW41cnM3NjUycGcyaTRfMjAyNjA5MTVUMjMwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Dance, back to back (the kids)</a></p><p class="mt">Two classes, 45 minutes each.</p></div>
+      <span class="pill pill-clash">Overlap</span>
+    </div>
+    <div class="row pers">
+      <div class="time">7:00 – 9:00 PM</div>
+      <div class="bd"><p class="ttl"><a class="deep" href="https://www.google.com/calendar/event?eid=a2xsM2x0bHNlazh0MTFqbWhjNTlkaXViMjRfMjAyNjA5MTZUMDEwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Bowling league</a></p><p class="mt">First week of the season; counts for points.</p></div>
+      <span class="pill pill-pers">Home</span>
+    </div>
+  </div>
+</section>
 
-    <div class="row work"><div class="time">In progress</div>
-      <div class="body"><p class="title"><a class="deep" href="https://app.clickup.com/t/868kjx521" target="_blank" rel="noopener">P.O. BD, Intro And Demo</a></p>
-      <p class="meta">Moved yesterday. The NDA is with their legal team as of Wednesday, so this is genuinely waiting on them now.</p></div>
-      <span class="badge badge-work">Work</span></div>
-
-    <div class="row work"><div class="time">Waiting, external</div>
-      <div class="body"><p class="title"><a class="deep" href="https://app.clickup.com/t/868khzazw" target="_blank" rel="noopener">M. BD, Schedule Follow Up</a> and <a class="deep" href="https://app.clickup.com/t/868kfkr8k" target="_blank" rel="noopener">The Co-Branded Flyer Review</a></p>
-      <p class="meta">Both touched yesterday, both waiting on the same partner. Your Sept 8 status check is still unanswered. One nudge covers both.</p></div>
-      <span class="badge badge-work">Work</span></div>
-
-    <div class="row work"><div class="time">In progress</div>
-      <div class="body"><p class="title"><a class="deep" href="https://app.clickup.com/t/868kftg19" target="_blank" rel="noopener">O.G.T., Comp Subscription Through October</a></p>
-      <p class="meta">Goodwill. Directly relevant to tomorrow's rescheduled 1:30 call, alongside <a class="deep" href="https://app.clickup.com/t/868kd9nfq" target="_blank" rel="noopener">the new features email</a> and <a class="deep" href="https://app.clickup.com/t/868kd9n7v" target="_blank" rel="noopener">upload features</a>. The contract notice window closes early this month.</p></div>
-      <span class="badge badge-work">Work</span></div>
-
-    <div class="row work"><div class="time">Waiting, external</div>
-      <div class="body"><p class="title"><a class="deep" href="https://app.clickup.com/t/868kfrh7u" target="_blank" rel="noopener">R.R. BD, Intro Call Via A Referral</a></p>
-      <p class="meta">The referrer is on tomorrow's kick-off, so this is a free ask while you have him.</p></div>
-      <span class="badge badge-work">Work</span></div>
-
-    <div class="row work"><div class="time">In progress</div>
-      <div class="body"><p class="title"><a class="deep" href="https://app.clickup.com/t/868kftm3v" target="_blank" rel="noopener">F. BD, Discovery Meeting</a></p>
-      <p class="meta">Rev/Ops has an invoice timing item on you under the same first name, so check these are the same person before treating them separately.</p></div>
-      <span class="badge badge-work">Work</span></div>
-
-    <div class="row work"><div class="time">Waiting, external</div>
-      <div class="body"><p class="title"><a class="deep" href="https://app.clickup.com/t/868k9n1yu" target="_blank" rel="noopener">Explore Partnership With S.C.A.</a></p>
-      <p class="meta">Untouched since late April and still marked waiting on someone else. A candidate for a decision rather than another week of waiting.</p></div>
-      <span class="badge badge-work">Work</span></div>
-
-    <div class="row work"><div class="time">Backlog</div>
-      <div class="body"><p class="title"><a class="deep" href="https://app.clickup.com/t/868kjxcgr" target="_blank" rel="noopener">Add The Well-Cap Language To Terms</a></p>
-      <p class="meta">Small, concrete, and it protects the entry tier from exactly the manual-upload usage pattern a subscriber described on Tuesday.</p></div>
-      <span class="badge badge-work">Work</span></div>
-
-    <div class="row work"><div class="time">Backlog</div>
-      <div class="body"><p class="title">Four Wealth And Trust Channel Items, All Cold</p>
-      <p class="meta">A <a class="deep" href="https://app.clickup.com/t/868kay45b" target="_blank" rel="noopener">trust company follow-up</a>, <a class="deep" href="https://app.clickup.com/t/868hnj7ec" target="_blank" rel="noopener">a wealth management flyer</a>, <a class="deep" href="https://app.clickup.com/t/868kfu3e4" target="_blank" rel="noopener">a banks and trust flyer</a>, and <a class="deep" href="https://app.clickup.com/t/868kj40hx" target="_blank" rel="noopener">a general-use flyer</a>. All untouched since April. That channel is producing referrals on its own, which makes this the highest-leverage cold cluster on the board.</p></div>
-      <span class="badge badge-work">Work</span></div>
-
-    <div class="row work"><div class="time">Backlog</div>
-      <div class="body"><p class="title"><a class="deep" href="https://app.clickup.com/t/868kj46k8" target="_blank" rel="noopener">Conference Presence Without Attending</a></p>
-      <p class="meta">End of the month, so about three weeks out and still marked needs refined. Whatever the presence is, it needs deciding soon enough to produce it.</p></div>
-      <span class="badge badge-work">Work</span></div>
-
-    <div class="row work"><div class="time">Backlog</div>
-      <div class="body"><p class="title">Two Items For A Client In Collections</p>
-      <p class="meta"><a class="deep" href="https://app.clickup.com/t/868kftkag" target="_blank" rel="noopener">Tract value testing</a> and <a class="deep" href="https://app.clickup.com/t/868kftkht" target="_blank" rel="noopener">a subscription setup</a>. Worth pausing until the August invoice is actually paid.</p></div>
-      <span class="badge badge-work">Work</span></div>
-
-    <p class="note">Yesterday's top ten was a different set, because this is the flat recency sort and yesterday's items were touched Tuesday. That is known placeholder behaviour, not new information: nothing on yesterday's list closed.</p>
+<section>
+  <h2><span class="num">03</span> Tasks &amp; Priorities</h2>
+  <p class="h2note">16 open, most recently touched first. Client and company names reduced to initials.</p>
+  <hr class="rule">
+  <div class="panel">
+    <div class="row work"><div class="time">In progress</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868m2rqvg" target="_blank" rel="noopener">Deal work — R.P.</a></p><p class="mt">Consulting</p></div></div>
+    <div class="row work"><div class="time">Backlog</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868kj46hd" target="_blank" rel="noopener">Family meeting prep — W.D.J., late September</a></p><p class="mt">Business development</p></div></div>
+    <div class="row work"><div class="time">In progress</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868kzw9n7" target="_blank" rel="noopener">Third-party engineering consultant role — B.O.</a></p><p class="mt">Business development</p></div></div>
+    <div class="row work"><div class="time">Backlog</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868m2t13x" target="_blank" rel="noopener">Finalize budget and revenue goals for the rest of 2026</a></p><p class="mt">Admin</p></div></div>
+    <div class="row work"><div class="time">In progress</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868kqjr8j" target="_blank" rel="noopener">Intro call — P.V.M.M.</a></p><p class="mt">Business development</p></div></div>
+    <div class="row work"><div class="time">Backlog</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868kfu6cy" target="_blank" rel="noopener">Follow up on custom risking and reports — 5.P.</a></p><p class="mt">Business development</p></div></div>
+    <div class="row work"><div class="time">Backlog</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868m2t0ae" target="_blank" rel="noopener">Check in on taxes and financials</a></p><p class="mt">Admin</p></div></div>
+    <div class="row work"><div class="time">In progress</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868kx611z" target="_blank" rel="noopener">Branded mockup report — O.G.T.</a></p><p class="mt">Business development</p></div></div>
+    <div class="row work"><div class="time">In progress</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868kx60zd" target="_blank" rel="noopener">Pitch and proposal — O.G.T.</a></p><p class="mt">Business development</p></div></div>
+    <div class="row work"><div class="time">In progress</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868jmk81h" target="_blank" rel="noopener">Portfolio build-out and consulting — G.G.</a></p><p class="mt">Consulting</p></div></div>
   </div>
 </section>
 
 <section>
   <h2 class="personal">
-    <svg width="18" height="18" viewBox="20 13 254 254" fill="none" stroke-linejoin="round">
-      <circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle>
-      <polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon>
-      <polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon>
-      <polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon>
-    </svg>
+    <svg class="famark" width="18" height="18" viewBox="20 13 254 254" fill="none" stroke-linejoin="round" aria-hidden="true"><circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle><polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon><polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon><polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon></svg>
     Life Balance
   </h2>
+  <hr class="rule personal">
   <div class="verdict">
-    <p class="lead">The afternoon is already yours. The only thing missing is air.</p>
-    <p><b>Your own time today is unusually good:</b> three appointments this afternoon that are all about you, with a sitter covering the evening so neither of you is driving. No suggestion needed there.</p>
-    <p><b>Suggested outdoor window, 10:30 to 11:30 AM, a full hour rather than thirty minutes.</b> Rain arrives this afternoon and it drops to about 8 degrees, so the usual late-afternoon slot is out. The morning is only cloudy and around 11, and 10:30 to 12:00 is the one genuinely open block. Take the first hour outside and leave the last half hour for tomorrow's prep.</p>
-    <p>If you would rather not walk in the cold, the honest alternative is that today has no better window, so it becomes an indoor day and the walk moves to tomorrow morning.</p>
+    <h3>The afternoon is wet, so take the hour before noon instead.</h3>
+    <p>Cloudy with a 60% chance of showers through the morning and early afternoon, rain settling in early afternoon, high 11&nbsp;°C. Clearing overnight to 3&nbsp;°C.</p>
+    <p><strong>Suggested window — 11:00 AM to 12:00 PM.</strong> A full hour rather than the usual thirty minutes, because the late-afternoon slot is written off by rain. It lands after the morning meetings and ahead of the worst of the weather.</p>
+    <p><strong>Already on the calendar:</strong> Pilates at 2:30 and bowling at 7:00.</p>
   </div>
 </section>
 
 <section>
-  <h2><span class="num">06</span> Email <span class="pill pill-frozen">Frozen 9:41 AM</span> <span class="n">1 owed, 6 waiting</span></h2>
+  <h2><span class="num">04</span> Email</h2>
+  <p class="h2note">External correspondents only, reduced to initials. Thread state verified against a paginated sweep of sent mail.</p>
+  <hr class="rule">
   <div class="panel">
-    <div class="row work"><div class="time">Reply owed</div>
-      <div class="body"><p class="title">P.T. (K.), Today 7:44 AM</p>
-      <p class="meta">She took a colleague's portfolio update to her own managers, who see <b>no new permits this year</b>, and is questioning two well groups that started producing in 2026 but whose permits are not showing. Addressed to a colleague, but the data answer is yours. You have the call at 10:00, so the useful move is working out whether this is a permit-date versus first-production-date mismatch before then.</p></div>
-      <span class="badge badge-work">Work</span></div>
-
-    <div class="row work"><div class="time">Waiting, 2 days</div>
-      <div class="body"><p class="title">C.G. (R.P.), Three Open Items</p>
-      <p class="meta">Sent Monday evening, no reply. <b>The kick-off is tomorrow.</b> This has gone from a chase to a decision: the answers arrive today, or you go in with the fallback agenda and no cases.</p></div>
-      <span class="badge badge-work">Work</span></div>
-
-    <div class="row work"><div class="time">Waiting, 2 days</div>
-      <div class="body"><p class="title">F., An Invoice</p>
-      <p class="meta">Discount applied, due date passed, payment date requested. Still nothing. Already in collections, and two tasks are parked behind it.</p></div>
-      <span class="badge badge-work">Work</span></div>
-
-    <div class="row work"><div class="time">Waiting, 2 days</div>
-      <div class="body"><p class="title">M.P. (P.), The NDA</p>
-      <p class="meta">Nine days out, two since your nudge. Blocks the whole introduction. There is a warm route in if the direct line stays quiet.</p></div>
-      <span class="badge badge-work">Work</span></div>
-
-    <div class="row work"><div class="time">Waiting, 3 days</div>
-      <div class="body"><p class="title">S.K. (M.), Status Check</p>
-      <p class="meta">Three questions and a request for twenty minutes, no reply. Two tasks now sit in waiting-external behind this one email.</p></div>
-      <span class="badge badge-work">Work</span></div>
-
-    <div class="row work"><div class="time">Waiting, 6 days</div>
-      <div class="body"><p class="title">The Accountants, Prior Year Financials</p>
-      <p class="meta">Second follow-up, sent last Friday. You asked them to confirm a large attachment set landed, since that volume trips filters. Still no confirmation either way.</p></div>
-      <span class="badge badge-work">Work</span></div>
-
-    <div class="row work"><div class="time">Waiting, 8 days, yours</div>
-      <div class="body"><p class="title">G.M. (B.O.)</p>
-      <p class="meta">You named Wednesday or Thursday this week and promised specific times plus a redacted sample. <b>Today is the last of those two days.</b> Either send times now for next week, or it becomes a nine day silence on a recurring opportunity.</p></div>
-      <span class="badge badge-work">Work</span></div>
-
-    <p class="note">Verified against a paginated sweep of Sent Items covering Sept 9 to now, continuous with yesterday's sweep back to Sept 1. Nothing on this list received a reply since yesterday, and nothing new joined it.</p>
+    <div class="row work"><div class="time">Reply owed</div><div class="bd"><p class="ttl">V.E. — owner relations</p><p class="mt">Two messages this morning on an ownership and division-order inquiry. High priority.</p></div><span class="pill pill-clash">High</span></div>
+    <div class="row work"><div class="time">Reply owed</div><div class="bd"><p class="ttl">F.N. — L.G.</p><p class="mt">Asked for feedback ahead of a Thursday call. Possibly CC only — kept on the list rather than dropped.</p></div><span class="pill pill-warn">Uncertain</span></div>
+    <div class="row work"><div class="time">Awaiting</div><div class="bd"><p class="ttl">S.S.C. — P.O. and S.K.</p><p class="mt">Sent yesterday afternoon. Commercial thread; the one to watch.</p></div><span class="pill pill-clash">High</span></div>
+    <div class="row work"><div class="time">Awaiting</div><div class="bd"><p class="ttl">B.M. — M.C.</p><p class="mt">Sent yesterday morning. A filing deadline falls today with the question still unanswered.</p></div><span class="pill pill-clash">High</span></div>
+    <div class="row work"><div class="time">Awaiting</div><div class="bd"><p class="ttl">P.V.M.M. — M.P.</p><p class="mt">Requested sample data yesterday afternoon.</p></div></div>
+    <div class="row work"><div class="time">Awaiting</div><div class="bd"><p class="ttl">R.P. — C. and J.</p><p class="mt">Status note sent yesterday evening.</p></div></div>
+    <div class="row work"><div class="time">Awaiting</div><div class="bd"><p class="ttl">O. — S.S.</p><p class="mt">Four ownership items outstanding, laid out yesterday afternoon.</p></div></div>
+    <div class="row work"><div class="time">Awaiting</div><div class="bd"><p class="ttl">Three further operator and owner-relations threads</p><p class="mt">All sent yesterday evening. Low urgency.</p></div></div>
   </div>
 </section>
 
 <section>
   <h2 class="personal">
-    <svg width="18" height="18" viewBox="20 13 254 254" fill="none" stroke-linejoin="round">
-      <circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle>
-      <polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon>
-      <polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon>
-      <polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon>
-    </svg>
-    Reminders
+    <svg class="famark" width="18" height="18" viewBox="20 13 254 254" fill="none" stroke-linejoin="round" aria-hidden="true"><circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle><polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon><polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon><polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon></svg>
+    Needs You — priority 1
   </h2>
+  <hr class="rule personal">
   <div class="panel personal">
-
-    <div class="row personal"><div class="time">8 days, easy close</div>
-      <div class="body"><p class="title"><a class="deep" href="https://app.todoist.com/app/task/6h5xXQR54CrF5pFf" target="_blank" rel="noopener">Call The Dentist, Check If We're Overdue For Cleanings</a></p>
-      <p class="meta">Priority one. They answered your Sept 2 question <b>13 minutes later</b> with a revised date pairing, and it has sat for eight days. One reply closes half of this task; adding a cleaning request to the same message closes all of it.</p></div>
-      <span class="badge badge-personal">Personal</span></div>
-
-    <div class="row personal"><div class="time">6 weeks late</div>
-      <div class="body"><p class="title"><a class="deep" href="https://app.todoist.com/app/task/6h69CQXGqH3cgfJf" target="_blank" rel="noopener">Call A Health Equipment Provider</a></p>
-      <p class="meta">Priority one. Still a genuine first contact with no thread behind it. Detail in Todoist.</p></div>
-      <span class="badge badge-personal">Personal</span></div>
-
-    <div class="row personal"><div class="time">6 weeks late</div>
-      <div class="body"><p class="title"><a class="deep" href="https://app.todoist.com/app/task/6h6Q2XvP658gF3Wv" target="_blank" rel="noopener">Library: Overdue Items For The Kids Now Marked LOST, Find And Return</a></p>
-      <p class="meta">Priority one, due Aug 1. Replacement charges already billed across both accounts, three items, returnable to any branch. Also a digital hold that needs borrowing or suspending.</p></div>
-      <span class="badge badge-personal">Personal</span></div>
-
-    <div class="row personal"><div class="time">Tick it</div>
-      <div class="body"><p class="title">One Task Closes This Afternoon</p>
-      <p class="meta">The appointment you were meant to book is today. That task has been open since Aug 10.</p></div>
-      <span class="badge badge-personal">Personal</span></div>
-
-    <div class="row personal"><div class="time">Half done</div>
-      <div class="body"><p class="title">Swim Lessons, The Second Half Is Still Open</p>
-      <p class="meta">The autumn slot is cancelled and rebooked. Still outstanding: cancelling the November to December block and booking private lessons instead, plus checking both kids are registered separately rather than under one name.</p></div>
-      <span class="badge badge-personal">Personal</span></div>
-
-    <div class="row personal"><div class="time">Stale</div>
-      <div class="body"><p class="title">Two Quick Ones, And One Now Parked</p>
-      <p class="meta">A community association renewal and a portal result now carried in five briefs. Both five minute jobs. The passport application picked up a back burner label since yesterday, so it is parked rather than late and this brief will stop nagging about it.</p></div>
-      <span class="badge badge-personal">Personal</span></div>
-
-    <div class="row personal"><div class="time">3 days</div>
-      <div class="body"><p class="title">Two Cards Due Sunday The 13th</p>
-      <p class="meta">A third follows on the 17th, just inside the window. A bank alert last night flagged one card near its limit, so check which is which before Saturday.</p></div>
-      <span class="badge badge-personal">Personal</span></div>
+    <div class="row pers"><div class="time">Overdue</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.todoist.com/app/task/6hW2jvJwwJCP5pxv" target="_blank" rel="noopener">Complete the school board online forms and demographic form</a></p><p class="mt">Was due yesterday. Submit separately for each child.</p></div><span class="pill pill-clash">Overdue</span></div>
+    <div class="row pers"><div class="time">13 days</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.todoist.com/app/task/6h5xXQR54CrF5pFf" target="_blank" rel="noopener">Book overdue dental cleanings and confirm the October dates</a></p><p class="mt">Waiting on a one-line reply to release the whole booking.</p></div><span class="pill pill-warn">Your court</span></div>
+    <div class="row pers"><div class="time">Open</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.todoist.com/app/task/6h6Q2XvP658gF3Wv" target="_blank" rel="noopener">Library items marked lost (the kids) — find and return</a></p><p class="mt">Returning them clears the charge.</p></div></div>
+    <div class="row pers"><div class="time">Open</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.todoist.com/app/task/6h69CQXGqH3cgfJf" target="_blank" rel="noopener">Health services call — first contact</a></p></div></div>
   </div>
 </section>
 
 <section>
-  <h2><span class="num">07</span> Heads Up <span class="pill pill-frozen">Frozen 9:41 AM</span> <span class="n">next 2 days</span></h2>
-  <div class="panel">
-    <div class="row work"><div class="time">Fri 11:45 AM</div>
-      <div class="body"><p class="title">Partner Kick-Off</p>
-      <p class="meta">Both external attendees accepted. Prep is in backlog and three answers are outstanding. The week's anchor.</p></div>
-      <span class="badge badge-work">Work</span></div>
-    <div class="row work"><div class="time">Fri 1:30 PM</div>
-      <div class="body"><p class="title">Partner Regroup</p>
-      <p class="meta">The call you moved from today. All four attendees accepted. Three tasks feed it, and a contract notice window closes early this month.</p></div>
-      <span class="badge badge-work">Work</span></div>
-    <div class="row personal"><div class="time">Friday</div>
-      <div class="body"><p class="title">A Full Personal Day Around Those Two Calls</p>
-      <p class="meta">A 10:00 appointment ending 45 minutes before the kick-off, one for your partner at 11:30, and an activity for the kids from 5:00 to 6:30.</p></div>
-      <span class="badge badge-personal">Personal</span></div>
-    <div class="row personal"><div class="time">Saturday</div>
-      <div class="body"><p class="title">A New Activity Starts, 1:45 PM</p>
-      <p class="meta">Details arrived yesterday. Not on the Family calendar yet.</p></div>
-      <span class="badge badge-personal">Personal</span></div>
-  </div>
+  <h2><span class="num">05</span> Flags</h2>
+  <hr class="rule">
+  <ul class="sq">
+    <li><strong>Unsolicited investor outreach, second touch.</strong> A cold approach from an overseas banking domain proposing a call next week. Kept off the replies-owed list deliberately.</li>
+    <li><strong>A report you authored was corrected without you</strong> ahead of a board call later this week. Worth reading the corrected line yourself.</li>
+    <li><strong>A colleague is blocked on you</strong> for a pricing range on a new intake, with an external clock on it.</li>
+    <li><strong>Two appointments sit on the wrong calendar</strong> and belong on the shared one. Flagged rather than moved.</li>
+    <li><strong>Massage series is in sync.</strong> All 15 bookings through the end of December have a matching entry at the right time.</li>
+    <li><strong>An overdue invoice was chased again last night</strong> with no response yet.</li>
+    <li><strong>Two internal meetings were cancelled,</strong> which is why the middle of the day is clear.</li>
+  </ul>
 </section>
 
+<section>
+  <h2 class="personal">
+    <svg class="famark" width="18" height="18" viewBox="20 13 254 254" fill="none" stroke-linejoin="round" aria-hidden="true"><circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle><polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon><polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon><polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon></svg>
+    Around Town
+  </h2>
+  <hr class="rule personal">
+  <ul class="sq personal">
+    <li><strong>Calgary weather:</strong> 60% chance of showers, high 11&nbsp;°C, rain settling in early afternoon. <a class="deep" href="https://weather.gc.ca/en/location/index.html?coords=51.046%2C-114.057" target="_blank" rel="noopener">Environment Canada</a></li>
+    <li><strong>Public Hearing of Council</strong> today at 9:30 AM, Council Chambers. <a class="deep" href="https://www.calgary.ca/planning/public-hearings.html" target="_blank" rel="noopener">City of Calgary</a></li>
+    <li><strong>Calgary-Shaw byelection</strong> — election day was yesterday; results rolling in. <a class="deep" href="https://globalnews.ca/calgary/" target="_blank" rel="noopener">Global News Calgary</a></li>
+    <li><strong>Landfill fire air quality data</strong> released by the city. <a class="deep" href="https://newsroom.calgary.ca/" target="_blank" rel="noopener">City newsroom</a></li>
+  </ul>
+</section>
+
+<p class="nav"><a href="https://deadnak.github.io/hornak-brief/">Tonight's household brief</a> · <a href="https://deadnak.github.io/hornak-brief/weekly/">This week's brief</a></p>
+
 <footer>
-  <div class="legend">
-    <span><span class="sw" style="background:#4D00CA"></span>Work</span>
-    <span><span class="sw" style="background:#B85C86"></span>Personal</span>
-    <span><span class="sw" style="background:#94A3B8"></span>Cancelled</span>
-  </div>
-  <p><b>Live</b> sections, the schedule and the task list, track their source records through the deep links. <b>Frozen</b> sections were fixed at build time.</p>
-  <p>A redacted mirror. External people and companies appear as initials, and detail sits behind a login. The unredacted version is the local file.</p>
-  <p>Built Thursday, September 10, 2026 at 9:41 AM MDT. All times Mountain.</p>
-  <p>No calendar or task changes were made today.</p>
+  Whitney's Day · Tuesday, September 15, 2026 · generated 9:05 AM MDT<br>
+  Redacted public mirror. Detail sits behind a login.
 </footer>
 
 </div>
+</body>
+</html>
