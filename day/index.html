@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Whitney's Day — Tuesday, September 15, 2026</title>
+<title>Whitney's Day — Wednesday, September 16, 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Jost:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap">
@@ -14,7 +14,6 @@
   --s50:#F8FAFC; --s100:#F1F5F9; --hair:#E2E8F0;
   --green:#16A34A; --red:#EF4444; --redwash:#FEF2F2;
   --amber:#B4690E; --amberwash:#FDF3E3;
-  --grad-cta:linear-gradient(135deg,#7A2BFF 0%,#4D00CA 100%);
   --alpen:#B85C86; --granite:#1B2022; --scree:#6C7378; --trail:#E3E1DA; --snow:#F7F5F1;
   --hair-snow:#DDDAD2;
   --font-head:'Lexend','Segoe UI',system-ui,sans-serif;
@@ -31,10 +30,10 @@ body{margin:0;background:#fff;color:var(--s700);font-family:var(--font-body);fon
 h1{font-family:var(--font-head);font-weight:700;font-size:28px;line-height:1.16;color:var(--s900);margin:12px 0 6px;letter-spacing:-.015em;text-wrap:balance}
 .sub{color:var(--s500);font-size:13.5px;margin:0}
 .redaction{margin-top:16px;background:var(--s50);border:1px solid var(--hair);border-radius:12px;padding:12px 16px;font-size:12.5px;color:var(--s500)}
-.snap{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin:24px 0 0}
+.snap{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:12px;margin:24px 0 0}
 .tile{background:#fff;border:1px solid var(--hair);border-radius:14px;padding:13px 15px}
 .tile.p{border-color:var(--hair-snow);background:var(--snow)}
-.tile .n{font-family:var(--font-head);font-weight:700;font-size:24px;color:var(--brand);line-height:1.1;font-variant-numeric:tabular-nums}
+.tile .n{font-family:var(--font-head);font-weight:700;font-size:23px;color:var(--brand);line-height:1.1;font-variant-numeric:tabular-nums}
 .tile.p .n{font-family:var(--font-fam-label);color:var(--alpen)}
 .tile .l{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--s500);margin-top:3px;font-family:var(--font-head);font-weight:500}
 .tile.p .l{font-family:var(--font-fam-label);color:var(--scree)}
@@ -52,23 +51,27 @@ h2.personal{font-family:var(--font-fam-label);font-weight:500;color:var(--granit
 .panel.personal .row{border-top-color:var(--hair-snow)}
 .row.work{border-left:3px solid var(--brand);padding-left:14px}
 .row.pers{border-left:3px solid var(--alpen);padding-left:14px}
-.row.dead{border-left:3px solid var(--s400);padding-left:14px}
-.time{font-variant-numeric:tabular-nums;font-size:12.5px;color:var(--s500);min-width:112px;flex:none;padding-top:2px}
+.row.free{border-left:3px dashed var(--p600);padding-left:14px}
+.time{font-variant-numeric:tabular-nums;font-size:12.5px;color:var(--s500);min-width:108px;flex:none;padding-top:2px}
 .row.pers .time{color:var(--scree);font-family:var(--font-fam-label)}
 .bd{flex:1;min-width:0}
 .ttl{font-family:var(--font-head);font-size:14px;font-weight:600;color:var(--s900);margin:0;line-height:1.4}
 .row.pers .ttl{font-family:var(--font-fam-label);font-weight:500;color:var(--granite)}
 .mt{font-size:12.5px;color:var(--s500);margin:2px 0 0}
 .row.pers .mt{color:var(--scree);font-family:var(--font-fam-label)}
-.row.dead .ttl{color:var(--s400);text-decoration:line-through}
 .pill{font-family:var(--font-head);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:600;border-radius:999px;padding:3px 9px;white-space:nowrap;flex:none;margin-top:2px}
-.pill-clash{background:var(--redwash);color:#B91C1C}
+.pill-hot{background:var(--redwash);color:#B91C1C}
 .pill-warn{background:var(--amberwash);color:var(--amber)}
 .pill-work{background:var(--wash);color:var(--brand)}
 .pill-pers{background:var(--trail);color:var(--alpen);font-family:var(--font-fam-label);font-weight:500}
 a.deep{color:inherit;text-decoration:none;border-bottom:1px dotted var(--s400)}
 a.deep:hover{border-bottom-style:solid;border-bottom-color:var(--brand)}
 .row.pers a.deep:hover{border-bottom-color:var(--alpen)}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+.colhead{display:flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:11.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--brand);padding-bottom:8px;margin-bottom:12px;border-bottom:2px solid var(--brand)}
+.colhead.personal{font-family:var(--font-fam-label);font-weight:500;color:var(--alpen);border-bottom-color:var(--alpen)}
+.colhead .cnt{margin-left:auto;font-variant-numeric:tabular-nums;color:var(--s400);letter-spacing:0;font-weight:400;text-transform:none}
+@media (max-width:820px){.twocol{grid-template-columns:1fr;gap:32px}}
 .verdict{background:linear-gradient(180deg,var(--snow),#fff);border:1px solid var(--hair-snow);border-radius:14px;padding:18px 20px}
 .verdict h3{font-family:var(--font-fam-head);font-style:italic;font-size:21px;font-weight:400;color:var(--alpen);margin:0 0 6px;line-height:1.26;text-wrap:balance}
 .verdict p{margin:0 0 8px;font-family:var(--font-fam-label);color:var(--granite);font-size:13.5px}
@@ -85,11 +88,7 @@ ul.sq.personal li::before{background:var(--alpen)}
 .nav a{color:var(--brand);text-decoration:none;border-bottom:1px solid transparent}
 .nav a:hover{border-bottom-color:var(--brand)}
 footer{margin-top:46px;padding-top:16px;border-top:1px solid var(--hair);font-size:11.5px;color:var(--s400);font-family:var(--font-head);line-height:1.8}
-@media (max-width:560px){
-  h1{font-size:23px}
-  .row{flex-wrap:wrap}
-  .time{min-width:100%;padding-top:0}
-}
+@media (max-width:560px){h1{font-size:23px}.row{flex-wrap:wrap}.time{min-width:100%;padding-top:0}}
 </style>
 </head>
 <body>
@@ -97,18 +96,19 @@ footer{margin-top:46px;padding-top:16px;border-top:1px solid var(--hair);font-si
 
 <header class="masthead">
   <p class="eyebrow">Whitney's Day</p>
-  <h1>Tuesday, September 15, 2026</h1>
-  <p class="sub">Calgary · all times Mountain · generated 9:05 AM MDT</p>
+  <h1>Wednesday, September 16, 2026</h1>
+  <p class="sub">Calgary · all times Mountain · generated 8:55 AM MDT</p>
   <div class="redaction">Public mirror. Names, clients, figures and meeting content are redacted to initials or removed. Every item links through to the real record, which sits behind a login.</div>
 </header>
 
 <div class="snap">
-  <div class="tile"><div class="n">3</div><div class="l">Work blocks</div></div>
-  <div class="tile"><div class="n">3</div><div class="l">Conflicts</div></div>
-  <div class="tile"><div class="n">2</div><div class="l">Replies owed</div></div>
+  <div class="tile"><div class="n">3</div><div class="l">Work meetings</div></div>
+  <div class="tile"><div class="n">3h</div><div class="l">Clear block</div></div>
+  <div class="tile"><div class="n">5</div><div class="l">Work replies owed</div></div>
   <div class="tile"><div class="n">8</div><div class="l">Awaiting reply</div></div>
   <div class="tile"><div class="n">16</div><div class="l">Open tasks</div></div>
-  <div class="tile p"><div class="n">6</div><div class="l">Home events</div></div>
+  <div class="tile p"><div class="n">3</div><div class="l">Personal replies owed</div></div>
+  <div class="tile p"><div class="n">5</div><div class="l">Home events</div></div>
   <div class="tile p"><div class="n">4</div><div class="l">Todoist P1</div></div>
 </div>
 
@@ -116,72 +116,65 @@ footer{margin-top:46px;padding-top:16px;border-top:1px solid var(--hair);font-si
   <h2><span class="num">01</span> Snapshot</h2>
   <hr class="rule">
   <div class="callout">
-    <h3>Meetings end at 11:00; the afternoon is genuinely open</h3>
-    <p>A board call is running now and overlaps the next meeting by fifteen minutes. Two internal meetings were cancelled, which leaves the widest uninterrupted stretch of the week from 11:00 onward. Two items have a hard clock on them today — a school deadline that passed yesterday, and a filing deadline with an unanswered question behind it. Rain arrives early afternoon, so the walk is better at 11:00 than at 4:00.</p>
+    <h3>One three-hour work block, then the evening belongs to the kids</h3>
+    <p>Meetings run through the morning, a workout at 11:00 splits the day, and after a short check-in at 12:30 the work calendar is empty until tomorrow. That afternoon stretch is the whole day's capacity. From 3:45 it is pickup, skating, dinner and choir straight through to seven — with a fifteen-minute crossing of the city in the middle of it. Two deadlines land tonight that nothing on the calendar is reminding anyone about.</p>
   </div>
 </section>
 
 <section>
   <h2><span class="num">02</span> Today's Schedule</h2>
-  <p class="h2note">Work and home on one list. Three overlaps flagged.</p>
+  <p class="h2note">Work and home on one list. No double-bookings today; the pressure is in the gaps.</p>
   <hr class="rule">
   <div class="panel">
-    <div class="row dead">
-      <div class="time">9:00 – 10:00 AM</div>
-      <div class="bd"><p class="ttl"><a class="deep" href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgAEJV7l7wAA&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Placeholder hold</a></p><p class="mt">Redundant — sits on top of the real meeting below.</p></div>
-      <span class="pill pill-warn">Tidy up</span>
+    <div class="row work">
+      <div class="time">8:30 – 9:15 AM</div>
+      <div class="bd"><p class="ttl"><a class="deep" href="https://outlook.office365.com/owa/?itemid=AAkBOQAICN8ThXOLgAAuAAAAAB2EAxGqZhHNm8gAqgAvxFoNANgnf%2FAaSwRHmKCwTnvH12YAAaGQkXgAABA%3D&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Revenue Ops — Level 0 &amp; Backlog</a></p><p class="mt">Internal.</p></div>
     </div>
     <div class="row work">
-      <div class="time">9:00 – 10:45 AM</div>
-      <div class="bd"><p class="ttl"><a class="deep" href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgAEmPEbkQAA&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Board meeting — N.F.</a></p><p class="mt">External, video call.</p></div>
-      <span class="pill pill-clash">Overlap</span>
+      <div class="time">9:30 – 10:30 AM</div>
+      <div class="bd"><p class="ttl"><a class="deep" href="https://outlook.office365.com/owa/?itemid=AAkBOQAICN8ThXOLgAAuAAAAAB2EAxGqZhHNm8gAqgAvxFoNANgnf%2FAaSwRHmKCwTnvH12YABCVe5esAABA%3D&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Business Development Strategy</a></p><p class="mt">Internal. You are chairing.</p></div>
+      <span class="pill pill-work">Yours</span>
+    </div>
+    <div class="row pers">
+      <div class="time">11:00 AM – 12:00 PM</div>
+      <div class="bd"><p class="ttl"><a class="deep" href="https://www.google.com/calendar/event?eid=NXNuNGo0c3BhZXB1ZzdjYXBmMXM2dnBzZ29fMjAyNjA5MTZUMTcwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Workout</a></p></div>
+      <span class="pill pill-pers">Home</span>
     </div>
     <div class="row work">
-      <div class="time">10:30 – 11:00 AM</div>
-      <div class="bd"><p class="ttl"><a class="deep" href="https://outlook.office365.com/owa/?itemid=AAkBOQAICN8SvEkhwAAuAAAAAB2EAxGqZhHNm8gAqgAvxFoNANgnf%2FAaSwRHmKCwTnvH12YAA0m4ulAAABA%3D&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Internal 1:1</a></p><p class="mt">Starts fifteen minutes before the board call ends.</p></div>
-      <span class="pill pill-clash">Overlap</span>
+      <div class="time">12:30 – 12:45 PM</div>
+      <div class="bd"><p class="ttl"><a class="deep" href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgAEq34vugAA&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Client appraisal check-in — M.F.</a></p><p class="mt">Tentative.</p></div>
     </div>
-    <div class="row work">
-      <div class="time">11:00 AM – 5:00 PM</div>
-      <div class="bd"><p class="ttl">Open</p><p class="mt">Two internal meetings cancelled. No further work commitments on the calendar.</p></div>
+    <div class="row free">
+      <div class="time">12:45 – 3:45 PM</div>
+      <div class="bd"><p class="ttl" style="color:var(--p600)">Open — the only real work block today</p><p class="mt">Nothing further on the work calendar until tomorrow.</p></div>
       <span class="pill pill-work">Free</span>
     </div>
     <div class="row pers">
-      <div class="time">12:00 PM</div>
-      <div class="bd"><p class="ttl"><a class="deep" href="https://www.google.com/calendar/event?eid=Y2k1Ym5tZHRtOThhMDZvZnNjNjI2cnU0cmtfMjAyNjA5MTVUMTgwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Weekly meal-box order</a></p><p class="mt">Cutoff 11:59 PM Wednesday.</p></div>
+      <div class="time">3:45 – 4:15 PM</div>
+      <div class="bd"><p class="ttl"><a class="deep" href="https://www.google.com/calendar/event?eid=c2ZzZnJsOWI5Z2tncWYza3ZuYTdlZDFoZDBfMjAyNjA5MTZUMjE0NTAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Pick up the kids</a></p></div>
       <span class="pill pill-pers">Home</span>
     </div>
     <div class="row pers">
-      <div class="time">12:30 PM</div>
-      <div class="bd"><p class="ttl"><a class="deep" href="https://www.google.com/calendar/event?eid=XzhrcmsyYzFrOGwyajBiOWc4NG9qMmI5azhnc2ppYmExNjkyM2ViOWo2Z3IzMmNoaDZncTNnZDFuOGcgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw" target="_blank" rel="noopener">Picture day tomorrow (the kids)</a></p></div>
+      <div class="time">4:15 – 5:00 PM</div>
+      <div class="bd"><p class="ttl"><a class="deep" href="https://www.google.com/calendar/event?eid=cXJucWlmNmk2YW8zZXVrb2pvY28zcnJtN2NfMjAyNjA5MTZUMjIxNTAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Skating — first session of the season (the kids)</a></p></div>
       <span class="pill pill-pers">Home</span>
     </div>
     <div class="row pers">
-      <div class="time">2:30 – 3:30 PM</div>
-      <div class="bd"><p class="ttl"><a class="deep" href="https://www.google.com/calendar/event?eid=XzYwc2oyZGE2Nm9ya2FiOWg3NTBrNGI5azg5MTM0YmEyOGQyM2diYTM4b3FrYWc5ajcwcjQyZGhuNzQgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw" target="_blank" rel="noopener">Reformer Pilates</a></p></div>
-      <span class="pill pill-pers">Home</span>
+      <div class="time">5:00 – 5:45 PM</div>
+      <div class="bd"><p class="ttl"><a class="deep" href="https://www.google.com/calendar/event?eid=ZjhrYmtzbm5sYnF2MmozbHFrNDFzNGg0b3NfMjAyNjA5MTZUMjMwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Dinner out</a></p><p class="mt">Then fifteen minutes to cross the city.</p></div>
+      <span class="pill pill-warn">Tight</span>
     </div>
     <div class="row pers">
-      <div class="time">5:00 – 7:00 PM</div>
-      <div class="bd"><p class="ttl"><a class="deep" href="https://www.google.com/calendar/event?eid=a3Z0aGtxamVlMXB0ZWo1MzZja3Z0ZHY1YzBfMjAyNjA5MTVUMjMwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Dinner with friends</a></p><p class="mt">Runs across both dance classes.</p></div>
-      <span class="pill pill-clash">Overlap</span>
-    </div>
-    <div class="row pers">
-      <div class="time">5:00 – 6:30 PM</div>
-      <div class="bd"><p class="ttl"><a class="deep" href="https://www.google.com/calendar/event?eid=YzFodG03aDdiazRnNW41cnM3NjUycGcyaTRfMjAyNjA5MTVUMjMwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Dance, back to back (the kids)</a></p><p class="mt">Two classes, 45 minutes each.</p></div>
-      <span class="pill pill-clash">Overlap</span>
-    </div>
-    <div class="row pers">
-      <div class="time">7:00 – 9:00 PM</div>
-      <div class="bd"><p class="ttl"><a class="deep" href="https://www.google.com/calendar/event?eid=a2xsM2x0bHNlazh0MTFqbWhjNTlkaXViMjRfMjAyNjA5MTZUMDEwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Bowling league</a></p><p class="mt">First week of the season; counts for points.</p></div>
-      <span class="pill pill-pers">Home</span>
+      <div class="time">6:00 – 7:00 PM</div>
+      <div class="bd"><p class="ttl"><a class="deep" href="https://www.google.com/calendar/event?eid=bDFoOW5oaDMwZmNzMjl1aThlcHJmY24wOWNfMjAyNjA5MTdUMDAwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Choir — open rehearsal (the kids)</a></p></div>
+      <span class="pill pill-warn">Tight</span>
     </div>
   </div>
 </section>
 
 <section>
   <h2><span class="num">03</span> Tasks &amp; Priorities</h2>
-  <p class="h2note">16 open, most recently touched first. Client and company names reduced to initials.</p>
+  <p class="h2note">16 open, most recently touched first. Client and company names reduced to initials. Nothing moved since yesterday.</p>
   <hr class="rule">
   <div class="panel">
     <div class="row work"><div class="time">In progress</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868m2rqvg" target="_blank" rel="noopener">Deal work — R.P.</a></p><p class="mt">Consulting</p></div></div>
@@ -190,7 +183,7 @@ footer{margin-top:46px;padding-top:16px;border-top:1px solid var(--hair);font-si
     <div class="row work"><div class="time">Backlog</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868m2t13x" target="_blank" rel="noopener">Finalize budget and revenue goals for the rest of 2026</a></p><p class="mt">Admin</p></div></div>
     <div class="row work"><div class="time">In progress</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868kqjr8j" target="_blank" rel="noopener">Intro call — P.V.M.M.</a></p><p class="mt">Business development</p></div></div>
     <div class="row work"><div class="time">Backlog</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868kfu6cy" target="_blank" rel="noopener">Follow up on custom risking and reports — 5.P.</a></p><p class="mt">Business development</p></div></div>
-    <div class="row work"><div class="time">Backlog</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868m2t0ae" target="_blank" rel="noopener">Check in on taxes and financials</a></p><p class="mt">Admin</p></div></div>
+    <div class="row work"><div class="time">Done in substance</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868m2t0ae" target="_blank" rel="noopener">Check in on taxes and financials</a></p><p class="mt">Resolved yesterday — worth closing.</p></div></div>
     <div class="row work"><div class="time">In progress</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868kx611z" target="_blank" rel="noopener">Branded mockup report — O.G.T.</a></p><p class="mt">Business development</p></div></div>
     <div class="row work"><div class="time">In progress</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868kx60zd" target="_blank" rel="noopener">Pitch and proposal — O.G.T.</a></p><p class="mt">Business development</p></div></div>
     <div class="row work"><div class="time">In progress</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868jmk81h" target="_blank" rel="noopener">Portfolio build-out and consulting — G.G.</a></p><p class="mt">Consulting</p></div></div>
@@ -204,40 +197,41 @@ footer{margin-top:46px;padding-top:16px;border-top:1px solid var(--hair);font-si
   </h2>
   <hr class="rule personal">
   <div class="verdict">
-    <h3>The afternoon is wet, so take the hour before noon instead.</h3>
-    <p>Cloudy with a 60% chance of showers through the morning and early afternoon, rain settling in early afternoon, high 11&nbsp;°C. Clearing overnight to 3&nbsp;°C.</p>
-    <p><strong>Suggested window — 11:00 AM to 12:00 PM.</strong> A full hour rather than the usual thirty minutes, because the late-afternoon slot is written off by rain. It lands after the morning meetings and ahead of the worst of the weather.</p>
-    <p><strong>Already on the calendar:</strong> Pilates at 2:30 and bowling at 7:00.</p>
+    <h3>A proper autumn day, and for once the weather is not the constraint.</h3>
+    <p>Clearing through the morning as the fog patches lift, high 17&nbsp;°C, low 7&nbsp;°C. A full ten degrees warmer than yesterday and dry.</p>
+    <p><strong>Suggested window — 2:00 to 2:30 PM.</strong> Thirty minutes is enough today, because the 11:00 workout already covers the activity. It sits in the warmest part of the afternoon, inside the free block, with over an hour of buffer before pickup.</p>
+    <p><strong>Already on the calendar:</strong> the 11:00 workout — the week's third session, which clears the target with three days to spare.</p>
   </div>
 </section>
 
 <section>
   <h2><span class="num">04</span> Email</h2>
-  <p class="h2note">External correspondents only, reduced to initials. Thread state verified against a paginated sweep of sent mail.</p>
+  <p class="h2note">Work threads are external correspondents, reduced to initials; thread state verified against a paginated sweep of sent mail. Personal threads are real correspondence about the kids and their activities, with people and places genericised.</p>
   <hr class="rule">
-  <div class="panel">
-    <div class="row work"><div class="time">Reply owed</div><div class="bd"><p class="ttl">V.E. — owner relations</p><p class="mt">Two messages this morning on an ownership and division-order inquiry. High priority.</p></div><span class="pill pill-clash">High</span></div>
-    <div class="row work"><div class="time">Reply owed</div><div class="bd"><p class="ttl">F.N. — L.G.</p><p class="mt">Asked for feedback ahead of a Thursday call. Possibly CC only — kept on the list rather than dropped.</p></div><span class="pill pill-warn">Uncertain</span></div>
-    <div class="row work"><div class="time">Awaiting</div><div class="bd"><p class="ttl">S.S.C. — P.O. and S.K.</p><p class="mt">Sent yesterday afternoon. Commercial thread; the one to watch.</p></div><span class="pill pill-clash">High</span></div>
-    <div class="row work"><div class="time">Awaiting</div><div class="bd"><p class="ttl">B.M. — M.C.</p><p class="mt">Sent yesterday morning. A filing deadline falls today with the question still unanswered.</p></div><span class="pill pill-clash">High</span></div>
-    <div class="row work"><div class="time">Awaiting</div><div class="bd"><p class="ttl">P.V.M.M. — M.P.</p><p class="mt">Requested sample data yesterday afternoon.</p></div></div>
-    <div class="row work"><div class="time">Awaiting</div><div class="bd"><p class="ttl">R.P. — C. and J.</p><p class="mt">Status note sent yesterday evening.</p></div></div>
-    <div class="row work"><div class="time">Awaiting</div><div class="bd"><p class="ttl">O. — S.S.</p><p class="mt">Four ownership items outstanding, laid out yesterday afternoon.</p></div></div>
-    <div class="row work"><div class="time">Awaiting</div><div class="bd"><p class="ttl">Three further operator and owner-relations threads</p><p class="mt">All sent yesterday evening. Low urgency.</p></div></div>
-  </div>
-</section>
-
-<section>
-  <h2 class="personal">
-    <svg class="famark" width="18" height="18" viewBox="20 13 254 254" fill="none" stroke-linejoin="round" aria-hidden="true"><circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle><polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon><polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon><polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon></svg>
-    Needs You — priority 1
-  </h2>
-  <hr class="rule personal">
-  <div class="panel personal">
-    <div class="row pers"><div class="time">Overdue</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.todoist.com/app/task/6hW2jvJwwJCP5pxv" target="_blank" rel="noopener">Complete the school board online forms and demographic form</a></p><p class="mt">Was due yesterday. Submit separately for each child.</p></div><span class="pill pill-clash">Overdue</span></div>
-    <div class="row pers"><div class="time">13 days</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.todoist.com/app/task/6h5xXQR54CrF5pFf" target="_blank" rel="noopener">Book overdue dental cleanings and confirm the October dates</a></p><p class="mt">Waiting on a one-line reply to release the whole booking.</p></div><span class="pill pill-warn">Your court</span></div>
-    <div class="row pers"><div class="time">Open</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.todoist.com/app/task/6h6Q2XvP658gF3Wv" target="_blank" rel="noopener">Library items marked lost (the kids) — find and return</a></p><p class="mt">Returning them clears the charge.</p></div></div>
-    <div class="row pers"><div class="time">Open</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.todoist.com/app/task/6h69CQXGqH3cgfJf" target="_blank" rel="noopener">Health services call — first contact</a></p></div></div>
+  <div class="twocol">
+    <div>
+      <div class="colhead">Work <span class="cnt">5 open</span></div>
+      <div class="panel">
+        <div class="row work"><div class="time">Reply owed</div><div class="bd"><p class="ttl">L.E. — owner relations</p><p class="mt">One-line request for a document already sent in August. Thirty seconds to close.</p></div><span class="pill pill-hot">High</span></div>
+        <div class="row work"><div class="time">Reply owed</div><div class="bd"><p class="ttl">F.N. — L.G.</p><p class="mt">Addressed to you by name with a numbered list, including two new permits added to the tracking sheet.</p></div></div>
+        <div class="row work"><div class="time">Reply owed</div><div class="bd"><p class="ttl">M.M. — T.B.</p><p class="mt">Supplied a long-sought operator contact and is offering to make the approach. Needs a yes or no.</p></div></div>
+        <div class="row work"><div class="time">Reply owed</div><div class="bd"><p class="ttl">C.C. — C.M.</p><p class="mt">Order form and pricing for a software add-on. A spend decision shared with a colleague.</p></div></div>
+        <div class="row work"><div class="time">Reply owed</div><div class="bd"><p class="ttl">O.G.T. — W.L.</p><p class="mt">Mostly informational; the substance runs into tomorrow's meeting.</p></div></div>
+        <div class="row work"><div class="time">Awaiting</div><div class="bd"><p class="ttl">Eight threads out, nothing back</p><p class="mt">Two now into day three, including one commercial thread worth watching and one client status note.</p></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="colhead personal">
+        <svg class="famark" width="16" height="16" viewBox="20 13 254 254" fill="none" stroke-linejoin="round" aria-hidden="true"><circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle><polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon><polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon><polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon></svg>
+        Home &amp; the kids <span class="cnt">3 open</span>
+      </div>
+      <div class="panel personal">
+        <div class="row pers"><div class="time">Before 6 PM</div><div class="bd"><p class="ttl">Choir placement for the kids</p><p class="mt">Unread since yesterday morning, and it applies to tonight's rehearsal. The reply that finalises it.</p></div><span class="pill pill-hot">Today</span></div>
+        <div class="row pers"><div class="time">Your move</div><div class="bd"><p class="ttl">Class birthday invitation</p><p class="mt">The teacher has given the go-ahead to send it out directly; contact details are in hand for twelve of eighteen families. The RSVP clock is the constraint.</p></div><span class="pill pill-hot">Today</span></div>
+        <div class="row pers"><div class="time">Reply owed</div><div class="bd"><p class="ttl">Rescheduling a standing appointment</p><p class="mt">This week's slot is cancelled and the provider is waiting on alternative dates.</p></div></div>
+        <div class="row pers"><div class="time">Closed</div><div class="bd"><p class="ttl">A note from school, already answered</p><p class="mt">Both parents replied; nothing outstanding. Two school meetings last night have also passed.</p></div></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -245,13 +239,13 @@ footer{margin-top:46px;padding-top:16px;border-top:1px solid var(--hair);font-si
   <h2><span class="num">05</span> Flags</h2>
   <hr class="rule">
   <ul class="sq">
-    <li><strong>Unsolicited investor outreach, second touch.</strong> A cold approach from an overseas banking domain proposing a call next week. Kept off the replies-owed list deliberately.</li>
-    <li><strong>A report you authored was corrected without you</strong> ahead of a board call later this week. Worth reading the corrected line yourself.</li>
-    <li><strong>A colleague is blocked on you</strong> for a pricing range on a new intake, with an external clock on it.</li>
-    <li><strong>Two appointments sit on the wrong calendar</strong> and belong on the shared one. Flagged rather than moved.</li>
-    <li><strong>Massage series is in sync.</strong> All 15 bookings through the end of December have a matching entry at the right time.</li>
-    <li><strong>An overdue invoice was chased again last night</strong> with no response yet.</li>
-    <li><strong>Two internal meetings were cancelled,</strong> which is why the middle of the day is clear.</li>
+    <li><strong>A payment webhook on a production site was disabled last night.</strong> Nothing suggests anyone has picked it up yet. Worth raising this morning rather than discovering it through a client.</li>
+    <li><strong>Cold investor outreach is now a pattern, not a one-off.</strong> A second approach in two days, different name, different overseas domain, near-identical script. Treat both as untrusted; send nothing with numbers in it.</li>
+    <li><strong>A colleague is blocked on you twice over</strong> — a scheduling question with an accelerating external project behind it, and a pricing range still outstanding.</li>
+    <li><strong>A family commitment tonight sits only on a personal calendar,</strong> not the shared one. Flagged rather than moved.</li>
+    <li><strong>A recurring booking appears to have been rebooked already</strong> for November and December, which may close an open personal task.</li>
+    <li><strong>A signed agreement closed itself</strong> yesterday evening after same-day turnaround. No action.</li>
+    <li><strong>The massage series remains in sync</strong> — all fifteen bookings through December matched.</li>
   </ul>
 </section>
 
@@ -262,17 +256,16 @@ footer{margin-top:46px;padding-top:16px;border-top:1px solid var(--hair);font-si
   </h2>
   <hr class="rule personal">
   <ul class="sq personal">
-    <li><strong>Calgary weather:</strong> 60% chance of showers, high 11&nbsp;°C, rain settling in early afternoon. <a class="deep" href="https://weather.gc.ca/en/location/index.html?coords=51.046%2C-114.057" target="_blank" rel="noopener">Environment Canada</a></li>
-    <li><strong>Public Hearing of Council</strong> today at 9:30 AM, Council Chambers. <a class="deep" href="https://www.calgary.ca/planning/public-hearings.html" target="_blank" rel="noopener">City of Calgary</a></li>
-    <li><strong>Calgary-Shaw byelection</strong> — election day was yesterday; results rolling in. <a class="deep" href="https://globalnews.ca/calgary/" target="_blank" rel="noopener">Global News Calgary</a></li>
-    <li><strong>Landfill fire air quality data</strong> released by the city. <a class="deep" href="https://newsroom.calgary.ca/" target="_blank" rel="noopener">City newsroom</a></li>
+    <li><strong>Calgary weather:</strong> clearing through the morning as fog patches lift, high 17&nbsp;°C, low 7&nbsp;°C. <a class="deep" href="https://weather.gc.ca/en/location/index.html?coords=51.046%2C-114.057" target="_blank" rel="noopener">Environment Canada</a></li>
+    <li><strong>Parkade closure</strong> at a venue on tonight's route — upper deck and P1 closed for rehabilitation work. Allow extra time to park.</li>
+    <li><strong>Energy read:</strong> a corporate report on Matador's Q2 landed this morning — a large run of upstream acquisitions expanding its Delaware inventory to nearly 5,900 locations. <a class="deep" href="https://www.novilabs.com/" target="_blank" rel="noopener">Novi Labs</a></li>
   </ul>
 </section>
 
 <p class="nav"><a href="https://deadnak.github.io/hornak-brief/">Tonight's household brief</a> · <a href="https://deadnak.github.io/hornak-brief/weekly/">This week's brief</a></p>
 
 <footer>
-  Whitney's Day · Tuesday, September 15, 2026 · generated 9:05 AM MDT<br>
+  Whitney's Day · Wednesday, September 16, 2026 · generated 8:55 AM MDT<br>
   Redacted public mirror. Detail sits behind a login.
 </footer>
 
