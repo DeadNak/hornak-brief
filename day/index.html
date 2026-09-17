@@ -1,272 +1,146 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Whitney's Day — Wednesday, September 16, 2026</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Jost:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Whitney's Day</title>
 <style>
 :root{
-  --brand:#4D00CA; --p600:#7C3AED; --wash:#F3E8FF;
-  --s900:#0F172A; --s700:#334155; --s500:#64748B; --s400:#94A3B8;
-  --s50:#F8FAFC; --s100:#F1F5F9; --hair:#E2E8F0;
-  --green:#16A34A; --red:#EF4444; --redwash:#FEF2F2;
-  --amber:#B4690E; --amberwash:#FDF3E3;
-  --alpen:#B85C86; --granite:#1B2022; --scree:#6C7378; --trail:#E3E1DA; --snow:#F7F5F1;
-  --hair-snow:#DDDAD2;
-  --font-head:'Lexend','Segoe UI',system-ui,sans-serif;
-  --font-body:'Segoe UI',system-ui,-apple-system,sans-serif;
-  --font-fam-label:'Jost','Century Gothic',Futura,system-ui,sans-serif;
-  --font-fam-head:'Instrument Serif',Georgia,'Times New Roman',serif;
+  --brand:#4D00CA;--p600:#7C3AED;--wash:#F3E8FF;--s900:#0F172A;--s700:#334155;
+  --s500:#64748B;--s400:#94A3B8;--s50:#F8FAFC;--s100:#F1F5F9;--hair:#E2E8F0;
+  --green:#16A34A;--amber:#D97706;--amberwash:#FFFBEB;
+  --grad-dark:linear-gradient(157deg,#190642,#2C0A72,#4A13B2);
+  color-scheme:light;
 }
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:#fff;color:var(--s700);font-family:var(--font-body);font-size:15px;line-height:1.62}
-.wrap{max-width:900px;margin:0 auto;padding-block:0 60px;padding-left:20px;padding-right:20px}
-.masthead{border-bottom:3px solid var(--brand);padding:28px 0 20px}
-.eyebrow{font-family:var(--font-head);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--p600);margin:0}
-h1{font-family:var(--font-head);font-weight:700;font-size:28px;line-height:1.16;color:var(--s900);margin:12px 0 6px;letter-spacing:-.015em;text-wrap:balance}
-.sub{color:var(--s500);font-size:13.5px;margin:0}
-.redaction{margin-top:16px;background:var(--s50);border:1px solid var(--hair);border-radius:12px;padding:12px 16px;font-size:12.5px;color:var(--s500)}
-.snap{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:12px;margin:24px 0 0}
-.tile{background:#fff;border:1px solid var(--hair);border-radius:14px;padding:13px 15px}
-.tile.p{border-color:var(--hair-snow);background:var(--snow)}
-.tile .n{font-family:var(--font-head);font-weight:700;font-size:23px;color:var(--brand);line-height:1.1;font-variant-numeric:tabular-nums}
-.tile.p .n{font-family:var(--font-fam-label);color:var(--alpen)}
-.tile .l{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--s500);margin-top:3px;font-family:var(--font-head);font-weight:500}
-.tile.p .l{font-family:var(--font-fam-label);color:var(--scree)}
-section{margin-top:40px}
-h2{font-family:var(--font-head);font-weight:600;font-size:18px;color:var(--s900);margin:0 0 4px;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
-h2 .num{color:var(--brand);font-weight:700;font-variant-numeric:tabular-nums}
-h2.personal{font-family:var(--font-fam-label);font-weight:500;color:var(--granite)}
-.h2note{font-size:12.5px;color:var(--s500);margin:0 0 14px}
-.rule{height:2px;background:var(--brand);border:0;margin:8px 0 16px}
-.rule.personal{background:var(--alpen)}
-.panel{border:1px solid var(--hair);border-radius:14px;overflow:hidden;background:#fff}
-.panel.personal{background:var(--snow);border-color:var(--hair-snow)}
-.row{display:flex;gap:14px;padding:12px 16px;border-top:1px solid var(--hair);align-items:flex-start}
-.row:first-child{border-top:0}
-.panel.personal .row{border-top-color:var(--hair-snow)}
-.row.work{border-left:3px solid var(--brand);padding-left:14px}
-.row.pers{border-left:3px solid var(--alpen);padding-left:14px}
-.row.free{border-left:3px dashed var(--p600);padding-left:14px}
-.time{font-variant-numeric:tabular-nums;font-size:12.5px;color:var(--s500);min-width:108px;flex:none;padding-top:2px}
-.row.pers .time{color:var(--scree);font-family:var(--font-fam-label)}
-.bd{flex:1;min-width:0}
-.ttl{font-family:var(--font-head);font-size:14px;font-weight:600;color:var(--s900);margin:0;line-height:1.4}
-.row.pers .ttl{font-family:var(--font-fam-label);font-weight:500;color:var(--granite)}
-.mt{font-size:12.5px;color:var(--s500);margin:2px 0 0}
-.row.pers .mt{color:var(--scree);font-family:var(--font-fam-label)}
-.pill{font-family:var(--font-head);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:600;border-radius:999px;padding:3px 9px;white-space:nowrap;flex:none;margin-top:2px}
-.pill-hot{background:var(--redwash);color:#B91C1C}
-.pill-warn{background:var(--amberwash);color:var(--amber)}
-.pill-work{background:var(--wash);color:var(--brand)}
-.pill-pers{background:var(--trail);color:var(--alpen);font-family:var(--font-fam-label);font-weight:500}
-a.deep{color:inherit;text-decoration:none;border-bottom:1px dotted var(--s400)}
-a.deep:hover{border-bottom-style:solid;border-bottom-color:var(--brand)}
-.row.pers a.deep:hover{border-bottom-color:var(--alpen)}
-.twocol{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
-.colhead{display:flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:11.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--brand);padding-bottom:8px;margin-bottom:12px;border-bottom:2px solid var(--brand)}
-.colhead.personal{font-family:var(--font-fam-label);font-weight:500;color:var(--alpen);border-bottom-color:var(--alpen)}
-.colhead .cnt{margin-left:auto;font-variant-numeric:tabular-nums;color:var(--s400);letter-spacing:0;font-weight:400;text-transform:none}
-@media (max-width:820px){.twocol{grid-template-columns:1fr;gap:32px}}
-.verdict{background:linear-gradient(180deg,var(--snow),#fff);border:1px solid var(--hair-snow);border-radius:14px;padding:18px 20px}
-.verdict h3{font-family:var(--font-fam-head);font-style:italic;font-size:21px;font-weight:400;color:var(--alpen);margin:0 0 6px;line-height:1.26;text-wrap:balance}
-.verdict p{margin:0 0 8px;font-family:var(--font-fam-label);color:var(--granite);font-size:13.5px}
-.verdict p:last-child{margin-bottom:0}
-.callout{background:var(--wash);border-left:5px solid var(--brand);border-radius:0 12px 12px 0;padding:14px 18px;font-size:13.5px}
-.callout h3{font-family:var(--font-head);font-size:13.5px;font-weight:600;color:var(--brand);margin:0 0 4px}
-.callout p{margin:0}
-ul.sq{list-style:none;padding:0;margin:0}
-ul.sq li{position:relative;padding-left:16px;margin-bottom:7px;font-size:13.5px}
-ul.sq li::before{content:"";position:absolute;left:0;top:.52em;width:6px;height:6px;background:var(--p600);transform:rotate(45deg)}
-ul.sq.personal li::before{background:var(--alpen)}
-.famark{vertical-align:-3px;margin-right:3px}
-.nav{margin-top:26px;font-size:12.5px}
-.nav a{color:var(--brand);text-decoration:none;border-bottom:1px solid transparent}
-.nav a:hover{border-bottom-color:var(--brand)}
-footer{margin-top:46px;padding-top:16px;border-top:1px solid var(--hair);font-size:11.5px;color:var(--s400);font-family:var(--font-head);line-height:1.8}
-@media (max-width:560px){h1{font-size:23px}.row{flex-wrap:wrap}.time{min-width:100%;padding-top:0}}
+body{margin:0;background:#F1F5F9;color:var(--s700);
+  font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.65;font-size:15px}
+.wrap{max-width:900px;margin:0 auto;padding:0 18px 56px}
+header.hero{background:var(--grad-dark);color:#fff;padding:32px 18px 36px;margin-bottom:22px}
+header.hero .inner{max-width:900px;margin:0 auto}
+.eyebrow{font-family:Lexend,Nunito,Arial,sans-serif;font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:#B98CFF;font-weight:600;margin:0 0 5px}
+h1{font-family:Lexend,Nunito,Arial,sans-serif;font-size:27px;font-weight:700;margin:0 0 5px;
+  letter-spacing:-.02em;color:#fff;line-height:1.2}
+.sub{color:#D8C7FF;font-size:13.5px;margin:0}
+.counts{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+.chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;padding:5px 13px;font-size:12px;color:#fff}
+.chip b{font-family:Lexend,Nunito,Arial,sans-serif;font-weight:700}
+section{background:#fff;border:1px solid var(--hair);border-radius:14px;padding:20px 22px 22px;
+  margin-bottom:18px;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+h2{font-family:Lexend,Nunito,Arial,sans-serif;font-size:16.5px;font-weight:700;color:var(--s900);
+  margin:0 0 3px;letter-spacing:-.01em}
+h2 .num{color:var(--brand);margin-right:8px}
+.note{font-size:12px;color:var(--s500);margin:0 0 14px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{background:var(--brand);color:#fff;font-family:Lexend,Nunito,Arial,sans-serif;font-weight:600;
+  text-align:left;padding:7px 10px;font-size:11.5px;letter-spacing:.02em}
+td{padding:8px 10px;border-bottom:1px solid var(--hair);vertical-align:top}
+tbody tr:nth-child(even){background:var(--s50)}
+td.t{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:600;color:var(--s900);width:112px}
+.tag{display:inline-block;font-family:Lexend,Nunito,Arial,sans-serif;font-size:9.5px;font-weight:600;
+  letter-spacing:.05em;text-transform:uppercase;padding:2px 7px;border-radius:999px;white-space:nowrap}
+.tag.work{background:var(--wash);color:var(--brand)}
+.tag.home{background:#DCFCE7;color:#15803D}
+.tag.caution{background:var(--amberwash);color:var(--amber)}
+.callout{background:var(--wash);border-left:5px solid var(--brand);border-radius:0 9px 9px 0;
+  padding:12px 16px;margin:13px 0}
+.callout.warn{background:var(--amberwash);border-left-color:var(--amber)}
+.callout.ok{background:#F0FDF4;border-left-color:var(--green)}
+.callout p{margin:0 0 5px}.callout p:last-child{margin-bottom:0}
+.callout strong{font-family:Lexend,Nunito,Arial,sans-serif;color:var(--s900)}
+ul{margin:8px 0;padding-left:20px}li{margin-bottom:8px}
+li::marker{color:var(--p600)}
+.small{font-size:12.5px;color:var(--s500)}
+footer{text-align:center;font-size:11.5px;color:var(--s400);padding:20px 0 0}
 </style>
 </head>
 <body>
-<div class="wrap">
 
-<header class="masthead">
-  <p class="eyebrow">Whitney's Day</p>
-  <h1>Wednesday, September 16, 2026</h1>
-  <p class="sub">Calgary · all times Mountain · generated 8:55 AM MDT</p>
-  <div class="redaction">Public mirror. Names, clients, figures and meeting content are redacted to initials or removed. Every item links through to the real record, which sits behind a login.</div>
+<header class="hero">
+  <div class="inner">
+    <p class="eyebrow">Whitney's Day</p>
+    <h1>Thursday, September 17, 2026</h1>
+    <p class="sub">All times Mountain · Calgary, AB</p>
+    <div class="counts">
+      <span class="chip"><b>9</b> work blocks</span>
+      <span class="chip"><b>5</b> personal items</span>
+      <span class="chip"><b>4</b> open P1s</span>
+      <span class="chip"><b>3</b> replies owed</span>
+      <span class="chip"><b>6</b> flags</span>
+    </div>
+  </div>
 </header>
 
-<div class="snap">
-  <div class="tile"><div class="n">3</div><div class="l">Work meetings</div></div>
-  <div class="tile"><div class="n">3h</div><div class="l">Clear block</div></div>
-  <div class="tile"><div class="n">5</div><div class="l">Work replies owed</div></div>
-  <div class="tile"><div class="n">8</div><div class="l">Awaiting reply</div></div>
-  <div class="tile"><div class="n">16</div><div class="l">Open tasks</div></div>
-  <div class="tile p"><div class="n">3</div><div class="l">Personal replies owed</div></div>
-  <div class="tile p"><div class="n">5</div><div class="l">Home events</div></div>
-  <div class="tile p"><div class="n">4</div><div class="l">Todoist P1</div></div>
-</div>
+<div class="wrap">
 
 <section>
-  <h2><span class="num">01</span> Snapshot</h2>
-  <hr class="rule">
+  <h2><span class="num">01</span>The shape of the day</h2>
+  <p class="note">Work blocks are shown as time only.</p>
+  <table>
+    <thead><tr><th>Time</th><th>What</th></tr></thead>
+    <tbody>
+      <tr><td class="t">09:00–10:45</td><td><span class="tag work">work</span> Four back-to-back blocks, no gap</td></tr>
+      <tr><td class="t">11:15</td><td><span class="tag home">home</span> Appointment — <strong>fasting</strong>, so nothing to eat beforehand</td></tr>
+      <tr><td class="t">11:45–12:45</td><td><span class="tag home">home</span> Appointment <span class="tag caution">declined overnight</span> — see flag 1</td></tr>
+      <tr><td class="t">13:00–13:45</td><td><span class="tag work">work</span> Two short blocks</td></tr>
+      <tr><td class="t">14:00–16:00</td><td><span class="tag work">work</span> Two hour-long blocks, both with outside attendees</td></tr>
+      <tr><td class="t">16:15–18:30</td><td><span class="tag home">home</span> Activity run and class — partner is driving, both girls</td></tr>
+      <tr><td class="t">17:30–21:30</td><td><span class="tag home">home</span> Sitter, 4 hrs — <strong>you are both out tonight</strong></td></tr>
+      <tr><td class="t">All day</td><td><span class="tag home">home</span> A friend's birthday</td></tr>
+    </tbody>
+  </table>
+  <div class="callout warn">
+    <p><strong>The pinch is 10:45 → 11:15.</strong> Thirty minutes between the last morning block ending and a fasting appointment starting. No slack, and no breakfast. If the morning runs long, that's what breaks.</p>
+  </div>
+  <p class="small">First genuinely open stretch is after 4:00 PM.</p>
+</section>
+
+<section>
+  <h2><span class="num">02</span>Needs you</h2>
+  <p class="note">Open priority-1 items.</p>
+  <ul>
+    <li><strong>School online forms + demographic form.</strong> Overdue since Monday, and the school escalated twice on Tuesday — one "now urgent" district notice, one direct email from the office. The step that trips people up: the forms are not on the main page, they live behind the SchoolEngage icon you open from inside the portal. Submit each form, for each girl. 15–20 minutes and it's done. <strong>Fastest one on this list to close, and the only one with someone chasing it.</strong></li>
+    <li><strong>Call the dentist.</strong> They replied Tuesday morning and it's still unread — they'd rather sort the whole thing by phone than keep trading emails, and they're waiting on one thing: a phone number. Blackout the week of Nov 9 again when you speak. Add your partner to the cleaning; the last email only asked for you. <strong>Open 49 days.</strong> Your stated 10:30–1:00 window is exactly what today looks like if the midday appointment really is off.</li>
+    <li><strong>Library items for both girls are marked lost.</strong> Returning them to any branch clears it. A digital hold also needs borrowing or suspending before it lapses.</li>
+    <li><strong>Call the respiratory clinic.</strong> First contact, no thread yet — ask whether a referral is needed, what it costs, and what's covered.</li>
+  </ul>
+  <p class="small">Also live but lower: a passport application, two overdue health follow-ups, and a community association renewal.</p>
+</section>
+
+<section>
+  <h2><span class="num">03</span>Flags</h2>
+
+  <div class="callout warn">
+    <p><strong>1 · The midday appointment was declined overnight but never removed.</strong> A decline went out at 12:02 AM and the entry now reads free — but it's still sitting on the calendar. It has deliberately <em>not</em> been deleted, because removing a real appointment on inference is worse than leaving a stale one. If it's genuinely off, the provider should be told — and that frees exactly the window you already offered somewhere else.</p>
+  </div>
+
+  <div class="callout warn">
+    <p><strong>2 · Two near-identical approaches, 24 minutes apart, from unrelated domains.</strong> Same sentence shape, each offering one day next week, both claiming the same kind of third party asked them to connect. That reads as a templated list — or a pretexting attempt — rather than two genuine unrelated approaches. Verify independently before any call, and share nothing about ownership or finances on a first contact.</p>
+  </div>
+
   <div class="callout">
-    <h3>One three-hour work block, then the evening belongs to the kids</h3>
-    <p>Meetings run through the morning, a workout at 11:00 splits the day, and after a short check-in at 12:30 the work calendar is empty until tomorrow. That afternoon stretch is the whole day's capacity. From 3:45 it is pickup, skating, dinner and choir straight through to seven — with a fifteen-minute crossing of the city in the middle of it. Two deadlines land tonight that nothing on the calendar is reminding anyone about.</p>
+    <p><strong>3 · A decision falls due tomorrow</strong> and the call that would inform it hasn't happened yet. If it's going to change the answer, it has to happen today.</p>
+  </div>
+
+  <div class="callout">
+    <p><strong>4 · A call was offered for two times today, and both collide with what's already booked.</strong> Only the Friday option works — worth saying so now rather than discovering it at 11:00.</p>
+  </div>
+
+  <div class="callout">
+    <p><strong>5 · Forward conflict.</strong> A confirmed appointment on Tue Nov 10 sits inside a week you've already told someone else you're away. One of the two is wrong. Flagged, not touched.</p>
+  </div>
+
+  <div class="callout ok">
+    <p><strong>6 · Calendar sync checks all ran clean.</strong> The 90-day provider sync found 13 bookings and 13 matching family entries — nothing missing, nothing phantom. The personal→family sweep found nothing that qualifies for a move. The 14-day sweep of the other personal calendar found one family-relevant item, already moved across last week. <strong>No calendar writes were needed today.</strong></p>
+    <p class="small">Still carried over from last week: one appointment sits on both calendars — a known duplicate awaiting cleanup.</p>
   </div>
 </section>
-
-<section>
-  <h2><span class="num">02</span> Today's Schedule</h2>
-  <p class="h2note">Work and home on one list. No double-bookings today; the pressure is in the gaps.</p>
-  <hr class="rule">
-  <div class="panel">
-    <div class="row work">
-      <div class="time">8:30 – 9:15 AM</div>
-      <div class="bd"><p class="ttl"><a class="deep" href="https://outlook.office365.com/owa/?itemid=AAkBOQAICN8ThXOLgAAuAAAAAB2EAxGqZhHNm8gAqgAvxFoNANgnf%2FAaSwRHmKCwTnvH12YAAaGQkXgAABA%3D&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Revenue Ops — Level 0 &amp; Backlog</a></p><p class="mt">Internal.</p></div>
-    </div>
-    <div class="row work">
-      <div class="time">9:30 – 10:30 AM</div>
-      <div class="bd"><p class="ttl"><a class="deep" href="https://outlook.office365.com/owa/?itemid=AAkBOQAICN8ThXOLgAAuAAAAAB2EAxGqZhHNm8gAqgAvxFoNANgnf%2FAaSwRHmKCwTnvH12YABCVe5esAABA%3D&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Business Development Strategy</a></p><p class="mt">Internal. You are chairing.</p></div>
-      <span class="pill pill-work">Yours</span>
-    </div>
-    <div class="row pers">
-      <div class="time">11:00 AM – 12:00 PM</div>
-      <div class="bd"><p class="ttl"><a class="deep" href="https://www.google.com/calendar/event?eid=NXNuNGo0c3BhZXB1ZzdjYXBmMXM2dnBzZ29fMjAyNjA5MTZUMTcwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Workout</a></p></div>
-      <span class="pill pill-pers">Home</span>
-    </div>
-    <div class="row work">
-      <div class="time">12:30 – 12:45 PM</div>
-      <div class="bd"><p class="ttl"><a class="deep" href="https://outlook.office365.com/owa/?itemid=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0A2Cd%2F8BpLBEeYoLBOe8fXZgAEq34vugAA&amp;exvsurl=1&amp;path=/calendar/item" target="_blank" rel="noopener">Client appraisal check-in — M.F.</a></p><p class="mt">Tentative.</p></div>
-    </div>
-    <div class="row free">
-      <div class="time">12:45 – 3:45 PM</div>
-      <div class="bd"><p class="ttl" style="color:var(--p600)">Open — the only real work block today</p><p class="mt">Nothing further on the work calendar until tomorrow.</p></div>
-      <span class="pill pill-work">Free</span>
-    </div>
-    <div class="row pers">
-      <div class="time">3:45 – 4:15 PM</div>
-      <div class="bd"><p class="ttl"><a class="deep" href="https://www.google.com/calendar/event?eid=c2ZzZnJsOWI5Z2tncWYza3ZuYTdlZDFoZDBfMjAyNjA5MTZUMjE0NTAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Pick up the kids</a></p></div>
-      <span class="pill pill-pers">Home</span>
-    </div>
-    <div class="row pers">
-      <div class="time">4:15 – 5:00 PM</div>
-      <div class="bd"><p class="ttl"><a class="deep" href="https://www.google.com/calendar/event?eid=cXJucWlmNmk2YW8zZXVrb2pvY28zcnJtN2NfMjAyNjA5MTZUMjIxNTAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Skating — first session of the season (the kids)</a></p></div>
-      <span class="pill pill-pers">Home</span>
-    </div>
-    <div class="row pers">
-      <div class="time">5:00 – 5:45 PM</div>
-      <div class="bd"><p class="ttl"><a class="deep" href="https://www.google.com/calendar/event?eid=ZjhrYmtzbm5sYnF2MmozbHFrNDFzNGg0b3NfMjAyNjA5MTZUMjMwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Dinner out</a></p><p class="mt">Then fifteen minutes to cross the city.</p></div>
-      <span class="pill pill-warn">Tight</span>
-    </div>
-    <div class="row pers">
-      <div class="time">6:00 – 7:00 PM</div>
-      <div class="bd"><p class="ttl"><a class="deep" href="https://www.google.com/calendar/event?eid=bDFoOW5oaDMwZmNzMjl1aThlcHJmY24wOWNfMjAyNjA5MTdUMDAwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Choir — open rehearsal (the kids)</a></p></div>
-      <span class="pill pill-warn">Tight</span>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2><span class="num">03</span> Tasks &amp; Priorities</h2>
-  <p class="h2note">16 open, most recently touched first. Client and company names reduced to initials. Nothing moved since yesterday.</p>
-  <hr class="rule">
-  <div class="panel">
-    <div class="row work"><div class="time">In progress</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868m2rqvg" target="_blank" rel="noopener">Deal work — R.P.</a></p><p class="mt">Consulting</p></div></div>
-    <div class="row work"><div class="time">Backlog</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868kj46hd" target="_blank" rel="noopener">Family meeting prep — W.D.J., late September</a></p><p class="mt">Business development</p></div></div>
-    <div class="row work"><div class="time">In progress</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868kzw9n7" target="_blank" rel="noopener">Third-party engineering consultant role — B.O.</a></p><p class="mt">Business development</p></div></div>
-    <div class="row work"><div class="time">Backlog</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868m2t13x" target="_blank" rel="noopener">Finalize budget and revenue goals for the rest of 2026</a></p><p class="mt">Admin</p></div></div>
-    <div class="row work"><div class="time">In progress</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868kqjr8j" target="_blank" rel="noopener">Intro call — P.V.M.M.</a></p><p class="mt">Business development</p></div></div>
-    <div class="row work"><div class="time">Backlog</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868kfu6cy" target="_blank" rel="noopener">Follow up on custom risking and reports — 5.P.</a></p><p class="mt">Business development</p></div></div>
-    <div class="row work"><div class="time">Done in substance</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868m2t0ae" target="_blank" rel="noopener">Check in on taxes and financials</a></p><p class="mt">Resolved yesterday — worth closing.</p></div></div>
-    <div class="row work"><div class="time">In progress</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868kx611z" target="_blank" rel="noopener">Branded mockup report — O.G.T.</a></p><p class="mt">Business development</p></div></div>
-    <div class="row work"><div class="time">In progress</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868kx60zd" target="_blank" rel="noopener">Pitch and proposal — O.G.T.</a></p><p class="mt">Business development</p></div></div>
-    <div class="row work"><div class="time">In progress</div><div class="bd"><p class="ttl"><a class="deep" href="https://app.clickup.com/t/868jmk81h" target="_blank" rel="noopener">Portfolio build-out and consulting — G.G.</a></p><p class="mt">Consulting</p></div></div>
-  </div>
-</section>
-
-<section>
-  <h2 class="personal">
-    <svg class="famark" width="18" height="18" viewBox="20 13 254 254" fill="none" stroke-linejoin="round" aria-hidden="true"><circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle><polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon><polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon><polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon></svg>
-    Life Balance
-  </h2>
-  <hr class="rule personal">
-  <div class="verdict">
-    <h3>A proper autumn day, and for once the weather is not the constraint.</h3>
-    <p>Clearing through the morning as the fog patches lift, high 17&nbsp;°C, low 7&nbsp;°C. A full ten degrees warmer than yesterday and dry.</p>
-    <p><strong>Suggested window — 2:00 to 2:30 PM.</strong> Thirty minutes is enough today, because the 11:00 workout already covers the activity. It sits in the warmest part of the afternoon, inside the free block, with over an hour of buffer before pickup.</p>
-    <p><strong>Already on the calendar:</strong> the 11:00 workout — the week's third session, which clears the target with three days to spare.</p>
-  </div>
-</section>
-
-<section>
-  <h2><span class="num">04</span> Email</h2>
-  <p class="h2note">Work threads are external correspondents, reduced to initials; thread state verified against a paginated sweep of sent mail. Personal threads are real correspondence about the kids and their activities, with people and places genericised.</p>
-  <hr class="rule">
-  <div class="twocol">
-    <div>
-      <div class="colhead">Work <span class="cnt">5 open</span></div>
-      <div class="panel">
-        <div class="row work"><div class="time">Reply owed</div><div class="bd"><p class="ttl">L.E. — owner relations</p><p class="mt">One-line request for a document already sent in August. Thirty seconds to close.</p></div><span class="pill pill-hot">High</span></div>
-        <div class="row work"><div class="time">Reply owed</div><div class="bd"><p class="ttl">F.N. — L.G.</p><p class="mt">Addressed to you by name with a numbered list, including two new permits added to the tracking sheet.</p></div></div>
-        <div class="row work"><div class="time">Reply owed</div><div class="bd"><p class="ttl">M.M. — T.B.</p><p class="mt">Supplied a long-sought operator contact and is offering to make the approach. Needs a yes or no.</p></div></div>
-        <div class="row work"><div class="time">Reply owed</div><div class="bd"><p class="ttl">C.C. — C.M.</p><p class="mt">Order form and pricing for a software add-on. A spend decision shared with a colleague.</p></div></div>
-        <div class="row work"><div class="time">Reply owed</div><div class="bd"><p class="ttl">O.G.T. — W.L.</p><p class="mt">Mostly informational; the substance runs into tomorrow's meeting.</p></div></div>
-        <div class="row work"><div class="time">Awaiting</div><div class="bd"><p class="ttl">Eight threads out, nothing back</p><p class="mt">Two now into day three, including one commercial thread worth watching and one client status note.</p></div></div>
-      </div>
-    </div>
-    <div>
-      <div class="colhead personal">
-        <svg class="famark" width="16" height="16" viewBox="20 13 254 254" fill="none" stroke-linejoin="round" aria-hidden="true"><circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle><polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon><polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon><polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon></svg>
-        Home &amp; the kids <span class="cnt">3 open</span>
-      </div>
-      <div class="panel personal">
-        <div class="row pers"><div class="time">Before 6 PM</div><div class="bd"><p class="ttl">Choir placement for the kids</p><p class="mt">Unread since yesterday morning, and it applies to tonight's rehearsal. The reply that finalises it.</p></div><span class="pill pill-hot">Today</span></div>
-        <div class="row pers"><div class="time">Your move</div><div class="bd"><p class="ttl">Class birthday invitation</p><p class="mt">The teacher has given the go-ahead to send it out directly; contact details are in hand for twelve of eighteen families. The RSVP clock is the constraint.</p></div><span class="pill pill-hot">Today</span></div>
-        <div class="row pers"><div class="time">Reply owed</div><div class="bd"><p class="ttl">Rescheduling a standing appointment</p><p class="mt">This week's slot is cancelled and the provider is waiting on alternative dates.</p></div></div>
-        <div class="row pers"><div class="time">Closed</div><div class="bd"><p class="ttl">A note from school, already answered</p><p class="mt">Both parents replied; nothing outstanding. Two school meetings last night have also passed.</p></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2><span class="num">05</span> Flags</h2>
-  <hr class="rule">
-  <ul class="sq">
-    <li><strong>A payment webhook on a production site was disabled last night.</strong> Nothing suggests anyone has picked it up yet. Worth raising this morning rather than discovering it through a client.</li>
-    <li><strong>Cold investor outreach is now a pattern, not a one-off.</strong> A second approach in two days, different name, different overseas domain, near-identical script. Treat both as untrusted; send nothing with numbers in it.</li>
-    <li><strong>A colleague is blocked on you twice over</strong> — a scheduling question with an accelerating external project behind it, and a pricing range still outstanding.</li>
-    <li><strong>A family commitment tonight sits only on a personal calendar,</strong> not the shared one. Flagged rather than moved.</li>
-    <li><strong>A recurring booking appears to have been rebooked already</strong> for November and December, which may close an open personal task.</li>
-    <li><strong>A signed agreement closed itself</strong> yesterday evening after same-day turnaround. No action.</li>
-    <li><strong>The massage series remains in sync</strong> — all fifteen bookings through December matched.</li>
-  </ul>
-</section>
-
-<section>
-  <h2 class="personal">
-    <svg class="famark" width="18" height="18" viewBox="20 13 254 254" fill="none" stroke-linejoin="round" aria-hidden="true"><circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle><polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon><polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon><polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon></svg>
-    Around Town
-  </h2>
-  <hr class="rule personal">
-  <ul class="sq personal">
-    <li><strong>Calgary weather:</strong> clearing through the morning as fog patches lift, high 17&nbsp;°C, low 7&nbsp;°C. <a class="deep" href="https://weather.gc.ca/en/location/index.html?coords=51.046%2C-114.057" target="_blank" rel="noopener">Environment Canada</a></li>
-    <li><strong>Parkade closure</strong> at a venue on tonight's route — upper deck and P1 closed for rehabilitation work. Allow extra time to park.</li>
-    <li><strong>Energy read:</strong> a corporate report on Matador's Q2 landed this morning — a large run of upstream acquisitions expanding its Delaware inventory to nearly 5,900 locations. <a class="deep" href="https://www.novilabs.com/" target="_blank" rel="noopener">Novi Labs</a></li>
-  </ul>
-</section>
-
-<p class="nav"><a href="https://deadnak.github.io/hornak-brief/">Tonight's household brief</a> · <a href="https://deadnak.github.io/hornak-brief/weekly/">This week's brief</a></p>
 
 <footer>
-  Whitney's Day · Wednesday, September 16, 2026 · generated 8:55 AM MDT<br>
-  Redacted public mirror. Detail sits behind a login.
+  Generated Thursday, September 17, 2026 at 9:36 AM MDT<br>
+  Redacted public view. The full version, with names and detail, stays behind a login.
 </footer>
 
 </div>
