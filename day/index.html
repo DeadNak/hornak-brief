@@ -3,211 +3,169 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Whitney's Day — Friday, September 18, 2026</title>
+<title>Whitney's Day — Monday, September 21, 2026</title>
 <style>
 :root{
-  --brand:#4D00CA; --p600:#7C3AED; --wash:#F3E8FF;
+  --brand:#4D00CA; --p600:#7C3AED;
+  --wash:#F3E8FF;
   --s900:#0F172A; --s700:#334155; --s500:#64748B; --s400:#94A3B8;
   --s50:#F8FAFC; --s100:#F1F5F9; --hair:#E2E8F0;
-  --green:#16A34A; --greenwash:#DCFCE7; --red:#EF4444; --redwash:#FEF2F2;
+  --green:#16A34A; --greenwash:#DCFCE7;
+  --red:#EF4444; --redwash:#FEF2F2;
   --amber:#B45309; --amberwash:#FFFBEB;
   color-scheme: light;
 }
 *{box-sizing:border-box}
-body{margin:0;padding:0 0 60px;background:var(--s50);color:var(--s700);
-  font-family:"Segoe UI",system-ui,-apple-system,sans-serif;line-height:1.66;font-size:15px}
-h1,h2,h3,.lex{font-family:Lexend,"Segoe UI",system-ui,sans-serif;letter-spacing:-0.01em}
-a{color:var(--brand);text-decoration:none;border-bottom:1px solid rgba(77,0,202,.25)}
+body{margin:0;padding:0 0 56px;background:var(--s50);color:var(--s700);
+  font-family:"Segoe UI",system-ui,-apple-system,sans-serif;line-height:1.65;font-size:15px}
+h1,h2,h3{font-family:Lexend,"Segoe UI",system-ui,sans-serif;letter-spacing:-0.01em}
+a{color:var(--brand);text-decoration:none;border-bottom:1px solid rgba(77,0,202,.28)}
+header.hero{background:linear-gradient(157deg,#190642,#2C0A72,#4A13B2);color:#fff;padding:30px 22px 26px}
 .wrap{max-width:820px;margin:0 auto;padding:0 18px}
-header.hero{background:linear-gradient(157deg,#190642,#2C0A72,#4A13B2);color:#fff;padding:30px 0 26px;margin-bottom:24px}
 .eyebrow{font-family:Lexend,sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.16em;
-  text-transform:uppercase;color:#B98CFF;margin:0 0 6px}
-header.hero h1{margin:0;font-size:27px;font-weight:700;color:#fff}
+  text-transform:uppercase;color:#B98CFF;margin:0 0 7px}
+header.hero h1{margin:0;font-size:26px;font-weight:700;color:#fff}
 header.hero .sub{margin:6px 0 0;color:#CFC3F0;font-size:13.5px}
-.counts{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
-.count{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);
-  border-radius:11px;padding:8px 13px;min-width:92px}
-.count .n{font-family:Lexend,sans-serif;font-size:19px;font-weight:700;color:#fff;line-height:1.2}
-.count .l{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#B98CFF;
-  font-family:Lexend,sans-serif;font-weight:600}
-section{margin-bottom:26px}
-h2.sec{font-size:17px;color:var(--s900);margin:0 0 3px;display:flex;align-items:baseline;gap:9px}
-h2.sec .num{color:var(--brand);font-size:11.5px;font-weight:700;letter-spacing:.1em}
+section{margin-top:26px}
+h2.sec{font-size:17px;color:var(--s900);margin:0 0 3px}
 .seclead{margin:0 0 12px;font-size:12.5px;color:var(--s500)}
-.card{background:#fff;border:1px solid var(--hair);border-radius:13px;padding:16px 18px;
-  box-shadow:0 1px 2px rgba(15,23,42,.05);margin-bottom:11px}
-.callout{background:var(--wash);border-left:5px solid var(--brand);border-radius:0 11px 11px 0;padding:13px 17px;margin-bottom:11px}
+.card{background:#fff;border:1px solid var(--hair);border-radius:14px;
+  box-shadow:0 1px 2px rgba(15,23,42,.05);padding:16px 18px;margin-bottom:11px}
+.callout{background:var(--wash);border-left:5px solid var(--brand);border-radius:0 12px 12px 0;
+  padding:13px 16px;margin-bottom:11px}
 .callout.warn{background:var(--amberwash);border-left-color:var(--amber)}
 .callout.bad{background:var(--redwash);border-left-color:var(--red)}
-.callout h3{margin:0 0 6px;font-size:12px;color:var(--brand);font-weight:700;
-  text-transform:uppercase;letter-spacing:.07em;font-family:Lexend,sans-serif}
-.callout.warn h3{color:var(--amber)} .callout.bad h3{color:#B91C1C}
+.callout.good{background:var(--greenwash);border-left-color:var(--green)}
+.callout h3{margin:0 0 5px;font-size:12.5px;color:var(--brand);font-weight:700;
+  text-transform:uppercase;letter-spacing:.07em}
+.callout.warn h3{color:var(--amber)} .callout.bad h3{color:#B91C1C} .callout.good h3{color:#15803D}
+.callout p{margin:0 0 5px} .callout p:last-child{margin-bottom:0}
 table{width:100%;border-collapse:collapse;font-size:13.5px}
 thead th{background:var(--brand);color:#fff;font-family:Lexend,sans-serif;font-weight:600;
   text-align:left;padding:8px 11px;font-size:11.5px}
 tbody td{padding:8px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
 tbody tr:nth-child(even){background:var(--s50)}
-td.t{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:600;color:var(--s900);width:116px}
-ul.b{list-style:none;padding:0;margin:7px 0 0}
-ul.b li{position:relative;padding-left:17px;margin-bottom:7px}
-ul.b li:before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--p600);transform:rotate(45deg)}
-ul.b li:last-child{margin-bottom:0}
+td.t{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:600;color:var(--s900);width:126px}
 .chip{display:inline-block;font-family:Lexend,sans-serif;font-size:10px;font-weight:600;
-  padding:2px 7px;border-radius:999px;letter-spacing:.04em;text-transform:uppercase;border:1px solid transparent}
+  padding:2px 7px;border-radius:999px;letter-spacing:.04em;text-transform:uppercase;
+  border:1px solid transparent;white-space:nowrap}
 .chip.work{background:var(--wash);color:var(--brand);border-color:#DDD0F6}
 .chip.home{background:var(--greenwash);color:#15803D;border-color:#BBF7D0}
-.chip.age{background:var(--redwash);color:#B91C1C;border-color:#FECACA}
+.chip.over{background:var(--redwash);color:#B91C1C;border-color:#FECACA}
+ul.b{list-style:none;padding:0;margin:7px 0 0}
+ul.b li{position:relative;padding-left:17px;margin-bottom:6px}
+ul.b li:before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;
+  background:var(--p600);transform:rotate(45deg)}
+ul.b li:last-child{margin-bottom:0}
 .meta{font-size:12px;color:var(--s500)}
-footer{margin-top:30px;padding-top:15px;border-top:1px solid var(--hair);font-size:12px;color:var(--s400)}
-.sib{margin:0 0 18px;font-size:13px}
+footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--hair);font-size:12px;color:var(--s400)}
 </style>
 </head>
 <body>
 
 <header class="hero">
-  <div class="wrap">
+  <div class="wrap" style="padding:0 18px">
     <p class="eyebrow">Whitney's Day</p>
-    <h1>Friday, September 18, 2026</h1>
-    <p class="sub">All times Mountain · work and personal, blended · public summary</p>
-    <div class="counts">
-      <div class="count"><div class="n">6</div><div class="l">On the day</div></div>
-      <div class="count"><div class="n">3</div><div class="l">Due today</div></div>
-      <div class="count"><div class="n">9</div><div class="l">Overdue</div></div>
-      <div class="count"><div class="n">2</div><div class="l">Replies owed</div></div>
-      <div class="count"><div class="n">4</div><div class="l">P1 personal</div></div>
-    </div>
+    <h1>Monday, September 21, 2026</h1>
+    <p class="sub">All times Mountain (MDT) · public summary — detail stays behind a login</p>
   </div>
 </header>
 
 <div class="wrap">
 
-<p class="sib"><a href="../">Tonight's Evening Brief</a> · <a href="../weekly/">This week's brief</a></p>
-
 <section>
-  <h2 class="sec"><span class="num">01</span> The shape of the day</h2>
-  <p class="seclead">Work and personal merged. Work items are shown as blocks of time only.</p>
+  <h2 class="sec">The shape of the day</h2>
+  <p class="seclead">Thirteen items across work and home. Work entries are reduced to shape — no subjects, no attendees, no links.</p>
+
+  <div class="callout bad">
+    <h3>One hard deadline — 3:00 PM</h3>
+    <p>An administrative filing has a firm 3:00 PM cutoff and sits between two back-to-back afternoon calls. It needs to be done before 2:00, not squeezed in after.</p>
+  </div>
+
+  <div class="callout warn">
+    <h3>Three tight seams</h3>
+    <p><strong>1.</strong> A pet appointment ends exactly when the morning's largest external call begins — no travel buffer. &nbsp;<strong>2.</strong> A 10:30 call runs straight into the 11:00 workout. &nbsp;<strong>3.</strong> A 4:00 personal appointment overlaps the girls' 4:15 lesson — covered, because the pickup and the rink are already someone else's.</p>
+  </div>
+
   <div class="card">
     <table>
-      <thead><tr><th style="width:116px">Time</th><th>What</th><th style="width:88px">Side</th></tr></thead>
+      <thead><tr><th>Time</th><th>What</th><th></th></tr></thead>
       <tbody>
-        <tr><td class="t">All day</td><td>House cleaner in</td><td><span class="chip home">Home</span></td></tr>
-        <tr><td class="t">8:30 – 9:30</td><td>Work block</td><td><span class="chip work">Work</span></td></tr>
-        <tr><td class="t">9:30 – 9:45</td><td>Short work check-in</td><td><span class="chip work">Work</span></td></tr>
-        <tr><td class="t">10:00 – 11:00</td><td>Appointment</td><td><span class="chip home">Home</span></td></tr>
-        <tr><td class="t">11:00 – 12:15</td><td>Appointment</td><td><span class="chip home">Home</span></td></tr>
-        <tr><td class="t">1:30 – 4:30</td><td>Out of office — held, 3 hrs</td><td><span class="chip work">Work</span></td></tr>
-        <tr><td class="t">5:00 – 6:30</td><td>Kids' sport</td><td><span class="chip home">Home</span></td></tr>
+        <tr><td class="t">8:20 – 9:00 AM</td><td>Pet appointment</td><td><span class="chip home">Home</span></td></tr>
+        <tr><td class="t">9:00 – 10:00 AM</td><td>External call, large group</td><td><span class="chip work">Work</span></td></tr>
+        <tr><td class="t">10:30 – 11:00 AM</td><td>Internal call</td><td><span class="chip work">Work</span></td></tr>
+        <tr><td class="t">11:00 AM – 12:00 PM</td><td>Workout</td><td><span class="chip home">Home</span></td></tr>
+        <tr><td class="t">12:30 – 1:30 PM</td><td>Internal working session</td><td><span class="chip work">Work</span></td></tr>
+        <tr><td class="t">2:00 – 3:00 PM</td><td>Internal meeting</td><td><span class="chip work">Work</span></td></tr>
+        <tr><td class="t">3:00 PM</td><td><strong>Administrative deadline</strong></td><td><span class="chip over">Due</span></td></tr>
+        <tr><td class="t">3:00 – 3:30 PM</td><td>External call</td><td><span class="chip work">Work</span></td></tr>
+        <tr><td class="t">3:45 – 4:15 PM</td><td>School pickup, then the rink — driving is covered</td><td><span class="chip home">Home</span></td></tr>
+        <tr><td class="t">4:00 – 5:00 PM</td><td>Personal appointment</td><td><span class="chip home">Home</span></td></tr>
+        <tr><td class="t">4:15 – 5:00 PM</td><td>Skating lesson, both girls</td><td><span class="chip home">Home</span></td></tr>
+        <tr><td class="t">5:00 – 10:00 PM</td><td>Sitter at the house — date night</td><td><span class="chip home">Home</span></td></tr>
+        <tr><td class="t">5:15 – 6:00 PM</td><td>Dance class</td><td><span class="chip home">Home</span></td></tr>
       </tbody>
     </table>
   </div>
-  <div class="callout warn">
-    <h3>Two things to sort before you leave the house</h3>
-    <ul class="b">
-      <li><strong>The 10:00 and the 11:00 run back to back with no travel time between them</strong>, and the first one has no location on the invite.</li>
-      <li><strong>The 11:00 booking names two different businesses</strong> — one in the title, a different one in the location field. Worth a call before driving anywhere.</li>
-    </ul>
-  </div>
 </section>
 
 <section>
-  <h2 class="sec"><span class="num">02</span> Work — the load</h2>
-  <p class="seclead">Counts and shape only. No names, no numbers.</p>
+  <h2 class="sec">Needs you</h2>
+  <p class="seclead">All four priority-one items are overdue, and every one is a phone call or a form.</p>
   <div class="card">
-    <ul class="b">
-      <li><strong>Three items due today.</strong> One is a vendor-onboarding package that's already most of the way there — waiting on one document to come back from an outside provider. One is a client follow-up that can't really move until pricing is settled. One is a membership check for an October conference.</li>
-      <li><strong>Nine items overdue</strong>, the oldest by nine days. Six are business-development follow-ups, three are client delivery. Several were rescheduled around by the meetings earlier this week rather than closed.</li>
-      <li><strong>Eleven more land inside ten days</strong>, including two renewal conversations on the same contract clock and a budget-and-goals piece for the rest of the year.</li>
-      <li><strong>One real bottleneck.</strong> Two live opportunities are both being offered a product that isn't defined or priced yet, and the pricing work isn't due for another week. Everything downstream waits on that.</li>
-      <li><strong>One orphan.</strong> A refund chase has had no owner on it since late July and nothing has moved.</li>
-      <li><strong>Two tickets, one job.</strong> A pair of renewal tasks sit in parallel with the same deadline and the same subject. Probably worth merging.</li>
-    </ul>
-  </div>
-  <div class="callout warn">
-    <h3>Deadlines outside the task list</h3>
-    <ul class="b">
-      <li>A hard finance deadline lands <strong>tomorrow afternoon</strong>, with a second one on Monday. If the weekend involves being away from a desk, the first needs handling before you go.</li>
-      <li>A professional licence renewal is <strong>13 days out</strong> and the registration fee is unpaid — awkward timing, because that licence is currently part of a package being handed to an outside party.</li>
-      <li>A conference accommodation decision is due <strong>by October 13</strong>.</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h2 class="sec"><span class="num">03</span> Meetings — what came back to you</h2>
-  <p class="seclead">Five meetings across Wednesday and Thursday. Twelve items landed on your plate; shape only.</p>
-  <div class="card">
-    <ul class="b">
-      <li><strong>Five to write or send</strong> — a positioning email, a sponsorship email, a flyer to finish, a certificate to chase, a document mock-up to design.</li>
-      <li><strong>Three follow-ups</strong> with people who are waiting on you, one of which has a 30-day clock on it.</li>
-      <li><strong>Two pricing validations</strong> — hours and multipliers to check before a quote goes out.</li>
-      <li><strong>One handover.</strong> A recurring set of calls moves off your plate this week, explicitly so you can prioritise your health. Worth actually letting that happen.</li>
-      <li><strong>One watch item.</strong> A whole workstream is sitting idle waiting on credentials from an outside party. Nothing on your side unblocks it; it just needs chasing.</li>
-    </ul>
+    <table>
+      <thead><tr><th>Overdue</th><th>Task</th><th>Where it stands</th></tr></thead>
+      <tbody>
+        <tr><td class="t"><span class="chip over">7 days</span></td>
+          <td>Complete the school's online forms and demographic form for both girls</td>
+          <td>The school is now chasing directly. The forms are not on the main portal page — they open from the enrolment tool inside it, and each form must be submitted separately for each girl. Fifteen to twenty minutes in one sitting, and the fastest of the four to close.</td></tr>
+        <tr><td class="t"><span class="chip over">54 days</span></td>
+          <td>Call the dental clinic — cleanings well overdue</td>
+          <td>The ask got easier: they now want to sort everything in one phone call and are waiting on nothing but a number. Blackout week in early November. Worth adding a second cleaning to the booking.</td></tr>
+        <tr><td class="t"><span class="chip over">54 days</span></td>
+          <td>Call the respiratory clinic about a home sleep test</td>
+          <td>First contact, no thread yet. Ask whether a referral is needed, what it costs, and how coverage works.</td></tr>
+        <tr><td class="t"><span class="chip over">51 days</span></td>
+          <td>Library items for both girls are now marked lost</td>
+          <td>Replacement charges are already on the accounts. Returning the three items to any branch is what clears it.</td></tr>
+      </tbody>
+    </table>
+    <p class="meta" style="margin-top:10px"><strong>Also sitting:</strong> an annual physical six weeks overdue, a test result waiting on a patient portal, a community association renewal, and a passport application on the back burner — that last one against travel at the end of the month and another week away in November.</p>
   </div>
 </section>
 
 <section>
-  <h2 class="sec"><span class="num">04</span> Inbox</h2>
-  <p class="seclead">External senders, last two days, checked against what you've actually already replied to.</p>
+  <h2 class="sec">Calendar housekeeping</h2>
+
+  <div class="callout good">
+    <h3>All three sync checks came back clean</h3>
+    <p><strong>Standing appointments, 90 days:</strong> the two subscribed calendars mirror each other exactly, so they were deduplicated by event id before comparing. Thirteen bookings through mid-December, and every one already has a matching family-calendar entry. No gaps, no phantom entries.</p>
+    <p><strong>Personal to family sweep:</strong> nothing new qualifies. Solo work blocks stay where they are, and the end-of-month travel is already carried on the family calendar.</p>
+    <p><strong>Partner's calendar, 14 days:</strong> one appointment belongs on the family calendar and it is already mirrored there. Its original copy remains as a known duplicate awaiting cleanup.</p>
+    <p><strong>No calendar changes were made today.</strong> That is the finding, not a skipped step.</p>
+  </div>
+
   <div class="callout bad">
-    <h3>Two people are waiting on you</h3>
-    <ul class="b">
-      <li>One wants a call rather than more email — you sent the work over yesterday lunchtime, they replied an hour later asking for a time. <strong>They're waiting on a slot from you.</strong></li>
-      <li>One came back with a detailed answer to a question you asked the night before. It closes out part of a long-running research thread.</li>
-    </ul>
+    <h3>The end-of-month travel day is double-booked</h3>
+    <p>Whitney flies out early on Wednesday the 30th and the away block is on the family calendar — but she is <em>also</em> still down for the 11:00 workout and, marked accepted, the afternoon school pickup. The pickup reads as covered when it is not. It is a no-school day as well, which changes the shape of the morning.</p>
   </div>
-  <div class="card">
-    <ul class="b">
-      <li><strong>Two more are ambiguous</strong> and were kept rather than dropped: a data delivery where you're on the To line but a colleague may own it, and a meeting invite for next Thursday you haven't RSVP'd to.</li>
-      <li><strong>Five belong to other people.</strong> Colleagues are already handling them; no action needed from you.</li>
-    </ul>
-  </div>
-</section>
 
-<section>
-  <h2 class="sec"><span class="num">05</span> Personal — the four that keep rolling over</h2>
-  <p class="seclead">Priority-1 tasks, in full.</p>
-  <div class="callout bad">
+  <div class="callout warn">
+    <h3>Loose ends</h3>
     <ul class="b">
-      <li><strong>Complete the school online forms and demographic form</strong> <span class="chip age">4 days overdue</span><br>
-        <span class="meta">The school escalated twice on Tuesday, including one message from the office directly. The catch: the forms aren't on the main portal page — they're inside a second system you open from within it, and each form has to be submitted separately for each child. Realistically 15–20 minutes, and it's the fastest of the four to close.</span></li>
-      <li><strong>Sort the dental appointments — treatment and the overdue cleaning</strong> <span class="chip age">51 days</span><br>
-        <span class="meta">Their reply on Tuesday is still unread, and it makes this easier than it was: they've dropped the pick-a-date-from-a-list approach and just want a phone number so it can all be sorted in one call. One call ends it. Have your usual midday availability window ready, and the dates you already know won't work.</span></li>
-      <li><strong>Return the library items marked lost</strong> <span class="chip age">48 days</span><br>
-        <span class="meta">Replacement costs are already billed to the accounts; returning the three items to any branch is what clears it. There's also a digital hold that needs borrowing or suspending before it lapses.</span></li>
-      <li><strong>Call about a sleep assessment</strong> <span class="chip age">51 days</span><br>
-        <span class="meta">First contact, no thread yet. Questions to ask: whether a referral is needed, what it costs, and what's covered.</span></li>
-    </ul>
-    <p class="meta" style="margin-top:9px"><strong>The honest read:</strong> three of these four need exactly one phone call or one login. None of them is difficult. They're old because they keep getting deferred behind work, not because they're hard — and two of the four are your own health.</p>
-  </div>
-  <div class="card">
-    <h3 class="lex" style="margin:0 0 7px;font-size:12px;color:var(--brand);text-transform:uppercase;letter-spacing:.07em">Priority 2, still live</h3>
-    <ul class="b">
-      <li>Book the annual check-up — the booking window that was suggested was September, and September is nearly gone.</li>
-      <li>Check a result that's been sitting on a portal since early August. Needs a login; it isn't in the email.</li>
-      <li>Renew a community association membership that lapsed in mid-August.</li>
-      <li>Passport application — parked, and worth un-parking before it becomes urgent.</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h2 class="sec"><span class="num">06</span> Housekeeping</h2>
-  <div class="card">
-    <ul class="b">
-      <li><strong>Massage calendar sync — clean.</strong> Thirteen bookings over the next ninety days, thirteen matching entries on the family calendar. No gaps, no phantoms. Both subscribed copies deduplicated before comparing.</li>
-      <li><strong>Partner's calendar sweep — nothing to move.</strong> Only their own solo work blocks ahead. The one appointment that belongs on the family calendar is already there, moved by an earlier sweep.</li>
-      <li><strong>One item left where it is, deliberately.</strong> An evening out on Monday, 7:30–10:30, sits on the personal calendar rather than the family one. It's a family outing rather than a provider appointment, so it wasn't moved — but it does take you out on a school night, so it may be worth sharing.</li>
-      <li><strong>No calendar changes were made this run.</strong></li>
-      <li><strong>An RSVP closes today</strong> for a party next Saturday afternoon.</li>
-      <li>Two long-past reminders are still sitting in the personal list from August. Candidates for the next tidy-up.</li>
+      <li>One reply is genuinely owed — a warm note from a membership contact that arrived Saturday morning and has sat since. Two lines closes it.</li>
+      <li>A professional registration renewal falls on the same day as the flight. It came off the same action item as an insurance certificate check, so they can be cleared together.</li>
+      <li>A recurring team slot has moved twice in four days and the latest proposal is still unconfirmed, so it is currently ambiguous.</li>
+      <li>Two travel arrangements for the end-of-month trip are still open nine days out.</li>
+      <li>A Thursday lunch reservation auto-created itself on the personal calendar from an email. It was left there rather than moved, because it is unclear whether it is solo.</li>
+      <li>A conference hotel decision is due in mid-October.</li>
     </ul>
   </div>
 </section>
 
 <footer>
-  <p>Redacted summary. Names, amounts, client detail, meeting subjects, locations and links are removed — the full version stays behind a login.</p>
-  <p>Generated Friday, September 18, 2026 at 6:39 AM MDT.</p>
+  <p>Redacted public view. Names, amounts, meeting subjects, client detail and source links are removed by design; the full version stays behind a login.</p>
+  <p>Generated Monday, September 21, 2026 at 10:06 AM MDT.</p>
 </footer>
 
 </div>
