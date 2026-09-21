@@ -4,237 +4,239 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Evening Brief — Friday, September 18, 2026</title>
+<title>Evening Brief — Monday, September 21, 2026</title>
 <style>
   :root{
-    color-scheme: light;
-    --ink:#2b2320;
-    --ink-soft:#6b5d55;
-    --paper:#fdfaf5;
-    --card:#ffffff;
-    --line:#ece2d6;
-    --amber:#c8781e;
-    --amber-soft:#fdf2e2;
-    --red:#b3402c;
-    --red-soft:#fceeea;
-    --green:#3f7a4f;
-    --green-soft:#eef6ef;
-    --blue:#2f6285;
-    --blue-soft:#eaf2f7;
+    --ink:#23201c; --ink-soft:#5f574d; --ink-faint:#8b8075;
+    --paper:#f7f3ec; --card:#fffdf9; --line:#e6ddcf;
+    --accent:#b4541f; --accent-soft:#f0e2d5;
+    --warn:#a8341f; --good:#3f6b4a; --cool:#3c5a74;
   }
   *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
   body{
-    margin:0; padding:20px 14px 48px;
     background:var(--paper); color:var(--ink);
-    font:16px/1.55 ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font:16px/1.55 ui-serif,Georgia,"Iowan Old Style","Times New Roman",serif;
     -webkit-text-size-adjust:100%;
   }
-  .wrap{max-width:560px;margin:0 auto}
-  a{color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(47,98,133,.3)}
-  a:hover{border-bottom-color:var(--blue)}
-  header{text-align:center;margin-bottom:22px}
-  .kicker{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);font-weight:700}
-  h1{font-size:25px;line-height:1.2;margin:8px 0 6px;font-weight:700;letter-spacing:-.02em}
-  .sub{font-size:13px;color:var(--ink-soft);margin:0}
-  .locked{
-    display:inline-block;margin-top:12px;padding:7px 13px;border-radius:999px;
-    background:var(--amber-soft);border:1px solid #f0dcc0;
-    font-size:12.5px;color:#8a5714;
-  }
-  .locked a{color:#8a5714;border-bottom-color:rgba(138,87,20,.4)}
-  section{
-    background:var(--card);border:1px solid var(--line);border-radius:14px;
-    padding:16px 17px;margin-bottom:14px;
-    break-inside:avoid;
-  }
-  h2{
-    font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);
-    margin:0 0 11px;font-weight:700;
-  }
-  h2 a{color:var(--ink-soft);border-bottom-color:rgba(107,93,85,.35)}
-  .daylabel{
-    font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
-    color:var(--amber);margin:14px 0 6px;
-  }
-  .daylabel:first-child{margin-top:0}
-  .row{display:flex;gap:11px;padding:7px 0;border-top:1px solid #f4ece2;align-items:baseline}
-  .row.first{border-top:none}
-  .t{flex:0 0 74px;font-variant-numeric:tabular-nums;font-weight:600;font-size:13.5px;color:var(--amber)}
-  .d{flex:1;font-size:14.5px}
-  .who{color:var(--ink-soft);font-size:12.5px}
-  .banner{border-radius:12px;padding:14px 15px;margin-bottom:14px;border:1px solid}
-  .banner h3{margin:0 0 7px;font-size:15px;font-weight:700}
-  .banner p{margin:0 0 7px;font-size:14px}
-  .banner p:last-child{margin-bottom:0}
-  .b-good{background:var(--green-soft);border-color:#cfe3d3;color:#22502f}
-  .b-good h3{color:var(--green)}
-  .b-warn{background:var(--red-soft);border-color:#f2d6ce;color:#6d2b1d}
-  .b-warn h3{color:var(--red)}
-  .b-info{background:var(--blue-soft);border-color:#cfe0eb;color:#254c66}
-  .b-info h3{color:var(--blue)}
-  ul{margin:0;padding-left:19px}
-  li{margin:5px 0;font-size:14.5px}
-  .p1{padding:10px 0;border-top:1px solid #f4ece2}
-  .p1.first{border-top:none;padding-top:0}
-  .p1 .name{font-weight:650;font-size:15px}
-  .p1 .why{font-size:13.5px;color:var(--ink-soft);margin-top:2px}
-  .weather{display:flex;gap:8px}
-  .wx{flex:1;text-align:center;background:var(--amber-soft);border:1px solid #f4e3c9;border-radius:11px;padding:10px 6px}
-  .wx .wd{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a5714;font-weight:700}
-  .wx .wt{font-size:19px;font-weight:700;margin:3px 0 1px}
-  .wx .wl{font-size:11.5px;color:var(--ink-soft)}
-  .verdict{margin-top:11px;font-size:14px}
-  .read p{margin:0 0 9px;font-size:14px}
-  .read p:last-child{margin-bottom:0}
-  .tag{
-    display:inline-block;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
-    font-weight:700;color:var(--amber);margin-right:6px;
-  }
-  footer{text-align:center;font-size:12px;color:var(--ink-soft);margin-top:20px;line-height:1.7}
-  .note{font-size:12.5px;color:var(--ink-soft);margin-top:10px;font-style:italic}
-
-  @media (min-width: 880px){
-    body{padding:32px 28px 60px}
-    .wrap{max-width:1120px}
-    h1{font-size:32px}
-    .cols{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:0 18px;
-      align-items:start;
-    }
-    .cols > section{margin-bottom:18px}
-    .full{grid-column:1 / -1}
+  .wrap{max-width:560px;margin:0 auto;padding:20px 16px 56px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 20px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+  header{margin-bottom:20px}
+  .kicker{font:600 11px/1.4 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+  h1{font-size:25px;line-height:1.2;margin:.32em 0 .12em;font-weight:700;letter-spacing:-.01em}
+  .sub{color:var(--ink-soft);font-size:13.5px;margin:0}
+  h2{font:600 11.5px/1.4 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);
+     margin:0 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line)}
+  section{margin:0 0 26px}
+  section:last-child{margin-bottom:0}
+  p{margin:0 0 11px}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+  a:hover{border-bottom-color:var(--accent)}
+  ul{margin:0 0 11px;padding-left:18px}
+  li{margin:0 0 7px}
+  .agenda{list-style:none;margin:0;padding:0}
+  .agenda li{display:flex;gap:11px;padding:8px 0;border-bottom:1px dotted var(--line);margin:0}
+  .agenda li:last-child{border-bottom:0}
+  .t{flex:0 0 76px;font:600 13px/1.5 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink-soft);white-space:nowrap}
+  .w{flex:1}
+  .who{color:var(--ink-faint);font-size:12.5px}
+  .note{background:#fbf6ee;border-left:3px solid var(--accent);padding:11px 13px;border-radius:0 8px 8px 0;margin:0 0 12px;font-size:14.5px}
+  .note.warn{background:#fdf1ee;border-left-color:var(--warn)}
+  .note.good{background:#f0f5f0;border-left-color:var(--good)}
+  .wx{display:flex;gap:9px;margin:0 0 13px}
+  .wxd{flex:1;background:#fbf6ee;border:1px solid var(--line);border-radius:11px;padding:10px 8px;text-align:center}
+  .wxd .d{font:600 10.5px/1.3 ui-sans-serif,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint)}
+  .wxd .hi{font-size:19px;font-weight:700;margin:3px 0 1px}
+  .wxd .lo{font-size:12px;color:var(--ink-faint)}
+  .wxd .c{font-size:11.5px;color:var(--ink-soft);margin-top:3px}
+  .p1{border:1px solid var(--line);border-radius:11px;padding:12px 13px;margin:0 0 10px;background:#fffefb}
+  .p1 .n{font-weight:700;font-size:15px;margin:0 0 4px}
+  .p1 .m{font-size:13.5px;color:var(--ink-soft);margin:0}
+  .age{display:inline-block;font:600 10.5px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;
+       background:var(--accent-soft);color:var(--accent);padding:3px 7px;border-radius:20px;margin-left:6px;vertical-align:1px}
+  .age.hot{background:#f7dfd9;color:var(--warn)}
+  .read-item{padding:9px 0;border-bottom:1px dotted var(--line)}
+  .read-item:last-child{border-bottom:0}
+  .read-item .lbl{font:600 10.5px/1.3 ui-sans-serif,system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);display:block;margin-bottom:2px}
+  .read-item .bd{font-size:14.5px}
+  footer{margin-top:26px;padding-top:15px;border-top:1px solid var(--line);color:var(--ink-faint);font-size:12px;text-align:center}
+  footer a{color:var(--ink-faint)}
+  .cols{display:block}
+  .readwrap{margin-top:0}
+  @media (min-width:880px){
+    .wrap{max-width:1080px;padding:32px 28px 64px}
+    .card{padding:34px 38px}
+    h1{font-size:33px}
+    .cols{display:grid;grid-template-columns:1fr 1fr;gap:0 44px;align-items:start}
+    .cols > section{margin-bottom:30px}
+    .readwrap{grid-column:1 / -1;border-top:2px solid var(--line);padding-top:26px;margin-top:6px}
+    .readgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 44px}
   }
 </style>
 </head>
 <body>
 <div class="wrap">
+<div class="card">
 
-<header>
-  <div class="kicker">Hornak Household</div>
-  <h1>Evening Brief — Friday, September 18</h1>
-  <p class="sub">Mountain Time · a weekend look-ahead, so Saturday and Sunday are here too</p>
-  <div class="locked">🔒 Sensitive items are held back — full detail is in <a href="https://todoist.com/app/project/6h62Jmrp3GpJjQwW" target="_blank" rel="noopener">Todoist</a></div>
-</header>
+  <header>
+    <div class="kicker">Hornak Evening Brief</div>
+    <h1>Monday, September 21</h1>
+    <p class="sub">Mountain Time · 12 further items sit in <a href="https://app.todoist.com/app/project/6h62Jmrp3GpJjQwW" target="_blank" rel="noopener">Todoist</a> and stay there.</p>
+  </header>
 
-<div class="cols">
+  <div class="cols">
 
-<section>
-  <h2>Weather — three days</h2>
-  <div class="weather">
-    <div class="wx"><div class="wd">Fri</div><div class="wt">21°</div><div class="wl">8° · sunny</div></div>
-    <div class="wx"><div class="wd">Sat</div><div class="wt">22°</div><div class="wl">9° · sunny</div></div>
-    <div class="wx"><div class="wd">Sun</div><div class="wt">23°</div><div class="wl">8° · sunny</div></div>
+    <section>
+      <h2>Weather</h2>
+      <div class="wx">
+        <div class="wxd"><div class="d">Mon</div><div class="hi">27°</div><div class="lo">/ 11°</div><div class="c">Sun &amp; wind*</div></div>
+        <div class="wxd"><div class="d">Tue</div><div class="hi">26°</div><div class="lo">/ 9°</div><div class="c">Clearing</div></div>
+        <div class="wxd"><div class="d">Wed</div><div class="hi">22°</div><div class="lo">/ 10°</div><div class="c">Part cloud</div></div>
+      </div>
+      <p class="note">*<strong>Two forecasts genuinely disagree about today.</strong> One has sunny and 27° with a south wind near 20 km/h; another has light rain and 22°. They agree it's warm. Jacket, and expect wind.</p>
+      <p><strong>4 PM verdict:</strong> moot — the late afternoon is already spoken for, and the evening after it. Today is handled either way.</p>
+    </section>
+
+    <section>
+      <h2>The day</h2>
+      <ul class="agenda">
+        <li><span class="t">8:20 AM</span><span class="w"><a href="https://www.google.com/calendar/event?eid=MmkybjViZ2p0ZGdrNWZpNGM0dm1rZ2FrNm8gZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw" target="_blank" rel="noopener">Vet appointment</a> <span class="who">— the dog</span></span></li>
+        <li><span class="t">11:00</span><span class="w"><a href="https://www.google.com/calendar/event?eid=MGgybG1jbzI0bDA1NzZnMDdudmJqaHNxb3NfMjAyNjA5MjFUMTcwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Workout</a> <span class="who">— Whitney &amp; Julian</span></span></li>
+        <li><span class="t">3:45 PM</span><span class="w"><a href="https://www.google.com/calendar/event?eid=bmdiZGFpMGtsMHZqMHV1cW9vbGRuaGdyam9fMjAyNjA5MjFUMjE0NTAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Pickup run</a> <span class="who">— Julian, Chicas</span></span></li>
+        <li><span class="t">4:00 PM</span><span class="w"><a href="https://www.google.com/calendar/event?eid=bXUzdm9ibjhuYTFtOW9pdXBicG0wYXIzbXNfMjAyNjA5MjFUMjIwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Hair appointment</a> <span class="who">— Whitney</span></span></li>
+        <li><span class="t">4:15 PM</span><span class="w"><a href="https://www.google.com/calendar/event?eid=cXJucWlmNmk2YW8zZXVrb2pvY28zcnJtN2NfMjAyNjA5MjFUMjIxNTAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Skating</a> <span class="who">— Chicas</span></span></li>
+        <li><span class="t">5:00 PM</span><span class="w"><a href="https://www.google.com/calendar/event?eid=NWs0aXA1cG52MGRpN21sMDJwb2lwMjZiMzBfMjAyNjA5MjFUMjMwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Sitter, 5:00–10:00</a> <span class="who">— at home</span></span></li>
+        <li><span class="t">5:15 PM</span><span class="w"><a href="https://www.google.com/calendar/event?eid=dW8xbHFncGVldDEycjdnNjc3N29pMmcwZTRfMjAyNjA5MjFUMjMxNTAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Dance class</a> <span class="who">— Chicas</span></span></li>
+        <li><span class="t">Evening</span><span class="w"><strong>Date night</strong> <span class="who">— out until 10</span></span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Worth a look</h2>
+      <p class="note warn"><strong>Fifteen minutes, two places.</strong> Skating finishes at 5:00 and the dance class starts at 5:15 across the neighbourhood. The sitter's notes cover the ride <em>home</em> afterwards — but nothing on the calendar says who does the leg in between, and the other parent is bringing the other child home at exactly that moment. One text before 4:00 settles it.</p>
+      <p class="note">The hair appointment ends at 5:00 and the sitter arrives at 5:00 — fine if she can let herself in, tight if not.</p>
+      <p><strong>The vet appointment only appeared on the calendar on Thursday</strong>, so this is the first brief to carry it. It's early.</p>
+    </section>
+
+    <section>
+      <h2>Dinner</h2>
+      <p>The girls are covered — the sitter cooks, then bath and bedtime. The two of you are out.</p>
+      <p>The meal-kit box arrived yesterday, so there are kits in the fridge for tomorrow.</p>
+      <p class="note warn">The meal plan still reads <strong>“Aug 12 onward”</strong> and its last entry is <strong>Aug 13</strong> — five and a half weeks blank. Tonight was flagged twice as the first night that genuinely needed a plan, and it's only covered because someone else is cooking.</p>
+    </section>
+
+    <section>
+      <h2>Health</h2>
+      <p class="note good">✅ <strong>The 11:00 workout is already booked</strong> — activity 1 of 3 for the week, banked before lunch. Nothing to add. 💊 Vitamins.</p>
+      <p>If you want a second, tomorrow is the clear 26° day and late morning is the gap.</p>
+    </section>
+
+    <section>
+      <h2>Needs you — 5 overdue</h2>
+
+      <div class="p1">
+        <p class="n">📋 <a href="https://app.todoist.com/app/task/6hW2jvJwwJCP5pxv" target="_blank" rel="noopener">School forms + demographic form</a><span class="age hot">7 days past due</span></p>
+        <p class="m">Still the cheapest one on the board, and the only one with a named person waiting. Roughly 15–20 minutes in one sitting — one form at a time, for each child.</p>
+      </div>
+
+      <div class="p1">
+        <p class="n">🦷 <a href="https://app.todoist.com/app/task/6h5xXQR54CrF5pFf" target="_blank" rel="noopener">Call the dental office</a><span class="age hot">52 days</span></p>
+        <p class="m">They are waiting on exactly one thing — a phone number — so the whole booking can be sorted in a single call. Their message has been read and unanswered for six days. Calling is faster than replying.</p>
+      </div>
+
+      <div class="p1">
+        <p class="n">🔴 <a href="https://app.todoist.com/app/task/6hFmqw9wr3VxPg4g" target="_blank" rel="noopener">Julian — follow up on Employment Insurance</a><span class="age hot">43 days overdue</span></p>
+        <p class="m">Flagged on Aug 9 as the top priority above everything else. No brief can ever detect progress on this one — it lives in his account, not anywhere visible here. Today is a weekday, and the line is open. Worth simply asking him.</p>
+      </div>
+
+      <div class="p1">
+        <p class="n">📚 <a href="https://app.todoist.com/app/task/6h6Q2XvP658gF3Wv" target="_blank" rel="noopener">Library items marked lost</a><span class="age">51 days</span></p>
+        <p class="m">Already billed to both accounts. Returning them to any branch clears it.</p>
+      </div>
+
+      <div class="p1">
+        <p class="n">☎️ <a href="https://app.todoist.com/app/task/6h69CQXGqH3cgfJf" target="_blank" rel="noopener">Call about a sleep study</a><span class="age">53 days</span></p>
+        <p class="m">Still first contact. Nothing is waiting on them, and nothing has started.</p>
+      </div>
+
+      <p style="font-size:13.5px;color:var(--ink-soft)">Four more have been overdue since roughly Aug 10, and three look already finished — all in <a href="https://app.todoist.com/app/project/6h5mX4qrJG8Gf528" target="_blank" rel="noopener">Todoist</a>. No store run: one item across every shopping list.</p>
+    </section>
+
+    <section>
+      <h2>Parked</h2>
+      <p>Seven items sit deliberately on the back burner. Six are one project — clearing the basement.</p>
+      <p class="note warn">The seventh is a <a href="https://app.todoist.com/app/task/6h65RqJx7pjpvWWg" target="_blank" rel="noopener">passport application</a>, parked since July and the only one marked high priority. Paperwork like that has a long tail — it's the one worth un-parking.</p>
+    </section>
+
+    <section>
+      <h2>Ahead</h2>
+      <ul>
+        <li><strong>Tuesday</strong> — an appointment mid-morning, a class mid-afternoon, two dance classes and dinner with friends in the early evening, then the bowling league at 7:00. ⚠️ Dinner ends at 7:00 and bowling starts at 7:00 — same squeeze as last week.</li>
+        <li><strong>Wednesday</strong> — workout, pickup, skating, dinner out, choir at 6:00, and the meal-kit cutoff at 11:59 PM.</li>
+        <li><strong>Saturday</strong> — the birthday party. ⚠️ Its RSVP deadline was Friday and has passed, so the head count is now whatever it is.</li>
+      </ul>
+      <p class="note warn"><strong>💳 Three cards are past due at once</strong> — two since the 13th, one since the 17th — and a fourth falls due on the 27th. Fourth brief running with three outstanding. Ten minutes clears it.</p>
+    </section>
+
+    <section>
+      <h2>Behind the scenes</h2>
+      <p>🤝 <strong>Massage sync clean.</strong> Both mirrored feeds read to the end of their range and deduped by event id — 13 bookings, all 13 matched on the family calendar. No phantoms, no gaps. One new catch: a November booking lands inside a week already spoken for.</p>
+      <p>🧭 <strong>Both personal calendars swept.</strong> Nothing new needed moving. One new entry appeared overnight that I couldn't confidently classify, so I left it where it is and flagged it rather than guessing.</p>
+      <p>📅 <strong>Calendar changes, 7 days:</strong> five additions or corrections, <strong>no deletions.</strong></p>
+      <p class="note warn">⚠️ <strong>Nothing has run since Thursday.</strong> No inbox sweep logged Friday, Saturday or Sunday, and no brief covered the weekend. Worth checking the schedules.</p>
+      <p style="font-size:13.5px;color:var(--ink-soft)">Seven flags are open and carrying unanswered, and there have been no replies on any brief. All of it is in <a href="https://app.todoist.com/app/project/6h62Jmrp3GpJjQwW" target="_blank" rel="noopener">Todoist</a>.</p>
+    </section>
+
+    <div class="readwrap">
+      <h2>The read</h2>
+      <div class="readgrid">
+        <div>
+          <div class="read-item">
+            <span class="lbl">Space</span>
+            <span class="bd">Hubble has caught a giant, evolving <strong>ten-sided wave</strong> wrapped around Saturn's <em>south</em> pole — a sibling to the famous hexagon up north, and the first big regular-sided jet pattern ever seen in that hemisphere. <a href="https://esahubble.org/news/archive/year/2026/" target="_blank" rel="noopener">ESA/Hubble</a> · and <a href="https://www.space.com/astronomy/james-webb-space-telescope/colossal-cosmic-cloud-revealed-in-insane-new-image-from-the-james-webb-space-telescope-space-photo-of-the-day-for-sept-16-2026" target="_blank" rel="noopener">Webb's new image of IC 348</a> is worth ten seconds.</span>
+          </div>
+          <div class="read-item">
+            <span class="lbl">Tech</span>
+            <span class="bd">A carmaker says it has switched on the first automated production line for humanoid robots — the robot walks off the end of the line under its own power, with nobody there to start it. <a href="https://innovationinthenews.substack.com/p/innovation-in-the-news-september-f2d" target="_blank" rel="noopener">Innovation in the News</a></span>
+          </div>
+          <div class="read-item">
+            <span class="lbl">Parenting</span>
+            <span class="bd">An eight-year Finnish study found teenagers who'd had <em>more</em> screen time showed better cognitive processing — cutting straight against the usual assumption. <a href="https://www.sciencedaily.com/news/mind_brain/parenting/" target="_blank" rel="noopener">ScienceDaily</a> · the <a href="https://www.newamerica.org/insights/2026-national-parent-survey/" target="_blank" rel="noopener">2026 National Parent Survey</a> (5,472 parents) is the bigger read.</span>
+          </div>
+          <div class="read-item">
+            <span class="lbl">Business</span>
+            <span class="bd">The largest retailer in the US is <em>only now</em> rolling out tap-to-pay at its own checkout registers — contactless cards, phones and watches, in 2026. A reminder that the slowest mover can still be the biggest one. <a href="https://www.cnbc.com/technology/" target="_blank" rel="noopener">CNBC</a></span>
+          </div>
+        </div>
+        <div>
+          <div class="read-item">
+            <span class="lbl">Calgary</span>
+            <span class="bd">The film festival opens Thursday and runs to Oct 4 — the largest in Alberta. <strong>Night Light</strong> takes over downtown Thursday to Sunday with projection-mapped buildings and live performance. <a href="https://dailyhive.com/calgary/calgary-things-to-do-sept-21-25" target="_blank" rel="noopener">Daily Hive</a> · <a href="https://curiocity.com/10-things-to-do-calgary-this-week-sept-21/" target="_blank" rel="noopener">Curiocity</a></span>
+          </div>
+          <div class="read-item">
+            <span class="lbl">Canada</span>
+            <span class="bd">The PM sits Question Period today then leaves for New York and the Partners for Multilateralism Summit. Separately, the 2026 census closed with <strong>98.4%</strong> of households responding — up on 2021. <a href="https://www.pm.gc.ca/en/news/media-advisories/2026/09/20/monday-september-21-2026" target="_blank" rel="noopener">PMO</a> · <a href="https://globalnews.ca/video/12066636/global-news-at-6-calgary-september-20-2026/" target="_blank" rel="noopener">Global</a></span>
+          </div>
+          <div class="read-item">
+            <span class="lbl">US</span>
+            <span class="bd">World leaders are converging on New York for the UN General Assembly, and the FAA has begun rolling out AI-assisted software to manage the nation's airspace. <a href="https://www.npr.org/2026/09/21/nx-s1-5972897/morning-news-brief" target="_blank" rel="noopener">NPR</a></span>
+          </div>
+          <div class="read-item">
+            <span class="lbl">Late night</span>
+            <span class="bd"><strong>John Oliver</strong> spent Sunday taking swings at David Ellison and his “business daddy” Larry Ellison — i.e. his probable future bosses. <a href="https://variety.com/2026/tv/news/john-oliver-david-ellison-larry-ellison-last-week-tonight-1236870834/" target="_blank" rel="noopener">Variety</a><br>Lineups: <a href="https://en.wikipedia.org/wiki/List_of_Late_Night_with_Seth_Meyers_episodes_(2026)" target="_blank" rel="noopener">Seth Meyers</a> · <a href="https://en.wikipedia.org/wiki/List_of_The_Late_Show_with_Stephen_Colbert_episodes_(2026)" target="_blank" rel="noopener">Colbert</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
-  <p class="verdict"><strong>4 PM verdict: clear.</strong> Three sunny days in a row and the temperature climbs through all of them — a hard stop at four is easy to justify. Nothing in the sky is going to change a plan this weekend.</p>
-  <p class="note">A frost advisory covers tonight across parts of the region; it lifts Friday morning. Cover anything tender before bed. <a href="https://weather.gc.ca/en/location/index.html?coords=51.046,-114.058" target="_blank" rel="noopener">Environment Canada</a></p>
-</section>
 
-<section>
-  <h2>The weekend</h2>
-
-  <div class="daylabel">Friday 18</div>
-  <div class="row first"><div class="t">All day</div><div class="d">Housekeeping visit <span class="who">(home)</span></div></div>
-  <div class="row"><div class="t">All day</div><div class="d"><a href="https://www.google.com/calendar/event?eid=NG9lZ3M3djJxbzVsMXBqdG9ib29xcXR2b29fMjAyNjA5MTggd2RlZGVsdWtAbQ" target="_blank" rel="noopener">🎂 A friend's birthday</a></div></div>
-  <div class="row"><div class="t">10:00</div><div class="d"><a href="https://www.google.com/calendar/event?eid=bXM4cjgxcjlqYWplY2Q1N2lxcWs3ZmQ3aWtfMjAyNjA5MThUMTYwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Hair appointment</a> <span class="who">(Whitney)</span></div></div>
-  <div class="row"><div class="t">11:00</div><div class="d"><a href="https://www.google.com/calendar/event?eid=aTVnNW9vaWxtcHNiaXQ4cGprdHMwaGZocmsgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw" target="_blank" rel="noopener">Nail appointment</a> <span class="who">(Whitney)</span></div></div>
-  <div class="row"><div class="t">5:00</div><div class="d"><a href="https://www.google.com/calendar/event?eid=OGlvbzh2dTg1bXAxbjRwdmJydDhlMG0yZzhfMjAyNjA5MThUMjMwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">🏸 Racquet club session</a> <span class="who">(Chicas)</span></div></div>
-
-  <div class="daylabel">Saturday 19</div>
-  <div class="row first"><div class="t">9:30</div><div class="d"><a href="https://www.google.com/calendar/event?eid=ZmtjMXVpM3BjdGlwc3R1ZGIybW5rdjZrZGtfMjAyNjA5MTlUMTUzMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">🏊 Swim lesson</a> <span class="who">(Chicas)</span></div></div>
-  <div class="row"><div class="t">11:30</div><div class="d"><a href="https://www.google.com/calendar/event?eid=MjNkZnZtbHQ1dmRhdW5maGJqYzJhazMyNW9fMjAyNjA5MTlUMTczMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">🎭 Dance class</a> <span class="who">(Chicas)</span></div></div>
-
-  <div class="daylabel">Sunday 20</div>
-  <div class="row first"><div class="t">All day</div><div class="d"><a href="https://www.google.com/calendar/event?eid=Njh2M3N2NXZuNnA3Ym9pbW9qdWQwOGNtdW9fMjAyNjA5MjAgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw" target="_blank" rel="noopener">Confirm subscriptions</a></div></div>
-  <div class="row"><div class="t">1:00–7:00</div><div class="d">📦 Meal-kit delivery window</div></div>
-
-  <p class="note">Two Saturday items and one Sunday item collide with other plans this weekend. The detail and the decision are in Todoist.</p>
-</section>
-
-<section>
-  <h2>⚠️ Needs a decision this weekend</h2>
-  <div class="banner b-warn" style="margin-bottom:0">
-    <h3>Saturday morning is double-booked</h3>
-    <p>Two of Saturday's commitments can't both happen alongside what else is planned. One of them has to give, and Friday is the last practical day to make the call.</p>
-    <p>A second, smaller one: Friday's two appointments are back-to-back with zero minutes between them, at two different places.</p>
-  </div>
-</section>
-
-<section>
-  <h2><a href="https://todoist.com/app/project/6h62Jmrp3GpJjQwW" target="_blank" rel="noopener">Needs you — 5 priority items, all overdue</a></h2>
-
-  <div class="p1 first">
-    <div class="name"><a href="https://app.todoist.com/app/task/6hW2jvJwwJCP5pxv" target="_blank" rel="noopener">📋 Complete the outstanding online school forms</a></div>
-    <div class="why">Four days past the deadline, and a named person at the school is now chasing it. 15–20 minutes and it's closed — the cheapest one on this list.</div>
-  </div>
-  <div class="p1">
-    <div class="name"><a href="https://app.todoist.com/app/task/6h5xXQR54CrF5pFf" target="_blank" rel="noopener">🦷 Call the dental office</a></div>
-    <div class="why">They've asked to sort everything in one phone call and are waiting only on a phone number. 49 days old; the overdue cleaning is roughly eight months out.</div>
-  </div>
-  <div class="p1">
-    <div class="name"><a href="https://app.todoist.com/app/task/6hFmqw9wr3VxPg4g" target="_blank" rel="noopener">🔴 Julian — follow up on Employment Insurance</a></div>
-    <div class="why">Flagged in August as the top priority above everything else, and 39 days overdue. Nothing outside Julian's own account will ever show progress on it.</div>
-  </div>
-  <div class="p1">
-    <div class="name"><a href="https://app.todoist.com/app/task/6h6Q2XvP658gF3Wv" target="_blank" rel="noopener">📚 Return the items marked lost</a></div>
-    <div class="why">Already billed. They can go back to any branch — the return is what clears the charge. 48 days.</div>
-  </div>
-  <div class="p1">
-    <div class="name"><a href="https://app.todoist.com/app/task/6h69CQXGqH3cgfJf" target="_blank" rel="noopener">☎️ Call the home-care clinic</a></div>
-    <div class="why">50 days, still first contact, never started. No correspondence exists yet, so nothing is waiting on anyone else.</div>
-  </div>
-</section>
-
-<section>
-  <h2>Health</h2>
-  <p style="margin:0 0 8px;font-size:14.5px">✅ <strong>Three activities already banked this week</strong> — the target is met before Friday even starts. Nothing to add, and nothing to feel behind on.</p>
-  <p style="margin:0;font-size:14.5px">Friday's open stretch is roughly <strong>12:30–4:30</strong> if you want a fourth, and it's 21° and sunny. 💊 Vitamins.</p>
-</section>
-
-<section>
-  <h2>Meals</h2>
-  <p style="margin:0 0 8px;font-size:14.5px">Friday, Saturday and Sunday are all covered by plans already in motion — nothing needs cooking.</p>
-  <p style="margin:0;font-size:14.5px">👋 <strong>Hey Whit and Julian</strong> — the meal plan itself hasn't been updated since mid-August. Send one through and it gets loaded. <a href="https://claude.ai/public/artifacts/c87f2ac9-ab21-4d38-8967-834af65c4da2" target="_blank" rel="noopener">Recipe Box</a></p>
-</section>
-
-<section>
-  <h2>Cards</h2>
-  <ul>
-    <li>A credit card — was due the 13th, <strong>5 days past due</strong></li>
-    <li>A second credit card — also due the 13th, <strong>5 days past due</strong></li>
-    <li>A third credit card — was due the 17th, <strong>1 day past due</strong></li>
-  </ul>
-  <p class="note">Three in a row now past due. Worth two minutes to confirm they cleared.</p>
-</section>
-
-<section class="full read">
-  <h2>The read</h2>
-
-  <p><span class="tag">Space</span>Astronomers confirmed a Jupiter-size world less than a million years old orbiting a young star 453 light years away — the youngest planet ever found, and awkward for models of how giant planets form so far out. <a href="https://science.nasa.gov/universe/newfound-baby-planet-smashes-record-for-youngest-known-world/" target="_blank" rel="noopener">NASA</a></p>
-
-  <p><span class="tag">Tech</span>Google opened early access to "Home MCP" this week, letting outside AI assistants read and control your doorbell, thermostat and smart devices — behind a paid tier, US only for now. <a href="https://techcrunch.com/2026/09/16/your-ai-agents-can-now-control-your-google-home-devices/" target="_blank" rel="noopener">TechCrunch</a></p>
-
-  <p><span class="tag">Parenting</span>An eight-year Finnish study following children into adolescence found more screen time associated with <em>better</em> cognitive processing later — a result the researchers themselves called unexpected, and a useful counterweight to the usual headline. <a href="https://www.sciencedaily.com/releases/2026/08/260815064803.htm" target="_blank" rel="noopener">ScienceDaily</a></p>
-
-  <p><span class="tag">Business</span>Generac jumped roughly 27–40% Thursday after Amazon signed a backup-generator deal worth $2.4B up front and up to $8B long term — and took a warrant on 1.69M Generac shares, so Amazon now has equity upside in its own supplier. <a href="https://www.cnbc.com/2026/09/17/generac-shares-surge-on-amazon-deal-wall-street-thinks-it-has-more-to-go-.html" target="_blank" rel="noopener">CNBC</a></p>
-
-  <p><span class="tag">Calgary</span>The Oct 19 referendum campaign ramped up across the city Wednesday with duelling events — a two-day virtual assembly announced for Sept 19–20, and a grassroots counter-campaign handing out cookies at a public library. <a href="https://www.cp24.com/news/canada/2026/09/16/alberta-referendum-campaign-ramps-up-with-several-calgary-events/" target="_blank" rel="noopener">CP24</a> · Alberta grocery workers voted to authorize a strike, 87% in favour locally, with the union warning of picket lines before Thanksgiving. <a href="https://www.cbc.ca/player/play/video/9.7342594" target="_blank" rel="noopener">CBC</a></p>
-
-  <p><span class="tag">Canada</span>Mark Carney told the European Parliament that Canada welcomes the EU's ambition to make it the bloc's first associate member, saying he is "not proposing a third bloc in order to become a great power rival, only with better manners." <a href="https://www.cnbc.com/2026/09/17/carney-canada-eu-associate-member.html" target="_blank" rel="noopener">CNBC</a> · He heads to the UN General Assembly in New York Sept 21–23. <a href="https://www.pm.gc.ca/en/news/news-releases/2026/09/17/prime-minister-carney-attend-81st-session-united-nations-general" target="_blank" rel="noopener">PMO</a></p>
-
-  <p><span class="tag">US</span>The Federal Reserve raised its benchmark rate 25 basis points to 3.75–4.00% on Wednesday, its first increase since 2023, on a 12–0 vote, citing elevated inflation. <a href="https://www.cnbc.com/2026/09/16/fed-rate-decision-september-2026.html" target="_blank" rel="noopener">CNBC</a> · The White House withdrew its nominee to lead ICE on Thursday, leaving the agency without a Senate-confirmed director. <a href="https://www.npr.org/2026/09/17/nx-s1-5973271/trump-withdraws-lance-schroyer-a-former-oklahoma-state-trooper-as-his-nominee-to-lead-ice" target="_blank" rel="noopener">NPR</a></p>
-
-  <p><span class="tag">Late night</span><strong>John Oliver</strong> is back Sunday Sept 20 with the first new <em>Last Week Tonight</em> after the late-summer break — main segment not announced yet. <a href="https://en.wikipedia.org/wiki/List_of_Last_Week_Tonight_with_John_Oliver_episodes" target="_blank" rel="noopener">episode list</a> · <strong>Seth Meyers</strong> is dark Friday and returns with new shows Monday Sept 21 after seven weeks off. <a href="https://www.tvinsider.com/1281618/late-night-with-seth-meyers-summer-break-2026-return-date-details/" target="_blank" rel="noopener">TV Insider</a> · <strong>Colbert</strong> still has no new show — his first appearance since <em>The Late Show</em> ended was as Kimmel's guest in Brooklyn on Tuesday. <a href="https://latenighter.com/news/stephen-colbert-kimmel-first-post-late-show-appearance/" target="_blank" rel="noopener">Latenighter</a> · <strong>Fallon</strong> has Sandra Bullock and Mike D on Friday; <strong>Kimmel</strong> wrapped his short Brooklyn week Thursday. <a href="https://latenighter.com/lineups-by-date/" target="_blank" rel="noopener">all lineups</a></p>
-</section>
+  <footer>
+    Generated Monday, September 21, 2026 at 10:56 AM MDT<br>
+    <a href="https://deadnak.github.io/hornak-brief/weekly/" target="_blank" rel="noopener">This week's brief →</a>
+  </footer>
 
 </div>
-
-<footer>
-  <a href="https://deadnak.github.io/hornak-brief/weekly/" target="_blank" rel="noopener">This week's brief →</a><br>
-  Generated Thursday, September 17, 2026 at 5:47 PM MDT
-</footer>
-
 </div>
 </body>
 </html>
