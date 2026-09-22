@@ -87,6 +87,16 @@ h3.pers{color:var(--alpen);font-family:var(--font-fam-label);font-weight:500;
 .ev-title{display:block;font-weight:600;color:var(--s900);font-size:11.5px}
 .ev-pers .ev-title{font-family:var(--font-fam-label);font-weight:500}
 .ev-sub{display:block;font-size:10px;color:var(--s500);margin-top:1px}
+.ev-short .ev-sub{display:none}
+.ev-tiny .ev-sub{display:none}
+.ev-tiny .ev-time{display:none}
+.ev-tiny{padding:2px 8px}
+.ev-tiny .ev-title{font-size:10.5px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:760px){
+  .ev-short .ev-sub,.ev-tiny .ev-sub{display:block}
+  .ev-tiny .ev-time{display:block}
+  .ev-tiny .ev-title{font-size:13px}
+}
 
 /* detail rows */
 .rows{margin-top:22px;border-top:1px solid var(--hair)}
@@ -192,14 +202,14 @@ tbody tr:nth-child(even){background:var(--s50)}
 <div class="hr-line" style="top:784.0px"></div>
 <div class="hr-lab" style="top:777.0px">10 PM</div>
     <div class="lanes" style="height:800px">
-      <div class="lane"><div class="ev ev-work" style="top:84.0px;height:20.0px;left:0.0000%;width:calc(100.0000% - 6px)"><span class="ev-time">9:30 AM – 9:45 AM</span><span class="ev-title">Weekly team coffee (cancelled)</span><span class="ev-sub">Internal</span></div>
-<div class="ev ev-work" style="top:252.0px;height:53.0px;left:0.0000%;width:calc(100.0000% - 6px)"><span class="ev-time">12:30 PM – 1:30 PM</span><span class="ev-title">Revenue ops check-in</span><span class="ev-sub">Internal</span></div></div>
-      <div class="lane"><div class="ev ev-pers" style="top:140.0px;height:53.0px;left:0.0000%;width:calc(100.0000% - 6px)"><span class="ev-time">10:30 AM – 11:30 AM</span><span class="ev-title">Massage 10:30</span><span class="ev-sub">You</span></div>
-<div class="ev ev-pers" style="top:224.0px;height:53.0px;left:0.0000%;width:calc(100.0000% - 6px)"><span class="ev-time">12:00 PM – 1:00 PM</span><span class="ev-title">Meal-kit order reminder</span><span class="ev-sub">Cutoff Wednesday</span></div>
-<div class="ev ev-pers" style="top:364.0px;height:43.7px;left:0.0000%;width:calc(100.0000% - 6px)"><span class="ev-time">2:30 PM – 3:20 PM</span><span class="ev-title">Pilates 2:30</span><span class="ev-sub">You</span></div>
-<div class="ev ev-pers" style="top:504.0px;height:39.0px;left:0.0000%;width:calc(50.0000% - 6px)"><span class="ev-time">5:00 PM – 5:45 PM</span><span class="ev-title">Dance class 5:00</span><span class="ev-sub">The kids</span></div>
+      <div class="lane"><div class="ev ev-work ev-tiny" style="top:84.0px;height:24.0px;left:0.0000%;width:calc(100.0000% - 6px)"><span class="ev-time">9:30 AM – 9:45 AM</span><span class="ev-title">Weekly team coffee (cancelled)</span><span class="ev-sub">Internal</span></div>
+<div class="ev ev-work ev-short" style="top:252.0px;height:53.0px;left:0.0000%;width:calc(100.0000% - 6px)"><span class="ev-time">12:30 PM – 1:30 PM</span><span class="ev-title">Revenue ops check-in</span><span class="ev-sub">Internal</span></div></div>
+      <div class="lane"><div class="ev ev-pers ev-short" style="top:140.0px;height:53.0px;left:0.0000%;width:calc(100.0000% - 6px)"><span class="ev-time">10:30 AM – 11:30 AM</span><span class="ev-title">Massage 10:30</span><span class="ev-sub">You</span></div>
+<div class="ev ev-pers ev-short" style="top:224.0px;height:53.0px;left:0.0000%;width:calc(100.0000% - 6px)"><span class="ev-time">12:00 PM – 1:00 PM</span><span class="ev-title">Meal-kit order reminder</span><span class="ev-sub">Cutoff Wednesday</span></div>
+<div class="ev ev-pers ev-short" style="top:364.0px;height:43.7px;left:0.0000%;width:calc(100.0000% - 6px)"><span class="ev-time">2:30 PM – 3:20 PM</span><span class="ev-title">Pilates 2:30</span><span class="ev-sub">You</span></div>
+<div class="ev ev-pers ev-short" style="top:504.0px;height:39.0px;left:0.0000%;width:calc(50.0000% - 6px)"><span class="ev-time">5:00 PM – 5:45 PM</span><span class="ev-title">Dance class 5:00</span><span class="ev-sub">The kids</span></div>
 <div class="ev ev-pers" style="top:504.0px;height:109.0px;left:50.0000%;width:calc(50.0000% - 6px)"><span class="ev-time">5:00 PM – 7:00 PM</span><span class="ev-title">Dinner with friends</span><span class="ev-sub">Family</span></div>
-<div class="ev ev-pers" style="top:546.0px;height:39.0px;left:0.0000%;width:calc(50.0000% - 6px)"><span class="ev-time">5:45 PM – 6:30 PM</span><span class="ev-title">Dance class 5:45</span><span class="ev-sub">The kids</span></div>
+<div class="ev ev-pers ev-short" style="top:546.0px;height:39.0px;left:0.0000%;width:calc(50.0000% - 6px)"><span class="ev-time">5:45 PM – 6:30 PM</span><span class="ev-title">Dance class 5:45</span><span class="ev-sub">The kids</span></div>
 <div class="ev ev-pers" style="top:616.0px;height:109.0px;left:0.0000%;width:calc(100.0000% - 6px)"><span class="ev-time">7:00 PM – 9:00 PM</span><span class="ev-title">Bowling league 7:00</span><span class="ev-sub">You</span></div></div>
     </div>
   </div>
