@@ -1,221 +1,130 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Whitney&#x27;s Day — public view — Tuesday, September 22, 2026</title><style>
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Jost:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap');
-:root{
-  --brand:#4D00CA; --p600:#7C3AED; --indigo:#4338CA; --wash:#F3E8FF;
-  --s900:#0F172A; --s700:#334155; --s500:#64748B; --s400:#94A3B8;
-  --s50:#F8FAFC; --s100:#F1F5F9; --hair:#E2E8F0;
-  --green:#16A34A; --greenw:#DCFCE7; --red:#EF4444; --redw:#FEF2F2;
-  --amber:#B4690E;
-  --alpen:#B85C86; --pine:#2E7358; --glacier:#35699B; --dusk:#6B5591;
-  --granite:#1B2022; --scree:#6C7378; --trail:#E3E1DA; --snow:#F7F5F1;
-  --pbord:#DDDAD2;
-  --font-head:'Lexend','Nunito',Arial,sans-serif;
-  --font-body:'Segoe UI',system-ui,-apple-system,sans-serif;
-  --font-fam-label:'Jost','Century Gothic',Futura,-apple-system,sans-serif;
-  --font-fam-head:'Instrument Serif',Georgia,'Times New Roman',serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Whitney's Day</title>
+<style>
+:root{--p:#4B2E83;--pd:#2E1A52;--pl:#7C5BB8;--gold:#E8A33D;--grn:#5A8F3D;
+ --cream:#FBF8F3;--ink:#231F20;--mut:#6B6570;--line:#E4DED6;color-scheme:light}
 *{box-sizing:border-box}
-body{margin:0;background:#fff;color:var(--s700);font-family:var(--font-body);
-     font-size:15px;line-height:1.68;-webkit-text-size-adjust:100%}
-.wrap{max-width:1080px;margin:0 auto;padding:0 16px 72px}
-a{color:inherit}
-.evlink,.tlink{color:inherit;text-decoration:none;border-bottom:1px dotted rgba(100,116,139,.55)}
-.evlink:hover,.tlink:hover{border-bottom-color:var(--brand)}
-
-/* masthead */
-.mast{padding:30px 0 18px;border-bottom:3px solid var(--brand);margin-bottom:26px}
-.mast img{width:168px;height:auto;display:block;margin-bottom:16px}
-.eyebrow{font-family:var(--font-head);font-size:11px;font-weight:600;letter-spacing:.16em;
-         text-transform:uppercase;color:var(--p600);margin:0 0 6px}
-h1{font-family:var(--font-head);font-weight:700;font-size:clamp(26px,5vw,38px);
-   line-height:1.14;color:var(--s900);margin:0 0 8px;letter-spacing:-.015em}
-.subhead{font-size:14px;color:var(--s500);margin:0}
-
-/* pills */
-.pill{display:inline-block;font-family:var(--font-head);font-size:10px;font-weight:700;
-      letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:999px;
-      vertical-align:middle}
-.pill-live{background:var(--brand);color:#fff}
-.pill-frozen{background:#FDF6EC;color:var(--amber);border:1px solid #F0DCC0}
-.pill-work{background:var(--wash);color:var(--brand)}
-.pill-pers{background:var(--trail);color:var(--alpen);font-family:var(--font-fam-label);
-           font-weight:500;letter-spacing:.09em}
-.pill-hi{background:var(--redw);color:var(--red);border:1px solid #FBD5D5}
-.pill-med{background:var(--wash);color:var(--brand)}
-.pill-low{background:var(--s100);color:var(--s500)}
-.pill-ok{background:var(--greenw);color:var(--green)}
-
-/* snapshot */
-.snap{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:12px;margin:0 0 30px}
-.snap div{border:1px solid var(--hair);border-radius:14px;padding:14px 15px;background:#fff}
-.snap b{display:block;font-family:var(--font-head);font-weight:700;font-size:27px;
-        color:var(--brand);line-height:1.1}
-.snap span{font-size:11.5px;color:var(--s500);letter-spacing:.03em}
-
-/* sections */
-section{margin:0 0 42px}
-h2{font-family:var(--font-head);font-weight:700;font-size:19px;color:var(--s900);
-   margin:0 0 4px;letter-spacing:-.01em;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-h2 .num{color:var(--brand);font-size:13px;font-weight:700}
-.sectnote{font-size:13px;color:var(--s500);margin:0 0 16px}
-h3{font-family:var(--font-head);font-weight:600;font-size:13.5px;color:var(--brand);
-   margin:26px 0 10px;letter-spacing:.01em}
-h3.pers{color:var(--alpen);font-family:var(--font-fam-label);font-weight:500;
-        display:flex;align-items:center;gap:7px}
-
-/* timeline */
-.tl{position:relative;border:1px solid var(--hair);border-radius:16px;padding:10px 10px 10px 58px;
-    background:#fff;overflow:hidden}
-.tl-head{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 6px}
-.tl-head span{font-family:var(--font-head);font-size:10px;font-weight:700;letter-spacing:.14em;
-              text-transform:uppercase;padding:5px 0;text-align:center;border-radius:8px}
-.tl-head .w{background:var(--wash);color:var(--brand)}
-.tl-head .p{background:var(--trail);color:var(--alpen);font-family:var(--font-fam-label);
-            font-weight:500;letter-spacing:.1em}
-.tl-body{position:relative}
-.hr-line{position:absolute;left:-48px;right:0;height:1px;background:var(--s100)}
-.hr-lab{position:absolute;left:-54px;width:44px;text-align:right;font-size:10px;
-        color:var(--s400);font-variant-numeric:tabular-nums}
-.lanes{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.lane{position:relative}
-.ev{position:absolute;border-radius:9px;padding:5px 8px;overflow:hidden;font-size:11.5px;
-    line-height:1.3}
-.ev-work{background:#FAF6FF;border:1px solid #E3D2FB;border-left:3px solid var(--brand)}
-.ev-pers{background:var(--snow);border:1px solid var(--pbord);border-left:3px solid var(--alpen)}
-.ev-time{display:block;font-size:9.5px;color:var(--s400);font-variant-numeric:tabular-nums;
-         letter-spacing:.02em}
-.ev-title{display:block;font-weight:600;color:var(--s900);font-size:11.5px}
-.ev-pers .ev-title{font-family:var(--font-fam-label);font-weight:500}
-.ev-sub{display:block;font-size:10px;color:var(--s500);margin-top:1px}
-.ev-short .ev-sub{display:none}
-.ev-tiny .ev-sub{display:none}
-.ev-tiny .ev-time{display:none}
-.ev-tiny{padding:2px 8px}
-.ev-tiny .ev-title{font-size:10.5px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-@media (max-width:760px){
-  .ev-short .ev-sub,.ev-tiny .ev-sub{display:block}
-  .ev-tiny .ev-time{display:block}
-  .ev-tiny .ev-title{font-size:13px}
-}
-
-/* detail rows */
-.rows{margin-top:22px;border-top:1px solid var(--hair)}
-.row{display:grid;grid-template-columns:132px 1fr;gap:14px;padding:11px 0;
-     border-bottom:1px solid var(--s100)}
-.row-time{font-size:12px;color:var(--s500);font-variant-numeric:tabular-nums;padding-top:1px}
-.row-title{font-weight:600;color:var(--s900);font-size:14px}
-.row-work .row-title{font-family:var(--font-head)}
-.row-pers .row-title{font-family:var(--font-fam-label);font-weight:500}
-.row-sub{font-size:12.5px;color:var(--s500)}
-.row-work{border-left:3px solid var(--brand);padding-left:12px}
-.row-pers{border-left:3px solid var(--alpen);padding-left:12px}
-
-/* cards */
-.card{border:1px solid var(--hair);border-radius:14px;padding:15px 17px;margin:0 0 11px;background:#fff}
-.card.work{border-left:3px solid var(--brand)}
-.card.pers{border-left:3px solid var(--alpen);background:var(--snow);border-color:var(--pbord)}
-.card-t{font-family:var(--font-head);font-weight:600;font-size:14.5px;color:var(--s900);
-        margin:0 0 3px;display:flex;gap:9px;align-items:baseline;flex-wrap:wrap}
-.card.pers .card-t{font-family:var(--font-fam-label);font-weight:500}
-.card-m{font-size:12px;color:var(--s400);margin:0 0 7px;letter-spacing:.01em}
-.card p{margin:0;font-size:13.5px;color:var(--s700)}
-.card p+p{margin-top:7px}
-.ask{font-size:13px;color:var(--s500);border-left:2px solid var(--hair);padding-left:11px;
-     margin-top:9px !important}
-
-/* callout */
-.callout{background:linear-gradient(180deg,var(--snow),#fff);border:1px solid var(--pbord);
-         border-radius:16px;padding:20px 22px;margin:0 0 16px}
-.callout .verdict{font-family:var(--font-fam-head);font-style:italic;font-size:22px;
-         color:var(--alpen);line-height:1.3;margin:0 0 9px}
-.callout p{margin:0;font-size:13.5px;color:var(--scree)}
-.wcall{background:var(--wash);border:1px solid #E3D2FB;border-left:4px solid var(--brand);
-       border-radius:12px;padding:15px 18px;margin:0 0 16px}
-.wcall .h{font-family:var(--font-head);font-weight:700;font-size:13px;color:var(--brand);
-       margin:0 0 5px;letter-spacing:.01em}
-.wcall p{margin:0;font-size:13.5px;color:var(--s700)}
-
-/* lists */
-ul.br{list-style:none;padding:0;margin:0}
-ul.br li{position:relative;padding-left:18px;margin:0 0 9px;font-size:13.5px}
-ul.br li:before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;
-                background:var(--p600);transform:rotate(45deg)}
-ul.br.pers li:before{background:var(--alpen)}
-
-/* table */
-table{width:100%;border-collapse:collapse;font-size:13px;margin:0}
-thead th{background:var(--brand);color:#fff;font-family:var(--font-head);font-weight:700;
-         font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;text-align:left;
-         padding:9px 11px}
-tbody td{padding:10px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
-tbody tr:nth-child(even){background:var(--s50)}
-.tbl-wrap{border:1px solid var(--hair);border-radius:12px;overflow:hidden}
-.ov{overflow-x:auto}
-
-.foot{border-top:1px solid var(--hair);padding-top:18px;font-size:11.5px;color:var(--s400)}
-.foot a{color:var(--s500)}
-
-@media (max-width:760px){
-  .tl{padding-left:12px}
-  .tl-head{display:none}
-  .lanes{display:block}
-  .lane{position:static !important}
-  .tl-body{height:auto !important}
-  .hr-line,.hr-lab{display:none}
-  .ev{position:static !important;width:auto !important;height:auto !important;
-      margin:0 0 8px;padding:9px 11px}
-  .ev-title{font-size:13px}
-  .row{grid-template-columns:1fr;gap:2px}
-}
-</style></head><body><div class="wrap"><header class="mast"><img src="data:image/png;base64,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" alt="Pecan Tree"><p class="eyebrow">Work and Life, One View</p><h1>Whitney&rsquo;s Day</h1><p class="subhead">Tuesday, September 22, 2026 &middot; Mountain Time &middot; Calgary<br>Public view. External names and companies are reduced to initials; amounts, subjects and attachments are removed. The detail sits behind your own logins.</p></header><div class="card" style="border-left:3px solid var(--brand);margin-bottom:16px"><p style="font-family:var(--font-head);font-weight:700;font-size:18px;color:var(--s900);margin:0 0 10px;line-height:1.34">Two meetings cancelled out from under the morning. One hour of work left, then the evening.</p><p>The work lane is down to a single check-in at 12:30. From 5:00 the evening runs back to back across two addresses and does not stop until 9:00, and it turns stormy after dark.</p></div><div class="snap"><div><b>1</b><span>work meeting left</span></div><div><b>2</b><span>cancelled this morning</span></div><div><b>6</b><span>personal blocks</span></div><div><b>6</b><span>replies you owe</span></div><div><b>3</b><span>waiting on others</span></div><div><b>10</b><span>overdue at home</span></div></div><section><h2><span class="num">01</span>Today&rsquo;s Schedule <span class="pill pill-live">Live</span></h2><p class="sectnote">Two lanes on one clock. Anything that collides shows as a collision rather than as two lines in a list. Narrow screens stack the lanes and every event keeps its own time. The massage appears once, on the personal lane; it mirrors into Outlook, and the mirror is not a second commitment. The 2:30 Pilates class was cancelled and has been removed.</p>
-<div class="tl">
-  <div class="tl-head"><span class="w">Work</span><span class="p">Personal</span></div>
-  <div class="tl-body" style="height:800px">
-    <div class="hr-line" style="top:0.0px"></div>
-<div class="hr-lab" style="top:-7.0px">8 AM</div>
-<div class="hr-line" style="top:56.0px"></div>
-<div class="hr-lab" style="top:49.0px">9 AM</div>
-<div class="hr-line" style="top:112.0px"></div>
-<div class="hr-lab" style="top:105.0px">10 AM</div>
-<div class="hr-line" style="top:168.0px"></div>
-<div class="hr-lab" style="top:161.0px">11 AM</div>
-<div class="hr-line" style="top:224.0px"></div>
-<div class="hr-lab" style="top:217.0px">12 PM</div>
-<div class="hr-line" style="top:280.0px"></div>
-<div class="hr-lab" style="top:273.0px">1 PM</div>
-<div class="hr-line" style="top:336.0px"></div>
-<div class="hr-lab" style="top:329.0px">2 PM</div>
-<div class="hr-line" style="top:392.0px"></div>
-<div class="hr-lab" style="top:385.0px">3 PM</div>
-<div class="hr-line" style="top:448.0px"></div>
-<div class="hr-lab" style="top:441.0px">4 PM</div>
-<div class="hr-line" style="top:504.0px"></div>
-<div class="hr-lab" style="top:497.0px">5 PM</div>
-<div class="hr-line" style="top:560.0px"></div>
-<div class="hr-lab" style="top:553.0px">6 PM</div>
-<div class="hr-line" style="top:616.0px"></div>
-<div class="hr-lab" style="top:609.0px">7 PM</div>
-<div class="hr-line" style="top:672.0px"></div>
-<div class="hr-lab" style="top:665.0px">8 PM</div>
-<div class="hr-line" style="top:728.0px"></div>
-<div class="hr-lab" style="top:721.0px">9 PM</div>
-<div class="hr-line" style="top:784.0px"></div>
-<div class="hr-lab" style="top:777.0px">10 PM</div>
-    <div class="lanes" style="height:800px">
-      <div class="lane"><div class="ev ev-work ev-tiny" style="top:84.0px;height:24.0px;left:0.0000%;width:calc(100.0000% - 6px)"><span class="ev-time">9:30 AM – 9:45 AM</span><span class="ev-title">Weekly team coffee (cancelled)</span><span class="ev-sub">Internal</span></div>
-<div class="ev ev-work ev-short" style="top:252.0px;height:53.0px;left:0.0000%;width:calc(100.0000% - 6px)"><span class="ev-time">12:30 PM – 1:30 PM</span><span class="ev-title">Revenue ops check-in</span><span class="ev-sub">Internal</span></div></div>
-      <div class="lane"><div class="ev ev-pers ev-short" style="top:140.0px;height:53.0px;left:0.0000%;width:calc(100.0000% - 6px)"><span class="ev-time">10:30 AM – 11:30 AM</span><span class="ev-title">Massage 10:30</span><span class="ev-sub">You</span></div>
-<div class="ev ev-pers ev-short" style="top:224.0px;height:53.0px;left:0.0000%;width:calc(100.0000% - 6px)"><span class="ev-time">12:00 PM – 1:00 PM</span><span class="ev-title">Meal-kit order reminder</span><span class="ev-sub">Shows as free · cutoff Wednesday</span></div>
-<div class="ev ev-pers ev-short" style="top:504.0px;height:39.0px;left:0.0000%;width:calc(50.0000% - 6px)"><span class="ev-time">5:00 PM – 5:45 PM</span><span class="ev-title">Dance class 5:00</span><span class="ev-sub">The kids</span></div>
-<div class="ev ev-pers" style="top:504.0px;height:109.0px;left:50.0000%;width:calc(50.0000% - 6px)"><span class="ev-time">5:00 PM – 7:00 PM</span><span class="ev-title">Dinner with friends</span><span class="ev-sub">Family</span></div>
-<div class="ev ev-pers ev-short" style="top:546.0px;height:39.0px;left:0.0000%;width:calc(50.0000% - 6px)"><span class="ev-time">5:45 PM – 6:30 PM</span><span class="ev-title">Dance class 5:45</span><span class="ev-sub">The kids</span></div>
-<div class="ev ev-pers" style="top:616.0px;height:109.0px;left:0.0000%;width:calc(100.0000% - 6px)"><span class="ev-time">7:00 PM – 9:00 PM</span><span class="ev-title">Bowling league 7:00</span><span class="ev-sub">You</span></div></div>
-    </div>
+body{margin:0;background:var(--cream);color:var(--ink);
+ font-family:"Segoe UI",-apple-system,system-ui,sans-serif;font-size:16px;line-height:1.55}
+.hero{background:linear-gradient(135deg,var(--pd) 0%,var(--p) 55%,var(--pl) 100%);color:#fff;padding:30px 20px 26px}
+.hero .in{max-width:900px;margin:0 auto}
+.hero h1{margin:0 0 3px;font-size:27px;font-weight:600;letter-spacing:-.02em}
+.hero p{margin:0;opacity:.9;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+ border-radius:999px;padding:4px 12px;font-size:13px}
+.wrap{max-width:900px;margin:0 auto;padding:22px 18px 50px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:16px}
+.card h2{margin:0 0 12px;font-size:13px;letter-spacing:.09em;text-transform:uppercase;
+ color:var(--p);font-weight:700;border-bottom:2px solid var(--line);padding-bottom:8px}
+.row{display:flex;gap:12px;padding:8px 0;border-bottom:1px dotted var(--line)}
+.row:last-child{border-bottom:none}
+.row .t{flex:0 0 92px;font-size:14px;color:var(--mut);font-variant-numeric:tabular-nums}
+.row .b{flex:1}
+ul.l{margin:0;padding:0;list-style:none}
+ul.l li{padding:8px 0;border-bottom:1px dotted var(--line)}
+ul.l li:last-child{border-bottom:none}
+.m{font-size:13.5px;color:var(--mut);margin-top:2px}
+.pill{display:inline-block;font-size:11.5px;padding:1px 8px;border-radius:999px;
+ background:#F1ECE4;color:var(--mut);margin-left:6px}
+.pill.hot{background:rgba(190,60,60,.12);color:#A63232}
+.flag{border-left:3px solid var(--gold);background:#FFFBF4;padding:10px 13px;
+ border-radius:0 8px 8px 0;margin-bottom:10px}
+.flag.hot{border-left-color:#A63232;background:#FFF6F5}
+.flag .h{font-weight:600}
+.flag .d{font-size:14px;color:var(--mut)}
+footer{text-align:center;font-size:13px;color:var(--mut);margin-top:22px}
+</style>
+</head>
+<body>
+<div class="hero"><div class="in">
+  <h1>Whitney's Day</h1>
+  <p>Wednesday, September 23, 2026 · all times Mountain</p>
+  <div class="chips">
+    <span class="chip">9 calendar items</span>
+    <span class="chip">2 conflicts</span>
+    <span class="chip">10 active work items</span>
+    <span class="chip">4 P1 · 8 P2</span>
+    <span class="chip">3 replies owed</span>
   </div>
-</div><h3>What actually collides</h3><div class="callout"><p class="verdict">Half an hour, two addresses, at 6:30.</p><p>The second class ends at 6:30 and the 7:00 commitment is across town, with dinner nominally running through the same window. Storms are forecast after dark.</p></div><div class="callout"><p class="verdict">A household reminder sits on the only meeting left.</p><p>A recurring reminder runs 12:00 to 1:00, over the half hour before the check-in and into it. Its real deadline is tomorrow night, so it is the softer of the two.</p></div><div class="rows"><h3>Work, in full</h3><div class="row row-work"><div class="row-time">9:30 AM – 9:45 AM</div><div class="row-body"><div class="row-title">Weekly team coffee (cancelled)</div><div class="row-sub">Internal</div></div></div>
-<div class="row row-work"><div class="row-time">12:30 PM – 1:30 PM</div><div class="row-body"><div class="row-title">Revenue ops check-in</div><div class="row-sub">Internal</div></div></div><h3 class="pers"><svg width="17" height="17" viewBox="20 13 254 254" fill="none" stroke-linejoin="round" style="flex:0 0 auto"><circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle><polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon><polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon><polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon></svg> Personal, in full</h3><div class="row row-pers"><div class="row-time">10:30 AM – 11:30 AM</div><div class="row-body"><div class="row-title">Massage 10:30</div><div class="row-sub">You</div></div></div>
-<div class="row row-pers"><div class="row-time">12:00 PM – 1:00 PM</div><div class="row-body"><div class="row-title">Meal-kit order reminder</div><div class="row-sub">Shows as free · cutoff Wednesday</div></div></div>
-<div class="row row-pers"><div class="row-time">5:00 PM – 5:45 PM</div><div class="row-body"><div class="row-title">Dance class 5:00</div><div class="row-sub">The kids</div></div></div>
-<div class="row row-pers"><div class="row-time">5:00 PM – 7:00 PM</div><div class="row-body"><div class="row-title">Dinner with friends</div><div class="row-sub">Family</div></div></div>
-<div class="row row-pers"><div class="row-time">5:45 PM – 6:30 PM</div><div class="row-body"><div class="row-title">Dance class 5:45</div><div class="row-sub">The kids</div></div></div>
-<div class="row row-pers"><div class="row-time">7:00 PM – 9:00 PM</div><div class="row-body"><div class="row-title">Bowling league 7:00</div><div class="row-sub">You</div></div></div></div></section><section><h2><span class="num">02</span>ClickUp Tasks &amp; Priorities <span class="pill pill-live">Live</span></h2><p class="sectnote">Counts and shapes only. Ten active items assigned to Whitney, each linked to the real record behind her ClickUp login.</p><div class="tbl-wrap ov"><table><thead><tr><th>Task</th><th>Status</th><th>Type</th></tr></thead><tbody><tr><td><a class="tlink" href="https://app.clickup.com/t/868m2rqvg" target="_blank" rel="noopener">2026 Sep - R.P. - L. Deal</a><div style="font-size:11px;color:#94A3B8">TASK-24549</div></td><td>In progress</td><td>Consulting</td></tr><tr><td><a class="tlink" href="https://app.clickup.com/t/868kx60zd" target="_blank" rel="noopener">O.T. BD - build the pitch + proposal (mini app, revenue integration, monthly OG-branded reports)</a><div style="font-size:11px;color:#94A3B8">TASK-24268</div></td><td>In progress</td><td>Business Dev</td></tr><tr><td><a class="tlink" href="https://app.clickup.com/t/868kj46hd" target="_blank" rel="noopener">W.D. Family meeting (offsite, late Sept) - marketing prep</a><div style="font-size:11px;color:#94A3B8">TASK-23684</div></td><td>In progress</td><td>Business Dev</td></tr><tr><td><a class="tlink" href="https://app.clickup.com/t/868m6r00m" target="_blank" rel="noopener">Produce the My Month in Review mockup</a><div style="font-size:11px;color:#94A3B8">TASK-24763</div></td><td>Backlog, shovel ready</td><td>Product</td></tr><tr><td><a class="tlink" href="https://app.clickup.com/t/868kzw9n7" target="_blank" rel="noopener">B.O. - third-party engineering consultant for RBL borrowing-base evaluations</a><div style="font-size:11px;color:#94A3B8">TASK-24468</div></td><td>In progress</td><td>Business Dev</td></tr><tr><td><a class="tlink" href="https://app.clickup.com/t/868m2t13x" target="_blank" rel="noopener">Finalize budget &amp; Rev Ops goals for rest of 2026</a><div style="font-size:11px;color:#94A3B8">TASK-24560</div></td><td>Backlog, shovel ready</td><td>Admin</td></tr><tr><td><a class="tlink" href="https://app.clickup.com/t/868kqjr8j" target="_blank" rel="noopener">P.V. - intro call with M.P. &amp; D.A. (via F.P. / C.Q.)</a><div style="font-size:11px;color:#94A3B8">TASK-24024</div></td><td>In progress</td><td>Business Dev</td></tr><tr><td><a class="tlink" href="https://app.clickup.com/t/868kfu6cy" target="_blank" rel="noopener">5.P. (C.Q.) BD - follow up on custom risking &amp; reports</a><div style="font-size:11px;color:#94A3B8">TASK-23420</div></td><td>Backlog, shovel ready</td><td>Business Dev</td></tr><tr><td><a class="tlink" href="https://app.clickup.com/t/868m2t0ae" target="_blank" rel="noopener">Check in with M. on taxes &amp; financials (2025 returns)</a><div style="font-size:11px;color:#94A3B8">TASK-24552</div></td><td>Backlog, shovel ready</td><td>Admin</td></tr><tr><td><a class="tlink" href="https://app.clickup.com/t/868kx611z" target="_blank" rel="noopener">O.T. BD - build the OG-branded mockup report from an existing portfolio</a><div style="font-size:11px;color:#94A3B8">TASK-24269</div></td><td>In progress</td><td>Business Dev</td></tr></tbody></table></div><div class="wcall" style="margin-top:16px"><div class="h">Two the recency sort drops, and the calendar does not</div><p>Both sit outside the top ten by last-touched, and both are hard-dated by the trip, now eight days out:</p><ul class="br" style="margin-top:9px"><li><a class="tlink" href="https://app.clickup.com/t/868krma8r" target="_blank" rel="noopener">Book Sunday SEA-YYC leg + verify Premium Class (Alaska EUVSUK, W.D.2026)</a> &middot; TASK-24090</li><li><a class="tlink" href="https://app.clickup.com/t/868krmagq" target="_blank" rel="noopener">Confirm 2 queens &amp; resort fee on hotel booking (offsite)</a> &middot; TASK-24093</li></ul></div></section><section><h2><span class="num">03</span>Life Balance <span class="pill pill-frozen">Frozen 12:15 PM</span></h2><p class="sectnote">Your own time, called out so it does not disappear into the day, and one outdoor window picked from what is actually free.</p><div class="card pers"><div class="card-t">Already yours today <span class="pill pill-pers">Personal</span></div><p><b>10:30 to 11:30</b> &mdash; massage, done.<br><b>7:00 to 9:00</b> &mdash; bowling league, which is yours rather than the kids&rsquo;.</p><p>The 2:30 Reformer Pilates class is <b>cancelled</b> and has been taken off the calendar. That leaves two things today rather than three, and it opens the entire afternoon.</p></div><div class="callout"><p class="verdict">You now have three and a half clear hours. Take some of them outside.</p><p>Mainly sunny and 25&deg;C with light wind, turning stormy after dark, so outdoor time wants to be early rather than late. With the 1:1, the coffee and now Pilates all gone, <b>1:30 through to 5:00 is completely unbooked</b>. The suggested window is <b>1:30 to 2:00</b>, straight out of the check-in while the day is still warm. Nothing stops you making it an hour now that the class is off, and with Pilates cancelled the walk is the only movement the afternoon has in it.</p></div><p class="sectnote" style="margin-top:12px">No calendar action taken. This is a suggestion, not a booking.</p></section><section><h2><span class="num">04</span>Top Emails to Respond To <span class="pill pill-frozen">Frozen 12:15 PM</span></h2><p class="sectnote">External senders only, internal Pecan mail excluded. Thread state checked against the Sent Items sweep; every candidate here arrived yesterday or today, and the sweep covers Sep 17 to now, so any reply would have shown up in it. Six qualify.</p><div class="card work"><div class="card-t">M.P. (P.M.) <span class="pill pill-hi">High</span></div><div class="card-m">subject withheld &middot; today, 10:46 AM</div></div><div class="card work"><div class="card-t">L.M. (D.E.) <span class="pill pill-hi">High</span></div><div class="card-m">subject withheld &middot; yesterday, 11:58 AM, 26 hours</div></div><div class="card work"><div class="card-t">L.G. (F.) <span class="pill pill-hi">High</span></div><div class="card-m">subject withheld &middot; yesterday, 2:59 PM</div></div><div class="card work"><div class="card-t">K. (R.P.R.) <span class="pill pill-hi">High</span></div><div class="card-m">subject withheld &middot; yesterday, 3:17 PM</div></div><div class="card work"><div class="card-t">J.W. (N.F.) <span class="pill pill-med">Medium</span></div><div class="card-m">subject withheld &middot; today, 11:17 and 11:23 AM</div></div><div class="card work"><div class="card-t">T.H. (F.) <span class="pill pill-med">Medium</span></div><div class="card-m">subject withheld &middot; yesterday 3:02 PM and today 7:48 AM</div></div></section><section><h2><span class="num">05</span>Waiting on Your Reply <span class="pill pill-frozen">Frozen 12:15 PM</span></h2><p class="sectnote">You sent last and nothing has come back.</p><div class="card work"><div class="card-t">G.M. &middot; B.O. <span class="pill pill-low">4 days</span></div><div class="card-m">subject withheld &middot; he replied Sep 18, 2:28 PM</div></div><div class="card work"><div class="card-t">J.C. &middot; N.O. <span class="pill pill-low">4 days</span></div><div class="card-m">subject withheld &middot; you sent Sep 18, 2:05 PM</div></div><div class="card work"><div class="card-t">G.G. &middot; W.D.J. <span class="pill pill-low">1 day</span></div><div class="card-m">subject withheld &middot; you sent yesterday, 9:41 AM</div></div></section><section><h2><span class="num">06</span>Personal Emails <span class="pill pill-frozen">Frozen 12:15 PM</span></h2><p class="sectnote">From the household side.</p><div class="card pers"><div class="card-t">J.P. <span class="pill pill-pers">Personal</span></div><div class="card-m">MRU Conservatory &middot; Sep 17, 3:36 PM</div></div><div class="card pers"><div class="card-t">D.g. <span class="pill pill-pers">Personal</span></div><div class="card-m">Studio notice &middot; Sep 18</div></div><div class="card pers"><div class="card-t">G.C. <span class="pill pill-pers">Personal</span></div><div class="card-m">Election ballot &middot; open</div></div></section><section><h2><span class="num">07</span>Reminders <span class="pill pill-frozen">Frozen 12:15 PM</span></h2><p class="sectnote">Priority 1 and priority 2 from Todoist, across every list, read live at build time. Nothing was completed since yesterday.</p><h3 class="pers"><svg width="17" height="17" viewBox="20 13 254 254" fill="none" stroke-linejoin="round" style="flex:0 0 auto"><circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle><polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon><polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon><polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon></svg> Priority 1</h3><div class="card pers"><div class="card-t"><a class="tlink" href="https://app.todoist.com/app/task/6hW2jvJwwJCP5pxv" target="_blank" rel="noopener">Complete the school forms and Demographic Form in MyCBE</a></div><div class="card-m">due Sep 14, 8 days over</div></div><div class="card pers"><div class="card-t"><a class="tlink" href="https://app.todoist.com/app/task/6h5xXQR54CrF5pFf" target="_blank" rel="noopener">Call the dental office</a></div><div class="card-m">due Jul 29, 55 days over</div></div><div class="card pers"><div class="card-t"><a class="tlink" href="https://app.todoist.com/app/task/6h6Q2XvP658gF3Wv" target="_blank" rel="noopener">Library items marked LOST</a></div><div class="card-m">due Aug 1, 52 days over</div></div><div class="card pers"><div class="card-t"><a class="tlink" href="https://app.todoist.com/app/task/6h69CQXGqH3cgfJf" target="_blank" rel="noopener">Call Respiratory Home Care Solutions</a></div><div class="card-m">due Jul 29, 55 days over</div></div><h3 class="pers"><svg width="17" height="17" viewBox="20 13 254 254" fill="none" stroke-linejoin="round" style="flex:0 0 auto"><circle cx="147" cy="140" r="118" stroke="#6B5591" stroke-width="10"></circle><polygon points="133.3,33.4 77.3,154.7 189.2,154.7" stroke="#2E7358" stroke-width="14"></polygon><polygon points="181.6,69.4 125.7,190.7 237.5,190.7" stroke="#B85C86" stroke-width="14"></polygon><polygon points="126.6,93.1 70.7,214.4 182.5,214.4" stroke="#35699B" stroke-width="14"></polygon></svg> Priority 2</h3><div class="card pers"><div class="card-t"><a class="tlink" href="https://app.todoist.com/app/task/6h65RqJx7pjpvWWg" target="_blank" rel="noopener">Apply for CAD passport</a></div><div class="card-m">no due date, parked on @backburner since Jul 16</div></div><div class="card pers"><div class="card-t"><a class="tlink" href="https://app.todoist.com/app/task/6hXpGCrFfxVf2j6M" target="_blank" rel="noopener">Confirm the childcare enrolment in the Alberta Childcare Family Portal</a></div><div class="card-m">no due date, created yesterday</div></div><div class="card pers"><div class="card-t"><a class="tlink" href="https://app.todoist.com/app/task/6hQQPHxfGPF7fVx8" target="_blank" rel="noopener">Call the club to cancel Saturday swim and rebook a private lesson</a></div><div class="card-m">due Sep 3, 19 days over</div></div><div class="card pers"><div class="card-t"><a class="tlink" href="https://app.todoist.com/app/task/6hFM8RC45FP5HHH8" target="_blank" rel="noopener">Renew community association membership</a></div><div class="card-m">due Aug 12, 41 days over</div></div><div class="card pers"><div class="card-t"><a class="tlink" href="https://app.todoist.com/app/task/6hFM8R8v7MgvcHfg" target="_blank" rel="noopener">Book annual physical</a></div><div class="card-m">due Aug 10, 43 days over</div></div><div class="card pers"><div class="card-t"><a class="tlink" href="https://app.todoist.com/app/task/6hFM8RHFxxRWJmJ8" target="_blank" rel="noopener">Check the new result on the patient portal</a></div><div class="card-m">due Aug 10, 43 days over</div></div><p class="sectnote" style="margin-top:14px">Two Rocky Mountain camp packing tasks are still open against dates in early and mid August. The camp ended last month, so they are closeable rather than actionable. Rolled into one line here rather than two rows, and unchanged since yesterday.</p></section><section><h2><span class="num">08</span>News <span class="pill pill-frozen">Frozen 12:15 PM</span></h2><p class="sectnote">Three things, each with a source.</p><ul class="br"><li><a class="tlink" href="https://www.theweathernetwork.com/en/news/weather/local-forecasts/calgary-ab-weather-forecast-22-september" target="_blank" rel="noopener"><b>Calgary today, and a caveat for tonight</b></a> &mdash; Mainly sunny, high 25C, light winds around 11 km/h, low of 8C. The one thing worth planning around is that it turns stormy after dark, which lands on the drive between the dance studio and the club.</li><li><a class="tlink" href="https://www.eia.gov/outlooks/steo/pdf/steo_full.pdf" target="_blank" rel="noopener"><b>Permian output still climbing into 2026</b></a> &mdash; EIA&#x27;s September Short-Term Energy Outlook has Permian crude up 430,000 b/d to 6.6 million b/d this year and gas averaging 29.2 Bcf/d, about 6% over 2025.</li><li><a class="tlink" href="https://www.eia.gov/todayinenergy/detail.php?id=67944" target="_blank" rel="noopener"><b>US on track for record natural gas production</b></a> &mdash; EIA has the country setting a production record in 2026, with the Permian and Appalachia carrying most of the growth.</li></ul></section><div class="foot">Generated Tuesday, September 22, 2026 at 12:15 PM MDT. Redacted public mirror of Whitney&rsquo;s private daily file. Live at <a href="https://deadnak.github.io/hornak-brief/day/">deadnak.github.io/hornak-brief/day/</a>.</div></div></body></html>
+</div></div>
+
+<div class="wrap">
+
+  <div class="card">
+    <h2>Shape of the day</h2>
+    <div class="row"><div class="t">8:30 – 9:15a</div><div class="b">Work block</div></div>
+    <div class="row"><div class="t">9:00 – 9:30a</div><div class="b">Cancelled — 30 minutes back</div></div>
+    <div class="row"><div class="t">9:30 – 10:30a</div><div class="b">Work block · you're leading it</div></div>
+    <div class="row"><div class="t">11:00 – 12:00</div><div class="b">Workout (with your partner)</div></div>
+    <div class="row"><div class="t">1:00 – 2:00p</div><div class="b">Someone at the house helping with a project</div></div>
+    <div class="row"><div class="t">1:00 – 1:30p</div><div class="b">Work call — overlaps the above</div></div>
+    <div class="row"><div class="t">2:00 – 2:15p</div><div class="b">Short work call · you're leading it</div></div>
+    <div class="row"><div class="t">3:45 – 4:15p</div><div class="b">School pickup (both kids) — hard stop on work</div></div>
+    <div class="row"><div class="t">4:15 – 5:00p</div><div class="b">Skating lesson (both kids)</div></div>
+    <div class="row"><div class="t">5:00 – 5:45p</div><div class="b">Dinner out</div></div>
+    <div class="row"><div class="t">6:00 – 7:00p</div><div class="b">Choir (both kids) — open rehearsal night</div></div>
+  </div>
+
+  <div class="card">
+    <h2>Needs you — Priority 1</h2>
+    <ul class="l">
+      <li>Complete the school board online forms + Demographic Form <span class="pill hot">9 days overdue</span>
+        <div class="m">The school office is chasing it by name now. The forms live behind a second portal inside the main login — that's the step that stalls people. Both kids, every form. 15–20 minutes.</div></li>
+      <li>Call the dental office — whitening, bonding and the overdue cleanings <span class="pill hot">55 days old</span>
+        <div class="m">They've asked for a phone number so they can sort all three in one call. A single call closes it.</div></li>
+      <li>Library — both kids have overdue items now marked lost
+        <div class="m">Returning them to any branch clears the charge.</div></li>
+      <li>Call the respiratory clinic about a sleep study
+        <div class="m">First contact — ask about home testing, whether a referral is needed, and coverage.</div></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Also on the list</h2>
+    <ul class="l">
+      <li>Confirm a childcare enrolment in the provincial family portal <div class="m">Government notice from last week, still unopened.</div></li>
+      <li>Cancel the Saturday swim bookings and rebook private lessons for Nov/Dec <span class="pill hot">overdue</span></li>
+      <li>Book the annual physical <span class="pill hot">overdue</span> <div class="m">September was the booking window and it's nearly gone.</div></li>
+      <li>Check a test result on the patient portal <span class="pill hot">overdue</span></li>
+      <li>Renew the community association membership <span class="pill hot">overdue</span></li>
+      <li>Passport application <span class="pill">parked</span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Work, in outline</h2>
+    <ul class="l">
+      <li>Ten active items on the hit list — a deal package, a client report cycle, two partnership proposals, a budget exercise and a product mockup.</li>
+      <li>A client trip lands in one week; four prep items are still open against it, including two travel confirmations.</li>
+      <li>Three replies owed to people outside the company. One of them is time-sensitive and worth doing first.</li>
+      <li>Fifteen action items came out of the last two days of meetings. One carries a Friday delivery date.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Flags</h2>
+    <div class="flag hot"><div class="h">⚠️ 1:00 PM is double-booked</div>
+      <div class="d">A work call sits inside the window when someone will be working at the house. It's a phone call, so it's workable — take it somewhere quiet or push it half an hour.</div></div>
+    <div class="flag"><div class="h">⚠️ 15 minutes between dinner and choir</div>
+      <div class="d">Dinner ends 5:45, choir starts 6:00 across town — and tonight is one of the three open rehearsals. Leave by 5:35.</div></div>
+    <div class="flag"><div class="h">📅 A duplicate appointment on the family calendar</div>
+      <div class="d">The same appointment next Monday was added twice by two different automated briefs. Not deleted — waiting on your say-so.</div></div>
+    <div class="flag"><div class="h">📅 Two events still sit on two calendars each</div>
+      <div class="d">Deleting the personal copies would strip the invitations and notify people, so they've been left alone.</div></div>
+    <div class="flag"><div class="h">✅ Appointment sync is clean</div>
+      <div class="d">Twelve recurring bookings through mid-December all have a matching family entry. Nothing missing, nothing phantom. Next one is Tuesday.</div></div>
+  </div>
+
+  <footer>
+    Generated Wednesday, September 23, 2026 at 6:43 AM MDT<br>
+    <a href="https://deadnak.github.io/hornak-brief/" style="color:#4B2E83">Tonight's brief</a> ·
+    <a href="https://deadnak.github.io/hornak-brief/weekly/" style="color:#4B2E83">This week's brief</a>
+  </footer>
+</div>
+</body>
+</html>
