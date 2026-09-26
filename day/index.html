@@ -1,98 +1,201 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Whitney's Day — September 25, 2026</title><style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Whitney's Day — Saturday, September 26, 2026</title>
+<style>
 :root{
   --brand:#4D00CA; --p600:#7C3AED; --wash:#F3E8FF;
   --s900:#0F172A; --s700:#334155; --s500:#64748B; --s400:#94A3B8;
   --s50:#F8FAFC; --s100:#F1F5F9; --hair:#E2E8F0;
-  --alpen:#B85C86; --snow:#F7F5F1; --pbord:#DDDAD2;
-  --red:#EF4444; --redw:#FEF2F2;
+  --green:#16A34A; --greenwash:#DCFCE7; --red:#EF4444; --redwash:#FEF2F2;
+  --amber:#B45309; --amberwash:#FFFBEB;
+  color-scheme: light;
 }
 *{box-sizing:border-box}
-body{margin:0;background:#fff;color:var(--s700);font-family:"Segoe UI",system-ui,sans-serif;
-     font-size:15px;line-height:1.65}
-.wrap{max-width:820px;margin:0 auto;padding:0 16px 60px}
-a{color:var(--brand)}
-.mast{padding:28px 0 16px;border-bottom:3px solid var(--brand);margin-bottom:24px}
-.eyebrow{font-family:"Lexend",sans-serif;font-size:11px;font-weight:600;letter-spacing:.16em;
-         text-transform:uppercase;color:var(--p600);margin:0 0 6px}
-h1{font-family:"Lexend",sans-serif;font-weight:700;font-size:clamp(24px,5vw,34px);
-   color:var(--s900);margin:0 0 8px}
-.subhead{font-size:13.5px;color:var(--s500);margin:0}
-section{margin:0 0 34px}
-h2{font-family:"Lexend",sans-serif;font-weight:700;font-size:17px;color:var(--s900);margin:0 0 10px}
-h2 .num{color:var(--brand);font-size:13px;font-weight:700}
-p.note{font-size:13px;color:var(--s500);margin:0 0 14px}
-.rows{border-top:1px solid var(--hair)}
-.row{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid var(--s100);font-size:13.5px}
-.row-time{color:var(--s500);font-variant-numeric:tabular-nums}
-.row-work{border-left:3px solid var(--brand);padding-left:10px}
-.row-pers{border-left:3px solid var(--alpen);padding-left:10px}
-.card{border:1px solid var(--hair);border-radius:12px;padding:13px 16px;margin:0 0 10px;font-size:13.5px}
-.card.flag{border-left:3px solid var(--brand);background:var(--wash)}
-.card.flagred{border-left:3px solid var(--red);background:var(--redw)}
-ul{margin:6px 0 0;padding-left:18px;font-size:13.5px}
-li{margin-bottom:6px}
-.foot{border-top:1px solid var(--hair);padding-top:16px;font-size:11.5px;color:var(--s400);margin-top:20px}
-.foot a{color:var(--s500)}
-</style></head><body><div class="wrap">
+body{margin:0;padding:0 0 60px;background:var(--s50);color:var(--s700);
+  font-family:"Segoe UI",system-ui,-apple-system,sans-serif;line-height:1.66;font-size:15px}
+h1,h2,h3,.lex{font-family:Lexend,"Segoe UI",system-ui,sans-serif;letter-spacing:-0.01em}
+a{color:var(--brand);text-decoration:none;border-bottom:1px solid rgba(77,0,202,.25)}
+.wrap{max-width:820px;margin:0 auto;padding:0 18px}
+header.hero{background:linear-gradient(157deg,#190642,#2C0A72,#4A13B2);color:#fff;padding:30px 0 26px;margin-bottom:24px}
+.eyebrow{font-family:Lexend,sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:#B98CFF;margin:0 0 6px}
+header.hero h1{margin:0;font-size:27px;font-weight:700;color:#fff}
+header.hero .sub{margin:6px 0 0;color:#CFC3F0;font-size:13.5px}
+.counts{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+.count{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);
+  border-radius:11px;padding:8px 13px;min-width:92px}
+.count .n{font-family:Lexend,sans-serif;font-size:19px;font-weight:700;color:#fff;line-height:1.2}
+.count .l{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#B98CFF;
+  font-family:Lexend,sans-serif;font-weight:600}
+section{margin-bottom:26px}
+h2.sec{font-size:17px;color:var(--s900);margin:0 0 3px;display:flex;align-items:baseline;gap:9px}
+h2.sec .num{color:var(--brand);font-size:11.5px;font-weight:700;letter-spacing:.1em}
+.seclead{margin:0 0 12px;font-size:12.5px;color:var(--s500)}
+.card{background:#fff;border:1px solid var(--hair);border-radius:13px;padding:16px 18px;
+  box-shadow:0 1px 2px rgba(15,23,42,.05);margin-bottom:11px}
+.callout{background:var(--wash);border-left:5px solid var(--brand);border-radius:0 11px 11px 0;padding:13px 17px;margin-bottom:11px}
+.callout.warn{background:var(--amberwash);border-left-color:var(--amber)}
+.callout.bad{background:var(--redwash);border-left-color:var(--red)}
+.callout.good{background:var(--greenwash);border-left-color:var(--green)}
+.callout h3{margin:0 0 6px;font-size:12px;color:var(--brand);font-weight:700;
+  text-transform:uppercase;letter-spacing:.07em;font-family:Lexend,sans-serif}
+.callout.warn h3{color:var(--amber)} .callout.bad h3{color:#B91C1C} .callout.good h3{color:#15803D}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:var(--brand);color:#fff;font-family:Lexend,sans-serif;font-weight:600;
+  text-align:left;padding:8px 11px;font-size:11.5px}
+tbody td{padding:8px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
+tbody tr:nth-child(even){background:var(--s50)}
+td.t{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:600;color:var(--s900);width:116px}
+ul.b{list-style:none;padding:0;margin:7px 0 0}
+ul.b li{position:relative;padding-left:17px;margin-bottom:7px}
+ul.b li:before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--p600);transform:rotate(45deg)}
+ul.b li:last-child{margin-bottom:0}
+.chip{display:inline-block;font-family:Lexend,sans-serif;font-size:10px;font-weight:600;
+  padding:2px 7px;border-radius:999px;letter-spacing:.04em;text-transform:uppercase;border:1px solid transparent}
+.chip.work{background:var(--wash);color:var(--brand);border-color:#DDD0F6}
+.chip.home{background:var(--greenwash);color:#15803D;border-color:#BBF7D0}
+.chip.age{background:var(--redwash);color:#B91C1C;border-color:#FECACA}
+.meta{font-size:12px;color:var(--s500)}
+footer{margin-top:30px;padding-top:15px;border-top:1px solid var(--hair);font-size:12px;color:var(--s400)}
+.sib{margin:0 0 18px;font-size:13px}
+</style>
+</head>
+<body>
 
-<header class="mast">
-<p class="eyebrow">Work and Life, One View</p>
-<h1>Whitney's Day</h1>
-<p class="subhead">Friday, September 25, 2026 · Mountain Time · generated 6:36 AM</p>
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Whitney's Day</p>
+    <h1>Saturday, September 26, 2026</h1>
+    <p class="sub">All times Mountain · work and personal, blended · public summary</p>
+    <div class="counts">
+      <div class="count"><div class="n">3</div><div class="l">On the day</div></div>
+      <div class="count"><div class="n">0</div><div class="l">Work today</div></div>
+      <div class="count"><div class="n">4</div><div class="l">Replies owed</div></div>
+      <div class="count"><div class="n">4</div><div class="l">P1 personal</div></div>
+    </div>
+  </div>
 </header>
 
+<div class="wrap">
+
+<p class="sib"><a href="../">Tonight's Evening Brief</a> · <a href="../weekly/">This week's brief</a></p>
+
 <section>
-<h2><span class="num">01</span> Today's Shape</h2>
-<p class="note">Calendar items reduced to shape only.</p>
-<div class="rows">
-<div class="row row-work"><div class="row-time">All day</div><div>No school today (kids)</div></div>
-<div class="row row-work"><div class="row-time">8:00 – 9:00 AM</div><div>Work block</div></div>
-<div class="row row-work"><div class="row-time">9:15 – 9:45 AM</div><div>Work block</div></div>
-<div class="row row-pers"><div class="row-time">10:00 – 11:00 AM</div><div>Personal appointment</div></div>
-<div class="row row-work"><div class="row-time">11:30 AM – 12:00 PM</div><div>Work block</div></div>
-<div class="row row-pers"><div class="row-time">11:30 AM – 12:30 PM</div><div>Personal appointment (partner)</div></div>
-<div class="row row-work"><div class="row-time">12:30 – 1:30 PM</div><div>Work block</div></div>
-<div class="row row-work"><div class="row-time">3:00 – 3:30 PM</div><div>Professional-development call</div></div>
-<div class="row row-pers"><div class="row-time">5:00 – 6:30 PM</div><div>Kids' activity</div></div>
+  <h2 class="sec"><span class="num">01</span> The shape of the day</h2>
+  <p class="seclead">Work and personal merged. Work items are shown as blocks of time only.</p>
+  <div class="card">
+    <table>
+      <thead><tr><th style="width:116px">Time</th><th>What</th><th style="width:88px">Side</th></tr></thead>
+      <tbody>
+        <tr><td class="t">9:30 – 10:00</td><td>Kids' swim lesson</td><td><span class="chip home">Home</span></td></tr>
+        <tr><td class="t">11:30 – 12:15</td><td>Kids' theatre rehearsal</td><td><span class="chip home">Home</span></td></tr>
+        <tr><td class="t">2:30 – 5:30</td><td>Birthday party</td><td><span class="chip home">Home</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout good">
+    <h3>A clear Saturday</h3>
+    <p style="margin:0">Nothing on the work calendar today, and the three home items run back to back without overlapping. One of them is a birthday party for one of the girls.</p>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="num">02</span> Work — the load</h2>
+  <p class="seclead">Counts and shape only. No names, no numbers.</p>
+  <div class="card">
+    <ul class="b">
+      <li><strong>Around two dozen items on the active hit list</strong>, spanning business development, client delivery, and admin. Nothing on it carries today's date, but roughly a third are marked waiting on an outside party rather than on Whitney.</li>
+      <li><strong>One deal is mid-negotiation</strong> with buy-side and sell-side cases both drafted, headed for a review early next week.</li>
+      <li><strong>Two event/conference items are still open</strong> — a sponsorship-level decision and hotel booking for a November conference, and a membership check for an October one.</li>
+      <li><strong>One orphaned refund chase</strong> has had no owner since late July and still has no resolution date.</li>
+      <li><strong>Two travel-logistics items</strong> and a marketing-prep task are converging on a trip that starts Tuesday.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="num">03</span> Meetings — what came back to you</h2>
+  <p class="seclead">Four meetings across Thursday and Friday; roughly twenty items landed on your plate. Shape only.</p>
+  <div class="card">
+    <ul class="b">
+      <li><strong>One team standup</strong> produced four follow-ups: a report to finish and invoice, a draft to hand off, a scope justification, and a conditional follow-up email.</li>
+      <li><strong>One product-planning session</strong> produced six items — a mockup for an early-October client presentation, a credentials chase, pricing and workflow decisions, a data-quality cleanup, and a client status call.</li>
+      <li><strong>One data-quality review</strong> produced six items — verifying a data inclusion, building a fuller demo, several data-extraction and reconciliation tasks, and a vendor-support escalation if problems persist.</li>
+      <li><strong>One deal check-in</strong> produced two items — providing remaining paperwork, and adding a data comparison to a report already in progress.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="num">04</span> Inbox</h2>
+  <p class="seclead">External senders, last two days, checked against what's actually already been replied to.</p>
+  <div class="callout bad">
+    <h3>Four people are waiting on you</h3>
+    <ul class="b">
+      <li>One contact wants a bio, photo and links for a professional-group introduction, plus a separate application step — both sent over the weekend window and still open.</li>
+      <li>One is a group logistics email ahead of a trip early next week, asking everyone on the list (Whitney included) to send materials before a Monday cutoff.</li>
+      <li>One client replied with partial information on a longstanding data question and is waiting on an acknowledgment.</li>
+      <li>One client asked for two specific adjustments to a set of figures they're reviewing.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <ul class="b">
+      <li><strong>Several threads are currently waiting on the other side</strong>, not on Whitney — a contract review, a registration confirmation, and a financials question all have the ball elsewhere right now.</li>
+      <li><strong>One thread was already closed out</strong> by a colleague on Whitney's behalf.</li>
+      <li>Two newsletters and one payment receipt were excluded as noise.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="num">05</span> Personal — the four that keep rolling over</h2>
+  <p class="seclead">Priority-1 tasks, in full.</p>
+  <div class="callout bad">
+    <ul class="b">
+      <li><strong>Complete the school online forms and demographic form</strong> <span class="chip age">12 days overdue</span><br>
+        <span class="meta">The school has escalated twice already. The forms live inside a second system reached from within the main portal, and each one has to be submitted separately for each child.</span></li>
+      <li><strong>Sort the dental appointments — treatment and the overdue cleaning</strong> <span class="chip age">62 days</span><br>
+        <span class="meta">The provider is now offering to settle whitening, bonding and the cleaning in one phone call — they're only waiting on a number to call.</span></li>
+      <li><strong>Return the library items marked lost</strong> <span class="chip age">56 days</span><br>
+        <span class="meta">Replacement costs are already billed to the accounts; returning the items to any branch clears it. A digital hold also needs borrowing or suspending before it lapses.</span></li>
+      <li><strong>Call about a sleep assessment</strong> <span class="chip age">59 days</span><br>
+        <span class="meta">First contact, no thread yet. Questions to ask: whether a referral is needed, what it costs, and what's covered.</span></li>
+    </ul>
+    <p class="meta" style="margin-top:9px"><strong>The honest read:</strong> three of the four need exactly one phone call or one login. They're old because they keep getting deferred behind work, not because they're hard.</p>
+  </div>
+  <div class="card">
+    <h3 class="lex" style="margin:0 0 7px;font-size:12px;color:var(--brand);text-transform:uppercase;letter-spacing:.07em">Priority 2, still live</h3>
+    <ul class="b">
+      <li>Book the annual check-up — the suggested window is closing.</li>
+      <li>Check a result that's been sitting on a portal since early August.</li>
+      <li>Renew a community association membership that lapsed in mid-August.</li>
+      <li>Passport application — parked, worth un-parking before it becomes urgent.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec"><span class="num">06</span> Housekeeping</h2>
+  <div class="card">
+    <ul class="b">
+      <li><strong>A calendar duplicate was cleaned up this run.</strong> One family-calendar entry had been created twice for a dental appointment later this month; the extra copy was deleted, one clean entry remains.</li>
+      <li><strong>Massage calendar sync — clean.</strong> Both upcoming bookings have a matching family-calendar entry. Both subscribed copies of that calendar were deduplicated before comparing — no gap, no phantom.</li>
+      <li><strong>Partner's calendar sweep — nothing to move.</strong> Only his own solo work blocks ahead; the one real appointment on his calendar is already correctly reflected on the family calendar.</li>
+      <li>A vendor payment settled via the company card platform yesterday — routine, no action needed.</li>
+      <li>A refund chase logged in Section 02 still has no firm resolution date.</li>
+      <li>A multi-day trip begins Tuesday; the family calendar already shows the away window.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p>Redacted summary. Names, amounts, client detail, meeting subjects, locations and links are removed — the full version stays behind a login.</p>
+  <p>Generated Saturday, September 26, 2026 at 6:39 AM MDT.</p>
+</footer>
+
 </div>
-</section>
-
-<section>
-<h2><span class="num">02</span> Work in Flight</h2>
-<p class="note">Task and client detail stays behind the login. Shape only, here.</p>
-<ul>
-<li>24+ items on the active hit list, spanning business development, client consulting, appraisal, admin and marketing work.</li>
-<li>10 more freshly-touched items from the current goals list, three marked urgent — one tied to a contract close-out, two to travel logistics for an upcoming client event.</li>
-<li>11 action items came out of two meetings in the last two days.</li>
-</ul>
-</section>
-
-<section>
-<h2><span class="num">03</span> Email — One Reply Owed</h2>
-<p class="note">External senders, last 2 days, thread-state checked against a full Sent Items sweep.</p>
-<div class="card flagred">A partner-institution contact is waiting on a reply tied to a contract close-out that's already in progress. No response sent yet.</div>
-</section>
-
-<section>
-<h2><span class="num">04</span> Needs You — P1s in Full</h2>
-<p class="note">Priority-1 personal tasks appear in full, by policy — partner and kids stay unnamed.</p>
-<ul>
-<li>Call R&amp;A Dentistry — cleanings overdue (Whitney &amp; partner) — 47+ days</li>
-<li>Call Respiratory Home Care Solutions — sleep apnea testing</li>
-<li>Library lost-item notices, both kids' accounts</li>
-<li>CBE online forms — school now chasing directly, overdue</li>
-</ul>
-</section>
-
-<section>
-<h2><span class="num">05</span> Flags</h2>
-<div class="card flagred">A duplicate calendar entry for a family health appointment needs consolidating — left untouched rather than auto-deleted.</div>
-<div class="card flag">A recurring birthday reminder sits on the wrong calendar — flagged, not moved.</div>
-<div class="card flag">A recurring vendor invoice total moved overnight — worth a glance before it's due.</div>
-<div class="card">Twyla massage sync: clean, 90-day check, no gaps.</div>
-<div class="card">Travel ahead late next week for a work trip; already on the shared calendar.</div>
-</section>
-
-<div class="foot">Pecan Tree · Whitney's Day (public, redacted) · <a href="../">This week's brief</a></div>
-</div>
-</body></html>
+</body>
+</html>
