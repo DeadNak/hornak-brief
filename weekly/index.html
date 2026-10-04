@@ -1,265 +1,43 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
-<title>Hornak Brief</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Jost:wght@300;400;500&display=swap">
-
-<style>
-  /* Hornak Family Brand Guide v1.0 — Pine leads, Alpenglow marks attention. */
-  :root{
-    --pine:#2E7358; --alpenglow:#B85C86; --glacier:#35699B; --dusk:#6B5591;
-    --granite:#1B2022; --scree:#6C7378; --trail:#E3E1DA; --snow:#F7F5F1;
-    --ground:var(--trail); --card:var(--snow); --ink:var(--granite);
-    --muted:var(--scree); --rule:#D8D5CC; --lead:var(--pine); --mark:var(--alpenglow);
-    --chip:#EDEBE4; --shadow:0 1px 2px rgba(27,32,34,.05),0 8px 24px rgba(27,32,34,.06);
-  }
-  @media (prefers-color-scheme:dark){
-    :root:not([data-theme="light"]){
-      --ground:#14181A; --card:#1E2426; --ink:#EDEAE3; --muted:#9AA1A5; --rule:#2E3639;
-      --lead:#6FBF9B; --mark:#E08FB0; --glacier:#7FB0DC; --dusk:#A794CC;
-      --chip:#262D30; --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
-    }
-  }
-  :root[data-theme="dark"]{
-    --ground:#14181A; --card:#1E2426; --ink:#EDEAE3; --muted:#9AA1A5; --rule:#2E3639;
-    --lead:#6FBF9B; --mark:#E08FB0; --glacier:#7FB0DC; --dusk:#A794CC;
-    --chip:#262D30; --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
-  }
-
-  *{box-sizing:border-box}
-  body{
-    margin:0; background:var(--ground); color:var(--ink);
-    font-family:Jost,"Segoe UI",system-ui,sans-serif; font-weight:400;
-    font-size:17px; line-height:1.5; padding:20px 14px 52px;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:560px; margin:0 auto}
-  .card{background:var(--card); border-radius:14px; padding:26px 22px; box-shadow:var(--shadow)}
-
-  .mast{display:flex; align-items:center; gap:13px; margin-bottom:22px}
-  .mast svg{width:44px; height:44px; flex:none}
-  .wordmark{font-weight:500; letter-spacing:.3em; text-transform:uppercase; font-size:12px; color:var(--lead)}
-  .dateline{font-family:"Instrument Serif",Georgia,serif; font-size:27px; line-height:1.15; margin-top:3px; text-wrap:balance}
-  .thesis{color:var(--muted); font-size:14.5px; margin-top:6px; line-height:1.45}
-
-  .sections{display:flex; flex-direction:column; gap:26px}
-  .label{
-    font-weight:500; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase;
-    color:var(--lead); margin-bottom:9px; display:flex; align-items:baseline; gap:8px;
-  }
-  .label.warn{color:var(--mark)}
-  .label a{color:inherit; text-decoration:none; border-bottom:1px solid currentColor; opacity:.75}
-  .rows{display:flex; flex-direction:column}
-  .row{display:flex; gap:12px; padding:7px 0; border-top:1px solid var(--rule); align-items:baseline}
-  .row:first-child{border-top:none; padding-top:0}
-  .t{
-    font-variant-numeric:tabular-nums; color:var(--muted); font-size:13.5px;
-    min-width:70px; flex:none; letter-spacing:.01em;
-  }
-  .d{flex:1; min-width:0}
-  .who{color:var(--muted); font-size:14px}
-  .note{color:var(--muted); font-size:14.5px; line-height:1.45}
-  p.note{margin:6px 0 0}
-  a{color:var(--glacier); text-decoration:none; border-bottom:1px solid color-mix(in srgb,var(--glacier) 35%,transparent)}
-  a:hover{border-bottom-color:var(--glacier)}
-  a:focus-visible{outline:2px solid var(--lead); outline-offset:3px; border-radius:2px}
-  .subhead{font-family:"Instrument Serif",Georgia,serif; font-size:18px; margin:0 0 5px; color:var(--ink); display:flex; align-items:baseline; gap:8px}
-  .subhead .tag{font-family:Jost,sans-serif; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--mark); font-weight:500}
-  .day{padding-bottom:14px; border-bottom:1px solid var(--rule); margin-bottom:14px}
-  .day:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0}
-  .empty{color:var(--muted); font-size:14.5px; font-style:italic}
-
-  .wx{display:grid; grid-template-columns:repeat(auto-fill,minmax(70px,1fr)); gap:7px}
-  .wx div{background:var(--chip); border-radius:10px; padding:9px 8px}
-  .wx b{display:block; font-weight:500; font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
-  .wx s{display:block; text-decoration:none; font-family:"Instrument Serif",Georgia,serif; font-size:20px; margin:2px 0 1px}
-  .wx em{font-style:normal; font-size:11.5px; color:var(--muted); display:block}
-
-  .flag{border-left:2px solid var(--mark); padding:2px 0 2px 13px; display:flex; flex-direction:column; gap:9px}
-  .flag p{margin:0}
-  .due{color:var(--mark); font-weight:500}
-
-  .readsplit{border-top:1px solid var(--rule); margin-top:32px; padding-top:26px}
-  .pills{display:flex; flex-direction:column; gap:11px}
-  .pill{display:flex; gap:11px; align-items:baseline}
-  .pk{
-    font-weight:500; font-size:10px; letter-spacing:.13em; text-transform:uppercase;
-    color:var(--muted); min-width:66px; flex:none; padding-top:3px;
-  }
-  .foot{margin-top:26px; padding-top:16px; border-top:1px solid var(--rule); color:var(--muted); font-size:13px}
-
-  @media (min-width:880px){
-    body{padding:36px 28px 64px}
-    .wrap{max-width:1020px}
-    .card{padding:38px 40px}
-    .dateline{font-size:36px}
-    .cols{display:grid; grid-template-columns:1fr 1fr; gap:30px 46px; align-items:start}
-    .cols>.sections{gap:26px}
-    .pills{display:grid; grid-template-columns:1fr 1fr; gap:14px 40px}
-  }
-  @media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
-</style>
-
-</head>
-<body>
-<div class="wrap"><div class="card">
-
-  <header class="mast">
-    <svg viewBox="0 0 64 64" aria-label="Hornak family mark" role="img">
-      <circle cx="32" cy="32" r="29" fill="none" stroke="var(--lead)" stroke-width="1.6"/>
-      <path d="M32 12 L45 38 L19 38 Z" fill="none" stroke="var(--pine)" stroke-width="2" stroke-linejoin="round"/>
-      <path d="M23 21 L37 47 L10 46 Z" fill="none" stroke="var(--alpenglow)" stroke-width="2" stroke-linejoin="round"/>
-      <path d="M42 22 L55 47 L28 46 Z" fill="none" stroke="var(--glacier)" stroke-width="2" stroke-linejoin="round"/>
-      <path d="M32 26 L43 50 L20 49 Z" fill="none" stroke="var(--dusk)" stroke-width="2" stroke-linejoin="round"/>
-    </svg>
-    <div>
-      <div class="wordmark">Hornak Weekly Brief</div>
-      <div class="dateline">Next 7 days, Sep 27 &ndash; Oct 3</div>
-    </div>
-  </header>
-  <p class="thesis">The meal plan's gone quiet for six-plus weeks &mdash; every night this week is still blank. Full week below.</p>
-
-  <div class="cols">
-  <div class="sections">
-
-    <section>
-      <div class="label">Weather &mdash; Calgary</div>
-      <div class="wx">
-        <div><b>Sun</b><s>9&deg;</s><em>low 0&deg;</em></div>
-        <div><b>Mon</b><s>17&deg;</s><em>low 6&deg;, sunny</em></div>
-        <div><b>Tue</b><s>17&deg;</s><em>showers PM</em></div>
-        <div><b>Wed</b><s>13&deg;</s><em>low 1&deg;</em></div>
-        <div><b>Thu</b><s>16&deg;</s><em>low 4&deg;</em></div>
-        <div><b>Fri</b><s>17&deg;</s><em>low 6&deg;</em></div>
-        <div><b>Sat</b><s>14&deg;</s><em>low 4&deg;</em></div>
-      </div>
-      <p class="note">Monday's the pick of the week &mdash; sunny and mild. Tuesday evening brings the one bit of rain worth knowing about.</p>
-    </section>
-
-    <section>
-      <div class="day">
-        <p class="subhead">Sunday <span class="tag">today</span></p>
-        <p class="empty">Nothing on the calendar.</p>
-      </div>
-      <div class="day">
-        <p class="subhead">Monday</p>
-        <div class="rows">
-          <div class="row"><div class="t">9:30</div><div class="d">Appointment <span class="who">(Julian), morning</span></div></div>
-          <div class="row"><div class="t">11:00</div><div class="d">Workout <span class="who">(Whitney &amp; Julian)</span></div></div>
-          <div class="row"><div class="t">3:45</div><div class="d">Skating <span class="who">(Chicas)</span></div></div>
-          <div class="row"><div class="t">4:00</div><div class="d">Salon appointment <span class="who">(Whitney)</span></div></div>
-          <div class="row"><div class="t">5:15</div><div class="d">Jazz <span class="who">(Chicas)</span></div></div>
-          <div class="row"><div class="t">7:00</div><div class="d">Movie night <span class="who">(Whitney &amp; Julian)</span></div></div>
-        </div>
-      </div>
-      <div class="day">
-        <p class="subhead">Tuesday</p>
-        <div class="rows">
-          <div class="row"><div class="t">10:30</div><div class="d">Massage <span class="who">(Whitney)</span></div></div>
-          <div class="row"><div class="t">2:30</div><div class="d">Pilates <span class="who">(Whitney)</span></div></div>
-          <div class="row"><div class="t">5:00</div><div class="d">Hip Hop <span class="who">(Chicas)</span> &middot; dinner with friends</div></div>
-          <div class="row"><div class="t">7:00</div><div class="d">Bowling league <span class="who">(Whitney)</span></div></div>
-        </div>
-      </div>
-      <div class="day">
-        <p class="subhead">Wednesday <span class="tag">no school</span></p>
-        <div class="rows">
-          <div class="row"><div class="t">4:15</div><div class="d">Skating <span class="who">(Chicas)</span></div></div>
-          <div class="row"><div class="t">5:00</div><div class="d">Dinner out <span class="who">(Julian &amp; Chicas)</span></div></div>
-        </div>
-      </div>
-      <div class="day">
-        <p class="subhead">Thursday</p>
-        <div class="rows">
-          <div class="row"><div class="t">5:00</div><div class="d">Gymnastics <span class="who">(Chicas)</span></div></div>
-          <div class="row"><div class="t">5:30</div><div class="d">Evening childcare</div></div>
-        </div>
-      </div>
-      <div class="day">
-        <p class="subhead">Friday</p>
-        <div class="rows">
-          <div class="row"><div class="t">11:30</div><div class="d">Massage <span class="who">(Julian)</span></div></div>
-          <div class="row"><div class="t">5:00</div><div class="d">Badminton <span class="who">(Chicas)</span></div></div>
-        </div>
-      </div>
-      <div class="day">
-        <p class="subhead">Saturday</p>
-        <div class="rows">
-          <div class="row"><div class="t">9:30</div><div class="d">Swim lesson <span class="who">(Chicas)</span></div></div>
-          <div class="row"><div class="t">11:30</div><div class="d">Musical Theatre <span class="who">(Chicas)</span></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="label">Conflicts</div>
-      <p class="note">Saturday's swim lesson is still on the books even though a call to cancel and rebook it has been sitting unmade for a few weeks &mdash; it'll run as normal unless that call happens first. Monday's salon appointment status is also still unconfirmed from a few weeks back.</p>
-    </section>
-
-  </div>
-  <div class="sections">
-
-    <section>
-      <div class="label">Meals</div>
-      <p class="note">All seven nights are blank. The meal plan's last entry is <strong>Aug 12 &mdash; six-plus weeks stale.</strong> Tuesday and Wednesday are already spoken for (dinner with friends, dinner out); the other five have nothing written down. Send a fresh Recipe Box export and it'll show up here with links.</p>
-    </section>
-
-    <section>
-      <div class="label">Health</div>
-      <p class="note">A strong start &mdash; workout Monday, Pilates and massage Tuesday, three banked before midweek. A dry-afternoon walk after pickup Thursday or Friday keeps the week moving. 💊 Vitamins.</p>
-    </section>
-
-    <section>
-      <div class="label warn">Needs you &mdash; all 5 open P1s <a href="https://app.todoist.com/app/project/6h62Jmrp3GpJjQwW" target="_blank" rel="noopener">Todoist</a></div>
-      <div class="rows">
-        <div class="row"><div class="t">60 days</div><div class="d"><a href="https://app.todoist.com/app/task/6h5xXQR54CrF5pFf" target="_blank" rel="noopener">Reply to the dental office</a><br><span class="who">They just need a phone number to book whitening, bonding and a cleaning in one call.</span></div></div>
-        <div class="row"><div class="t">60 days</div><div class="d"><a href="https://app.todoist.com/app/task/6h69CQXGqH3cgfJf" target="_blank" rel="noopener">Make the health-services call</a><br><span class="who">Sleep apnea test &mdash; never started.</span></div></div>
-        <div class="row"><div class="t">58 days</div><div class="d"><a href="https://app.todoist.com/app/task/6h6Q2XvP658gF3Wv" target="_blank" rel="noopener">Library items marked lost</a><br><span class="who">Already billed; returnable to any branch.</span></div></div>
-        <div class="row"><div class="t">49 days</div><div class="d"><a href="https://app.todoist.com/app/task/6hFmqw9wr3VxPg4g" target="_blank" rel="noopener">Julian &mdash; follow up on Employment Insurance</a><br><span class="who">Flagged as the top priority above everything else. Owner: Julian.</span></div></div>
-        <div class="row"><div class="t">13 days late</div><div class="d"><a href="https://app.todoist.com/app/task/6hW2jvJwwJCP5pxv" target="_blank" rel="noopener">Complete the school's online forms</a><br><span class="who">One portal, one login, every form, both girls.</span></div></div>
-      </div>
-      <p class="note">Seven more open items are queued behind these &mdash; a lesson-cancellation call, a physical to book, a lapsed membership, and a few decisions waiting on a yes/no. Full list in Todoist.</p>
-    </section>
-
-    <section>
-      <div class="label">Parked</div>
-      <p class="note">7 items on @backburner since mid-July (73 days) &mdash; one passport application worth a second look, the rest household projects. All in Todoist.</p>
-    </section>
-
-    <section>
-      <div class="label warn">Cards</div>
-      <p class="note"><span class="due">A credit card is due today</span>, and <span class="due">another Thursday</span>.</p>
-    </section>
-
-    <section>
-      <div class="label">Fun this week</div>
-      <p class="note"><strong>Pumpkins in the Park</strong>, Granary Road &mdash; seasonal and easy, a week left on it. <strong>Farmers &amp; Makers Market</strong>, Marda Loop, weekends through mid-October. Monday's the day for North Glenmore Park if a bike ride calls.</p>
-    </section>
-
-  </div>
-  </div>
-
-  <div class="readsplit">
-    <div class="label">The read</div>
-    <div class="pills">
-      <div class="pill"><div class="pk">Space</div><div>Astronomers identified the first black-hole-powered &ldquo;microquasar&rdquo; in the Milky Way this week, and JWST found the early universe's chemical makeup wasn't as simple as thought. <a href="https://www.space.com/news/archive/2026/09" target="_blank" rel="noopener">Space.com</a></div></div>
-      <div class="pill"><div class="pk">Tech</div><div>Anthropic cut Claude's API pricing while adding always-on safety evaluations; Microsoft shut down an AI-powered phishing platform that had compromised 12,000+ accounts. <a href="https://techstartups.com/2026/09/23/top-tech-news-today-september-23-2026-anthropic-att-google-microsoft-nvidia-openai-xiaomi-more/" target="_blank" rel="noopener">Tech Startups</a></div></div>
-      <div class="pill"><div class="pk">Parenting</div><div>An 8-year Finnish study found more screen time linked to <em>better</em> teen cognitive processing &mdash; researchers say what kids do on screens matters more than how long. <a href="https://www.sciencedaily.com/releases/2026/08/260815064803.htm" target="_blank" rel="noopener">ScienceDaily</a></div></div>
-      <div class="pill"><div class="pk">Business</div><div>Amazon is building a $100M robot-manufacturing facility in Indiana, part of a wider push to automate warehouse operations at scale. <a href="https://dailycuratednews.substack.com/p/news-headlines-september-26-2026" target="_blank" rel="noopener">Daily Curated News</a></div></div>
-      <div class="pill"><div class="pk">Calgary</div><div>The City finished its Sunnyside flood-barrier project after two years of construction; the Flames signed winger Alex Nylander ahead of their final pre-season game against Edmonton. <a href="https://www.ctvnews.ca/calgary/" target="_blank" rel="noopener">CTV Calgary</a></div></div>
-      <div class="pill"><div class="pk">Canada</div><div>Factual roundups from the weekend's national bulletins &mdash; nothing Calgary-specific beyond what's above. <a href="https://ca.news.yahoo.com/latest-news-bulletin-september-26th-160029130.html" target="_blank" rel="noopener">Yahoo News Canada</a></div></div>
-      <div class="pill"><div class="pk">US</div><div>Diesel prices surged nationwide, squeezing schools, farms and small businesses; the Energy Department allocated $2B across 31 projects to add 23+ gigawatts of capacity. <a href="https://dailycuratednews.substack.com/p/news-headlines-september-26-2026" target="_blank" rel="noopener">Daily Curated News</a></div></div>
-      <div class="pill"><div class="pk">Late night</div><div>Seth Meyers this week: Kate McKinnon &amp; Christopher Abbott (Mon), Rachel Maddow, Eric Idle &amp; Danny Meyer (Tue), Florence Pugh &amp; Ms. Pat (Wed). Colbert made a one-off guest turn on Kimmel's show from Brooklyn in mid-September &mdash; still no new regular show since <em>The Late Show</em> ended in May. <a href="https://tvlineups.com/late-night-with-seth-meyers-guests-weekly-episode-schedule/" target="_blank" rel="noopener">This week's lineups</a></div></div>
-    </div>
-  </div>
-
-  <div class="foot">Generated Sunday, September 27, 2026 at 5:44 PM MDT &middot; <a href="https://deadnak.github.io/hornak-brief/" target="_blank" rel="noopener">Tonight's brief</a></div>
-
-</div></div>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hornak Weekly Brief</title></head><body><style>
+:root{--bg:#faf6ef;--card:#fffdf8;--ink:#2b2622;--mut:#7a6f64;--acc:#b5532c;--line:#e8dfd0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1917;--card:#26211e;--ink:#f1e9df;--mut:#a89b8c;--acc:#e08a5f;--line:#3a332e}}
+:root[data-theme="dark"]{--bg:#1c1917;--card:#26211e;--ink:#f1e9df;--mut:#a89b8c;--acc:#e08a5f;--line:#3a332e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:560px;margin:0 auto;padding:16px}
+header h1{font-size:1.4rem;margin:0 0 4px}header p{margin:2px 0;color:var(--mut);font-size:.9rem}
+a{color:var(--acc)}section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:12px 0}
+h2{font-size:1.05rem;margin:0 0 6px}h4{margin:10px 0 2px;font-size:.95rem}ul{margin:4px 0;padding-left:20px}li{margin:3px 0}.m{color:var(--mut);font-size:.9rem}
+.cols{display:block}
+@media (min-width:880px){.wrap{max-width:1100px}.cols{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;align-items:start}.full{grid-column:1/-1}}
+footer{color:var(--mut);font-size:.85rem;margin:16px 0}
+</style><div class="wrap"><header><h1>🗓️ Weekly Brief — Next 7 days, Oct 4 to Oct 10</h1>
+<p><a href="https://deadnak.github.io/hornak-brief/weekly/" target="_blank" rel="noopener">This page</a> · <a href="https://deadnak.github.io/hornak-brief/" target="_blank" rel="noopener">Tonight&#x27;s brief</a> · <a href="https://app.todoist.com/app/project/6h62Jmrp3GpJjQwW" target="_blank" rel="noopener">Full detail in Todoist</a></p>
+<p>Some items are Todoist-only (travel, health, work-adjacent detail) and are left off this page.</p></header>
+<div class="cols">
+<div>
+<section><h2>🌤️ Weather</h2><p class="m">No live Calgary forecast could be retrieved this run (Environment Canada was blocked; search returned only out-of-date articles). Check your weather app before picking an outdoor slot.</p></section>
+<section><h2>📅 The 7 days</h2><p class="m">Mountain time. Family, personal and massage calendars only.</p><h4>Sun Oct 4</h4><ul><li><a href="https://www.google.com/calendar/event?eid=XzZwMjM4aDFqNmNxa2NiOW04ZDIzY2I5azhoMjM0YjlwODUzNGFiYTY2dDJrOGdhMThncmthYzFnNm8gZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw" target="_blank" rel="noopener">Birthday party 2:00–5:00</a></li></ul><h4>Mon Oct 5</h4><ul><li><a href="https://www.google.com/calendar/event?eid=bmdiZGFpMGtsMHZqMHV1cW9vbGRuaGdyam9fMjAyNjEwMDVUMjE0NTAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Pickup 3:45 → skating (Julian)</a></li><li><a href="https://www.google.com/calendar/event?eid=cXJucWlmNmk2YW8zZXVrb2pvY28zcnJtN2NfMjAyNjEwMDVUMjIxNTAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Skating 4:15 (Chicas)</a></li><li><a href="https://www.google.com/calendar/event?eid=NWs0aXA1cG52MGRpN21sMDJwb2lwMjZiMzBfMjAyNjEwMDVUMjMwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Sitter 5:00–10:00</a></li><li><a href="https://www.google.com/calendar/event?eid=dW8xbHFncGVldDEycjdnNjc3N29pMmcwZTRfMjAyNjEwMDVUMjMxNTAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Dance 5:15 (Chicas)</a></li></ul><h4>Tue Oct 6</h4><ul><li><a href="https://www.google.com/calendar/event?eid=dmo1OGlxZWM3cTZtNTl2dDRrdDMwYTZ1NjAgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw" target="_blank" rel="noopener">Massage 10:30 (Whitney)</a></li><li><a href="https://www.google.com/calendar/event?eid=Y2k1Ym5tZHRtOThhMDZvZnNjNjI2cnU0cmtfMjAyNjEwMDZUMTgwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Order FreshPrep 12:00</a></li><li><a href="https://www.google.com/calendar/event?eid=YzFodG03aDdiazRnNW41cnM3NjUycGcyaTRfMjAyNjEwMDZUMjMwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Dance 5:00 (Chicas)</a></li><li><a href="https://www.google.com/calendar/event?eid=a3Z0aGtxamVlMXB0ZWo1MzZja3Z0ZHY1YzBfMjAyNjEwMDZUMjMwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Dinner with friends 5:00–7:00</a></li><li><a href="https://www.google.com/calendar/event?eid=am05bjdyNjFzbW1xbG1iYzE0Z25ubTkxYjhfMjAyNjEwMDZUMjM0NTAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Dance 5:45 (Chicas)</a></li><li><a href="https://www.google.com/calendar/event?eid=NzR2aWZuNDlvMWJzMzQ1bnJoMG5ha2tqaTggZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw" target="_blank" rel="noopener">Appointment 7:00 (Whitney &amp; Julian)</a></li><li><a href="https://www.google.com/calendar/event?eid=a2xsM2x0bHNlazh0MTFqbWhjNTlkaXViMjRfMjAyNjEwMDdUMDEwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Bowling night 7:00–9:00 (Glencoe)</a></li></ul><h4>Wed Oct 7</h4><ul><li><a href="https://www.google.com/calendar/event?eid=NXNuNGo0c3BhZXB1ZzdjYXBmMXM2dnBzZ29fMjAyNjEwMDdUMTcwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Workout 11:00 (Whitney &amp; Julian)</a></li><li><a href="https://www.google.com/calendar/event?eid=c2ZzZnJsOWI5Z2tncWYza3ZuYTdlZDFoZDBfMjAyNjEwMDdUMjE0NTAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Pickup 3:45 (Whitney)</a></li><li><a href="https://www.google.com/calendar/event?eid=cXJucWlmNmk2YW8zZXVrb2pvY28zcnJtN2NfMjAyNjEwMDdUMjIxNTAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Skating 4:15 (Chicas)</a></li><li><a href="https://www.google.com/calendar/event?eid=ZjhrYmtzbm5sYnF2MmozbHFrNDFzNGg0b3NfMjAyNjEwMDdUMjMwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Dinner at Glencoe 5:00</a></li><li><a href="https://www.google.com/calendar/event?eid=bDFoOW5oaDMwZmNzMjl1aThlcHJmY24wOWNfMjAyNjEwMDhUMDAwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Choir 6:00 (Chicas)</a></li></ul><h4>Thu Oct 8</h4><ul><li><a href="https://www.google.com/calendar/event?eid=bW4wcHI2YnE1ZTAwajE3c3E1dTZnNDE2NDRfMjAyNjEwMDhUMTkwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Appointment 1:00 (Julian)</a></li><li><a href="https://www.google.com/calendar/event?eid=NjN1bWR1cGczNmE5Mjh2ZHU4ZmRvcmtmYTRfMjAyNjEwMDhUMjIxNTAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Drive to gymnastics 4:15 (Julian)</a></li><li><a href="https://www.google.com/calendar/event?eid=azByajhwZXAwbDY4OWRqbDg0YmJzdGdnM2tfMjAyNjEwMDhUMjIzMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Appointment 4:30 (Whitney)</a></li><li><a href="https://www.google.com/calendar/event?eid=XzZzcTQ2aDlrODRvajJiOW04Z3JqaWI5azZzczRjYmEyNmgwamNiOWw4a3M0Y2UxbjhvcmpnZ2hwNmtfMjAyNjEwMDhUMjMwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Gymnastics 5:00–6:30 (Chicas)</a></li><li><a href="https://www.google.com/calendar/event?eid=NXJzZnRmZnBzZWhydnBrY2hpNGQ2bzJtazBfMjAyNjEwMDhUMjMzMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Sitter 5:30–9:30</a></li></ul><h4>Fri Oct 9</h4><ul><li><a href="https://www.google.com/calendar/event?eid=bXM4cjgxcjlqYWplY2Q1N2lxcWs3ZmQ3aWtfMjAyNjEwMDlUMTYwMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Hair appointment 10:00 (Whitney)</a></li><li><a href="https://www.google.com/calendar/event?eid=XzYxMWs0ZTlvNm9wNDZiYTM4a3MzMmI5azZncWpjYmExOHAyNDZiOXA3MHMzYWM5aTZsMWtjZDFrOGMgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw" target="_blank" rel="noopener">Dinner with friends 5:30</a></li></ul><h4>Sat Oct 10</h4><ul><li><a href="https://www.google.com/calendar/event?eid=ZmtjMXVpM3BjdGlwc3R1ZGIybW5rdjZrZGtfMjAyNjEwMTBUMTUzMDAwWiBmYW1pbHkwMjMyNzYzMDI5NzI1OTA1MTY5MEBn" target="_blank" rel="noopener">Swim lesson 9:30 (Chicas)</a></li><li><a href="https://www.google.com/calendar/event?eid=XzhsMTNlYzIxNjhzNGFiOWs2aDBrOGI5azY0cmtjYmExNzRxamdiOWg2Z3E0YWQ5aDYwcDMwZ2kxNjAgZmFtaWx5MDIzMjc2MzAyOTcyNTkwNTE2OTBAZw" target="_blank" rel="noopener">Family Fall Photos 3:00, Edison Park</a></li></ul></section>
+<section><h2>⚠️ Heads-up on overlaps</h2><ul>
+<li>Tue 5:00–7:00 dinner with friends overlaps both dance classes (5:00 and 5:45).</li>
+<li>Tue 7:00 appointment overlaps bowling night (7:00–9:00).</li>
+<li>Wed 5:45 dinner ends 15 min before 6:00 choir across town.</li>
+<li>Thu 4:30 appointment overlaps the 4:15 gymnastics drive; the sitter arrives 5:30 but gymnastics runs to 6:30.</li>
+<li>Sat 9:30 swim lesson is still booked — the Glencoe cancel call is open.</li></ul></section>
+<section><h2>🍽️ Meals</h2><p>Hey Whit and Julian — a few nights still need a plan! <b>Sun Oct 4 (tonight), Mon Oct 5, Thu Oct 8 and Sat Oct 10</b> have no meal against them. Tue (dinner with friends), Wed (dinner at Glencoe) and Fri (dinner with friends) are covered.</p>
+<p class="m">FreshPrep reminder is Tue 12:00 (cutoff Wed 11:59 PM). Delivery for Oct 4 was skipped. <a href="https://claude.ai/public/artifacts/c87f2ac9-ab21-4d38-8967-834af65c4da2" target="_blank" rel="noopener">Recipe Box</a> · <a href="https://app.todoist.com/app/task/6h94h4Wv9cHj4c39" target="_blank" rel="noopener">Meal plan task</a></p></section>
+</div>
+<div>
+<section><h2>🔴 Needs you — open P1s</h2><ul><li><a href="https://app.todoist.com/app/task/6h5xXQR54CrF5pFf" target="_blank" rel="noopener">Call the dentist — check if we&#x27;re overdue for cleanings</a> <span class="m">— 67 days; waiting on a phone number</span></li><li><a href="https://app.todoist.com/app/task/6h69CQXGqH3cgfJf" target="_blank" rel="noopener">Make the health-related phone call</a> <span class="m">— 67 days, not started</span></li><li><a href="https://app.todoist.com/app/task/6h6Q2XvP658gF3Wv" target="_blank" rel="noopener">📚 Library: overdue items for both girls now marked LOST — find &amp; return them</a> <span class="m">— 64 days; any branch</span></li><li><a href="https://app.todoist.com/app/task/6hFmqw9wr3VxPg4g" target="_blank" rel="noopener">Julian — follow up on his benefits claim</a> <span class="m">— 56 days overdue; Julian's to do</span></li><li><a href="https://app.todoist.com/app/task/6hW2jvJwwJCP5pxv" target="_blank" rel="noopener">Complete school online forms + Demographic Form (plus lunchroom registrations)</a> <span class="m">— 20 days past deadline</span></li></ul></section>
+<section><h2>🎯 Open items</h2><ul><li><a href="https://app.todoist.com/app/task/6hXpGCrFfxVf2j6M" target="_blank" rel="noopener">Confirm childcare enrolment in the Alberta Childcare Family Portal</a> <span class="m">— queued · 14 days</span></li><li><a href="https://app.todoist.com/app/task/6hQQPHxfGPF7fVx8" target="_blank" rel="noopener">Call Glencoe — cancel Saturday private swim, rebook Nov/Dec</a> <span class="m">— queued · 31 days overdue · Sat Oct 10 lesson still booked</span></li><li><a href="https://app.todoist.com/app/task/6hFM8RC45FP5HHH8" target="_blank" rel="noopener">Renew Marda Loop Community Association membership</a> <span class="m">— needs your decision · lapsed ~Aug 14</span></li><li><a href="https://app.todoist.com/app/task/6hPwqxChvXwRrQH6" target="_blank" rel="noopener">Workout-schedule capture (truncated)</a> <span class="m">— needs a yes/no · likely OK to close</span></li><li><a href="https://app.todoist.com/app/task/6hPwMM2q768pggv6" target="_blank" rel="noopener">Calendar-appointments capture (duplicates)</a> <span class="m">— needs your OK to close · duplicates look cleaned for Oct 6/15</span></li><li><span class="m">2 health items are Todoist-only.</span></li></ul></section>
+<section><h2>🅿️ Backburner — parked since Jul 16–17 (79–80 days)</h2><ul><li><a href="https://app.todoist.com/app/task/6h65RqJx7pjpvWWg" target="_blank" rel="noopener">Apply for CAD passport (Whitney)</a></li><li><a href="https://app.todoist.com/app/task/6h65RqJWRXj9wwF8" target="_blank" rel="noopener">Photos of the basement furniture</a></li><li><a href="https://app.todoist.com/app/task/6h65RqQvQqGJqXj8" target="_blank" rel="noopener">List the basement furniture for sale</a></li><li><a href="https://app.todoist.com/app/task/6h65RqVmvCvMg47g" target="_blank" rel="noopener">Go through both basement closets</a></li><li><a href="https://app.todoist.com/app/task/6h6CC7wvHJrj8CM8" target="_blank" rel="noopener">Organize Whit&#x27;s office</a></li><li><a href="https://app.todoist.com/app/task/6h65RqcRVhjhRHR8" target="_blank" rel="noopener">Move the drums</a></li><li><a href="https://app.todoist.com/app/task/6h65RqcffXQX5pCg" target="_blank" rel="noopener">Red SUV — fix the scratches (Julian)</a></li></ul><p class="m">Still want these parked, or ready to pull any forward?</p></section>
+<section><h2>💳 Cards &amp; bills</h2><ul><li>Nothing falls due Oct 4–10.</li><li>Costco and Julian's WestJet — due Tue Oct 13 · WestJet — Sat Oct 17 · Gold — Tue Oct 27</li><li>Amazon (Oct 1) and Gold (Sep 27) not confirmed paid.</li></ul></section>
+<section><h2>🎉 Fun options</h2>
+<p><b>With the chicas</b> — seasonal runs found in a live Calgary listing (<a href="https://www.todocanada.ca/city/calgary/listing/this-weekend-in-calgary/" target="_blank" rel="noopener">todocanada</a>), dates as listed: Harvest Pumpkin Fest, Butterfield Acres (Oct 3–25) · Pumpkin Palooza, Cobb's Adventure Park (Oct 2–25) · Fall Days, Calgary Farmyard (to Oct 25) · Pumpkins After Dark, WinSport (to Oct 31) · Halloweekends, Calaway Park (to Oct 12).</p>
+<p><b>Best open slot:</b> Saturday after swim (10:00) until photos at 3:00, or Friday after the 11:00 appointment. Weather not confirmed — check before heading out.</p>
+<p><b>Adult:</b> Friday's dinner with friends is already booked; Saturday evening after photos is open.</p></section>
+</div>
+<section class="full"><h2>📰 The Read</h2>
+<p><b>Space:</b> NASA's September roundup lists Crew-13 as preparing to launch Oct 1 (<a href="https://digg.com/science/rtknnkx6" target="_blank" rel="noopener">NASA Minute via Digg</a>) — launch outcome not verified this run.</p>
+<p class="m">Tech, parenting, business, Calgary/Canada/US news: no story-level results were found in live searches this run, so none are listed rather than guessing. Late night starting points: <a href="https://www.youtube.com/@LastWeekTonight" target="_blank" rel="noopener">Last Week Tonight</a> · <a href="https://www.youtube.com/@LateNightSeth" target="_blank" rel="noopener">Seth Meyers</a> · <a href="https://www.youtube.com/@colbertlateshow" target="_blank" rel="noopener">Colbert</a>.</p></section>
+</div>
+<footer>Housekeeping and flags live in Todoist. Generated Sunday, October 4, 2026 at 5:45 PM MDT.</footer></div></body></html>
