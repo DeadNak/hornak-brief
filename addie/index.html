@@ -5,7 +5,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Jost:wght@300;400;500;600&display=swap">
 <style>
-/* Hornak Homework â€” shared page engine.
+/* Hornak Homework — shared page engine.
    Brand: Hornak Family Brand Guide v1.0 (references/brand.md in the hornak-brief skill).
    Each girl's page sets --lead on :root to her own family colour; the other three support.
    Committed light theme: these pages are read by kids in daylight on an iPad. */
@@ -85,6 +85,25 @@ h1{
 }
 .lifetime .count{font-family:var(--display);font-size:30px;line-height:1;color:var(--lead)}
 .lifetime .cap{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--soft)}
+
+/* ---------------- joke ---------------- */
+
+.joke{
+  width:100%;max-width:460px;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  background:var(--ground);border-radius:12px;
+  padding:14px 16px;
+}
+.joke .setup{
+  font-family:var(--display);font-size:19px;line-height:1.25;
+  color:var(--ink);text-wrap:balance;margin:0;
+}
+.joke .punch{
+  font-family:var(--display);font-style:italic;font-size:21px;line-height:1.25;
+  color:var(--lead);text-wrap:balance;margin:0;
+}
+.joke .btnrow{justify-content:center}
+.joke button.toggle{background:var(--paper);color:var(--green);border:0;padding:8px 16px;min-height:40px}
 
 /* ---------------- library ---------------- */
 
@@ -251,18 +270,20 @@ section{display:flex;flex-direction:column;gap:11px}
 .reveal .why{display:block}
 
 /* option contents */
-.dots{display:flex;gap:5px;align-items:center}
-.dot{width:19px;height:19px;border-radius:50%;display:inline-block}
+/* flex:0 0 auto is load-bearing. These sit inside flex rows, and without it they
+   shrink to slivers when the row is tight — the colours became invisible. */
+.dots{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.dot{width:32px;height:32px;border-radius:50%;display:inline-block;flex:0 0 auto}
 .dot.p{background:var(--pink)} .dot.d{background:var(--purple)}
 .dot.g{background:var(--blue)} .dot.n{background:var(--green)}
-.sq{width:19px;height:19px;display:inline-block;border-radius:3px}
+.sq{width:32px;height:32px;display:inline-block;border-radius:6px;flex:0 0 auto}
 .sq.p{background:var(--pink)} .sq.d{background:var(--purple)}
 .sq.g{background:var(--blue)} .sq.n{background:var(--green)}
-.numeral{font-family:var(--display);font-size:34px;line-height:1;display:inline-block}
+.numeral{font-family:var(--display);font-size:40px;line-height:1;display:inline-block}
 .mirror{display:inline-block;transform:scaleX(-1)}
 .flipy{display:inline-block;transform:scaleY(-1)}
-.count-dots{display:flex;flex-wrap:wrap;gap:7px;max-width:260px}
-.count-dots .dot{width:22px;height:22px;background:var(--lead)}
+.count-dots{display:flex;flex-wrap:wrap;gap:10px;max-width:340px;margin:2px 0}
+.count-dots .dot{width:30px;height:30px;background:var(--lead);flex:0 0 auto}
 
 /* ---------------- flip cards ---------------- */
 
@@ -404,6 +425,53 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
       <span class="count" id="lifetime-count">0</span>
       <span class="cap" id="lifetime-word">stars earned</span>
     </p>
+
+    <div class="joke" id="joke">
+      <p class="setup"></p>
+      <p class="punch" hidden></p>
+      <div class="btnrow">
+        <button class="toggle" type="button" id="joke-go">Tell me!</button>
+      </div>
+      <script type="application/json" id="joke-bank">
+      [
+        { "q": "Why did the scarecrow win an award?", "a": "Because he was outstanding in his field." },
+        { "q": "What do you call a bear with no teeth?", "a": "A gummy bear." },
+        { "q": "What do you call cheese that isn't yours?", "a": "Nacho cheese." },
+        { "q": "Why did the math book look so sad?", "a": "It had too many problems." },
+        { "q": "What has hands but can't clap?", "a": "A clock." },
+        { "q": "Why do bees have sticky hair?", "a": "Because they use honeycombs." },
+        { "q": "What do you call a dinosaur that is fast asleep?", "a": "A dino-snore." },
+        { "q": "Why did the cookie go to the doctor?", "a": "It was feeling crumby." },
+        { "q": "What is orange and sounds like a parrot?", "a": "A carrot." },
+        { "q": "Why can't your nose be twelve inches long?", "a": "Because then it would be a foot." },
+        { "q": "Why did the banana go to the doctor?", "a": "It wasn't peeling well." },
+        { "q": "How do you make a tissue dance?", "a": "You put a little boogie in it." },
+        { "q": "What building has the most stories?", "a": "The library." },
+        { "q": "What did one wall say to the other wall?", "a": "I'll meet you at the corner." },
+        { "q": "Why do seagulls fly over the sea?", "a": "Because if they flew over the bay, they'd be bagels." },
+        { "q": "What do you call a sleeping pizza?", "a": "A piZZZZa." },
+        { "q": "What is a snowman's favourite breakfast?", "a": "Frosted flakes." },
+        { "q": "How does the moon cut his hair?", "a": "Eclipse it." },
+        { "q": "What do you call a pony with a sore throat?", "a": "A little hoarse." },
+        { "q": "Why are ghosts such bad liars?", "a": "Because you can see right through them." },
+        { "q": "What kind of tree fits in your hand?", "a": "A palm tree." },
+        { "q": "What did the ocean say to the beach?", "a": "Nothing. It just waved." },
+        { "q": "Why did the bicycle fall over?", "a": "It was two tired." },
+        { "q": "What do you call a dog who does magic?", "a": "A labracadabrador." },
+        { "q": "Why did the picture go to jail?", "a": "Because it was framed." },
+        { "q": "What did one ice cube say to the other?", "a": "You are so cool." },
+        { "q": "What do you call a fish wearing a bowtie?", "a": "Sofishticated." },
+        { "q": "Why was the broom late for school?", "a": "It over-swept." },
+        { "q": "What is a cat's favourite colour?", "a": "Purr-ple." },
+        { "q": "Why can't you trust an atom?", "a": "Because they make up everything." },
+        { "q": "Pourquoi les poissons n'aiment pas l'ordinateur ?", "a": "Parce qu'ils ont peur du net." },
+        { "q": "Quel est l'animal le plus heureux ?", "a": "Le hibou, parce que sa femme est chouette." },
+        { "q": "Pourquoi la poule a-t-elle traversé la route ?", "a": "Pour aller de l'autre côté." },
+        { "q": "Que dit un oignon quand il se cogne ?", "a": "Aïe !" }
+      ]
+      </script>
+    </div>
+
     <div class="stripe"></div>
   </div>
 
@@ -447,7 +515,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
             { "ask": "Which word starts with the sound M?", "options": ["maison", "livre", "arbre"], "answer": 0, "why": "maison starts with M." },
             { "ask": "Which word starts with the sound M?", "options": ["mouton", "lion", "chat"], "answer": 0, "why": "mouton starts with M." },
             { "ask": "Which word starts with the sound L?", "options": ["lait", "maman", "porte"], "answer": 0, "why": "lait starts with L." },
-            { "ask": "Which word starts with the sound L?", "options": ["livre", "maison", "Ã©cole"], "answer": 0, "why": "livre starts with L." },
+            { "ask": "Which word starts with the sound L?", "options": ["livre", "maison", "école"], "answer": 0, "why": "livre starts with L." },
             { "ask": "Which word starts with the sound L?", "options": ["lion", "mouton", "table"], "answer": 0, "why": "lion starts with L." },
             { "ask": "Which word has the sound U, like in lune?", "options": ["mur", "chat", "porte"], "answer": 0, "why": "mur has the u sound." },
             { "ask": "Which word has the sound U, like in lune?", "options": ["lune", "bol", "chat"], "answer": 0, "why": "lune has the u sound." }
@@ -471,19 +539,19 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
         {
           "take": 4,
           "questions": [
-            { "html": true, "ask": "Which <b>9</b> is the right way round?", "answer": 0, "why": "A 9 has its circle at the top and its tail going down on the right.",
+            { "html": true, "ask": "Which <b>nine</b> is the right way round?", "answer": 0, "why": "A 9 has its circle at the top and its tail going down on the right.",
               "options": ["<span class=\"numeral\">9</span>", "<span class=\"numeral mirror\">9</span>", "<span class=\"numeral flipy\">9</span>"] },
-            { "html": true, "ask": "Which <b>3</b> is the right way round?", "answer": 0, "why": "A 3 has both bumps opening to the left.",
+            { "html": true, "ask": "Which <b>three</b> is the right way round?", "answer": 0, "why": "A 3 has both bumps opening to the left.",
               "options": ["<span class=\"numeral\">3</span>", "<span class=\"numeral mirror\">3</span>", "<span class=\"numeral flipy\">3</span>"] },
-            { "html": true, "ask": "Which <b>7</b> is the right way round?", "answer": 0, "why": "A 7 starts at the top left and slides down to the left.",
+            { "html": true, "ask": "Which <b>seven</b> is the right way round?", "answer": 0, "why": "A 7 starts at the top left and slides down to the left.",
               "options": ["<span class=\"numeral\">7</span>", "<span class=\"numeral mirror\">7</span>", "<span class=\"numeral flipy\">7</span>"] },
-            { "html": true, "ask": "Which <b>2</b> is the right way round?", "answer": 0, "why": "A 2 curves over the top, then runs flat along the bottom.",
+            { "html": true, "ask": "Which <b>two</b> is the right way round?", "answer": 0, "why": "A 2 curves over the top, then runs flat along the bottom.",
               "options": ["<span class=\"numeral\">2</span>", "<span class=\"numeral mirror\">2</span>", "<span class=\"numeral flipy\">2</span>"] },
-            { "html": true, "ask": "Which <b>5</b> is the right way round?", "answer": 0, "why": "A 5 has its flat hat at the top left.",
+            { "html": true, "ask": "Which <b>five</b> is the right way round?", "answer": 0, "why": "A 5 has its flat hat at the top left.",
               "options": ["<span class=\"numeral\">5</span>", "<span class=\"numeral mirror\">5</span>", "<span class=\"numeral flipy\">5</span>"] },
-            { "html": true, "ask": "Which <b>6</b> is the right way round?", "answer": 0, "why": "A 6 has its little circle at the bottom.",
+            { "html": true, "ask": "Which <b>six</b> is the right way round?", "answer": 0, "why": "A 6 has its little circle at the bottom.",
               "options": ["<span class=\"numeral\">6</span>", "<span class=\"numeral mirror\">6</span>", "<span class=\"numeral flipy\">6</span>"] },
-            { "html": true, "ask": "Which <b>4</b> is the right way round?", "answer": 0, "why": "A 4 has its flag opening to the left.",
+            { "html": true, "ask": "Which <b>four</b> is the right way round?", "answer": 0, "why": "A 4 has its flag opening to the left.",
               "options": ["<span class=\"numeral\">4</span>", "<span class=\"numeral mirror\">4</span>", "<span class=\"numeral flipy\">4</span>"] }
           ]
         }
@@ -572,8 +640,8 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
           "take": { "S": 3, "L": 3 },
           "items": {
             "S": ["un livre (a book)", "une pomme (an apple)", "un crayon (a pencil)",
-                  "une roche (a rock)", "un soulier (a shoe)", "une cuillÃ¨re (a spoon)"],
-            "L": ["le lait (milk)", "le jus (juice)", "lâ€™eau (water)",
+                  "une roche (a rock)", "un soulier (a shoe)", "une cuillère (a spoon)"],
+            "L": ["le lait (milk)", "le jus (juice)", "l’eau (water)",
                   "la soupe (soup)", "le shampooing (shampoo)", "le sirop (syrup)"]
           }
         }
@@ -623,16 +691,16 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
         {
           "take": 5,
           "questions": [
-            { "ask": "Which is the real word for â€œa, oneâ€?", "options": ["une", "unne", "uen"], "answer": 0 },
-            { "ask": "Which is the real word for â€œinâ€?", "options": ["dans", "dens", "danz"], "answer": 0 },
-            { "ask": "Which is the real word for â€œforâ€?", "options": ["pour", "poure", "por"], "answer": 0 },
-            { "ask": "Which is the real word for â€œthatâ€?", "options": ["que", "qeu", "kue"], "answer": 0 },
-            { "ask": "Which is the real word for â€œwhoâ€?", "options": ["qui", "qii", "kui"], "answer": 0 },
-            { "ask": "Which is the real word for â€œof the, someâ€?", "options": ["du", "doo", "dhu"], "answer": 0 },
-            { "ask": "Which is the real word for â€œweâ€?", "options": ["on", "onn", "aon"], "answer": 0 },
-            { "ask": "Which is the real word for â€œheâ€?", "options": ["il", "ill", "iil"], "answer": 0 },
-            { "ask": "Which is the real word for â€œareâ€?", "options": ["sont", "sonte", "sount"], "answer": 0 },
-            { "ask": "Which is the real word for â€œto theâ€?", "options": ["au", "aou", "auh"], "answer": 0 }
+            { "ask": "Which is the real word for “a, one”?", "options": ["une", "unne", "uen"], "answer": 0 },
+            { "ask": "Which is the real word for “in”?", "options": ["dans", "dens", "danz"], "answer": 0 },
+            { "ask": "Which is the real word for “for”?", "options": ["pour", "poure", "por"], "answer": 0 },
+            { "ask": "Which is the real word for “that”?", "options": ["que", "qeu", "kue"], "answer": 0 },
+            { "ask": "Which is the real word for “who”?", "options": ["qui", "qii", "kui"], "answer": 0 },
+            { "ask": "Which is the real word for “of the, some”?", "options": ["du", "doo", "dhu"], "answer": 0 },
+            { "ask": "Which is the real word for “we”?", "options": ["on", "onn", "aon"], "answer": 0 },
+            { "ask": "Which is the real word for “he”?", "options": ["il", "ill", "iil"], "answer": 0 },
+            { "ask": "Which is the real word for “are”?", "options": ["sont", "sonte", "sount"], "answer": 0 },
+            { "ask": "Which is the real word for “to the”?", "options": ["au", "aou", "auh"], "answer": 0 }
           ]
         }
         </script>
@@ -675,7 +743,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 </div>
 
 <script>
-/* Hornak Homework â€” shared engine.
+/* Hornak Homework — shared engine.
  *
  * The page is declarative: this file finds whatever units and activities are in
  * the HTML and wires them up, so adding a new sheet never means touching JS.
@@ -685,15 +753,15 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
  *   details.unit[data-unit][data-stars]    one sheet; data-unit must be unique and stable
  *        [data-subject][data-when]         used to build the library row
  *   .act[data-act="sort|choice|flip"]      one activity, with a JSON bank inside:
- *        <script type="application/json" class="bank"> â€¦ <\/script>
+ *        <script type="application/json" class="bank"> … <\/script>
  *
  * Note the escaped closing tag above. This file gets inlined into the page, and
- * an HTML parser ends a <script> element at the first closing tag it sees â€” even
+ * an HTML parser ends a <script> element at the first closing tag it sees — even
  * inside a comment or a string. An unescaped one here silently truncates the
  * whole engine. The build escapes them too, as a backstop.
  *
  * A star is won by getting every box in one round right, without having shown
- * the answers. One star per set â€” shuffling is what makes another available.
+ * the answers. One star per set — shuffling is what makes another available.
  */
 (function(){
   'use strict';
@@ -716,7 +784,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
         state.lifetime = Math.max(0, parseInt(parsed.lifetime, 10) || 0);
         state.units = (parsed.units && typeof parsed.units === 'object') ? parsed.units : {};
       }
-    } catch(e){ /* private window, blocked storage â€” carry on unsaved */ }
+    } catch(e){ /* private window, blocked storage — carry on unsaved */ }
   }
 
   function save(){
@@ -1146,7 +1214,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
     } catch(e){}
 
     function sentences(text){
-      var found = text.trim().match(/[^.!?â€¦]+[.!?â€¦]+/g);
+      var found = text.trim().match(/[^.!?…]+[.!?…]+/g);
       return found ? found.length : 0;
     }
 
@@ -1158,7 +1226,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
       bar.innerHTML = '';
       var count = n + (n === 1 ? ' sentence' : ' sentences');
       if(want){ count += ' of ' + want; }
-      bar.appendChild(el('span', null, count + ' Â· ' + words + (words === 1 ? ' word' : ' words')));
+      bar.appendChild(el('span', null, count + ' · ' + words + (words === 1 ? ' word' : ' words')));
       if(want && n >= want){ bar.appendChild(el('span', 'ok', 'that is all of them')); }
       if(note){ bar.appendChild(el('span', kind || 'ok', note)); }
     }
@@ -1185,12 +1253,12 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
     if(done === 0){ return 'Answer a few first, then tap Check my answers.'; }
     if(right === total){
       if(peeked){
-        return 'All ' + total + ' right â€” but the answers were showing. Tap New examples and win a star for real.';
+        return 'All ' + total + ' right — but the answers were showing. Tap New examples and win a star for real.';
       }
       if(awarded){ return 'Still perfect. Tap New examples for a fresh set.'; }
       markAwarded();
-      if(award(unit)){ return 'Perfect â€” all ' + total + ' right. You earned a star!'; }
-      return 'Perfect â€” all ' + total + ' right. Every star on this sheet is lit.';
+      if(award(unit)){ return 'Perfect — all ' + total + ' right. You earned a star!'; }
+      return 'Perfect — all ' + total + ' right. Every star on this sheet is lit.';
     }
     var blank = total - done;
     if(blank > 0){
@@ -1200,9 +1268,54 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
     return right + ' out of ' + total + '. The pink ones just need another try.';
   }
 
+  /* ---------------- joke ----------------
+     One button, two jobs: reveal the punchline, then deal the next one. The deck
+     is shuffled and dealt from, so no joke repeats until they have all been told. */
+
+  function wireJoke(){
+    var box = document.getElementById('joke');
+    var tag = document.getElementById('joke-bank');
+    var btn = document.getElementById('joke-go');
+    if(!box || !tag || !btn){ return; }
+
+    var setup = box.querySelector('.setup');
+    var punch = box.querySelector('.punch');
+    if(!setup || !punch){ return; }
+
+    var jokes;
+    try{ jokes = JSON.parse(tag.textContent); } catch(e){ return; }
+    if(!jokes || !jokes.length){ return; }
+
+    var deck = [];
+    var revealed = false;
+
+    function deal(){
+      if(!deck.length){ deck = shuffled(jokes); }
+      var joke = deck.pop();
+      revealed = false;
+      setup.textContent = joke.q;
+      punch.textContent = joke.a;
+      punch.hidden = true;
+      btn.textContent = 'Tell me!';
+    }
+
+    btn.addEventListener('click', function(){
+      if(!revealed){
+        revealed = true;
+        punch.hidden = false;
+        btn.textContent = 'Another one';
+      } else {
+        deal();
+      }
+    });
+
+    deal();
+  }
+
   /* ---------------- boot ---------------- */
 
   load();
+  wireJoke();
   buildLibrary();
   paintLifetime();
 
