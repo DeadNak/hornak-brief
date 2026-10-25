@@ -1,5 +1,6 @@
 ﻿<meta charset="utf-8">
 <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
 <title>Homework Progress</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -87,6 +88,26 @@ h1{
 .lifetime .count{font-family:var(--display);font-size:30px;line-height:1;color:var(--lead)}
 .lifetime .cap{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--soft)}
 
+/* ---------------- the right rail ----------------
+   Joke, then library, then rewards. Below 900px it drops under the sheet, so the
+   actual work is what she lands on. */
+
+.rail{display:flex;flex-direction:column;gap:14px;min-width:0;order:3}
+.mast{order:1}
+.units{order:2}
+.foot{order:4}
+.rail > *{max-width:none;width:100%}
+
+.rewards{
+  background:var(--paper);border-radius:14px;
+  padding-left:max(18px,env(safe-area-inset-left,0px));
+  padding-right:max(18px,env(safe-area-inset-right,0px));
+  padding-block:16px 18px;
+  display:flex;flex-direction:column;gap:11px;
+}
+.rewards > .label{color:var(--lead)}
+.rewards .bank{border:0;padding:0;background:transparent;max-width:none}
+
 /* ---------------- piggy bank ---------------- */
 
 .bank{
@@ -95,6 +116,8 @@ h1{
   background:var(--paper);border:2px solid var(--ground);border-radius:12px;
   padding:13px 16px;text-align:left;
 }
+.rail .bank .pig{width:46px;height:40px}
+.rail .bank{gap:12px}
 .bank .pig{flex:0 0 auto;width:58px;height:50px;color:var(--lead)}
 .bank .figures{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:5px}
 .bank .owed{
@@ -407,15 +430,15 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 @media(min-width:900px){
   .wrap{
     display:grid;
-    grid-template-columns:minmax(0,1fr) 256px;
+    grid-template-columns:minmax(0,3fr) minmax(232px,1fr);
     column-gap:18px;
     align-items:start;
-    max-width:1160px;
+    max-width:1240px;
   }
-  .mast{grid-column:1 / -1}
-  .units{grid-column:1;display:flex;flex-direction:column;gap:18px;min-width:0}
-  .foot{grid-column:1}
-  .library{
+  .mast{grid-column:1 / -1;grid-row:1}
+  .units{grid-column:1;grid-row:2;display:flex;flex-direction:column;gap:18px;min-width:0}
+  .foot{grid-column:1;grid-row:3}
+  .rail{
     grid-column:2;
     grid-row:2 / 4;
     position:sticky;
@@ -423,8 +446,8 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
     max-height:calc(100vh - 28px);
     overflow-y:auto;
     overscroll-behavior:contain;
-    padding-block:16px 18px;
   }
+  .library{padding-block:16px 18px}
   .shelf{gap:5px}
   .row{flex-wrap:wrap;gap:2px 8px;min-height:0;padding:10px 12px}
   .row .when{order:0;width:100%}
@@ -701,4 +724,5 @@ table.sheets tr.full td .got{color:var(--green);font-weight:500}
   Array.prototype.slice.call(document.querySelectorAll('.girl')).forEach(render);
 })();
 </script>
+
 
