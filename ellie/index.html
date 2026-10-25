@@ -87,6 +87,25 @@ h1{
 .lifetime .count{font-family:var(--display);font-size:30px;line-height:1;color:var(--lead)}
 .lifetime .cap{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--soft)}
 
+/* ---------------- coming up ----------------
+   Alpenglow is the family brand's attention colour, so a quiz lives here. */
+
+.upnext{
+  width:100%;max-width:460px;
+  display:flex;flex-direction:column;align-items:center;gap:3px;
+  background:var(--pink);color:var(--paper);
+  border:0;border-radius:12px;padding:13px 16px;
+  font-family:var(--body);text-align:center;cursor:pointer;
+}
+.upnext:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
+.upnext .cue{
+  font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:600;opacity:.85;
+}
+.upnext .what{font-family:var(--display);font-size:22px;line-height:1.2;text-wrap:balance}
+.upnext .whenline{font-size:14.5px;opacity:.92}
+.upnext.soon{background:var(--purple)}
+
 /* ---------------- joke ---------------- */
 
 .joke{
@@ -422,6 +441,13 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
     </svg>
     <h1>Ellie's Homework</h1>
     <p class="sub">Grade 3 &middot; Mme Seychelle</p>
+
+    <button class="upnext" type="button" id="upnext" hidden></button>
+    <script type="application/json" id="upnext-bank">
+    [
+      { "date": "2026-10-26", "what": "Science quiz: solids, liquids and gases", "unit": "matter-2026-10-26" }
+    ]
+    </script>
     <p class="lifetime">
       <span class="count" id="lifetime-count">0</span>
       <span class="cap" id="lifetime-word">stars earned</span>
@@ -1420,6 +1446,65 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
     return right + ' out of ' + total + '. The pink ones just need another try.';
   }
 
+  /* ---------------- coming up ----------------
+     Shows the soonest quiz or test that has not happened yet, and disappears by
+     itself the day after. Dates are plain YYYY-MM-DD and are read as local days,
+     never parsed as UTC, or a morning in Calgary reads as the previous date. */
+
+  function wireUpNext(){
+    var box = document.getElementById('upnext');
+    var tag = document.getElementById('upnext-bank');
+    if(!box || !tag){ return; }
+
+    var entries;
+    try{ entries = JSON.parse(tag.textContent); } catch(e){ box.hidden = true; return; }
+    if(!entries || !entries.length){ box.hidden = true; return; }
+
+    var now = new Date();
+    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+    var dated = entries.map(function(entry){
+      var parts = String(entry.date || '').split('-');
+      if(parts.length !== 3){ return null; }
+      var when = new Date(+parts[0], +parts[1] - 1, +parts[2]);
+      if(isNaN(when.getTime())){ return null; }
+      return { when: when, what: entry.what, unit: entry.unit };
+    }).filter(function(x){ return x && x.when >= today; });
+
+    if(!dated.length){ box.hidden = true; return; }
+
+    dated.sort(function(a, b){ return a.when - b.when; });
+    var next = dated[0];
+    var days = Math.round((next.when - today) / 86400000);
+
+    var dayName = next.when.toLocaleDateString(undefined, {
+      weekday: 'long', month: 'long', day: 'numeric'
+    });
+
+    var countdown;
+    if(days === 0){ countdown = 'today'; }
+    else if(days === 1){ countdown = 'tomorrow'; }
+    else if(days < 7){ countdown = 'in ' + days + ' days'; }
+    else { countdown = 'in ' + days + ' days'; }
+
+    box.innerHTML = '';
+    box.appendChild(el('span', 'cue', 'Coming up'));
+    box.appendChild(el('span', 'what', next.what));
+    box.appendChild(el('span', 'whenline', dayName + ' · ' + countdown));
+    box.classList.toggle('soon', days <= 1);
+    box.hidden = false;
+
+    if(next.unit){
+      box.addEventListener('click', function(){
+        var target = document.querySelector('details.unit[data-unit="' + next.unit + '"]');
+        if(!target){ return; }
+        units.forEach(function(u){ u.open = (u === target); });
+        markCurrent();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+  }
+
   /* ---------------- joke ----------------
      One button, two jobs: reveal the punchline, then deal the next one. The deck
      is shuffled and dealt from, so no joke repeats until they have all been told. */
@@ -1467,8 +1552,9 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
   /* ---------------- boot ---------------- */
 
   load();
-  wireJoke();
   buildLibrary();
+  wireUpNext();
+  wireJoke();
   paintLifetime();
 
   units.forEach(function(unit){
