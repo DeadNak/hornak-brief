@@ -657,7 +657,12 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
  *   details.unit[data-unit][data-stars]    one sheet; data-unit must be unique and stable
  *        [data-subject][data-when]         used to build the library row
  *   .act[data-act="sort|choice|flip"]      one activity, with a JSON bank inside:
- *        <script type="application/json" class="bank">â€¦</script>
+ *        <script type="application/json" class="bank"> â€¦ <\/script>
+ *
+ * Note the escaped closing tag above. This file gets inlined into the page, and
+ * an HTML parser ends a <script> element at the first closing tag it sees â€” even
+ * inside a comment or a string. An unescaped one here silently truncates the
+ * whole engine. The build escapes them too, as a backstop.
  *
  * A star is won by getting every box in one round right, without having shown
  * the answers. One star per set â€” shuffling is what makes another available.
