@@ -1,4 +1,5 @@
-﻿<meta name="claude:viewport-fit-sides" content="cover">
+﻿<meta charset="utf-8">
+<meta name="claude:viewport-fit-sides" content="cover">
 <title>Addie's Homework</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -275,6 +276,23 @@ section{display:flex;flex-direction:column;gap:11px}
 .flip:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
 .flip.flipped{background:var(--ground);border-color:var(--lead);font-family:var(--body);font-size:16px}
 
+/* ---------------- writing ---------------- */
+
+.scribe{
+  font-family:var(--body);font-size:17px;line-height:1.65;color:var(--ink);
+  background:var(--paper);border:2px solid var(--ground);border-radius:12px;
+  padding:13px 15px;width:100%;min-height:160px;resize:vertical;display:block;
+}
+.scribe:focus{border-color:var(--lead)}
+.scribe:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
+.scribe::placeholder{color:var(--soft)}
+.writebar{
+  display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;
+  font-size:13.5px;color:var(--soft);margin:0;
+}
+.writebar .ok{color:var(--green);font-weight:500}
+.writebar .warn{color:var(--pink);font-weight:500}
+
 /* ---------------- buttons + score ---------------- */
 
 .btnrow{display:flex;flex-wrap:wrap;gap:9px;align-items:center}
@@ -291,9 +309,10 @@ button.toggle.ghost{background:transparent;color:var(--green);border:2px solid v
 
 .star{
   width:26px;height:26px;border:2px dashed var(--ground);border-radius:50%;
-  display:grid;place-items:center;color:var(--ground);font-size:13px;line-height:1;flex:0 0 auto;
+  display:grid;place-items:center;color:var(--soft);opacity:.5;
+  font-size:13px;line-height:1;flex:0 0 auto;
 }
-.star.on{border-style:solid;color:var(--paper)}
+.star.on{border-style:solid;color:var(--paper);opacity:1}
 .unit-stars .star:nth-child(4n+1).on,.stars .star:nth-child(4n+1).on{background:var(--pink);border-color:var(--pink)}
 .unit-stars .star:nth-child(4n+2).on,.stars .star:nth-child(4n+2).on{background:var(--purple);border-color:var(--purple)}
 .unit-stars .star:nth-child(4n+3).on,.stars .star:nth-child(4n+3).on{background:var(--blue);border-color:var(--blue)}
@@ -626,6 +645,15 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
         <p class="score" aria-live="polite" hidden></p>
       </section>
 
+      <section class="act" data-act="write" data-write="oct25-phrases" data-sentences="2">
+        <p class="label">&Eacute;crire</p>
+        <h2>Write two sentences</h2>
+        <p class="hint">Use two of your sight words. Remember a capital letter at the start, a space between every word, and a period at the end.</p>
+        <textarea class="scribe" id="write-oct25-phrases" rows="5"
+          placeholder="Il y a une pomme dans&hellip;"></textarea>
+        <p class="writebar" aria-live="polite"></p>
+      </section>
+
       <section>
         <div class="tint d">
           <b>WHAT MME ASHLEY ASKED FOR THIS MONTH</b>
@@ -699,6 +727,12 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 
   /* ---------------- small helpers ---------------- */
 
+  /* Drawn rather than typed. A star character depends on the device having a
+     font for it; this cannot fail to render. */
+  var STAR_SVG = '<svg viewBox="0 0 20 19" width="15" height="15" aria-hidden="true" ' +
+                 'focusable="false" style="vertical-align:-2px"><path fill="currentColor" ' +
+                 'd="M10 0l2.9 6.2 6.6.9-4.8 4.7 1.2 6.8L10 15.4 4.1 18.6l1.2-6.8L.5 7.1l6.6-.9z"/></svg>';
+
   function el(tag, cls, text){
     var n = document.createElement(tag);
     if(cls){ n.className = cls; }
@@ -725,7 +759,8 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
   function starRow(container, lit, total){
     container.innerHTML = '';
     for(var i = 0; i < total; i++){
-      var s = el('span', 'star', i < lit ? 'â˜…' : 'â˜†');
+      var s = el('span', 'star');
+      s.innerHTML = STAR_SVG;
       if(i < lit){ s.classList.add('on'); }
       s.setAttribute('aria-hidden', 'true');
       container.appendChild(s);
@@ -767,7 +802,10 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
     var row = shelf && shelf.querySelector('.row[data-for="' + id + '"]');
     if(row){
       var got = row.querySelector('.got');
-      if(got){ got.textContent = 'â˜… ' + lit + '/' + max; }
+      if(got){
+        got.innerHTML = STAR_SVG + ' ' + lit + '/' + max;
+        got.setAttribute('aria-label', lit + ' of ' + max + ' stars earned');
+      }
       row.classList.toggle('done', lit >= max);
     }
   }
@@ -1088,6 +1126,59 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
     fresh();
   }
 
+  /* ---------------- activity: write ----------------
+     A textarea that saves itself. Her writing is kept under its own key, away
+     from the star record, so "Start the stars over" never wipes her work. */
+
+  function wireWrite(act){
+    var box = act.querySelector('.scribe');
+    var bar = act.querySelector('.writebar');
+    var id = act.getAttribute('data-write');
+    if(!box || !id){ return; }
+
+    var key = KEY + ':write:' + id;
+    var want = parseInt(act.getAttribute('data-sentences'), 10) || 0;
+    var timer = null;
+
+    try{
+      var saved = window.localStorage.getItem(key);
+      if(saved){ box.value = saved; }
+    } catch(e){}
+
+    function sentences(text){
+      var found = text.trim().match(/[^.!?â€¦]+[.!?â€¦]+/g);
+      return found ? found.length : 0;
+    }
+
+    function status(note, kind){
+      if(!bar){ return; }
+      var n = sentences(box.value);
+      var trimmed = box.value.trim();
+      var words = trimmed ? trimmed.split(/\s+/).length : 0;
+      bar.innerHTML = '';
+      var count = n + (n === 1 ? ' sentence' : ' sentences');
+      if(want){ count += ' of ' + want; }
+      bar.appendChild(el('span', null, count + ' Â· ' + words + (words === 1 ? ' word' : ' words')));
+      if(want && n >= want){ bar.appendChild(el('span', 'ok', 'that is all of them')); }
+      if(note){ bar.appendChild(el('span', kind || 'ok', note)); }
+    }
+
+    box.addEventListener('input', function(){
+      status('');
+      window.clearTimeout(timer);
+      timer = window.setTimeout(function(){
+        try{
+          window.localStorage.setItem(key, box.value);
+          status('saved', 'ok');
+        } catch(e){
+          status('could not save on this device', 'warn');
+        }
+      }, 500);
+    });
+
+    status(box.value ? 'saved' : '');
+  }
+
   /* ---------------- shared verdict + star award ---------------- */
 
   function verdict(total, done, right, peeked, awarded, unit, markAwarded){
@@ -1123,6 +1214,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
       if(kind === 'sort'){ wireSort(act, unit); }
       else if(kind === 'choice'){ wireChoice(act, unit); }
       else if(kind === 'flip'){ wireFlip(act); }
+      else if(kind === 'write'){ wireWrite(act); }
     });
   });
 
