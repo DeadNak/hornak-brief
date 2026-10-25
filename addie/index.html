@@ -87,6 +87,26 @@ h1{
 .lifetime .count{font-family:var(--display);font-size:30px;line-height:1;color:var(--lead)}
 .lifetime .cap{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--soft)}
 
+/* ---------------- the right rail ----------------
+   Joke, then library, then rewards. Below 900px it drops under the sheet, so the
+   actual work is what she lands on. */
+
+.rail{display:flex;flex-direction:column;gap:14px;min-width:0;order:3}
+.mast{order:1}
+.units{order:2}
+.foot{order:4}
+.rail > *{max-width:none;width:100%}
+
+.rewards{
+  background:var(--paper);border-radius:14px;
+  padding-left:max(18px,env(safe-area-inset-left,0px));
+  padding-right:max(18px,env(safe-area-inset-right,0px));
+  padding-block:16px 18px;
+  display:flex;flex-direction:column;gap:11px;
+}
+.rewards > .label{color:var(--lead)}
+.rewards .bank{border:0;padding:0;background:transparent;max-width:none}
+
 /* ---------------- piggy bank ---------------- */
 
 .bank{
@@ -95,6 +115,8 @@ h1{
   background:var(--paper);border:2px solid var(--ground);border-radius:12px;
   padding:13px 16px;text-align:left;
 }
+.rail .bank .pig{width:46px;height:40px}
+.rail .bank{gap:12px}
 .bank .pig{flex:0 0 auto;width:58px;height:50px;color:var(--lead)}
 .bank .figures{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:5px}
 .bank .owed{
@@ -407,15 +429,15 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 @media(min-width:900px){
   .wrap{
     display:grid;
-    grid-template-columns:minmax(0,1fr) 256px;
+    grid-template-columns:minmax(0,3fr) minmax(232px,1fr);
     column-gap:18px;
     align-items:start;
-    max-width:1160px;
+    max-width:1240px;
   }
-  .mast{grid-column:1 / -1}
-  .units{grid-column:1;display:flex;flex-direction:column;gap:18px;min-width:0}
-  .foot{grid-column:1}
-  .library{
+  .mast{grid-column:1 / -1;grid-row:1}
+  .units{grid-column:1;grid-row:2;display:flex;flex-direction:column;gap:18px;min-width:0}
+  .foot{grid-column:1;grid-row:3}
+  .rail{
     grid-column:2;
     grid-row:2 / 4;
     position:sticky;
@@ -423,8 +445,8 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
     max-height:calc(100vh - 28px);
     overflow-y:auto;
     overscroll-behavior:contain;
-    padding-block:16px 18px;
   }
+  .library{padding-block:16px 18px}
   .shelf{gap:5px}
   .row{flex-wrap:wrap;gap:2px 8px;min-height:0;padding:10px 12px}
   .row .when{order:0;width:100%}
@@ -472,34 +494,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
     [
     ]
     </script>
-    <div class="bank">
-      <svg class="pig" viewBox="0 0 64 54" role="img" aria-label="Piggy bank">
-        <path d="M14 15l-3-10 12 5z" fill="currentColor"/>
-        <rect x="15" y="39" width="7" height="11" rx="2.6" fill="currentColor"/>
-        <rect x="34" y="39" width="7" height="11" rx="2.6" fill="currentColor"/>
-        <ellipse cx="29" cy="28" rx="23" ry="17" fill="currentColor"/>
-        <ellipse cx="51" cy="30" rx="10" ry="8" fill="currentColor"/>
-        <circle cx="49" cy="28.5" r="1.7" fill="#F7F5F1"/>
-        <circle cx="54.5" cy="31.5" r="1.7" fill="#F7F5F1"/>
-        <circle cx="34" cy="23" r="2.3" fill="#F7F5F1"/>
-        <rect x="21" y="14" width="17" height="3.6" rx="1.8" fill="#F7F5F1"/>
-        <path d="M7 25c-4 1-4 5-1 7" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
-      </svg>
-      <div class="figures">
-        <p class="owed"><span id="bank-owed">$0</span><small>in the piggy bank</small></p>
-        <p class="earned"><b id="bank-stars">0 stars</b> &middot; <b id="bank-earned">$0</b> earned this year</p>
-        <div class="meter"><span id="bank-meter"></span></div>
-        <p class="togo" id="bank-togo"></p>
-      </div>
-    </div>
-
-    <div class="joke" id="joke">
-      <p class="setup"></p>
-      <p class="punch" hidden></p>
-      <div class="btnrow">
-        <button class="toggle" type="button" id="joke-go">Tell me!</button>
-      </div>
-      <script type="application/json" id="joke-bank">
+    <script type="application/json" id="joke-bank">
       [
         { "q": "Why did the scarecrow win an award?", "a": "Because he was outstanding in his field." },
         { "q": "What do you call a bear with no teeth?", "a": "A gummy bear." },
@@ -536,15 +531,50 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
         { "q": "Pourquoi la poule a-t-elle traversé la route ?", "a": "Pour aller de l'autre côté." },
         { "q": "Que dit un oignon quand il se cogne ?", "a": "Aïe !" }
       ]
-      </script>
-    </div>
+    </script>
 
     <div class="stripe"></div>
   </div>
 
-  <div class="library">
-    <p class="label">Her library <span class="shelf-count" id="shelf-count"></span></p>
-    <div class="shelf" id="shelf"></div>
+  <div class="rail">
+
+    <div class="joke" id="joke">
+      <p class="setup"></p>
+      <p class="punch" hidden></p>
+      <div class="btnrow">
+        <button class="toggle" type="button" id="joke-go">Tell me!</button>
+      </div>
+    </div>
+
+    <div class="library">
+      <p class="label">Her library <span class="shelf-count" id="shelf-count"></span></p>
+      <div class="shelf" id="shelf"></div>
+    </div>
+
+    <div class="rewards">
+      <p class="label">Her rewards</p>
+      <div class="bank">
+        <svg class="pig" viewBox="0 0 64 54" role="img" aria-label="Piggy bank">
+          <path d="M14 15l-3-10 12 5z" fill="currentColor"/>
+          <rect x="15" y="39" width="7" height="11" rx="2.6" fill="currentColor"/>
+          <rect x="34" y="39" width="7" height="11" rx="2.6" fill="currentColor"/>
+          <ellipse cx="29" cy="28" rx="23" ry="17" fill="currentColor"/>
+          <ellipse cx="51" cy="30" rx="10" ry="8" fill="currentColor"/>
+          <circle cx="49" cy="28.5" r="1.7" fill="#F7F5F1"/>
+          <circle cx="54.5" cy="31.5" r="1.7" fill="#F7F5F1"/>
+          <circle cx="34" cy="23" r="2.3" fill="#F7F5F1"/>
+          <rect x="21" y="14" width="17" height="3.6" rx="1.8" fill="#F7F5F1"/>
+          <path d="M7 25c-4 1-4 5-1 7" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div class="figures">
+          <p class="owed"><span id="bank-owed">$0</span><small>in the piggy bank</small></p>
+          <p class="earned"><b id="bank-stars">0 stars</b> &middot; <b id="bank-earned">$0</b> earned this year</p>
+          <div class="meter"><span id="bank-meter"></span></div>
+          <p class="togo" id="bank-togo"></p>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <div class="units">
