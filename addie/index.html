@@ -1,0 +1,1153 @@
+﻿<meta name="claude:viewport-fit-sides" content="cover">
+<title>Addie's Homework</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+/* Hornak Homework â€” shared page engine.
+   Brand: Hornak Family Brand Guide v1.0 (references/brand.md in the hornak-brief skill).
+   Each girl's page sets --lead on :root to her own family colour; the other three support.
+   Committed light theme: these pages are read by kids in daylight on an iPad. */
+
+:root{
+  --pink:#B85C86;      /* Alpenglow */
+  --purple:#6B5591;    /* Dusk */
+  --blue:#35699B;      /* Glacier */
+  --green:#2E7358;     /* Pine */
+  --ink:#1B2022;       /* Granite */
+  --soft:#6C7378;      /* Scree */
+  --paper:#F7F5F1;     /* Snowfield */
+  --ground:#E3E1DA;    /* Trail Dust */
+  --lead:var(--pink);  /* overridden per girl */
+  --display:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --body:"Jost",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  color-scheme:light;
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--ground);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:17px;
+  line-height:1.5;
+  margin:0;
+  -webkit-text-size-adjust:100%;
+}
+
+.wrap{
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:22px 48px;
+  max-width:860px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+/* ---------------- masthead ---------------- */
+
+.mast{
+  background:var(--paper);
+  border-radius:14px;
+  padding-left:max(18px,env(safe-area-inset-left,0px));
+  padding-right:max(18px,env(safe-area-inset-right,0px));
+  padding-block:24px 22px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  text-align:center;
+}
+.arc{width:132px;height:69px;max-width:100%;display:block}
+h1{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:clamp(36px,8.5vw,52px);
+  line-height:.95;
+  margin:0;
+  color:var(--lead);
+  text-wrap:balance;
+}
+.mast .sub{font-family:var(--display);font-style:italic;font-size:20px;color:var(--purple);margin:0}
+.stripe{
+  height:5px;border-radius:999px;width:100%;
+  background:linear-gradient(90deg,var(--pink) 0 25%,var(--purple) 25% 50%,var(--blue) 50% 75%,var(--green) 75% 100%);
+}
+
+/* lifetime tally */
+.lifetime{
+  display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;
+  background:var(--ground);border-radius:999px;padding:9px 18px;margin:0;
+}
+.lifetime .count{font-family:var(--display);font-size:30px;line-height:1;color:var(--lead)}
+.lifetime .cap{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--soft)}
+
+/* ---------------- library ---------------- */
+
+.library{
+  background:var(--paper);
+  border-radius:14px;
+  padding-left:max(18px,env(safe-area-inset-left,0px));
+  padding-right:max(18px,env(safe-area-inset-right,0px));
+  padding-block:18px 20px;
+  display:flex;flex-direction:column;gap:12px;
+}
+.library > .label{color:var(--lead)}
+.shelf{display:flex;flex-direction:column;gap:7px}
+.row{
+  display:flex;align-items:center;gap:12px;width:100%;min-width:0;
+  font-family:var(--body);font-size:16px;color:var(--ink);text-align:left;cursor:pointer;
+  background:transparent;border:1px solid var(--ground);border-radius:10px;
+  padding:11px 13px;min-height:52px;
+}
+.row:hover{border-color:var(--lead)}
+.row:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
+.row[aria-current="true"]{border-color:var(--lead);background:var(--ground)}
+.row .when{
+  flex:0 0 auto;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--soft);width:62px;line-height:1.25;
+}
+.row .what{flex:1 1 auto;min-width:0;line-height:1.25}
+.row .what b{display:block;font-weight:500}
+.row .what em{font-style:normal;font-size:13px;color:var(--soft)}
+.row .got{
+  flex:0 0 auto;display:flex;align-items:center;gap:5px;
+  font-family:var(--display);font-size:18px;color:var(--lead);
+}
+.row .got .pip{font-size:14px;color:var(--lead)}
+.row.done .got{color:var(--green)}
+.row.done .got .pip{color:var(--green)}
+@media(max-width:430px){
+  .row{gap:9px;padding:10px 11px}
+  .row .when{width:54px;font-size:11px}
+}
+
+/* ---------------- units ---------------- */
+
+.unit{
+  background:var(--paper);
+  border-radius:14px;
+  overflow:hidden;
+}
+.unit > summary{
+  list-style:none;
+  cursor:pointer;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:6px 14px;
+  padding-left:max(18px,env(safe-area-inset-left,0px));
+  padding-right:max(18px,env(safe-area-inset-right,0px));
+  padding-block:18px;
+  border-left:5px solid var(--lead);
+}
+.unit > summary::-webkit-details-marker{display:none}
+.unit > summary:focus-visible{outline:3px solid var(--purple);outline-offset:-3px}
+.unit:not([open]) > summary{border-left-color:var(--ground)}
+.unit-title{font-family:var(--display);font-size:27px;line-height:1.05;flex:1 1 220px;min-width:0}
+.unit-meta{flex:1 1 100%;font-size:13px;color:var(--soft);order:3}
+.unit-stars{display:flex;gap:5px;flex:0 0 auto;order:2}
+.unit-body{
+  padding-left:max(18px,env(safe-area-inset-left,0px));
+  padding-right:max(18px,env(safe-area-inset-right,0px));
+  padding-block:4px 26px;
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+.unit:not([open]) + .unit{margin-top:-4px}
+
+/* ---------------- shared blocks ---------------- */
+
+.label{
+  font-weight:600;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--green);margin:0;display:flex;align-items:center;gap:8px;
+}
+.label::after{content:"";flex:1;height:1px;background:var(--ground)}
+h2{font-family:var(--display);font-weight:400;font-size:26px;line-height:1.1;margin:0;text-wrap:balance}
+h3{font-family:var(--display);font-weight:400;font-size:23px;line-height:1.1;margin:0;text-wrap:balance}
+p{margin:0}
+.lede{color:var(--soft);font-size:15.5px;max-width:62ch}
+.rule{font-size:15.5px;border-left:4px solid var(--green);padding-left:13px;line-height:1.45}
+section{display:flex;flex-direction:column;gap:11px}
+.act{display:flex;flex-direction:column;gap:11px}
+.hint{font-size:14px;color:var(--soft)}
+.hint b{color:var(--ink);font-weight:600}
+
+.cards{display:grid;grid-template-columns:1fr;gap:13px}
+@media(min-width:640px){.cards.three{grid-template-columns:repeat(3,1fr)}.cards.two{grid-template-columns:1fr 1fr}}
+.card{border:2px solid var(--ground);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.card.a{border-color:var(--pink)} .card.b{border-color:var(--purple)} .card.c{border-color:var(--blue)} .card.d{border-color:var(--green)}
+.card h4{font-family:var(--display);font-weight:400;font-size:24px;margin:0;line-height:1}
+.card.a h4{color:var(--pink)} .card.b h4{color:var(--purple)} .card.c h4{color:var(--blue)} .card.d h4{color:var(--green)}
+.card .fr{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:var(--soft);margin:0}
+.card ul{margin:0;padding-left:17px;font-size:15px;display:flex;flex-direction:column;gap:3px}
+.card li::marker{color:var(--soft)}
+.card p{font-size:15px;line-height:1.4}
+.diagram{width:100%;height:84px;display:block;border-radius:8px;background:rgba(227,225,218,.45)}
+
+.tint{border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.tint.a{background:rgba(184,92,134,.09)}
+.tint.b{background:rgba(107,85,145,.09)}
+.tint.c{background:rgba(53,105,155,.08)}
+.tint.d{background:rgba(46,115,88,.09)}
+.tint b{font-weight:600;font-size:14px;letter-spacing:.04em}
+.tint p{font-size:15px;line-height:1.45}
+
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:14px;border:1px solid var(--ground);border-radius:999px;padding:4px 11px;background:var(--paper)}
+
+/* ---------------- sort activity ---------------- */
+
+.sort{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:9px}
+.item{
+  display:flex;align-items:center;gap:10px;min-width:0;
+  border:1px solid var(--ground);border-radius:10px;background:transparent;
+  padding:10px 11px;font-family:var(--body);font-size:16px;color:var(--ink);
+  text-align:left;width:100%;cursor:pointer;
+}
+.item:hover{border-color:var(--lead)}
+.item:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
+.slot{
+  flex:0 0 34px;height:34px;border:2px solid var(--ground);border-radius:8px;
+  display:grid;place-items:center;font-weight:600;font-size:17px;color:var(--lead);
+}
+.item .name{min-width:0;overflow-wrap:anywhere}
+.item::after{margin-left:auto;font-size:17px;font-weight:600;line-height:1;flex:0 0 auto}
+.item.right{border-color:var(--green);background:rgba(46,115,88,.07)}
+.item.right .slot{border-color:var(--green)}
+.item.right::after{content:"\2713";color:var(--green)}
+.item.wrong{border-color:var(--pink);background:rgba(184,92,134,.07)}
+.item.wrong .slot{border-color:var(--pink)}
+.item.wrong::after{content:"\21BB";color:var(--pink)}
+.reveal .item::after{content:attr(data-answer);color:var(--green);font-size:14px;letter-spacing:.1em}
+.reveal .item.right::after{content:"\2713";font-size:17px}
+
+/* ---------------- choice activity ---------------- */
+
+.choice{display:flex;flex-direction:column;gap:14px}
+.qa{border:1px solid var(--ground);border-radius:12px;padding:13px 14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.qa.right{border-color:var(--green);background:rgba(46,115,88,.06)}
+.qa.wrong{border-color:var(--pink);background:rgba(184,92,134,.06)}
+.qa .ask{font-size:17px;font-weight:500;line-height:1.35;margin:0}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{
+  font-family:var(--body);font-size:17px;color:var(--ink);cursor:pointer;
+  border:2px solid var(--ground);border-radius:10px;background:transparent;
+  padding:11px 16px;min-height:52px;display:flex;align-items:center;gap:4px;
+}
+.opt:hover{border-color:var(--lead)}
+.opt:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
+.opt[aria-pressed="true"]{border-color:var(--lead);background:var(--ground)}
+.qa.right .opt[aria-pressed="true"]{border-color:var(--green);background:rgba(46,115,88,.12)}
+.qa.wrong .opt[aria-pressed="true"]{border-color:var(--pink);background:rgba(184,92,134,.12)}
+.reveal .opt.correct{border-color:var(--green);box-shadow:inset 0 0 0 1px var(--green)}
+.why{font-size:14.5px;color:var(--soft);margin:0}
+.qa:not(.right):not(.wrong) .why{display:none}
+.reveal .why{display:block}
+
+/* option contents */
+.dots{display:flex;gap:5px;align-items:center}
+.dot{width:19px;height:19px;border-radius:50%;display:inline-block}
+.dot.p{background:var(--pink)} .dot.d{background:var(--purple)}
+.dot.g{background:var(--blue)} .dot.n{background:var(--green)}
+.sq{width:19px;height:19px;display:inline-block;border-radius:3px}
+.sq.p{background:var(--pink)} .sq.d{background:var(--purple)}
+.sq.g{background:var(--blue)} .sq.n{background:var(--green)}
+.numeral{font-family:var(--display);font-size:34px;line-height:1;display:inline-block}
+.mirror{display:inline-block;transform:scaleX(-1)}
+.flipy{display:inline-block;transform:scaleY(-1)}
+.count-dots{display:flex;flex-wrap:wrap;gap:7px;max-width:260px}
+.count-dots .dot{width:22px;height:22px;background:var(--lead)}
+
+/* ---------------- flip cards ---------------- */
+
+.flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:9px}
+.flip{
+  font-family:var(--display);font-size:25px;color:var(--ink);cursor:pointer;
+  border:2px solid var(--ground);border-radius:12px;background:transparent;
+  min-height:76px;display:grid;place-items:center;padding:8px;text-align:center;line-height:1.1;
+}
+.flip:hover{border-color:var(--lead)}
+.flip:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
+.flip.flipped{background:var(--ground);border-color:var(--lead);font-family:var(--body);font-size:16px}
+
+/* ---------------- buttons + score ---------------- */
+
+.btnrow{display:flex;flex-wrap:wrap;gap:9px;align-items:center}
+button.toggle{
+  font-family:var(--body);font-size:13.5px;font-weight:500;letter-spacing:.08em;
+  text-transform:uppercase;cursor:pointer;min-height:44px;
+  background:var(--green);color:var(--paper);border:0;border-radius:999px;padding:10px 18px;
+}
+button.toggle:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
+button.toggle.ghost{background:transparent;color:var(--green);border:2px solid var(--ground);padding:8px 16px}
+.score{font-family:var(--display);font-size:21px;line-height:1.25;color:var(--purple);margin:0}
+
+/* ---------------- stars ---------------- */
+
+.star{
+  width:26px;height:26px;border:2px dashed var(--ground);border-radius:50%;
+  display:grid;place-items:center;color:var(--ground);font-size:13px;line-height:1;flex:0 0 auto;
+}
+.star.on{border-style:solid;color:var(--paper)}
+.unit-stars .star:nth-child(4n+1).on,.stars .star:nth-child(4n+1).on{background:var(--pink);border-color:var(--pink)}
+.unit-stars .star:nth-child(4n+2).on,.stars .star:nth-child(4n+2).on{background:var(--purple);border-color:var(--purple)}
+.unit-stars .star:nth-child(4n+3).on,.stars .star:nth-child(4n+3).on{background:var(--blue);border-color:var(--blue)}
+.unit-stars .star:nth-child(4n+4).on,.stars .star:nth-child(4n+4).on{background:var(--green);border-color:var(--green)}
+@keyframes pop{0%{transform:scale(.55)}55%{transform:scale(1.3)}100%{transform:scale(1)}}
+.star.pop{animation:pop .5s ease}
+
+/* ---------------- footer ---------------- */
+
+.foot{
+  display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center;
+  padding-block:6px 0;
+}
+.foot .note{font-size:13px;color:var(--soft);letter-spacing:.04em}
+button.reset{
+  font-family:var(--body);font-size:11.5px;font-weight:500;letter-spacing:.1em;
+  text-transform:uppercase;cursor:pointer;background:transparent;color:var(--soft);
+  border:0;border-bottom:1px solid var(--ground);padding:4px 1px;
+}
+button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
+
+/* ---------------- wide screens: library becomes a sticky right rail ----------------
+   Below 900px it stays a block under the masthead, which is the right shape on a
+   phone and on an iPad held in portrait. */
+
+@media(min-width:900px){
+  .wrap{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 256px;
+    column-gap:18px;
+    align-items:start;
+    max-width:1160px;
+  }
+  .mast{grid-column:1 / -1}
+  .units{grid-column:1;display:flex;flex-direction:column;gap:18px;min-width:0}
+  .foot{grid-column:1}
+  .library{
+    grid-column:2;
+    grid-row:2 / 4;
+    position:sticky;
+    top:14px;
+    max-height:calc(100vh - 28px);
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    padding-block:16px 18px;
+  }
+  .shelf{gap:5px}
+  .row{flex-wrap:wrap;gap:2px 8px;min-height:0;padding:10px 12px}
+  .row .when{order:0;width:100%}
+  .row .what{order:1;flex:1 1 90px}
+  .row .got{order:2;align-self:flex-start;font-size:17px}
+  .row .what em{display:block;margin-top:1px}
+}
+
+.shelf-count{font-weight:500;color:var(--soft);letter-spacing:.1em}
+
+/* ---------------- motion + print ---------------- */
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+@media print{
+  @page{margin:.45in}
+  body{background:#fff}
+  .wrap{padding:0;gap:14px;max-width:none}
+  .mast,.unit{background:#fff;border-radius:0}
+  .no-print,.btnrow,.score,button.reset,.lifetime{display:none!important}
+  .unit-body{display:flex!important}
+  section,.act,.card,.qa{break-inside:avoid}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+</style>
+<style>:root{--lead:var(--purple)}</style>
+
+<div class="wrap" data-girl="addie">
+
+  <div class="mast">
+    <svg class="arc" viewBox="0 0 150 78" role="img" aria-label="A four-stripe rainbow, one colour for each Hornak">
+      <g fill="none" stroke-linecap="round" stroke-width="9">
+        <path d="M11 73a64 64 0 0 1 128 0" stroke="#B85C86"/>
+        <path d="M22 73a53 53 0 0 1 106 0" stroke="#6B5591"/>
+        <path d="M33 73a42 42 0 0 1 84 0" stroke="#35699B"/>
+        <path d="M44 73a31 31 0 0 1 62 0" stroke="#2E7358"/>
+      </g>
+    </svg>
+    <h1>Addie's Homework</h1>
+    <p class="sub">Grade 1 &middot; Mme Ashley &middot; Classe 1A</p>
+    <p class="lifetime">
+      <span class="count" id="lifetime-count">0</span>
+      <span class="cap" id="lifetime-word">stars earned</span>
+    </p>
+    <div class="stripe"></div>
+  </div>
+
+  <div class="library">
+    <p class="label">Her library <span class="shelf-count" id="shelf-count"></span></p>
+    <div class="shelf" id="shelf"></div>
+  </div>
+
+  <div class="units">
+
+  <!-- ===================== UNIT: October practice ===================== -->
+  <details class="unit" open
+           data-unit="oct-2026-practice"
+           data-when="Oct 24"
+           data-subject="Sounds, Numbers &amp; Patterns"
+           data-topic="What Mme Ashley asked us to practise"
+           data-stars="4">
+    <summary>
+      <span class="unit-title">Sounds, Numbers &amp; Patterns</span>
+      <span class="unit-stars"></span>
+      <span class="unit-meta">From Mme Ashley's October updates and the October Google Classroom pack</span>
+    </summary>
+
+    <div class="unit-body">
+
+      <section>
+        <p class="label">Bonjour Addie</p>
+        <h2>Four things to practise</h2>
+        <p class="lede">Mme Ashley asked us to work on these at home this month. Do one, do all four &mdash; every round you get completely right lights up a star.</p>
+      </section>
+
+      <section class="act" data-act="choice">
+        <p class="label">Les sons</p>
+        <h2>Ll, Mm and Uu</h2>
+        <p class="hint">Tap the word that matches. These are the sounds your class has worked through.</p>
+        <script type="application/json" class="bank">
+        {
+          "take": 4,
+          "questions": [
+            { "ask": "Which word starts with the sound M?", "options": ["maman", "lune", "table"], "answer": 0, "why": "maman starts with M." },
+            { "ask": "Which word starts with the sound M?", "options": ["maison", "livre", "arbre"], "answer": 0, "why": "maison starts with M." },
+            { "ask": "Which word starts with the sound M?", "options": ["mouton", "lion", "chat"], "answer": 0, "why": "mouton starts with M." },
+            { "ask": "Which word starts with the sound L?", "options": ["lait", "maman", "porte"], "answer": 0, "why": "lait starts with L." },
+            { "ask": "Which word starts with the sound L?", "options": ["livre", "maison", "Ã©cole"], "answer": 0, "why": "livre starts with L." },
+            { "ask": "Which word starts with the sound L?", "options": ["lion", "mouton", "table"], "answer": 0, "why": "lion starts with L." },
+            { "ask": "Which word has the sound U, like in lune?", "options": ["mur", "chat", "porte"], "answer": 0, "why": "mur has the u sound." },
+            { "ask": "Which word has the sound U, like in lune?", "options": ["lune", "bol", "chat"], "answer": 0, "why": "lune has the u sound." }
+          ]
+        }
+        </script>
+        <div class="choice"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">New questions</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+      </section>
+
+      <section class="act" data-act="choice">
+        <p class="label">Les chiffres</p>
+        <h2>Which one is the right way round?</h2>
+        <p class="hint">Mme Ashley noticed numbers getting written backwards. Find the one facing the right way.</p>
+        <script type="application/json" class="bank">
+        {
+          "take": 4,
+          "questions": [
+            { "html": true, "ask": "Which <b>9</b> is the right way round?", "answer": 0, "why": "A 9 has its circle at the top and its tail going down on the right.",
+              "options": ["<span class=\"numeral\">9</span>", "<span class=\"numeral mirror\">9</span>", "<span class=\"numeral flipy\">9</span>"] },
+            { "html": true, "ask": "Which <b>3</b> is the right way round?", "answer": 0, "why": "A 3 has both bumps opening to the left.",
+              "options": ["<span class=\"numeral\">3</span>", "<span class=\"numeral mirror\">3</span>", "<span class=\"numeral flipy\">3</span>"] },
+            { "html": true, "ask": "Which <b>7</b> is the right way round?", "answer": 0, "why": "A 7 starts at the top left and slides down to the left.",
+              "options": ["<span class=\"numeral\">7</span>", "<span class=\"numeral mirror\">7</span>", "<span class=\"numeral flipy\">7</span>"] },
+            { "html": true, "ask": "Which <b>2</b> is the right way round?", "answer": 0, "why": "A 2 curves over the top, then runs flat along the bottom.",
+              "options": ["<span class=\"numeral\">2</span>", "<span class=\"numeral mirror\">2</span>", "<span class=\"numeral flipy\">2</span>"] },
+            { "html": true, "ask": "Which <b>5</b> is the right way round?", "answer": 0, "why": "A 5 has its flat hat at the top left.",
+              "options": ["<span class=\"numeral\">5</span>", "<span class=\"numeral mirror\">5</span>", "<span class=\"numeral flipy\">5</span>"] },
+            { "html": true, "ask": "Which <b>6</b> is the right way round?", "answer": 0, "why": "A 6 has its little circle at the bottom.",
+              "options": ["<span class=\"numeral\">6</span>", "<span class=\"numeral mirror\">6</span>", "<span class=\"numeral flipy\">6</span>"] },
+            { "html": true, "ask": "Which <b>4</b> is the right way round?", "answer": 0, "why": "A 4 has its flag opening to the left.",
+              "options": ["<span class=\"numeral\">4</span>", "<span class=\"numeral mirror\">4</span>", "<span class=\"numeral flipy\">4</span>"] }
+          ]
+        }
+        </script>
+        <div class="choice"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">New questions</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+      </section>
+
+      <section class="act" data-act="choice">
+        <p class="label">Compter jusqu'&agrave; 20</p>
+        <h2>How many dots?</h2>
+        <p class="hint">Count them out loud. Touch each one as you go.</p>
+        <script type="application/json" class="bank">
+        {
+          "take": 4,
+          "questions": [
+            { "ask": "Count the dots.", "dots": 12, "options": ["12", "11", "13"], "answer": 0 },
+            { "ask": "Count the dots.", "dots": 15, "options": ["15", "14", "16"], "answer": 0 },
+            { "ask": "Count the dots.", "dots": 17, "options": ["17", "16", "18"], "answer": 0 },
+            { "ask": "Count the dots.", "dots": 19, "options": ["19", "18", "20"], "answer": 0 },
+            { "ask": "Count the dots.", "dots": 14, "options": ["14", "13", "15"], "answer": 0 },
+            { "ask": "Count the dots.", "dots": 20, "options": ["20", "19", "18"], "answer": 0 },
+            { "ask": "Count the dots.", "dots": 16, "options": ["16", "15", "17"], "answer": 0 }
+          ]
+        }
+        </script>
+        <div class="choice"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">New questions</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+      </section>
+
+      <section class="act" data-act="choice">
+        <p class="label">Les r&eacute;gularit&eacute;s</p>
+        <h2>Patterns</h2>
+        <p class="hint">Name the pattern out loud first &mdash; red, blue, red, blue &mdash; then tap what comes next.</p>
+        <script type="application/json" class="bank">
+        {
+          "take": 4,
+          "questions": [
+            { "html": true, "answer": 0, "why": "AB pattern: pink, purple, pink, purple.",
+              "ask": "What comes next? <span class=\"dots\"><span class=\"dot p\"></span><span class=\"dot d\"></span><span class=\"dot p\"></span><span class=\"dot d\"></span></span>",
+              "options": ["<span class=\"dot p\"></span>", "<span class=\"dot d\"></span>", "<span class=\"dot n\"></span>"] },
+            { "html": true, "answer": 0, "why": "AAB pattern: blue, blue, green.",
+              "ask": "What comes next? <span class=\"dots\"><span class=\"dot g\"></span><span class=\"dot g\"></span><span class=\"dot n\"></span><span class=\"dot g\"></span><span class=\"dot g\"></span></span>",
+              "options": ["<span class=\"dot n\"></span>", "<span class=\"dot g\"></span>", "<span class=\"dot p\"></span>"] },
+            { "html": true, "answer": 0, "why": "ABC pattern: pink, blue, green, and round again.",
+              "ask": "What comes next? <span class=\"dots\"><span class=\"dot p\"></span><span class=\"dot g\"></span><span class=\"dot n\"></span><span class=\"dot p\"></span><span class=\"dot g\"></span></span>",
+              "options": ["<span class=\"dot n\"></span>", "<span class=\"dot p\"></span>", "<span class=\"dot g\"></span>"] },
+            { "html": true, "answer": 0, "why": "The core is the little piece that repeats: purple, pink.",
+              "ask": "What is the <b>core</b> of this pattern? <span class=\"dots\"><span class=\"dot d\"></span><span class=\"dot p\"></span><span class=\"dot d\"></span><span class=\"dot p\"></span><span class=\"dot d\"></span><span class=\"dot p\"></span></span>",
+              "options": ["<span class=\"dots\"><span class=\"dot d\"></span><span class=\"dot p\"></span></span>", "<span class=\"dots\"><span class=\"dot d\"></span><span class=\"dot d\"></span></span>", "<span class=\"dots\"><span class=\"dot p\"></span><span class=\"dot g\"></span></span>"] },
+            { "html": true, "answer": 0, "why": "The core is green, green, pink.",
+              "ask": "What is the <b>core</b> of this pattern? <span class=\"dots\"><span class=\"dot n\"></span><span class=\"dot n\"></span><span class=\"dot p\"></span><span class=\"dot n\"></span><span class=\"dot n\"></span><span class=\"dot p\"></span></span>",
+              "options": ["<span class=\"dots\"><span class=\"dot n\"></span><span class=\"dot n\"></span><span class=\"dot p\"></span></span>", "<span class=\"dots\"><span class=\"dot n\"></span><span class=\"dot p\"></span></span>", "<span class=\"dots\"><span class=\"dot p\"></span><span class=\"dot p\"></span><span class=\"dot n\"></span></span>"] },
+            { "html": true, "answer": 0, "why": "AB pattern with squares: green, purple.",
+              "ask": "What comes next? <span class=\"dots\"><span class=\"sq n\"></span><span class=\"sq d\"></span><span class=\"sq n\"></span><span class=\"sq d\"></span></span>",
+              "options": ["<span class=\"sq n\"></span>", "<span class=\"sq d\"></span>", "<span class=\"sq p\"></span>"] }
+          ]
+        }
+        </script>
+        <div class="choice"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">New questions</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+      </section>
+
+      <section class="act" data-act="sort">
+        <p class="label">La mati&egrave;re</p>
+        <h2>Solide ou liquide?</h2>
+        <p class="hint">Your class just started matter. Tap a box until it shows <b>S</b> for solide or <b>L</b> for liquide.</p>
+        <script type="application/json" class="bank">
+        {
+          "order": ["", "S", "L"],
+          "take": { "S": 3, "L": 3 },
+          "items": {
+            "S": ["un livre (a book)", "une pomme (an apple)", "un crayon (a pencil)",
+                  "une roche (a rock)", "un soulier (a shoe)", "une cuillÃ¨re (a spoon)"],
+            "L": ["le lait (milk)", "le jus (juice)", "lâ€™eau (water)",
+                  "la soupe (soup)", "le shampooing (shampoo)", "le sirop (syrup)"]
+          }
+        }
+        </script>
+        <div class="sort"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">New examples</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+      </section>
+
+      <section class="act" data-act="flip">
+        <p class="label">Les mots fr&eacute;quents</p>
+        <h2>Sight words</h2>
+        <p class="hint">Read the word out loud, then tap it to check what it means. No stars here &mdash; just practice.</p>
+        <script type="application/json" class="bank">
+        {
+          "take": 10,
+          "cards": [
+            { "front": "il",   "back": "he" },
+            { "front": "une",  "back": "a, one" },
+            { "front": "dans", "back": "in" },
+            { "front": "du",   "back": "of the, some" },
+            { "front": "pour", "back": "for" },
+            { "front": "que",  "back": "that" },
+            { "front": "qui",  "back": "who" },
+            { "front": "au",   "back": "to the" },
+            { "front": "sont", "back": "are" },
+            { "front": "on",   "back": "we" }
+          ]
+        }
+        </script>
+        <div class="flips"></div>
+        <div class="btnrow">
+          <button class="toggle ghost" type="button" data-role="shuffle">New words</button>
+        </div>
+        <p class="hint">Mme Ashley's October list, all ten words, straight from <b>Les Mots Fr&eacute;quents &mdash; octobre</b> in Google Classroom.</p>
+      </section>
+
+      <section class="act" data-act="choice">
+        <p class="label">L'orthographe</p>
+        <h2>Which spelling is right?</h2>
+        <p class="hint">There is a spelling test on these every month. Only one of the three is a real word.</p>
+        <script type="application/json" class="bank">
+        {
+          "take": 5,
+          "questions": [
+            { "ask": "Which is the real word for â€œa, oneâ€?", "options": ["une", "unne", "uen"], "answer": 0 },
+            { "ask": "Which is the real word for â€œinâ€?", "options": ["dans", "dens", "danz"], "answer": 0 },
+            { "ask": "Which is the real word for â€œforâ€?", "options": ["pour", "poure", "por"], "answer": 0 },
+            { "ask": "Which is the real word for â€œthatâ€?", "options": ["que", "qeu", "kue"], "answer": 0 },
+            { "ask": "Which is the real word for â€œwhoâ€?", "options": ["qui", "qii", "kui"], "answer": 0 },
+            { "ask": "Which is the real word for â€œof the, someâ€?", "options": ["du", "doo", "dhu"], "answer": 0 },
+            { "ask": "Which is the real word for â€œweâ€?", "options": ["on", "onn", "aon"], "answer": 0 },
+            { "ask": "Which is the real word for â€œheâ€?", "options": ["il", "ill", "iil"], "answer": 0 },
+            { "ask": "Which is the real word for â€œareâ€?", "options": ["sont", "sonte", "sount"], "answer": 0 },
+            { "ask": "Which is the real word for â€œto theâ€?", "options": ["au", "aou", "auh"], "answer": 0 }
+          ]
+        }
+        </script>
+        <div class="choice"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">New questions</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+      </section>
+
+      <section>
+        <div class="tint d">
+          <b>WHAT MME ASHLEY ASKED FOR THIS MONTH</b>
+          <p>Practise writing letters and numbers, because the Grade 1 classes are seeing a lot of reversals &middot; Practise the October sight words, tested monthly &mdash; all ten are on this sheet &middot; Keep counting and identifying numbers to 20 &middot; Work the Ll and Mm reading sheets that came home &middot; Name a pattern, find its core, and repeat it &mdash; clapping games count.</p>
+        </div>
+      </section>
+
+    </div>
+  </details>
+
+  </div><!-- /.units -->
+
+  <div class="foot">
+    <div class="stripe"></div>
+    <p class="note">Hornak family &middot; four stripes, one for each of us</p>
+    <button class="reset no-print" type="button" id="reset-stars">Start the stars over</button>
+  </div>
+
+</div>
+
+<script>
+/* Hornak Homework â€” shared engine.
+ *
+ * The page is declarative: this file finds whatever units and activities are in
+ * the HTML and wires them up, so adding a new sheet never means touching JS.
+ *
+ * Markup contract
+ *   .wrap[data-girl]                       the page root, one girl
+ *   details.unit[data-unit][data-stars]    one sheet; data-unit must be unique and stable
+ *        [data-subject][data-when]         used to build the library row
+ *   .act[data-act="sort|choice|flip"]      one activity, with a JSON bank inside:
+ *        <script type="application/json" class="bank">â€¦</script>
+ *
+ * A star is won by getting every box in one round right, without having shown
+ * the answers. One star per set â€” shuffling is what makes another available.
+ */
+(function(){
+  'use strict';
+
+  var root = document.querySelector('.wrap[data-girl]');
+  if(!root){ return; }
+  var GIRL = root.getAttribute('data-girl');
+  var KEY = 'hornak-homework:' + GIRL;
+
+  /* ---------------- storage ---------------- */
+
+  var state = { lifetime: 0, units: {} };
+
+  function load(){
+    try{
+      var raw = window.localStorage.getItem(KEY);
+      if(!raw){ return; }
+      var parsed = JSON.parse(raw);
+      if(parsed && typeof parsed === 'object'){
+        state.lifetime = Math.max(0, parseInt(parsed.lifetime, 10) || 0);
+        state.units = (parsed.units && typeof parsed.units === 'object') ? parsed.units : {};
+      }
+    } catch(e){ /* private window, blocked storage â€” carry on unsaved */ }
+  }
+
+  function save(){
+    try{ window.localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){}
+  }
+
+  function earnedFor(id){ return Math.max(0, parseInt(state.units[id], 10) || 0); }
+
+  /* ---------------- small helpers ---------------- */
+
+  function el(tag, cls, text){
+    var n = document.createElement(tag);
+    if(cls){ n.className = cls; }
+    if(text != null){ n.textContent = text; }
+    return n;
+  }
+
+  function shuffled(list){
+    var a = list.slice();
+    for(var i = a.length - 1; i > 0; i--){
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  function bankOf(act){
+    var tag = act.querySelector('script.bank');
+    if(!tag){ return null; }
+    try{ return JSON.parse(tag.textContent); }
+    catch(e){ return null; }
+  }
+
+  function starRow(container, lit, total){
+    container.innerHTML = '';
+    for(var i = 0; i < total; i++){
+      var s = el('span', 'star', i < lit ? 'â˜…' : 'â˜†');
+      if(i < lit){ s.classList.add('on'); }
+      s.setAttribute('aria-hidden', 'true');
+      container.appendChild(s);
+    }
+    container.setAttribute('aria-label', lit + ' of ' + total + ' stars earned');
+  }
+
+  /* ---------------- units and library ---------------- */
+
+  var units = Array.prototype.slice.call(document.querySelectorAll('details.unit'));
+
+  var lifeCount = document.getElementById('lifetime-count');
+  var lifeWord = document.getElementById('lifetime-word');
+  var shelf = document.getElementById('shelf');
+
+  function unitMax(unit){ return Math.max(1, parseInt(unit.getAttribute('data-stars'), 10) || 4); }
+
+  function paintLifetime(){
+    if(lifeCount){ lifeCount.textContent = String(state.lifetime); }
+    if(lifeWord){ lifeWord.textContent = state.lifetime === 1 ? 'star earned' : 'stars earned'; }
+  }
+
+  function paintUnit(unit, justWon){
+    var id = unit.getAttribute('data-unit');
+    var box = unit.querySelector('.unit-stars');
+    var max = unitMax(unit);
+    var lit = Math.min(earnedFor(id), max);
+    if(box){
+      starRow(box, lit, max);
+      if(justWon && lit > 0){
+        var won = box.children[lit - 1];
+        if(won){
+          won.classList.remove('pop');
+          void won.offsetWidth;
+          won.classList.add('pop');
+        }
+      }
+    }
+    var row = shelf && shelf.querySelector('.row[data-for="' + id + '"]');
+    if(row){
+      var got = row.querySelector('.got');
+      if(got){ got.textContent = 'â˜… ' + lit + '/' + max; }
+      row.classList.toggle('done', lit >= max);
+    }
+  }
+
+  function buildLibrary(){
+    if(!shelf){ return; }
+    shelf.innerHTML = '';
+
+    var tally = document.getElementById('shelf-count');
+    if(tally){ tally.textContent = units.length === 1 ? '1 sheet' : units.length + ' sheets'; }
+
+    units.forEach(function(unit){
+      var id = unit.getAttribute('data-unit');
+      var row = el('button', 'row');
+      row.type = 'button';
+      row.setAttribute('data-for', id);
+
+      var when = el('span', 'when', unit.getAttribute('data-when') || '');
+      var what = el('span', 'what');
+      var title = el('b', null, unit.getAttribute('data-subject') || unit.querySelector('.unit-title').textContent);
+      var sub = el('em', null, unit.getAttribute('data-topic') || '');
+      what.appendChild(title);
+      if(sub.textContent){ what.appendChild(sub); }
+      var got = el('span', 'got', '');
+
+      row.appendChild(when);
+      row.appendChild(what);
+      row.appendChild(got);
+
+      row.addEventListener('click', function(){
+        units.forEach(function(u){ u.open = (u === unit); });
+        markCurrent();
+        unit.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      shelf.appendChild(row);
+    });
+  }
+
+  function markCurrent(){
+    if(!shelf){ return; }
+    units.forEach(function(unit){
+      var row = shelf.querySelector('.row[data-for="' + unit.getAttribute('data-unit') + '"]');
+      if(row){ row.setAttribute('aria-current', unit.open ? 'true' : 'false'); }
+    });
+  }
+
+  function award(unit){
+    var id = unit.getAttribute('data-unit');
+    var max = unitMax(unit);
+    if(earnedFor(id) >= max){ return false; }
+    state.units[id] = earnedFor(id) + 1;
+    state.lifetime = state.lifetime + 1;
+    save();
+    paintUnit(unit, true);
+    paintLifetime();
+    return true;
+  }
+
+  /* ---------------- activity: sort ---------------- */
+
+  function draw(bank){
+    var picked = [];
+    Object.keys(bank.take).forEach(function(answer){
+      shuffled(bank.items[answer] || []).slice(0, bank.take[answer]).forEach(function(name){
+        picked.push({ name: name, answer: answer });
+      });
+    });
+    return shuffled(picked);
+  }
+
+  function renderSort(grid, list){
+    grid.innerHTML = '';
+    list.forEach(function(it){
+      var btn = el('button', 'item');
+      btn.type = 'button';
+      btn.setAttribute('data-answer', it.answer);
+      var slot = el('span', 'slot', '');
+      slot.setAttribute('data-answer', it.answer);
+      btn.appendChild(slot);
+      btn.appendChild(el('span', 'name', it.name));
+      grid.appendChild(btn);
+    });
+  }
+
+  function wireSort(act, unit){
+    var bank = bankOf(act);
+    var grid = act.querySelector('.sort');
+    if(!bank || !grid){ return; }
+
+    var order = bank.order || ['', 'A', 'B'];
+    var score = act.querySelector('.score');
+    var checkBtn = act.querySelector('[data-role="check"]');
+    var swapBtn = act.querySelector('[data-role="shuffle"]');
+    var peekBtn = act.querySelector('[data-role="peek"]');
+    var awarded = false, peeked = false;
+
+    function items(){ return Array.prototype.slice.call(grid.querySelectorAll('.item')); }
+
+    function clearMarks(){
+      items().forEach(function(b){ b.classList.remove('right', 'wrong'); });
+      if(score){ score.hidden = true; }
+      awarded = false;
+    }
+
+    function fresh(){
+      renderSort(grid, draw(bank));
+      grid.classList.remove('reveal');
+      if(peekBtn){ peekBtn.textContent = 'Show the answers'; }
+      if(score){ score.hidden = true; }
+      awarded = false;
+      peeked = false;
+    }
+
+    grid.addEventListener('click', function(e){
+      var btn = e.target.closest('.item');
+      if(!btn){ return; }
+      var cur = btn.getAttribute('data-pick') || '';
+      var next = order[(order.indexOf(cur) + 1) % order.length];
+      if(next){ btn.setAttribute('data-pick', next); }
+      else { btn.removeAttribute('data-pick'); }
+      btn.querySelector('.slot').textContent = next;
+      clearMarks();
+    });
+
+    if(swapBtn){ swapBtn.addEventListener('click', fresh); }
+
+    if(peekBtn){
+      peekBtn.addEventListener('click', function(){
+        var on = grid.classList.toggle('reveal');
+        if(on){ peeked = true; }
+        peekBtn.textContent = on ? 'Hide the answers' : 'Show the answers';
+      });
+    }
+
+    if(checkBtn && score){
+      checkBtn.addEventListener('click', function(){
+        grid.classList.remove('reveal');
+        if(peekBtn){ peekBtn.textContent = 'Show the answers'; }
+
+        var all = items(), total = all.length, done = 0, right = 0;
+        all.forEach(function(btn){
+          btn.classList.remove('right', 'wrong');
+          var pick = btn.getAttribute('data-pick') || '';
+          if(!pick){ return; }
+          done++;
+          if(pick === btn.getAttribute('data-answer')){ right++; btn.classList.add('right'); }
+          else { btn.classList.add('wrong'); }
+        });
+
+        score.textContent = verdict(total, done, right, peeked, awarded, unit, function(){ awarded = true; });
+        score.hidden = false;
+      });
+    }
+
+    fresh();
+  }
+
+  /* ---------------- activity: choice ---------------- */
+
+  function renderChoice(box, questions){
+    box.innerHTML = '';
+    questions.forEach(function(q, qi){
+      var card = el('div', 'qa');
+      card.setAttribute('data-answer', String(q.answerIndex));
+
+      var ask = el('p', 'ask');
+      if(q.html){ ask.innerHTML = q.ask; } else { ask.textContent = q.ask; }
+      card.appendChild(ask);
+
+      /* "dots": N draws N counters to count, so the bank stays readable */
+      if(q.dots > 0){
+        var pile = el('div', 'count-dots');
+        for(var d = 0; d < q.dots; d++){ pile.appendChild(el('span', 'dot')); }
+        pile.setAttribute('aria-label', q.dots + ' dots');
+        card.appendChild(pile);
+      }
+
+      var opts = el('div', 'opts');
+      q.options.forEach(function(text, oi){
+        var b = el('button', 'opt');
+        b.type = 'button';
+        b.setAttribute('data-index', String(oi));
+        b.setAttribute('aria-pressed', 'false');
+        if(q.html){ b.innerHTML = text; } else { b.textContent = text; }
+        if(oi === q.answerIndex){ b.classList.add('correct'); }
+        opts.appendChild(b);
+      });
+      card.appendChild(opts);
+
+      if(q.why){ card.appendChild(el('p', 'why', q.why)); }
+      box.appendChild(card);
+      void qi;
+    });
+  }
+
+  function drawChoice(bank){
+    var qs = shuffled(bank.questions || []);
+    if(bank.take){ qs = qs.slice(0, bank.take); }
+    return qs.map(function(q){
+      var paired = q.options.map(function(text, i){ return { text: text, correct: i === q.answer }; });
+      if(q.keepOrder !== true){ paired = shuffled(paired); }
+      var answerIndex = 0;
+      paired.forEach(function(p, i){ if(p.correct){ answerIndex = i; } });
+      return {
+        ask: q.ask,
+        html: q.html === true,
+        dots: parseInt(q.dots, 10) || 0,
+        why: q.why || '',
+        options: paired.map(function(p){ return p.text; }),
+        answerIndex: answerIndex
+      };
+    });
+  }
+
+  function wireChoice(act, unit){
+    var bank = bankOf(act);
+    var box = act.querySelector('.choice');
+    if(!bank || !box){ return; }
+
+    var score = act.querySelector('.score');
+    var checkBtn = act.querySelector('[data-role="check"]');
+    var swapBtn = act.querySelector('[data-role="shuffle"]');
+    var peekBtn = act.querySelector('[data-role="peek"]');
+    var awarded = false, peeked = false;
+
+    function cards(){ return Array.prototype.slice.call(box.querySelectorAll('.qa')); }
+
+    function clearMarks(){
+      cards().forEach(function(c){ c.classList.remove('right', 'wrong'); });
+      if(score){ score.hidden = true; }
+      awarded = false;
+    }
+
+    function fresh(){
+      renderChoice(box, drawChoice(bank));
+      box.classList.remove('reveal');
+      if(peekBtn){ peekBtn.textContent = 'Show the answers'; }
+      if(score){ score.hidden = true; }
+      awarded = false;
+      peeked = false;
+    }
+
+    box.addEventListener('click', function(e){
+      var opt = e.target.closest('.opt');
+      if(!opt){ return; }
+      var card = opt.closest('.qa');
+      card.querySelectorAll('.opt').forEach(function(o){
+        o.setAttribute('aria-pressed', String(o === opt));
+      });
+      card.setAttribute('data-pick', opt.getAttribute('data-index'));
+      clearMarks();
+    });
+
+    if(swapBtn){ swapBtn.addEventListener('click', fresh); }
+
+    if(peekBtn){
+      peekBtn.addEventListener('click', function(){
+        var on = box.classList.toggle('reveal');
+        if(on){ peeked = true; }
+        peekBtn.textContent = on ? 'Hide the answers' : 'Show the answers';
+      });
+    }
+
+    if(checkBtn && score){
+      checkBtn.addEventListener('click', function(){
+        box.classList.remove('reveal');
+        if(peekBtn){ peekBtn.textContent = 'Show the answers'; }
+
+        var all = cards(), total = all.length, done = 0, right = 0;
+        all.forEach(function(card){
+          card.classList.remove('right', 'wrong');
+          var pick = card.getAttribute('data-pick');
+          if(pick === null){ return; }
+          done++;
+          if(pick === card.getAttribute('data-answer')){ right++; card.classList.add('right'); }
+          else { card.classList.add('wrong'); }
+        });
+
+        score.textContent = verdict(total, done, right, peeked, awarded, unit, function(){ awarded = true; });
+        score.hidden = false;
+      });
+    }
+
+    fresh();
+  }
+
+  /* ---------------- activity: flip ---------------- */
+
+  function wireFlip(act){
+    var bank = bankOf(act);
+    var box = act.querySelector('.flips');
+    if(!bank || !box){ return; }
+
+    var swapBtn = act.querySelector('[data-role="shuffle"]');
+
+    function fresh(){
+      var cards = shuffled(bank.cards || []);
+      if(bank.take){ cards = cards.slice(0, bank.take); }
+      box.innerHTML = '';
+      cards.forEach(function(c){
+        var b = el('button', 'flip', c.front);
+        b.type = 'button';
+        b.setAttribute('data-front', c.front);
+        b.setAttribute('data-back', c.back);
+        box.appendChild(b);
+      });
+    }
+
+    box.addEventListener('click', function(e){
+      var b = e.target.closest('.flip');
+      if(!b){ return; }
+      var flipped = b.classList.toggle('flipped');
+      b.textContent = flipped ? b.getAttribute('data-back') : b.getAttribute('data-front');
+    });
+
+    if(swapBtn){ swapBtn.addEventListener('click', fresh); }
+    fresh();
+  }
+
+  /* ---------------- shared verdict + star award ---------------- */
+
+  function verdict(total, done, right, peeked, awarded, unit, markAwarded){
+    if(done === 0){ return 'Answer a few first, then tap Check my answers.'; }
+    if(right === total){
+      if(peeked){
+        return 'All ' + total + ' right â€” but the answers were showing. Tap New examples and win a star for real.';
+      }
+      if(awarded){ return 'Still perfect. Tap New examples for a fresh set.'; }
+      markAwarded();
+      if(award(unit)){ return 'Perfect â€” all ' + total + ' right. You earned a star!'; }
+      return 'Perfect â€” all ' + total + ' right. Every star on this sheet is lit.';
+    }
+    var blank = total - done;
+    if(blank > 0){
+      return right + ' right out of the ' + done + ' you answered. ' +
+             blank + (blank === 1 ? ' is' : ' are') + ' still empty.';
+    }
+    return right + ' out of ' + total + '. The pink ones just need another try.';
+  }
+
+  /* ---------------- boot ---------------- */
+
+  load();
+  buildLibrary();
+  paintLifetime();
+
+  units.forEach(function(unit){
+    paintUnit(unit, false);
+    unit.addEventListener('toggle', markCurrent);
+    Array.prototype.slice.call(unit.querySelectorAll('.act')).forEach(function(act){
+      var kind = act.getAttribute('data-act');
+      if(kind === 'sort'){ wireSort(act, unit); }
+      else if(kind === 'choice'){ wireChoice(act, unit); }
+      else if(kind === 'flip'){ wireFlip(act); }
+    });
+  });
+
+  markCurrent();
+
+  var resetBtn = document.getElementById('reset-stars');
+  if(resetBtn){
+    var armed = false, timer = null;
+    var label = resetBtn.textContent;
+    resetBtn.addEventListener('click', function(){
+      if(!armed){
+        armed = true;
+        resetBtn.textContent = 'Tap again to clear every star';
+        timer = window.setTimeout(function(){
+          armed = false;
+          resetBtn.textContent = label;
+        }, 4000);
+        return;
+      }
+      window.clearTimeout(timer);
+      armed = false;
+      resetBtn.textContent = label;
+      state.lifetime = 0;
+      state.units = {};
+      save();
+      units.forEach(function(u){ paintUnit(u, false); });
+      paintLifetime();
+    });
+  }
+})();
+
+</script>
+
