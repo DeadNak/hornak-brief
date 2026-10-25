@@ -29,6 +29,11 @@
 
 *{box-sizing:border-box}
 
+/* Data blocks are <script type="application/json">. A stylesheet rule that happens
+   to match one will render its contents as text on the page — which is exactly what
+   `.bank` did once the piggy bank borrowed that class name. Never let it happen again. */
+script{display:none!important}
+
 body{
   background:var(--ground);
   color:var(--ink);
@@ -106,34 +111,34 @@ h1{
   display:flex;flex-direction:column;gap:11px;
 }
 .rewards > .label{color:var(--lead)}
-.rewards .bank{border:0;padding:0;background:transparent;max-width:none}
+.rewards .piggy{border:0;padding:0;background:transparent;max-width:none}
 
 /* ---------------- piggy bank ---------------- */
 
-.bank{
+.piggy{
   width:100%;max-width:460px;
   display:flex;align-items:center;gap:15px;
   background:var(--paper);border:2px solid var(--ground);border-radius:12px;
   padding:13px 16px;text-align:left;
 }
-.rail .bank .pig{width:46px;height:40px}
-.rail .bank{gap:12px}
-.bank .pig{flex:0 0 auto;width:58px;height:50px;color:var(--lead)}
-.bank .figures{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:5px}
-.bank .owed{
+.rail .piggy .pig{width:46px;height:40px}
+.rail .piggy{gap:12px}
+.piggy .pig{flex:0 0 auto;width:58px;height:50px;color:var(--lead)}
+.piggy .figures{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:5px}
+.piggy .owed{
   font-family:var(--display);font-size:32px;line-height:1;color:var(--lead);margin:0;
 }
-.bank .owed small{
+.piggy .owed small{
   display:block;margin-top:4px;
   font-family:var(--body);font-size:10.5px;letter-spacing:.15em;
   text-transform:uppercase;font-weight:600;color:var(--soft);
 }
-.bank .earned{font-size:13.5px;color:var(--soft);margin:0}
-.bank .earned b{color:var(--ink);font-weight:500}
+.piggy .earned{font-size:13.5px;color:var(--soft);margin:0}
+.piggy .earned b{color:var(--ink);font-weight:500}
 .meter{height:9px;border-radius:999px;background:var(--ground);overflow:hidden}
 .meter span{display:block;height:100%;width:0;background:var(--lead);border-radius:999px;transition:width .45s ease}
-.bank .togo{font-size:13px;color:var(--soft);margin:0}
-.bank .togo b{color:var(--lead);font-weight:600}
+.piggy .togo{font-size:13px;color:var(--soft);margin:0}
+.piggy .togo b{color:var(--lead);font-weight:600}
 
 /* ---------------- coming up ----------------
    Alpenglow is the family brand's attention colour, so a quiz lives here. */
@@ -473,6 +478,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 
+
 </style>
 <style>:root{--lead:var(--pink)}</style>
 
@@ -555,7 +561,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 
     <div class="rewards">
       <p class="label">Her rewards</p>
-      <div class="bank">
+      <div class="piggy">
         <svg class="pig" viewBox="0 0 64 54" role="img" aria-label="Piggy bank">
           <path d="M14 15l-3-10 12 5z" fill="currentColor"/>
           <rect x="15" y="39" width="7" height="11" rx="2.6" fill="currentColor"/>
@@ -599,13 +605,13 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
       <section>
         <p class="label">Bonjour Ellie</p>
         <h2>Deux langues, une page</h2>
-        <p class="lede">Everything here comes from work you have already done in class &mdash; the <b>au / eau</b> lesson, the short vowel story, and the Canada video. Read out loud wherever you can. Your ears catch things your eyes miss.</p>
+        <p class="lede">All of this is work you have done in class. Read it out loud. Your ears catch things your eyes miss.</p>
       </section>
 
       <section>
         <p class="label">Le&ccedil;on 6</p>
         <h2>Le son <em>au</em> / <em>eau</em></h2>
-        <p class="lede">Both spellings make the same sound. That is exactly why they are tricky &mdash; you cannot hear which one to write, you have to know the word.</p>
+        <p class="lede">Both spellings sound the same. You cannot hear which one to use, so you have to know the word.</p>
         <div class="chips">
           <span class="chip">nouveau</span><span class="chip">un tableau</span><span class="chip">un ch&acirc;teau</span>
           <span class="chip">une chauve-souris</span><span class="chip">aussi</span><span class="chip">chaud</span>
@@ -617,7 +623,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
       <section class="act" data-act="sort">
         <p class="label">&Agrave; toi</p>
         <h2><em>au</em> ou <em>eau</em>?</h2>
-        <p class="hint">Say the word first, then decide how it is spelled. Tap a box until it shows <b>A</b> for <b>au</b> or <b>E</b> for <b>eau</b>.</p>
+        <p class="hint">Say the word. Then tap the box: <b>A</b> for <b>au</b>, <b>E</b> for <b>eau</b>.</p>
         <script type="application/json" class="bank">
         {
           "order": ["", "A", "E"],
@@ -645,15 +651,15 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
         <h2>Odile et Charlie</h2>
         <div class="tint b">
           <b>GET YOUR LE&Ccedil;ON 6 SHEET</b>
-          <p>Read the two stories on it out loud &mdash; Odile l'autruche at the restaurant, and Charlie le chameau in his ch&acirc;teau. Then go back through and find every <b>au</b> and every <b>eau</b>. There are more than twenty.</p>
+          <p>Read both stories out loud. Then find every <b>au</b> and every <b>eau</b>. There are more than twenty.</p>
         </div>
-        <p class="rule">Watch for the sneaky one: <b>beaucoup</b> is spelled with <em>eau</em>, even though it sounds exactly like the <em>au</em> words around it.</p>
+        <p class="rule">Watch out for <b>beaucoup</b>. It uses <em>eau</em>, even though it sounds like the <em>au</em> words.</p>
       </section>
 
       <section class="act" data-act="sort">
         <p class="label">English &middot; UFLI lesson 41c</p>
         <h2>Short vowels, tricky clusters</h2>
-        <p class="hint">These all have two or three consonants bunched together. Say each one, then tap a box for the vowel sound you hear: <b>A</b>, <b>E</b>, <b>I</b> or <b>O</b>.</p>
+        <p class="hint">Say each word. Tap the box for the vowel you hear: <b>A</b>, <b>E</b>, <b>I</b> or <b>O</b>.</p>
         <script type="application/json" class="bank">
         {
           "order": ["", "A", "E", "I", "O"],
@@ -675,7 +681,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
         <p class="score" aria-live="polite" hidden></p>
         <div class="tint c">
           <b>THEN READ &ldquo;A CRAFT FROM US&rdquo;</b>
-          <p>It is the short vowel story in your folder, the one about Brent and Clint making Mom a gift. Read it out loud, then tell someone what happened without looking.</p>
+          <p>The story about Brent and Clint is in your folder. Read it out loud. Then tell someone what happened without looking.</p>
         </div>
       </section>
 
@@ -712,7 +718,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
         <h2>Now write some of it down</h2>
         <div class="act" data-act="write" data-write="oct25-francais" data-sentences="3">
           <h3>En fran&ccedil;ais</h3>
-          <p class="hint">Write <b>three sentences</b> about where Odile goes next. Use at least four words from the <em>au / eau</em> list.</p>
+          <p class="hint">Write <b>three sentences</b> about where Odile goes next. Use four words from the <em>au / eau</em> list.</p>
           <textarea class="scribe" id="write-oct25-francais" rows="6"
             placeholder="Odile prend le bateau&hellip;"></textarea>
           <p class="writebar" aria-live="polite"></p>
@@ -720,14 +726,14 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 
         <div class="act" data-act="write" data-write="oct25-english" data-sentences="3">
           <h3>In English</h3>
-          <p class="hint">Write <b>three sentences</b> about a gift you would make for someone. Use at least four cluster words &mdash; <em>craft, stand, best, gift, spots, grand</em>.</p>
+          <p class="hint">Write <b>three sentences</b> about a gift you would make. Use four of these words: <em>craft, stand, best, gift, spots, grand</em>.</p>
           <textarea class="scribe" id="write-oct25-english" rows="6"
             placeholder="I would craft&hellip;"></textarea>
           <p class="writebar" aria-live="polite"></p>
         </div>
         <div class="tint d">
           <b>WHAT MME SEYCHELLE IS LOOKING FOR</b>
-          <p>Capital letters, punctuation and proper spacing &middot; complete sentences &middot; descriptive details that add something &middot; a different sentence starter each time, not three sentences all beginning the same way.</p>
+          <p>Capital letters &middot; punctuation &middot; spaces between words &middot; describing words &middot; a different start to every sentence.</p>
         </div>
       </section>
 
@@ -752,7 +758,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
       <section>
         <p class="label">Part one</p>
         <h2>The three states of matter</h2>
-        <p class="lede">Everything in the whole world is made of tiny particles. What makes a solid, a liquid or a gas different is how those particles are <em>arranged</em> and how they <em>move</em>.</p>
+        <p class="lede">Everything is made of tiny particles. Solids, liquids and gases are different because of how the particles sit and how they move.</p>
 
         <div class="cards three">
 
@@ -837,13 +843,13 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
             <p>Yes &rarr; it is a <b>liquid</b>. No, it spreads everywhere &rarr; it is a <b>gas</b>.</p>
           </div>
         </div>
-        <p class="rule">Pour a liquid into a different cup and you still have the same amount. A gas will not do that &mdash; it fills every last corner it can reach.</p>
+        <p class="rule">Pour a liquid into another cup and you still have the same amount. A gas does not do that. It spreads out to fill every corner.</p>
       </section>
 
       <section>
         <p class="label">Practise by moving</p>
         <h2>Be the particles</h2>
-        <p class="lede">You already did this in class. Do it again in the kitchen: someone calls out a state, you become the particles. Then swap, and you name the state they are acting out.</p>
+        <p class="lede">Play this in the kitchen. Someone calls out a state and you become the particles. Then swap.</p>
         <div class="cards three">
           <div class="tint c"><b>SOLID</b><p>Stand tall, feet planted, elbows touching. Wiggle all you like, but your feet stay put.</p></div>
           <div class="tint c"><b>LIQUID</b><p>Stay close, shoulders brushing, and slide slowly around the room together.</p></div>
@@ -896,7 +902,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
       <section>
         <p class="label">Part two &middot; from class, October 16</p>
         <h2>Clay, leather and metal</h2>
-        <p class="lede">These are <b>natural materials</b>. People take them from the earth, from plants or from animals, and change them into things we use every day.</p>
+        <p class="lede">These are <b>natural materials</b>. They come from the earth, from plants or from animals.</p>
         <div class="cards three">
           <div class="tint a"><b>CLAY &mdash; dug from the ground</b><p>Bricks &middot; flower pots &middot; bowls and mugs &middot; roof tiles &middot; bathroom tiles</p></div>
           <div class="tint b"><b>LEATHER &mdash; from an animal hide</b><p>Shoes &middot; belts &middot; bags and purses &middot; a baseball glove &middot; a couch</p></div>
@@ -927,7 +933,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
             </div>
           </div>
         </div>
-        <p class="rule">Here is the clever bit: <b>clay</b> is natural, but a <b>brick</b> is manufactured &mdash; people dug up the clay, shaped it and baked it hard. Same with a tree (natural) and paper (manufactured).</p>
+        <p class="rule">Here is the clever bit. <b>Clay</b> is natural, but a <b>brick</b> is manufactured. People dig the clay, shape it and bake it hard.</p>
       </section>
 
       <section class="act" data-act="sort">
@@ -975,7 +981,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
       <section>
         <div class="tint d">
           <b>NOT ON THIS QUIZ &mdash; SAVE IT FOR LATER</b>
-          <p>Melting, freezing, evaporation, condensation and the water cycle all come <em>after</em> Monday. That is the next part of the unit.</p>
+          <p>Melting, freezing and the water cycle come after Monday. Save your brain for solids, liquids and gases.</p>
         </div>
       </section>
 
@@ -1749,6 +1755,8 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 })();
 
 </script>
+
+
 
 
 

@@ -29,6 +29,11 @@
 
 *{box-sizing:border-box}
 
+/* Data blocks are <script type="application/json">. A stylesheet rule that happens
+   to match one will render its contents as text on the page — which is exactly what
+   `.bank` did once the piggy bank borrowed that class name. Never let it happen again. */
+script{display:none!important}
+
 body{
   background:var(--ground);
   color:var(--ink);
@@ -106,34 +111,34 @@ h1{
   display:flex;flex-direction:column;gap:11px;
 }
 .rewards > .label{color:var(--lead)}
-.rewards .bank{border:0;padding:0;background:transparent;max-width:none}
+.rewards .piggy{border:0;padding:0;background:transparent;max-width:none}
 
 /* ---------------- piggy bank ---------------- */
 
-.bank{
+.piggy{
   width:100%;max-width:460px;
   display:flex;align-items:center;gap:15px;
   background:var(--paper);border:2px solid var(--ground);border-radius:12px;
   padding:13px 16px;text-align:left;
 }
-.rail .bank .pig{width:46px;height:40px}
-.rail .bank{gap:12px}
-.bank .pig{flex:0 0 auto;width:58px;height:50px;color:var(--lead)}
-.bank .figures{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:5px}
-.bank .owed{
+.rail .piggy .pig{width:46px;height:40px}
+.rail .piggy{gap:12px}
+.piggy .pig{flex:0 0 auto;width:58px;height:50px;color:var(--lead)}
+.piggy .figures{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:5px}
+.piggy .owed{
   font-family:var(--display);font-size:32px;line-height:1;color:var(--lead);margin:0;
 }
-.bank .owed small{
+.piggy .owed small{
   display:block;margin-top:4px;
   font-family:var(--body);font-size:10.5px;letter-spacing:.15em;
   text-transform:uppercase;font-weight:600;color:var(--soft);
 }
-.bank .earned{font-size:13.5px;color:var(--soft);margin:0}
-.bank .earned b{color:var(--ink);font-weight:500}
+.piggy .earned{font-size:13.5px;color:var(--soft);margin:0}
+.piggy .earned b{color:var(--ink);font-weight:500}
 .meter{height:9px;border-radius:999px;background:var(--ground);overflow:hidden}
 .meter span{display:block;height:100%;width:0;background:var(--lead);border-radius:999px;transition:width .45s ease}
-.bank .togo{font-size:13px;color:var(--soft);margin:0}
-.bank .togo b{color:var(--lead);font-weight:600}
+.piggy .togo{font-size:13px;color:var(--soft);margin:0}
+.piggy .togo b{color:var(--lead);font-weight:600}
 
 /* ---------------- coming up ----------------
    Alpenglow is the family brand's attention colour, so a quiz lives here. */
@@ -473,6 +478,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 
+
 </style>
 <style>:root{--lead:var(--purple)}</style>
 
@@ -554,7 +560,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 
     <div class="rewards">
       <p class="label">Her rewards</p>
-      <div class="bank">
+      <div class="piggy">
         <svg class="pig" viewBox="0 0 64 54" role="img" aria-label="Piggy bank">
           <path d="M14 15l-3-10 12 5z" fill="currentColor"/>
           <rect x="15" y="39" width="7" height="11" rx="2.6" fill="currentColor"/>
@@ -598,13 +604,13 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
       <section>
         <p class="label">Bonjour Addie</p>
         <h2>Four things to practise</h2>
-        <p class="lede">Mme Ashley asked us to work on these at home this month. Do one, do all four &mdash; every round you get completely right lights up a star.</p>
+        <p class="lede">Mme Ashley asked us to practise these at home. Get a whole round right and you win a star.</p>
       </section>
 
       <section class="act" data-act="choice">
         <p class="label">Les sons</p>
         <h2>Ll, Mm and Uu</h2>
-        <p class="hint">Tap the word that matches. These are the sounds your class has worked through.</p>
+        <p class="hint">Tap the word that matches.</p>
         <script type="application/json" class="bank">
         {
           "take": 4,
@@ -632,7 +638,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
       <section class="act" data-act="choice">
         <p class="label">Les chiffres</p>
         <h2>Which one is the right way round?</h2>
-        <p class="hint">Mme Ashley noticed numbers getting written backwards. Find the one facing the right way.</p>
+        <p class="hint">Find the one facing the right way.</p>
         <script type="application/json" class="bank">
         {
           "take": 4,
@@ -666,7 +672,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
       <section class="act" data-act="choice">
         <p class="label">Compter jusqu'&agrave; 20</p>
         <h2>How many dots?</h2>
-        <p class="hint">Count them out loud. Touch each one as you go.</p>
+        <p class="hint">Count out loud. Touch each dot as you go.</p>
         <script type="application/json" class="bank">
         {
           "take": 4,
@@ -693,7 +699,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
       <section class="act" data-act="choice">
         <p class="label">Les r&eacute;gularit&eacute;s</p>
         <h2>Patterns</h2>
-        <p class="hint">Name the pattern out loud first &mdash; red, blue, red, blue &mdash; then tap what comes next.</p>
+        <p class="hint">Say the pattern out loud. Then tap what comes next.</p>
         <script type="application/json" class="bank">
         {
           "take": 4,
@@ -731,7 +737,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
       <section class="act" data-act="sort">
         <p class="label">La mati&egrave;re</p>
         <h2>Solide ou liquide?</h2>
-        <p class="hint">Your class just started matter. Tap a box until it shows <b>S</b> for solide or <b>L</b> for liquide.</p>
+        <p class="hint">Tap the box: <b>S</b> for solide, <b>L</b> for liquide.</p>
         <script type="application/json" class="bank">
         {
           "order": ["", "S", "L"],
@@ -756,7 +762,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
       <section class="act" data-act="flip">
         <p class="label">Les mots fr&eacute;quents</p>
         <h2>Sight words</h2>
-        <p class="hint">Read the word out loud, then tap it to check what it means. No stars here &mdash; just practice.</p>
+        <p class="hint">Read the word out loud. Tap it to see what it means.</p>
         <script type="application/json" class="bank">
         {
           "take": 10,
@@ -778,13 +784,13 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
         <div class="btnrow">
           <button class="toggle ghost" type="button" data-role="shuffle">New words</button>
         </div>
-        <p class="hint">Mme Ashley's October list, all ten words, straight from <b>Les Mots Fr&eacute;quents &mdash; octobre</b> in Google Classroom.</p>
+        <p class="hint">All ten words from Mme Ashley's October list.</p>
       </section>
 
       <section class="act" data-act="choice">
         <p class="label">L'orthographe</p>
         <h2>Which spelling is right?</h2>
-        <p class="hint">There is a spelling test on these every month. Only one of the three is a real word.</p>
+        <p class="hint">Only one of the three is a real word.</p>
         <script type="application/json" class="bank">
         {
           "take": 5,
@@ -814,7 +820,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
       <section class="act" data-act="write" data-write="oct25-phrases" data-sentences="2">
         <p class="label">&Eacute;crire</p>
         <h2>Write two sentences</h2>
-        <p class="hint">Use two of your sight words. Remember a capital letter at the start, a space between every word, and a period at the end.</p>
+        <p class="hint">Use two sight words. Start with a capital letter. Put a space between words. End with a period.</p>
         <textarea class="scribe" id="write-oct25-phrases" rows="5"
           placeholder="Il y a une pomme dans&hellip;"></textarea>
         <p class="writebar" aria-live="polite"></p>
@@ -823,7 +829,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
       <section>
         <div class="tint d">
           <b>WHAT MME ASHLEY ASKED FOR THIS MONTH</b>
-          <p>Practise writing letters and numbers, because the Grade 1 classes are seeing a lot of reversals &middot; Practise the October sight words, tested monthly &mdash; all ten are on this sheet &middot; Keep counting and identifying numbers to 20 &middot; Work the Ll and Mm reading sheets that came home &middot; Name a pattern, find its core, and repeat it &mdash; clapping games count.</p>
+          <p>Letter and number reversals &middot; the October sight words, tested monthly &middot; counting to 20 &middot; the Ll and Mm reading sheets sent home &middot; naming a pattern and finding its core, clapping games included.</p>
         </div>
       </section>
 
@@ -1597,6 +1603,8 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 })();
 
 </script>
+
+
 
 
 
