@@ -613,7 +613,8 @@ table.sheets tr.full td .got{color:var(--green);font-weight:500}
     tiles.appendChild(tile('$' + owed, 'owed right now', 'owed'));
     tiles.appendChild(tile('$' + earned, 'earned all year'));
     tiles.appendChild(tile(String(state.lifetime), 'stars'));
-    tiles.appendChild(tile(String(writingCount(girl)), 'pieces written'));
+    var written = writingCount(girl);
+    tiles.appendChild(tile(String(written), written === 1 ? 'piece written' : 'pieces written'));
     card.appendChild(tiles);
 
     if(!sheets.length){
