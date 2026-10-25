@@ -87,6 +87,31 @@ h1{
 .lifetime .count{font-family:var(--display);font-size:30px;line-height:1;color:var(--lead)}
 .lifetime .cap{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--soft)}
 
+/* ---------------- piggy bank ---------------- */
+
+.bank{
+  width:100%;max-width:460px;
+  display:flex;align-items:center;gap:15px;
+  background:var(--paper);border:2px solid var(--ground);border-radius:12px;
+  padding:13px 16px;text-align:left;
+}
+.bank .pig{flex:0 0 auto;width:58px;height:50px;color:var(--lead)}
+.bank .figures{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:5px}
+.bank .owed{
+  font-family:var(--display);font-size:32px;line-height:1;color:var(--lead);margin:0;
+}
+.bank .owed small{
+  display:block;margin-top:4px;
+  font-family:var(--body);font-size:10.5px;letter-spacing:.15em;
+  text-transform:uppercase;font-weight:600;color:var(--soft);
+}
+.bank .earned{font-size:13.5px;color:var(--soft);margin:0}
+.bank .earned b{color:var(--ink);font-weight:500}
+.meter{height:9px;border-radius:999px;background:var(--ground);overflow:hidden}
+.meter span{display:block;height:100%;width:0;background:var(--lead);border-radius:999px;transition:width .45s ease}
+.bank .togo{font-size:13px;color:var(--soft);margin:0}
+.bank .togo b{color:var(--lead);font-weight:600}
+
 /* ---------------- coming up ----------------
    Alpenglow is the family brand's attention colour, so a quiz lives here. */
 
@@ -448,10 +473,26 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
       { "date": "2026-10-26", "what": "Science quiz: solids, liquids and gases", "unit": "matter-2026-10-26" }
     ]
     </script>
-    <p class="lifetime">
-      <span class="count" id="lifetime-count">0</span>
-      <span class="cap" id="lifetime-word">stars earned</span>
-    </p>
+    <div class="bank">
+      <svg class="pig" viewBox="0 0 64 54" role="img" aria-label="Piggy bank">
+        <path d="M14 15l-3-10 12 5z" fill="currentColor"/>
+        <rect x="15" y="39" width="7" height="11" rx="2.6" fill="currentColor"/>
+        <rect x="34" y="39" width="7" height="11" rx="2.6" fill="currentColor"/>
+        <ellipse cx="29" cy="28" rx="23" ry="17" fill="currentColor"/>
+        <ellipse cx="51" cy="30" rx="10" ry="8" fill="currentColor"/>
+        <circle cx="49" cy="28.5" r="1.7" fill="#F7F5F1"/>
+        <circle cx="54.5" cy="31.5" r="1.7" fill="#F7F5F1"/>
+        <circle cx="34" cy="23" r="2.3" fill="#F7F5F1"/>
+        <rect x="21" y="14" width="17" height="3.6" rx="1.8" fill="#F7F5F1"/>
+        <path d="M7 25c-4 1-4 5-1 7" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="figures">
+        <p class="owed"><span id="bank-owed">$0</span><small>in the piggy bank</small></p>
+        <p class="earned"><b id="bank-stars">0 stars</b> &middot; <b id="bank-earned">$0</b> earned this year</p>
+        <div class="meter"><span id="bank-meter"></span></div>
+        <p class="togo" id="bank-togo"></p>
+      </div>
+    </div>
 
     <div class="joke" id="joke">
       <p class="setup"></p>
@@ -915,6 +956,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
   <div class="foot">
     <div class="stripe"></div>
     <p class="note">Hornak family &middot; four stripes, one for each of us</p>
+    <button class="reset no-print" type="button" id="record-payment">Record a payment</button>
     <button class="reset no-print" type="button" id="reset-stars">Start the stars over</button>
   </div>
 
@@ -951,7 +993,13 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 
   /* ---------------- storage ---------------- */
 
-  var state = { lifetime: 0, units: {} };
+  /* Stars convert to pocket money: every STARS_PER_PAYOUT stars is worth PAYOUT
+     dollars. `paid` is what has actually been handed over, so the piggy bank can
+     show both what is owed right now and what has been earned all year. */
+  var STARS_PER_PAYOUT = 20;
+  var PAYOUT = 5;
+
+  var state = { lifetime: 0, units: {}, paid: 0 };
 
   function load(){
     try{
@@ -961,6 +1009,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
       if(parsed && typeof parsed === 'object'){
         state.lifetime = Math.max(0, parseInt(parsed.lifetime, 10) || 0);
         state.units = (parsed.units && typeof parsed.units === 'object') ? parsed.units : {};
+        state.paid = Math.max(0, parseInt(parsed.paid, 10) || 0);
       }
     } catch(e){ /* private window, blocked storage — carry on unsaved */ }
   }
@@ -1027,6 +1076,51 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
   function paintLifetime(){
     if(lifeCount){ lifeCount.textContent = String(state.lifetime); }
     if(lifeWord){ lifeWord.textContent = state.lifetime === 1 ? 'star earned' : 'stars earned'; }
+    paintBank();
+  }
+
+  /* ---------------- piggy bank ---------------- */
+
+  var bankOwed = document.getElementById('bank-owed');
+  var bankStars = document.getElementById('bank-stars');
+  var bankEarned = document.getElementById('bank-earned');
+  var bankMeter = document.getElementById('bank-meter');
+  var bankTogo = document.getElementById('bank-togo');
+
+  function earnedDollars(){
+    return Math.floor(state.lifetime / STARS_PER_PAYOUT) * PAYOUT;
+  }
+
+  function owedDollars(){
+    return Math.max(0, earnedDollars() - state.paid);
+  }
+
+  function paintBank(){
+    if(!bankOwed){ return; }
+
+    bankOwed.textContent = '$' + owedDollars();
+
+    if(bankStars){
+      bankStars.textContent = state.lifetime + (state.lifetime === 1 ? ' star' : ' stars');
+    }
+    if(bankEarned){
+      bankEarned.textContent = '$' + earnedDollars();
+    }
+
+    var intoNext = state.lifetime % STARS_PER_PAYOUT;
+    if(bankMeter){
+      bankMeter.style.width = Math.round((intoNext / STARS_PER_PAYOUT) * 100) + '%';
+    }
+    if(bankTogo){
+      var togo = STARS_PER_PAYOUT - intoNext;
+      bankTogo.innerHTML = '';
+      var strong = el('b', null, togo + (togo === 1 ? ' more star' : ' more stars'));
+      bankTogo.appendChild(strong);
+      bankTogo.appendChild(document.createTextNode(
+        state.lifetime < STARS_PER_PAYOUT ? ' to your first $' + PAYOUT
+                                          : ' to the next $' + PAYOUT
+      ));
+    }
   }
 
   function paintUnit(unit, justWon){
@@ -1571,31 +1665,58 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 
   markCurrent();
 
-  var resetBtn = document.getElementById('reset-stars');
-  if(resetBtn){
+  /* Grown-up controls. Both need two taps, so nobody wipes a term's stars or
+     cashes out the piggy bank with one stray finger. */
+  function armButton(btn, confirmLabel, run){
+    if(!btn){ return; }
     var armed = false, timer = null;
-    var label = resetBtn.textContent;
-    resetBtn.addEventListener('click', function(){
+    var label = btn.textContent;
+    btn.addEventListener('click', function(){
       if(!armed){
         armed = true;
-        resetBtn.textContent = 'Tap again to clear every star';
+        btn.textContent = confirmLabel;
         timer = window.setTimeout(function(){
           armed = false;
-          resetBtn.textContent = label;
+          btn.textContent = label;
         }, 4000);
         return;
       }
       window.clearTimeout(timer);
       armed = false;
-      resetBtn.textContent = label;
+      btn.textContent = label;
+      run();
+    });
+  }
+
+  armButton(
+    document.getElementById('reset-stars'),
+    'Tap again to clear every star',
+    function(){
       state.lifetime = 0;
       state.units = {};
+      state.paid = 0;
       save();
       units.forEach(function(u){ paintUnit(u, false); });
       paintLifetime();
+    }
+  );
+
+  var payBtn = document.getElementById('record-payment');
+  if(payBtn){
+    var payLabel = function(){
+      return owedDollars() > 0 ? 'Record paying $' + owedDollars() : 'Nothing owed right now';
+    };
+    payBtn.textContent = payLabel();
+    armButton(payBtn, 'Tap again to confirm you paid it', function(){
+      if(owedDollars() <= 0){ return; }
+      state.paid = earnedDollars();
+      save();
+      paintLifetime();
+      payBtn.textContent = payLabel();
     });
   }
 })();
 
 </script>
+
 

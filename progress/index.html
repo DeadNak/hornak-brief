@@ -1,0 +1,703 @@
+﻿<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Homework Progress</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+/* Hornak Homework — shared page engine.
+   Brand: Hornak Family Brand Guide v1.0 (references/brand.md in the hornak-brief skill).
+   Each girl's page sets --lead on :root to her own family colour; the other three support.
+   Committed light theme: these pages are read by kids in daylight on an iPad. */
+
+:root{
+  --pink:#B85C86;      /* Alpenglow */
+  --purple:#6B5591;    /* Dusk */
+  --blue:#35699B;      /* Glacier */
+  --green:#2E7358;     /* Pine */
+  --ink:#1B2022;       /* Granite */
+  --soft:#6C7378;      /* Scree */
+  --paper:#F7F5F1;     /* Snowfield */
+  --ground:#E3E1DA;    /* Trail Dust */
+  --lead:var(--pink);  /* overridden per girl */
+  --display:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --body:"Jost",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  color-scheme:light;
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--ground);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:17px;
+  line-height:1.5;
+  margin:0;
+  -webkit-text-size-adjust:100%;
+}
+
+.wrap{
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:22px 48px;
+  max-width:860px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+/* ---------------- masthead ---------------- */
+
+.mast{
+  background:var(--paper);
+  border-radius:14px;
+  padding-left:max(18px,env(safe-area-inset-left,0px));
+  padding-right:max(18px,env(safe-area-inset-right,0px));
+  padding-block:24px 22px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  text-align:center;
+}
+.arc{width:132px;height:69px;max-width:100%;display:block}
+h1{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:clamp(36px,8.5vw,52px);
+  line-height:.95;
+  margin:0;
+  color:var(--lead);
+  text-wrap:balance;
+}
+.mast .sub{font-family:var(--display);font-style:italic;font-size:20px;color:var(--purple);margin:0}
+.stripe{
+  height:5px;border-radius:999px;width:100%;
+  background:linear-gradient(90deg,var(--pink) 0 25%,var(--purple) 25% 50%,var(--blue) 50% 75%,var(--green) 75% 100%);
+}
+
+/* lifetime tally */
+.lifetime{
+  display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;
+  background:var(--ground);border-radius:999px;padding:9px 18px;margin:0;
+}
+.lifetime .count{font-family:var(--display);font-size:30px;line-height:1;color:var(--lead)}
+.lifetime .cap{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--soft)}
+
+/* ---------------- piggy bank ---------------- */
+
+.bank{
+  width:100%;max-width:460px;
+  display:flex;align-items:center;gap:15px;
+  background:var(--paper);border:2px solid var(--ground);border-radius:12px;
+  padding:13px 16px;text-align:left;
+}
+.bank .pig{flex:0 0 auto;width:58px;height:50px;color:var(--lead)}
+.bank .figures{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:5px}
+.bank .owed{
+  font-family:var(--display);font-size:32px;line-height:1;color:var(--lead);margin:0;
+}
+.bank .owed small{
+  display:block;margin-top:4px;
+  font-family:var(--body);font-size:10.5px;letter-spacing:.15em;
+  text-transform:uppercase;font-weight:600;color:var(--soft);
+}
+.bank .earned{font-size:13.5px;color:var(--soft);margin:0}
+.bank .earned b{color:var(--ink);font-weight:500}
+.meter{height:9px;border-radius:999px;background:var(--ground);overflow:hidden}
+.meter span{display:block;height:100%;width:0;background:var(--lead);border-radius:999px;transition:width .45s ease}
+.bank .togo{font-size:13px;color:var(--soft);margin:0}
+.bank .togo b{color:var(--lead);font-weight:600}
+
+/* ---------------- coming up ----------------
+   Alpenglow is the family brand's attention colour, so a quiz lives here. */
+
+.upnext{
+  width:100%;max-width:460px;
+  display:flex;flex-direction:column;align-items:center;gap:3px;
+  background:var(--pink);color:var(--paper);
+  border:0;border-radius:12px;padding:13px 16px;
+  font-family:var(--body);text-align:center;cursor:pointer;
+}
+.upnext:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
+.upnext .cue{
+  font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:600;opacity:.85;
+}
+.upnext .what{font-family:var(--display);font-size:22px;line-height:1.2;text-wrap:balance}
+.upnext .whenline{font-size:14.5px;opacity:.92}
+.upnext.soon{background:var(--purple)}
+
+/* ---------------- joke ---------------- */
+
+.joke{
+  width:100%;max-width:460px;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  background:var(--ground);border-radius:12px;
+  padding:14px 16px;
+}
+.joke .setup{
+  font-family:var(--display);font-size:19px;line-height:1.25;
+  color:var(--ink);text-wrap:balance;margin:0;
+}
+.joke .punch{
+  font-family:var(--display);font-style:italic;font-size:21px;line-height:1.25;
+  color:var(--lead);text-wrap:balance;margin:0;
+}
+.joke .btnrow{justify-content:center}
+.joke button.toggle{background:var(--paper);color:var(--green);border:0;padding:8px 16px;min-height:40px}
+
+/* ---------------- library ---------------- */
+
+.library{
+  background:var(--paper);
+  border-radius:14px;
+  padding-left:max(18px,env(safe-area-inset-left,0px));
+  padding-right:max(18px,env(safe-area-inset-right,0px));
+  padding-block:18px 20px;
+  display:flex;flex-direction:column;gap:12px;
+}
+.library > .label{color:var(--lead)}
+.shelf{display:flex;flex-direction:column;gap:7px}
+.row{
+  display:flex;align-items:center;gap:12px;width:100%;min-width:0;
+  font-family:var(--body);font-size:16px;color:var(--ink);text-align:left;cursor:pointer;
+  background:transparent;border:1px solid var(--ground);border-radius:10px;
+  padding:11px 13px;min-height:52px;
+}
+.row:hover{border-color:var(--lead)}
+.row:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
+.row[aria-current="true"]{border-color:var(--lead);background:var(--ground)}
+.row .when{
+  flex:0 0 auto;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--soft);width:62px;line-height:1.25;
+}
+.row .what{flex:1 1 auto;min-width:0;line-height:1.25}
+.row .what b{display:block;font-weight:500}
+.row .what em{font-style:normal;font-size:13px;color:var(--soft)}
+.row .got{
+  flex:0 0 auto;display:flex;align-items:center;gap:5px;
+  font-family:var(--display);font-size:18px;color:var(--lead);
+}
+.row .got .pip{font-size:14px;color:var(--lead)}
+.row.done .got{color:var(--green)}
+.row.done .got .pip{color:var(--green)}
+@media(max-width:430px){
+  .row{gap:9px;padding:10px 11px}
+  .row .when{width:54px;font-size:11px}
+}
+
+/* ---------------- units ---------------- */
+
+.unit{
+  background:var(--paper);
+  border-radius:14px;
+  overflow:hidden;
+}
+.unit > summary{
+  list-style:none;
+  cursor:pointer;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:6px 14px;
+  padding-left:max(18px,env(safe-area-inset-left,0px));
+  padding-right:max(18px,env(safe-area-inset-right,0px));
+  padding-block:18px;
+  border-left:5px solid var(--lead);
+}
+.unit > summary::-webkit-details-marker{display:none}
+.unit > summary:focus-visible{outline:3px solid var(--purple);outline-offset:-3px}
+.unit:not([open]) > summary{border-left-color:var(--ground)}
+.unit-title{font-family:var(--display);font-size:27px;line-height:1.05;flex:1 1 220px;min-width:0}
+.unit-meta{flex:1 1 100%;font-size:13px;color:var(--soft);order:3}
+.unit-stars{display:flex;gap:5px;flex:0 0 auto;order:2}
+.unit-body{
+  padding-left:max(18px,env(safe-area-inset-left,0px));
+  padding-right:max(18px,env(safe-area-inset-right,0px));
+  padding-block:4px 26px;
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+.unit:not([open]) + .unit{margin-top:-4px}
+
+/* ---------------- shared blocks ---------------- */
+
+.label{
+  font-weight:600;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--green);margin:0;display:flex;align-items:center;gap:8px;
+}
+.label::after{content:"";flex:1;height:1px;background:var(--ground)}
+h2{font-family:var(--display);font-weight:400;font-size:26px;line-height:1.1;margin:0;text-wrap:balance}
+h3{font-family:var(--display);font-weight:400;font-size:23px;line-height:1.1;margin:0;text-wrap:balance}
+p{margin:0}
+.lede{color:var(--soft);font-size:15.5px;max-width:62ch}
+.rule{font-size:15.5px;border-left:4px solid var(--green);padding-left:13px;line-height:1.45}
+section{display:flex;flex-direction:column;gap:11px}
+.act{display:flex;flex-direction:column;gap:11px}
+.hint{font-size:14px;color:var(--soft)}
+.hint b{color:var(--ink);font-weight:600}
+
+.cards{display:grid;grid-template-columns:1fr;gap:13px}
+@media(min-width:640px){.cards.three{grid-template-columns:repeat(3,1fr)}.cards.two{grid-template-columns:1fr 1fr}}
+.card{border:2px solid var(--ground);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.card.a{border-color:var(--pink)} .card.b{border-color:var(--purple)} .card.c{border-color:var(--blue)} .card.d{border-color:var(--green)}
+.card h4{font-family:var(--display);font-weight:400;font-size:24px;margin:0;line-height:1}
+.card.a h4{color:var(--pink)} .card.b h4{color:var(--purple)} .card.c h4{color:var(--blue)} .card.d h4{color:var(--green)}
+.card .fr{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:var(--soft);margin:0}
+.card ul{margin:0;padding-left:17px;font-size:15px;display:flex;flex-direction:column;gap:3px}
+.card li::marker{color:var(--soft)}
+.card p{font-size:15px;line-height:1.4}
+.diagram{width:100%;height:84px;display:block;border-radius:8px;background:rgba(227,225,218,.45)}
+
+.tint{border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.tint.a{background:rgba(184,92,134,.09)}
+.tint.b{background:rgba(107,85,145,.09)}
+.tint.c{background:rgba(53,105,155,.08)}
+.tint.d{background:rgba(46,115,88,.09)}
+.tint b{font-weight:600;font-size:14px;letter-spacing:.04em}
+.tint p{font-size:15px;line-height:1.45}
+
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:14px;border:1px solid var(--ground);border-radius:999px;padding:4px 11px;background:var(--paper)}
+
+/* ---------------- sort activity ---------------- */
+
+.sort{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:9px}
+.item{
+  display:flex;align-items:center;gap:10px;min-width:0;
+  border:1px solid var(--ground);border-radius:10px;background:transparent;
+  padding:10px 11px;font-family:var(--body);font-size:16px;color:var(--ink);
+  text-align:left;width:100%;cursor:pointer;
+}
+.item:hover{border-color:var(--lead)}
+.item:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
+.slot{
+  flex:0 0 34px;height:34px;border:2px solid var(--ground);border-radius:8px;
+  display:grid;place-items:center;font-weight:600;font-size:17px;color:var(--lead);
+}
+.item .name{min-width:0;overflow-wrap:anywhere}
+.item::after{margin-left:auto;font-size:17px;font-weight:600;line-height:1;flex:0 0 auto}
+.item.right{border-color:var(--green);background:rgba(46,115,88,.07)}
+.item.right .slot{border-color:var(--green)}
+.item.right::after{content:"\2713";color:var(--green)}
+.item.wrong{border-color:var(--pink);background:rgba(184,92,134,.07)}
+.item.wrong .slot{border-color:var(--pink)}
+.item.wrong::after{content:"\21BB";color:var(--pink)}
+.reveal .item::after{content:attr(data-answer);color:var(--green);font-size:14px;letter-spacing:.1em}
+.reveal .item.right::after{content:"\2713";font-size:17px}
+
+/* ---------------- choice activity ---------------- */
+
+.choice{display:flex;flex-direction:column;gap:14px}
+.qa{border:1px solid var(--ground);border-radius:12px;padding:13px 14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.qa.right{border-color:var(--green);background:rgba(46,115,88,.06)}
+.qa.wrong{border-color:var(--pink);background:rgba(184,92,134,.06)}
+.qa .ask{font-size:17px;font-weight:500;line-height:1.35;margin:0}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{
+  font-family:var(--body);font-size:17px;color:var(--ink);cursor:pointer;
+  border:2px solid var(--ground);border-radius:10px;background:transparent;
+  padding:11px 16px;min-height:52px;display:flex;align-items:center;gap:4px;
+}
+.opt:hover{border-color:var(--lead)}
+.opt:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
+.opt[aria-pressed="true"]{border-color:var(--lead);background:var(--ground)}
+.qa.right .opt[aria-pressed="true"]{border-color:var(--green);background:rgba(46,115,88,.12)}
+.qa.wrong .opt[aria-pressed="true"]{border-color:var(--pink);background:rgba(184,92,134,.12)}
+.reveal .opt.correct{border-color:var(--green);box-shadow:inset 0 0 0 1px var(--green)}
+.why{font-size:14.5px;color:var(--soft);margin:0}
+.qa:not(.right):not(.wrong) .why{display:none}
+.reveal .why{display:block}
+
+/* option contents */
+/* flex:0 0 auto is load-bearing. These sit inside flex rows, and without it they
+   shrink to slivers when the row is tight — the colours became invisible. */
+.dots{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.dot{width:32px;height:32px;border-radius:50%;display:inline-block;flex:0 0 auto}
+.dot.p{background:var(--pink)} .dot.d{background:var(--purple)}
+.dot.g{background:var(--blue)} .dot.n{background:var(--green)}
+.sq{width:32px;height:32px;display:inline-block;border-radius:6px;flex:0 0 auto}
+.sq.p{background:var(--pink)} .sq.d{background:var(--purple)}
+.sq.g{background:var(--blue)} .sq.n{background:var(--green)}
+.numeral{font-family:var(--display);font-size:40px;line-height:1;display:inline-block}
+.mirror{display:inline-block;transform:scaleX(-1)}
+.flipy{display:inline-block;transform:scaleY(-1)}
+.count-dots{display:flex;flex-wrap:wrap;gap:10px;max-width:340px;margin:2px 0}
+.count-dots .dot{width:30px;height:30px;background:var(--lead);flex:0 0 auto}
+
+/* ---------------- flip cards ---------------- */
+
+.flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:9px}
+.flip{
+  font-family:var(--display);font-size:25px;color:var(--ink);cursor:pointer;
+  border:2px solid var(--ground);border-radius:12px;background:transparent;
+  min-height:76px;display:grid;place-items:center;padding:8px;text-align:center;line-height:1.1;
+}
+.flip:hover{border-color:var(--lead)}
+.flip:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
+.flip.flipped{background:var(--ground);border-color:var(--lead);font-family:var(--body);font-size:16px}
+
+/* ---------------- writing ---------------- */
+
+.scribe{
+  font-family:var(--body);font-size:17px;line-height:1.65;color:var(--ink);
+  background:var(--paper);border:2px solid var(--ground);border-radius:12px;
+  padding:13px 15px;width:100%;min-height:160px;resize:vertical;display:block;
+}
+.scribe:focus{border-color:var(--lead)}
+.scribe:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
+.scribe::placeholder{color:var(--soft)}
+.writebar{
+  display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;
+  font-size:13.5px;color:var(--soft);margin:0;
+}
+.writebar .ok{color:var(--green);font-weight:500}
+.writebar .warn{color:var(--pink);font-weight:500}
+
+/* ---------------- buttons + score ---------------- */
+
+.btnrow{display:flex;flex-wrap:wrap;gap:9px;align-items:center}
+button.toggle{
+  font-family:var(--body);font-size:13.5px;font-weight:500;letter-spacing:.08em;
+  text-transform:uppercase;cursor:pointer;min-height:44px;
+  background:var(--green);color:var(--paper);border:0;border-radius:999px;padding:10px 18px;
+}
+button.toggle:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
+button.toggle.ghost{background:transparent;color:var(--green);border:2px solid var(--ground);padding:8px 16px}
+.score{font-family:var(--display);font-size:21px;line-height:1.25;color:var(--purple);margin:0}
+
+/* ---------------- stars ---------------- */
+
+.star{
+  width:26px;height:26px;border:2px dashed var(--ground);border-radius:50%;
+  display:grid;place-items:center;color:var(--soft);opacity:.5;
+  font-size:13px;line-height:1;flex:0 0 auto;
+}
+.star.on{border-style:solid;color:var(--paper);opacity:1}
+.unit-stars .star:nth-child(4n+1).on,.stars .star:nth-child(4n+1).on{background:var(--pink);border-color:var(--pink)}
+.unit-stars .star:nth-child(4n+2).on,.stars .star:nth-child(4n+2).on{background:var(--purple);border-color:var(--purple)}
+.unit-stars .star:nth-child(4n+3).on,.stars .star:nth-child(4n+3).on{background:var(--blue);border-color:var(--blue)}
+.unit-stars .star:nth-child(4n+4).on,.stars .star:nth-child(4n+4).on{background:var(--green);border-color:var(--green)}
+@keyframes pop{0%{transform:scale(.55)}55%{transform:scale(1.3)}100%{transform:scale(1)}}
+.star.pop{animation:pop .5s ease}
+
+/* ---------------- footer ---------------- */
+
+.foot{
+  display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center;
+  padding-block:6px 0;
+}
+.foot .note{font-size:13px;color:var(--soft);letter-spacing:.04em}
+button.reset{
+  font-family:var(--body);font-size:11.5px;font-weight:500;letter-spacing:.1em;
+  text-transform:uppercase;cursor:pointer;background:transparent;color:var(--soft);
+  border:0;border-bottom:1px solid var(--ground);padding:4px 1px;
+}
+button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
+
+/* ---------------- wide screens: library becomes a sticky right rail ----------------
+   Below 900px it stays a block under the masthead, which is the right shape on a
+   phone and on an iPad held in portrait. */
+
+@media(min-width:900px){
+  .wrap{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 256px;
+    column-gap:18px;
+    align-items:start;
+    max-width:1160px;
+  }
+  .mast{grid-column:1 / -1}
+  .units{grid-column:1;display:flex;flex-direction:column;gap:18px;min-width:0}
+  .foot{grid-column:1}
+  .library{
+    grid-column:2;
+    grid-row:2 / 4;
+    position:sticky;
+    top:14px;
+    max-height:calc(100vh - 28px);
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    padding-block:16px 18px;
+  }
+  .shelf{gap:5px}
+  .row{flex-wrap:wrap;gap:2px 8px;min-height:0;padding:10px 12px}
+  .row .when{order:0;width:100%}
+  .row .what{order:1;flex:1 1 90px}
+  .row .got{order:2;align-self:flex-start;font-size:17px}
+  .row .what em{display:block;margin-top:1px}
+}
+
+.shelf-count{font-weight:500;color:var(--soft);letter-spacing:.1em}
+
+/* ---------------- motion + print ---------------- */
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+@media print{
+  @page{margin:.45in}
+  body{background:#fff}
+  .wrap{padding:0;gap:14px;max-width:none}
+  .mast,.unit{background:#fff;border-radius:0}
+  .no-print,.btnrow,.score,button.reset,.lifetime{display:none!important}
+  .unit-body{display:flex!important}
+  section,.act,.card,.qa{break-inside:avoid}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+</style>
+<style>
+/* The report is a plain single column — it must not pick up the girls' two-column
+   layout, so it uses .page rather than .wrap. */
+.page{
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:22px 48px;
+  max-width:760px;margin:0 auto;
+  display:flex;flex-direction:column;gap:18px;
+}
+.girl{
+  background:var(--paper);border-radius:14px;
+  padding-left:max(18px,env(safe-area-inset-left,0px));
+  padding-right:max(18px,env(safe-area-inset-right,0px));
+  padding-block:20px 22px;
+  display:flex;flex-direction:column;gap:14px;
+  border-left:5px solid var(--lead);
+}
+.girl.ellie{--lead:var(--pink)}
+.girl.addie{--lead:var(--purple)}
+.girl h2{font-family:var(--display);font-size:30px;margin:0;color:var(--lead);line-height:1}
+.girl h2 a{color:inherit;text-decoration:none;border-bottom:2px solid var(--ground)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:10px}
+.tile{border:2px solid var(--ground);border-radius:12px;padding:11px 13px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.tile .n{font-family:var(--display);font-size:27px;line-height:1;color:var(--ink)}
+.tile.owed{border-color:var(--lead)}
+.tile.owed .n{color:var(--lead)}
+.tile .k{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--soft)}
+table.sheets{width:100%;border-collapse:collapse;font-size:15px}
+table.sheets th{
+  text-align:left;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:600;color:var(--green);padding:0 0 7px;border-bottom:1px solid var(--ground);
+}
+table.sheets th.num,table.sheets td.num{text-align:right;font-variant-numeric:tabular-nums}
+table.sheets td{padding:10px 0;border-bottom:1px solid var(--ground);vertical-align:top}
+table.sheets td .when{display:block;font-size:12px;color:var(--soft);letter-spacing:.06em;text-transform:uppercase}
+table.sheets tr.full td .got{color:var(--green);font-weight:500}
+.empty{font-size:15px;color:var(--soft);font-style:italic}
+.payrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.caveat{
+  background:rgba(184,92,134,.09);border-radius:12px;padding:14px 16px;
+  display:flex;flex-direction:column;gap:6px;
+}
+.caveat b{font-weight:600;font-size:13px;letter-spacing:.06em;color:var(--pink)}
+.caveat p{font-size:14.5px;line-height:1.45;margin:0}
+</style>
+
+<div class="page">
+
+  <div class="mast">
+    <svg class="arc" viewBox="0 0 150 78" role="img" aria-label="A four-stripe rainbow, one colour for each Hornak">
+      <g fill="none" stroke-linecap="round" stroke-width="9">
+        <path d="M11 73a64 64 0 0 1 128 0" stroke="#B85C86"/>
+        <path d="M22 73a53 53 0 0 1 106 0" stroke="#6B5591"/>
+        <path d="M33 73a42 42 0 0 1 84 0" stroke="#35699B"/>
+        <path d="M44 73a31 31 0 0 1 62 0" stroke="#2E7358"/>
+      </g>
+    </svg>
+    <h1>Homework Progress</h1>
+    <p class="sub">Every sheet, every star, and what is owed</p>
+    <div class="stripe"></div>
+  </div>
+
+  <div class="girl ellie" data-girl="ellie" data-name="Ellie" data-page="../ellie/"></div>
+  <div class="girl addie" data-girl="addie" data-name="Addie" data-page="../addie/"></div>
+
+  <div class="caveat">
+    <b>READ THIS BEFORE YOU PAY ANYONE</b>
+    <p>Stars are stored in the browser on whichever device she works on. This report can only see the device it is opened on, so check it on <b>her</b> iPad, not yours, or it will show zeros. Clearing that browser's data clears her stars with it.</p>
+    <p>Every 20 stars is worth $5. Recording a payment here only changes this device's tally &mdash; it does not move any actual money.</p>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  /* One row per published sheet, newest first. The hornak-homework skill adds to
+     this whenever it adds a unit to a girl's page; `unit` must match that page's
+     data-unit exactly, or the stars will not line up. */
+  var SHEETS = {
+    ellie: [
+      { unit: 'lecture-ecriture-2026-10-25', when: 'Oct 25', subject: 'Lecture et Écriture', topic: 'Le son au/eau · short vowels · Canada', stars: 4 },
+      { unit: 'matter-2026-10-26',           when: 'Oct 26', subject: 'States of Matter',    topic: 'Science quiz · solids, liquids, gases', stars: 4 }
+    ],
+    addie: [
+      { unit: 'oct-2026-practice', when: 'Oct 24', subject: 'Sounds, Numbers & Patterns', topic: 'What Mme Ashley asked us to practise', stars: 4 }
+    ]
+  };
+
+  var STARS_PER_PAYOUT = 20;
+  var PAYOUT = 5;
+
+  function keyFor(girl){ return 'hornak-homework:' + girl; }
+
+  function read(girl){
+    try{
+      var raw = window.localStorage.getItem(keyFor(girl));
+      var parsed = raw ? JSON.parse(raw) : null;
+      if(!parsed || typeof parsed !== 'object'){ return { lifetime: 0, units: {}, paid: 0 }; }
+      return {
+        lifetime: Math.max(0, parseInt(parsed.lifetime, 10) || 0),
+        units: (parsed.units && typeof parsed.units === 'object') ? parsed.units : {},
+        paid: Math.max(0, parseInt(parsed.paid, 10) || 0)
+      };
+    } catch(e){ return { lifetime: 0, units: {}, paid: 0 }; }
+  }
+
+  function write(girl, state){
+    try{ window.localStorage.setItem(keyFor(girl), JSON.stringify(state)); } catch(e){}
+  }
+
+  function writingCount(girl){
+    var prefix = 'hornak-homework:' + girl + ':write:';
+    var n = 0;
+    try{
+      for(var i = 0; i < window.localStorage.length; i++){
+        var k = window.localStorage.key(i);
+        if(k && k.indexOf(prefix) === 0 && (window.localStorage.getItem(k) || '').trim()){ n++; }
+      }
+    } catch(e){}
+    return n;
+  }
+
+  function el(tag, cls, text){
+    var n = document.createElement(tag);
+    if(cls){ n.className = cls; }
+    if(text != null){ n.textContent = text; }
+    return n;
+  }
+
+  function tile(value, label, cls){
+    var t = el('div', 'tile' + (cls ? ' ' + cls : ''));
+    t.appendChild(el('span', 'n', value));
+    t.appendChild(el('span', 'k', label));
+    return t;
+  }
+
+  function render(card){
+    var girl = card.getAttribute('data-girl');
+    var name = card.getAttribute('data-name');
+    var page = card.getAttribute('data-page');
+    var state = read(girl);
+    var sheets = SHEETS[girl] || [];
+
+    var earned = Math.floor(state.lifetime / STARS_PER_PAYOUT) * PAYOUT;
+    var owed = Math.max(0, earned - state.paid);
+    var possible = sheets.reduce(function(a, s){ return a + s.stars; }, 0);
+
+    card.innerHTML = '';
+
+    var h = el('h2');
+    var link = el('a', null, name);
+    link.href = page;
+    h.appendChild(link);
+    card.appendChild(h);
+
+    var tiles = el('div', 'tiles');
+    tiles.appendChild(tile('$' + owed, 'owed right now', 'owed'));
+    tiles.appendChild(tile('$' + earned, 'earned all year'));
+    tiles.appendChild(tile(String(state.lifetime), 'stars'));
+    tiles.appendChild(tile(String(writingCount(girl)), 'pieces written'));
+    card.appendChild(tiles);
+
+    if(!sheets.length){
+      card.appendChild(el('p', 'empty', 'No sheets published yet.'));
+    } else {
+      var table = el('table', 'sheets');
+      var thead = el('thead');
+      var hr = el('tr');
+      hr.appendChild(el('th', null, 'Sheet'));
+      var hs = el('th', 'num', 'Stars');
+      hr.appendChild(hs);
+      thead.appendChild(hr);
+      table.appendChild(thead);
+
+      var tbody = el('tbody');
+      sheets.forEach(function(sheet){
+        var got = Math.max(0, parseInt(state.units[sheet.unit], 10) || 0);
+        var tr = el('tr');
+        if(got >= sheet.stars){ tr.className = 'full'; }
+
+        var td = el('td');
+        td.appendChild(el('span', 'when', sheet.when));
+        td.appendChild(document.createTextNode(sheet.subject));
+        if(sheet.topic){
+          var small = el('span', 'when', sheet.topic);
+          small.style.textTransform = 'none';
+          small.style.letterSpacing = '0';
+          td.appendChild(small);
+        }
+        tr.appendChild(td);
+
+        var tdn = el('td', 'num');
+        tdn.appendChild(el('span', 'got', got + '/' + sheet.stars));
+        tr.appendChild(tdn);
+
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+      card.appendChild(table);
+
+      var totalGot = sheets.reduce(function(a, s){
+        return a + Math.max(0, parseInt(state.units[s.unit], 10) || 0);
+      }, 0);
+      card.appendChild(el('p', 'empty',
+        totalGot + ' of ' + possible + ' stars collected on the sheets published so far.'));
+    }
+
+    var row = el('div', 'payrow');
+    var btn = el('button', 'toggle');
+    btn.type = 'button';
+
+    function label(){
+      var o = Math.max(0, (Math.floor(read(girl).lifetime / STARS_PER_PAYOUT) * PAYOUT) - read(girl).paid);
+      return o > 0 ? 'Record paying ' + name + ' $' + o : 'Nothing owed to ' + name;
+    }
+
+    btn.textContent = label();
+
+    var armed = false, timer = null;
+    btn.addEventListener('click', function(){
+      var fresh = read(girl);
+      var e2 = Math.floor(fresh.lifetime / STARS_PER_PAYOUT) * PAYOUT;
+      if(e2 - fresh.paid <= 0){ return; }
+      if(!armed){
+        armed = true;
+        btn.textContent = 'Tap again to confirm';
+        timer = window.setTimeout(function(){ armed = false; btn.textContent = label(); }, 4000);
+        return;
+      }
+      window.clearTimeout(timer);
+      armed = false;
+      fresh.paid = e2;
+      write(girl, fresh);
+      render(card);
+    });
+
+    row.appendChild(btn);
+    if(state.paid > 0){
+      row.appendChild(el('span', 'empty', '$' + state.paid + ' paid out so far.'));
+    }
+    card.appendChild(row);
+  }
+
+  Array.prototype.slice.call(document.querySelectorAll('.girl')).forEach(render);
+})();
+</script>
+
