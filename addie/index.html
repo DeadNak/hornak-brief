@@ -151,6 +151,8 @@ h1{
   border:0;border-radius:12px;padding:13px 16px;
   font-family:var(--body);text-align:center;cursor:pointer;
 }
+/* display:flex above beats the hidden attribute, so an empty bank drew a blank pink bar. */
+.upnext[hidden]{display:none}
 .upnext:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 .upnext .cue{
   font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
