@@ -500,9 +500,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 
     <button class="upnext" type="button" id="upnext" hidden></button>
     <script type="application/json" id="upnext-bank">
-    [
-      { "date": "2026-10-26", "what": "Science quiz: solids, liquids and gases", "unit": "matter-2026-10-26" }
-    ]
+    []
     </script>
     <script type="application/json" id="joke-bank">
       [
@@ -590,8 +588,279 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 
   <div class="units">
 
-  <!-- ===================== UNIT: reading and writing ===================== -->
+  <!-- ===================== UNIT: addition with regrouping ===================== -->
   <details class="unit" open
+           data-unit="regrouping-2026-11-02"
+           data-when="Nov 2"
+           data-subject="Math Snap &amp; Regrouping"
+           data-topic="Facts to 20 &middot; carrying &middot; noms, verbes, adjectifs"
+           data-stars="6">
+    <summary>
+      <span class="unit-title">Math Snap &amp; Regrouping</span>
+      <span class="unit-stars"></span>
+      <span class="unit-meta">Before fall break &middot; from Mme Seychelle's October 30 newsletter</span>
+    </summary>
+
+    <div class="unit-body">
+
+      <section>
+        <p class="label">Bonjour Ellie</p>
+        <h2>Fast facts make big sums easy</h2>
+        <p class="lede">You are adding big numbers in class now. When the small facts are quick, the big ones get easy.</p>
+      </section>
+
+      <section class="act" data-act="choice">
+        <p class="label">Math Snap &middot; adding</p>
+        <h2>Snap! What is the sum?</h2>
+        <p class="hint">Two cards flip over. Add them in your head, fast.</p>
+        <script type="application/json" class="bank">
+        {
+          "take": 6,
+          "questions": [
+            { "ask": "8 + 7 = ?",  "options": ["15", "14", "16"], "answer": 0 },
+            { "ask": "9 + 6 = ?",  "options": ["15", "16", "14"], "answer": 0 },
+            { "ask": "7 + 5 = ?",  "options": ["12", "11", "13"], "answer": 0 },
+            { "ask": "6 + 8 = ?",  "options": ["14", "13", "15"], "answer": 0 },
+            { "ask": "9 + 9 = ?",  "options": ["18", "17", "19"], "answer": 0 },
+            { "ask": "10 + 7 = ?", "options": ["17", "16", "18"], "answer": 0 },
+            { "ask": "8 + 5 = ?",  "options": ["13", "12", "14"], "answer": 0 },
+            { "ask": "7 + 7 = ?",  "options": ["14", "13", "15"], "answer": 0 },
+            { "ask": "9 + 4 = ?",  "options": ["13", "14", "12"], "answer": 0 },
+            { "ask": "6 + 6 = ?",  "options": ["12", "11", "13"], "answer": 0 },
+            { "ask": "8 + 9 = ?",  "options": ["17", "16", "18"], "answer": 0 },
+            { "ask": "10 + 10 = ?","options": ["20", "19", "21"], "answer": 0 },
+            { "ask": "5 + 9 = ?",  "options": ["14", "13", "15"], "answer": 0 },
+            { "ask": "7 + 6 = ?",  "options": ["13", "12", "14"], "answer": 0 },
+            { "ask": "4 + 8 = ?",  "options": ["12", "11", "13"], "answer": 0 },
+            { "ask": "9 + 3 = ?",  "options": ["12", "13", "11"], "answer": 0 },
+            { "ask": "8 + 8 = ?",  "options": ["16", "15", "17"], "answer": 0 },
+            { "ask": "6 + 9 = ?",  "options": ["15", "14", "16"], "answer": 0 },
+            { "ask": "7 + 9 = ?",  "options": ["16", "15", "17"], "answer": 0 },
+            { "ask": "10 + 9 = ?", "options": ["19", "18", "20"], "answer": 0 }
+          ]
+        }
+        </script>
+        <div class="choice"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">New cards</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+      </section>
+
+      <section class="act" data-act="choice">
+        <p class="label">Math Snap &middot; taking away</p>
+        <h2>Snap! What is the difference?</h2>
+        <p class="hint">Take the small number away from the big one.</p>
+        <script type="application/json" class="bank">
+        {
+          "take": 6,
+          "questions": [
+            { "ask": "15 − 7 = ?",  "html": true, "options": ["8", "7", "9"], "answer": 0, "why": "7 + 8 = 15, so 15 − 7 = 8." },
+            { "ask": "13 − 6 = ?",  "html": true, "options": ["7", "6", "8"], "answer": 0, "why": "6 + 7 = 13." },
+            { "ask": "17 − 9 = ?",  "html": true, "options": ["8", "9", "7"], "answer": 0, "why": "9 + 8 = 17." },
+            { "ask": "14 − 8 = ?",  "html": true, "options": ["6", "7", "5"], "answer": 0, "why": "8 + 6 = 14." },
+            { "ask": "12 − 5 = ?",  "html": true, "options": ["7", "8", "6"], "answer": 0, "why": "5 + 7 = 12." },
+            { "ask": "16 − 7 = ?",  "html": true, "options": ["9", "8", "10"], "answer": 0, "why": "7 + 9 = 16." },
+            { "ask": "11 − 4 = ?",  "html": true, "options": ["7", "6", "8"], "answer": 0, "why": "4 + 7 = 11." },
+            { "ask": "18 − 9 = ?",  "html": true, "options": ["9", "8", "10"], "answer": 0, "why": "9 + 9 = 18." },
+            { "ask": "13 − 8 = ?",  "html": true, "options": ["5", "6", "4"], "answer": 0, "why": "8 + 5 = 13." },
+            { "ask": "12 − 7 = ?",  "html": true, "options": ["5", "4", "6"], "answer": 0, "why": "7 + 5 = 12." },
+            { "ask": "14 − 6 = ?",  "html": true, "options": ["8", "7", "9"], "answer": 0, "why": "6 + 8 = 14." },
+            { "ask": "15 − 9 = ?",  "html": true, "options": ["6", "5", "7"], "answer": 0, "why": "9 + 6 = 15." },
+            { "ask": "11 − 8 = ?",  "html": true, "options": ["3", "4", "2"], "answer": 0, "why": "8 + 3 = 11." },
+            { "ask": "16 − 8 = ?",  "html": true, "options": ["8", "7", "9"], "answer": 0, "why": "8 + 8 = 16." },
+            { "ask": "20 − 10 = ?", "html": true, "options": ["10", "9", "11"], "answer": 0, "why": "10 + 10 = 20." },
+            { "ask": "17 − 8 = ?",  "html": true, "options": ["9", "8", "10"], "answer": 0, "why": "8 + 9 = 17." }
+          ]
+        }
+        </script>
+        <div class="choice"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">New cards</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+      </section>
+
+      <section class="act" data-act="choice">
+        <p class="label">Three-card Snap</p>
+        <h2>Three cards at once</h2>
+        <p class="hint">Look for two cards that make 10. Add those first.</p>
+        <script type="application/json" class="bank">
+        {
+          "take": 4,
+          "questions": [
+            { "ask": "3 + 7 + 5 = ?", "options": ["15", "14", "16"], "answer": 0, "why": "3 + 7 = 10, then 10 + 5 = 15." },
+            { "ask": "6 + 4 + 8 = ?", "options": ["18", "17", "19"], "answer": 0, "why": "6 + 4 = 10, then 10 + 8 = 18." },
+            { "ask": "9 + 1 + 6 = ?", "options": ["16", "15", "17"], "answer": 0, "why": "9 + 1 = 10, then 10 + 6 = 16." },
+            { "ask": "2 + 7 + 8 = ?", "options": ["17", "16", "18"], "answer": 0, "why": "2 + 8 = 10, then 10 + 7 = 17." },
+            { "ask": "5 + 9 + 5 = ?", "options": ["19", "18", "20"], "answer": 0, "why": "5 + 5 = 10, then 10 + 9 = 19." },
+            { "ask": "4 + 3 + 6 = ?", "options": ["13", "12", "14"], "answer": 0, "why": "4 + 6 = 10, then 10 + 3 = 13." },
+            { "ask": "7 + 9 + 3 = ?", "options": ["19", "18", "17"], "answer": 0, "why": "7 + 3 = 10, then 10 + 9 = 19." },
+            { "ask": "8 + 4 + 2 = ?", "options": ["14", "13", "15"], "answer": 0, "why": "8 + 2 = 10, then 10 + 4 = 14." }
+          ]
+        }
+        </script>
+        <div class="choice"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">New cards</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+      </section>
+
+      <section>
+        <p class="label">Regrouping</p>
+        <h2>When the ones get too big</h2>
+        <p class="lede">A column can only hold 9. Make 10 or more, and you trade ten of them for one in the next column.</p>
+        <div class="cards three">
+          <div class="tint a"><b>1. ADD THE ONES</b><p>158 + 225: 8 + 5 = 13. Write the <b>3</b>. Carry the <b>1</b> ten.</p></div>
+          <div class="tint b"><b>2. ADD THE TENS</b><p>5 + 2 = 7, plus the 1 you carried = <b>8</b>.</p></div>
+          <div class="tint c"><b>3. ADD THE HUNDREDS</b><p>1 + 2 = <b>3</b>. The answer is <b>383</b>.</p></div>
+        </div>
+        <p class="rule">Think money: ten loonies trade for one ten-dollar bill. Ten tens trade for one hundred.</p>
+      </section>
+
+      <section class="act" data-act="sort">
+        <p class="label">Your turn</p>
+        <h2>Do you need to regroup?</h2>
+        <p class="hint">Check the ones, then the tens. Tap <b>R</b> if you must regroup, <b>N</b> if not.</p>
+        <script type="application/json" class="bank">
+        {
+          "order": ["", "R", "N"],
+          "take": { "R": 3, "N": 3 },
+          "items": {
+            "R": ["367 + 248", "158 + 225", "274 + 163", "436 + 285", "529 + 136",
+                  "345 + 182", "619 + 254", "287 + 345", "463 + 291", "148 + 437"],
+            "N": ["245 + 132", "321 + 456", "513 + 274", "142 + 607", "230 + 448",
+                  "611 + 125", "354 + 223", "402 + 396", "163 + 714", "520 + 369"]
+          }
+        }
+        </script>
+        <div class="sort"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">New sums</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+      </section>
+
+      <section class="act" data-act="choice">
+        <p class="label">Your turn</p>
+        <h2>Add with regrouping</h2>
+        <p class="hint">Use paper. Line the numbers up, ones under ones.</p>
+        <script type="application/json" class="bank">
+        {
+          "take": 4,
+          "questions": [
+            { "ask": "158 + 225 = ?", "options": ["383", "373", "393"], "answer": 0, "why": "8 + 5 = 13. Write 3, carry 1. 5 + 2 + 1 = 8. 1 + 2 = 3." },
+            { "ask": "436 + 285 = ?", "options": ["721", "611", "711"], "answer": 0, "why": "6 + 5 = 11, carry 1. 3 + 8 + 1 = 12, carry 1. 4 + 2 + 1 = 7." },
+            { "ask": "529 + 136 = ?", "options": ["665", "655", "675"], "answer": 0, "why": "9 + 6 = 15. Write 5, carry 1. 2 + 3 + 1 = 6. 5 + 1 = 6." },
+            { "ask": "345 + 182 = ?", "options": ["527", "427", "537"], "answer": 0, "why": "5 + 2 = 7. 4 + 8 = 12, write 2, carry 1. 3 + 1 + 1 = 5." },
+            { "ask": "619 + 254 = ?", "options": ["873", "863", "883"], "answer": 0, "why": "9 + 4 = 13. Write 3, carry 1. 1 + 5 + 1 = 7. 6 + 2 = 8." },
+            { "ask": "148 + 437 = ?", "options": ["585", "575", "595"], "answer": 0, "why": "8 + 7 = 15. Write 5, carry 1. 4 + 3 + 1 = 8. 1 + 4 = 5." },
+            { "ask": "274 + 163 = ?", "options": ["437", "337", "447"], "answer": 0, "why": "4 + 3 = 7. 7 + 6 = 13, write 3, carry 1. 2 + 1 + 1 = 4." },
+            { "ask": "367 + 248 = ?", "options": ["615", "505", "625"], "answer": 0, "why": "7 + 8 = 15, carry 1. 6 + 4 + 1 = 11, carry 1. 3 + 2 + 1 = 6." },
+            { "ask": "256 + 137 = ?", "options": ["393", "383", "403"], "answer": 0, "why": "6 + 7 = 13. Write 3, carry 1. 5 + 3 + 1 = 9. 2 + 1 = 3." },
+            { "ask": "189 + 206 = ?", "options": ["395", "385", "405"], "answer": 0, "why": "9 + 6 = 15. Write 5, carry 1. 8 + 0 + 1 = 9. 1 + 2 = 3." }
+          ]
+        }
+        </script>
+        <div class="choice"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">New sums</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+      </section>
+
+      <section class="act" data-act="sort">
+        <p class="label">Fran&ccedil;ais &middot; les mots qui d&eacute;crivent</p>
+        <h2>Nom, verbe ou adjectif?</h2>
+        <p class="hint">Tap the box: <b>N</b> for nom, <b>V</b> for verbe, <b>A</b> for adjectif.</p>
+        <script type="application/json" class="bank">
+        {
+          "order": ["", "N", "V", "A"],
+          "take": { "N": 3, "V": 3, "A": 3 },
+          "items": {
+            "N": ["le chat", "la citrouille", "le fantôme", "la maison", "un ourson",
+                  "le chapeau", "la lune", "une sorcière", "un bonbon", "l’arbre"],
+            "V": ["courir", "sauter", "manger", "dormir", "voler",
+                  "crier", "danser", "jouer", "rire", "nager"],
+            "A": ["grand", "petit", "doux", "noir", "orange",
+                  "gentil", "rapide", "mignon", "drôle", "effrayant"]
+          }
+        }
+        </script>
+        <div class="sort"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">New words</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+        <p class="rule">A <b>nom</b> is a thing. A <b>verbe</b> is an action. An <b>adjectif</b> tells what the thing is like.</p>
+      </section>
+
+      <section>
+        <p class="label">&Eacute;crire</p>
+        <h2>D&eacute;cris ton toutou</h2>
+        <div class="act" data-act="write" data-write="nov02-toutou" data-sentences="3">
+          <h3>En fran&ccedil;ais</h3>
+          <p class="hint">Write <b>three sentences</b> about your favourite stuffie. Use one nom, one verbe and one adjectif in each.</p>
+          <textarea class="scribe" id="write-nov02-toutou" rows="6"
+            placeholder="Mon ourson est petit et doux&hellip;"></textarea>
+          <p class="writebar" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="act" data-act="flip">
+        <p class="label">Social studies</p>
+        <h2>Words from class</h2>
+        <p class="hint">Say what each one means. Then flip it to check.</p>
+        <script type="application/json" class="bank">
+        {
+          "take": 4,
+          "cards": [
+            { "front": "Time immemorial", "back": "A time so long ago that nobody can remember it. First Nations have lived here that long." },
+            { "front": "Land acknowledgement", "back": "Words that show respect for the Indigenous peoples of the land we are on." },
+            { "front": "Traditional territories", "back": "Land a First Nation has lived on and cared for over many generations." },
+            { "front": "First Nations", "back": "The first peoples to live on the land we now call Canada." }
+          ]
+        }
+        </script>
+        <div class="flips"></div>
+        <div class="btnrow">
+          <button class="toggle ghost" type="button" data-role="shuffle">Mix them up</button>
+        </div>
+      </section>
+
+      <section>
+        <div class="tint d">
+          <b>NOT ON THIS SHEET</b>
+          <p>Treaties come next week in social studies. Melting, freezing and the water cycle come later in science.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="tint b">
+          <b>FOR MOM AND DAD &middot; WHAT MME SEYCHELLE ASKED FOR</b>
+          <p>Math Snap with a deck of cards, face cards out, 5&ndash;10 minutes a few times a week &middot; sums to 20, then subtraction, then three-card Snap &middot; three-digit addition with regrouping, shown with base-ten blocks, money and the column method &middot; optional French and English word lists and reading passages in Classroom &rsaquo; For Parents (not downloaded yet, so none are on this sheet) &middot; library walk Wed Nov 4: library card, books to return, a bag, warm clothes &middot; Remembrance Day assembly Nov 10 &middot; fall break Nov 11&ndash;15.</p>
+        </div>
+      </section>
+
+    </div>
+  </details>
+
+
+  <!-- ===================== UNIT: reading and writing ===================== -->
+  <details class="unit"
            data-unit="lecture-ecriture-2026-10-25"
            data-when="Oct 25"
            data-subject="Lecture et &Eacute;criture"
@@ -1758,6 +2027,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 })();
 
 </script>
+
 
 
 

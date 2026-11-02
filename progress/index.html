@@ -29,6 +29,11 @@
 
 *{box-sizing:border-box}
 
+/* Data blocks are <script type="application/json">. A stylesheet rule that happens
+   to match one will render its contents as text on the page — which is exactly what
+   `.bank` did once the piggy bank borrowed that class name. Never let it happen again. */
+script{display:none!important}
+
 body{
   background:var(--ground);
   color:var(--ink);
@@ -106,34 +111,35 @@ h1{
   display:flex;flex-direction:column;gap:11px;
 }
 .rewards > .label{color:var(--lead)}
-.rewards .bank{border:0;padding:0;background:transparent;max-width:none}
+.rewards .piggy{border:0;padding:0;background:transparent;max-width:none}
 
 /* ---------------- piggy bank ---------------- */
 
-.bank{
+.piggy{
   width:100%;max-width:460px;
   display:flex;align-items:center;gap:15px;
   background:var(--paper);border:2px solid var(--ground);border-radius:12px;
   padding:13px 16px;text-align:left;
 }
-.rail .bank .pig{width:46px;height:40px}
-.rail .bank{gap:12px}
-.bank .pig{flex:0 0 auto;width:58px;height:50px;color:var(--lead)}
-.bank .figures{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:5px}
-.bank .owed{
+.rail .piggy .pig{width:46px;height:40px}
+.rail .piggy{gap:12px}
+.piggy .pig{flex:0 0 auto;width:58px;height:50px;color:var(--lead)}
+.piggy .figures{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:5px}
+.piggy .owed{
   font-family:var(--display);font-size:32px;line-height:1;color:var(--lead);margin:0;
 }
-.bank .owed small{
+.piggy .owed small{
   display:block;margin-top:4px;
   font-family:var(--body);font-size:10.5px;letter-spacing:.15em;
   text-transform:uppercase;font-weight:600;color:var(--soft);
 }
-.bank .earned{font-size:13.5px;color:var(--soft);margin:0}
-.bank .earned b{color:var(--ink);font-weight:500}
+.piggy .earned{font-size:13.5px;color:var(--soft);margin:0}
+.piggy .earned b{color:var(--ink);font-weight:500}
 .meter{height:9px;border-radius:999px;background:var(--ground);overflow:hidden}
 .meter span{display:block;height:100%;width:0;background:var(--lead);border-radius:999px;transition:width .45s ease}
-.bank .togo{font-size:13px;color:var(--soft);margin:0}
-.bank .togo b{color:var(--lead);font-weight:600}
+.piggy .togo{font-size:13px;color:var(--soft);margin:0}
+.piggy .togo b{color:var(--lead);font-weight:600}
+.onlyhere{font-size:11.5px;color:var(--soft);margin:2px 0 0;letter-spacing:.02em}
 
 /* ---------------- coming up ----------------
    Alpenglow is the family brand's attention colour, so a quiz lives here. */
@@ -473,6 +479,8 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 
+
+
 </style>
 <style>
 /* The report is a plain single column — it must not pick up the girls' two-column
@@ -557,10 +565,12 @@ table.sheets tr.full td .got{color:var(--green);font-weight:500}
      data-unit exactly, or the stars will not line up. */
   var SHEETS = {
     ellie: [
+      { unit: 'regrouping-2026-11-02',       when: 'Nov 2',  subject: 'Math Snap & Regrouping', topic: 'Facts to 20 · carrying · noms, verbes, adjectifs', stars: 6 },
       { unit: 'lecture-ecriture-2026-10-25', when: 'Oct 25', subject: 'Lecture et Écriture', topic: 'Le son au/eau · short vowels · Canada', stars: 4 },
       { unit: 'matter-2026-10-26',           when: 'Oct 26', subject: 'States of Matter',    topic: 'Science quiz · solids, liquids, gases', stars: 4 }
     ],
     addie: [
+      { unit: 'mots-frequents-2026-11-02', when: 'Nov 2', subject: 'Mots fréquents', topic: 'Sight words in sentences · Halloween words · five senses', stars: 4 },
       { unit: 'oct-2026-practice', when: 'Oct 24', subject: 'Sounds, Numbers & Patterns', topic: 'What Mme Ashley asked us to practise', stars: 4 }
     ]
   };
