@@ -151,8 +151,6 @@ h1{
   border:0;border-radius:12px;padding:13px 16px;
   font-family:var(--body);text-align:center;cursor:pointer;
 }
-/* display:flex above beats the hidden attribute, so an empty bank drew a blank pink bar. */
-.upnext[hidden]{display:none}
 .upnext:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 .upnext .cue{
   font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
@@ -402,6 +400,34 @@ button.toggle:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
 button.toggle.ghost{background:transparent;color:var(--green);border:2px solid var(--ground);padding:8px 16px}
 .score{font-family:var(--display);font-size:21px;line-height:1.25;color:var(--purple);margin:0}
 
+/* ---------------- parent review + payout ---------------- */
+
+.review{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.review[hidden]{display:none!important}
+.review .checked{
+  font-size:15px;font-weight:500;color:var(--green);margin:0;
+  background:rgba(46,115,88,.09);border-radius:10px;padding:9px 13px;
+}
+.review .nope,.payout .nope{font-size:14px;color:var(--pink);font-weight:500;margin:0}
+.codebox{display:flex;flex-direction:column;gap:8px;width:100%}
+
+input.code{
+  font-family:var(--body);font-size:17px;color:var(--ink);
+  background:var(--paper);border:2px solid var(--ground);border-radius:10px;
+  padding:10px 13px;min-height:44px;width:110px;letter-spacing:.2em;
+}
+input.code.amount{letter-spacing:0;width:92px}
+input.code:focus{border-color:var(--lead);outline:none}
+input.code:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
+
+.payout{
+  display:flex;flex-direction:column;gap:9px;align-items:center;
+  background:var(--paper);border:2px solid var(--ground);border-radius:12px;
+  padding:14px 16px;max-width:460px;width:100%;
+}
+.payout[hidden]{display:none!important}
+.payout .btnrow{justify-content:center}
+
 /* ---------------- stars ---------------- */
 
 .star{
@@ -415,7 +441,12 @@ button.toggle.ghost{background:transparent;color:var(--green);border:2px solid v
 .unit-stars .star:nth-child(4n+3).on,.stars .star:nth-child(4n+3).on{background:var(--blue);border-color:var(--blue)}
 .unit-stars .star:nth-child(4n+4).on,.stars .star:nth-child(4n+4).on{background:var(--green);border-color:var(--green)}
 @keyframes pop{0%{transform:scale(.55)}55%{transform:scale(1.3)}100%{transform:scale(1)}}
-.star.pop{animation:pop .5s ease}
+.star.pop,.extra.pop{animation:pop .5s ease}
+.extra{
+  font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:.02em;
+  color:var(--paper);background:var(--green);border-radius:999px;
+  padding:3px 9px;line-height:1.3;flex:0 0 auto;align-self:center;
+}
 
 /* ---------------- footer ---------------- */
 
@@ -1438,26 +1469,35 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
     var id = unit.getAttribute('data-unit');
     var box = unit.querySelector('.unit-stars');
     var max = unitMax(unit);
-    var lit = Math.min(earnedFor(id), max);
+    var earned = earnedFor(id);
+    var lit = Math.min(earned, max);
+    var extra = Math.max(0, earned - max);
+
     if(box){
       starRow(box, lit, max);
-      if(justWon && lit > 0){
-        var won = box.children[lit - 1];
-        if(won){
-          won.classList.remove('pop');
-          void won.offsetWidth;
-          won.classList.add('pop');
+      if(extra > 0){
+        var more = el('span', 'extra', '+' + extra);
+        more.setAttribute('aria-label', extra + ' more beyond the target');
+        box.appendChild(more);
+      }
+      if(justWon){
+        var pop = extra > 0 ? box.lastChild : box.children[lit - 1];
+        if(pop){
+          pop.classList.remove('pop');
+          void pop.offsetWidth;
+          pop.classList.add('pop');
         }
       }
     }
+
     var row = shelf && shelf.querySelector('.row[data-for="' + id + '"]');
     if(row){
       var got = row.querySelector('.got');
       if(got){
-        got.innerHTML = STAR_SVG + ' ' + lit + '/' + max;
-        got.setAttribute('aria-label', lit + ' of ' + max + ' stars earned');
+        got.innerHTML = STAR_SVG + ' ' + earned + '/' + max;
+        got.setAttribute('aria-label', earned + ' stars earned, target ' + max);
       }
-      row.classList.toggle('done', lit >= max);
+      row.classList.toggle('done', earned >= max);
     }
   }
 
@@ -1504,10 +1544,11 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
     });
   }
 
+  /* No ceiling. The row of stars on a sheet is a target, not a limit — once it is
+     full, extra rounds keep earning and show as a +N beside it. Practice that
+     stops paying is practice she stops doing. */
   function award(unit){
     var id = unit.getAttribute('data-unit');
-    var max = unitMax(unit);
-    if(earnedFor(id) >= max){ return false; }
     state.units[id] = earnedFor(id) + 1;
     state.lifetime = state.lifetime + 1;
     save();
@@ -1781,13 +1822,28 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
      A textarea that saves itself. Her writing is kept under its own key, away
      from the star record, so "Start the stars over" never wipes her work. */
 
-  function wireWrite(act){
+  /* A writing star is not self-serve. She writes, a grown-up reads it and enters
+     the code, and only then does the star land. Rewriting it afterwards makes it
+     reviewable again, so a second effort can earn a second star. */
+  function textHash(text){
+    var h = 0;
+    for(var i = 0; i < text.length; i++){ h = (h * 31 + text.charCodeAt(i)) >>> 0; }
+    return h;
+  }
+
+  /* The parent code, stored as a hash so the digits are not sitting in the page
+     source. A determined nine-year-old could still defeat this; it is a door
+     handle, not a lock. */
+  var PARENT_CODE_HASH = 1599743;
+
+  function wireWrite(act, unit){
     var box = act.querySelector('.scribe');
     var bar = act.querySelector('.writebar');
     var id = act.getAttribute('data-write');
     if(!box || !id){ return; }
 
     var key = KEY + ':write:' + id;
+    var markKey = KEY + ':review:' + id;
     var want = parseInt(act.getAttribute('data-sentences'), 10) || 0;
     var timer = null;
 
@@ -1795,6 +1851,86 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
       var saved = window.localStorage.getItem(key);
       if(saved){ box.value = saved; }
     } catch(e){}
+
+    function reviewedHash(){
+      try{ return parseInt(window.localStorage.getItem(markKey), 10); }
+      catch(e){ return NaN; }
+    }
+
+    function isReviewed(){
+      var trimmed = box.value.trim();
+      return trimmed.length > 0 && reviewedHash() === textHash(trimmed);
+    }
+
+    var review = el('div', 'review');
+    act.appendChild(review);
+
+    function paintReview(note, bad){
+      review.innerHTML = '';
+      var trimmed = box.value.trim();
+
+      if(!trimmed){ review.hidden = true; return; }
+      review.hidden = false;
+
+      if(isReviewed()){
+        review.appendChild(el('p', 'checked', '✓ A grown-up checked this. Star earned.'));
+        return;
+      }
+
+      var ask = el('button', 'toggle ghost');
+      ask.type = 'button';
+      ask.textContent = reviewedHash() ? 'You changed it — get it checked again'
+                                       : 'Ask a grown-up to check it';
+      ask.addEventListener('click', function(){ openCode(); });
+      review.appendChild(ask);
+
+      if(note){ review.appendChild(el('p', bad ? 'nope' : 'hint', note)); }
+    }
+
+    function openCode(){
+      review.innerHTML = '';
+      var form = el('div', 'codebox');
+      form.appendChild(el('p', 'hint', 'Grown-ups: read it together, then enter the code.'));
+
+      var row = el('div', 'btnrow');
+      var input = document.createElement('input');
+      input.type = 'password';
+      input.inputMode = 'numeric';
+      input.autocomplete = 'off';
+      input.className = 'code';
+      input.setAttribute('aria-label', 'Parent code');
+      input.placeholder = '••••';
+      row.appendChild(input);
+
+      var go = el('button', 'toggle');
+      go.type = 'button';
+      go.textContent = 'Check it';
+      row.appendChild(go);
+
+      var cancel = el('button', 'toggle ghost');
+      cancel.type = 'button';
+      cancel.textContent = 'Not now';
+      cancel.addEventListener('click', function(){ paintReview(''); });
+      row.appendChild(cancel);
+
+      form.appendChild(row);
+      review.appendChild(form);
+      input.focus();
+
+      function submit(){
+        if(textHash(input.value.trim()) !== PARENT_CODE_HASH){
+          input.value = '';
+          paintReview('That is not the code.', true);
+          return;
+        }
+        try{ window.localStorage.setItem(markKey, String(textHash(box.value.trim()))); } catch(e){}
+        if(unit){ award(unit); }
+        paintReview('');
+      }
+
+      go.addEventListener('click', submit);
+      input.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ submit(); } });
+    }
 
     function sentences(text){
       var found = text.trim().match(/[^.!?…]+[.!?…]+/g);
@@ -1816,6 +1952,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 
     box.addEventListener('input', function(){
       status('');
+      paintReview('');
       window.clearTimeout(timer);
       timer = window.setTimeout(function(){
         try{
@@ -1828,6 +1965,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
     });
 
     status(box.value ? 'saved' : '');
+    paintReview('');
   }
 
   /* ---------------- shared verdict + star award ---------------- */
@@ -1838,10 +1976,10 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
       if(peeked){
         return 'All ' + total + ' right — but the answers were showing. Tap New examples and win a star for real.';
       }
-      if(awarded){ return 'Still perfect. Tap New examples for a fresh set.'; }
+      if(awarded){ return 'Still perfect. Tap New examples for a fresh set and another star.'; }
       markAwarded();
-      if(award(unit)){ return 'Perfect — all ' + total + ' right. You earned a star!'; }
-      return 'Perfect — all ' + total + ' right. Every star on this sheet is lit.';
+      award(unit);
+      return 'Perfect — all ' + total + ' right. You earned a star!';
     }
     var blank = total - done;
     if(blank > 0){
@@ -1970,7 +2108,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
       if(kind === 'sort'){ wireSort(act, unit); }
       else if(kind === 'choice'){ wireChoice(act, unit); }
       else if(kind === 'flip'){ wireFlip(act); }
-      else if(kind === 'write'){ wireWrite(act); }
+      else if(kind === 'write'){ wireWrite(act, unit); }
     });
   });
 
@@ -2012,23 +2150,102 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
     }
   );
 
+  /* Paying out takes an amount, because real payments are rarely the whole tin:
+     a fiver now, the rest at the weekend. Behind the same code as a review, so a
+     stray tap cannot empty her bank. */
   var payBtn = document.getElementById('record-payment');
   if(payBtn){
-    var payLabel = function(){
-      return owedDollars() > 0 ? 'Record paying $' + owedDollars() : 'Nothing owed right now';
-    };
+    var payPanel = el('div', 'payout');
+    payPanel.hidden = true;
+    payBtn.parentNode.insertBefore(payPanel, payBtn.nextSibling);
+
+    function payLabel(){
+      var owed = owedDollars();
+      return owed > 0 ? 'Pay out — $' + owed + ' owed' : 'Nothing owed right now';
+    }
+
+    function openPayout(){
+      var owed = owedDollars();
+      payPanel.innerHTML = '';
+      payPanel.hidden = false;
+
+      payPanel.appendChild(el('p', 'hint', 'How much did you hand over? She is owed $' + owed + '.'));
+
+      var row = el('div', 'btnrow');
+
+      var amount = document.createElement('input');
+      amount.type = 'number';
+      amount.min = '1';
+      amount.max = String(owed);
+      amount.step = '1';
+      amount.className = 'code amount';
+      amount.value = String(owed);
+      amount.setAttribute('aria-label', 'Amount paid, in dollars');
+      row.appendChild(amount);
+
+      var code = document.createElement('input');
+      code.type = 'password';
+      code.inputMode = 'numeric';
+      code.autocomplete = 'off';
+      code.className = 'code';
+      code.placeholder = 'code';
+      code.setAttribute('aria-label', 'Parent code');
+      row.appendChild(code);
+
+      var go = el('button', 'toggle');
+      go.type = 'button';
+      go.textContent = 'Paid it';
+      row.appendChild(go);
+
+      var cancel = el('button', 'toggle ghost');
+      cancel.type = 'button';
+      cancel.textContent = 'Cancel';
+      cancel.addEventListener('click', function(){ payPanel.hidden = true; });
+      row.appendChild(cancel);
+
+      payPanel.appendChild(row);
+      var msg = el('p', 'hint', '');
+      payPanel.appendChild(msg);
+
+      amount.focus();
+      amount.select();
+
+      function submit(){
+        if(textHash(code.value.trim()) !== PARENT_CODE_HASH){
+          msg.className = 'nope';
+          msg.textContent = 'That is not the code.';
+          code.value = '';
+          return;
+        }
+        var given = Math.floor(Number(amount.value));
+        if(!(given > 0)){
+          msg.className = 'nope';
+          msg.textContent = 'Enter how much you paid.';
+          return;
+        }
+        given = Math.min(given, owedDollars());
+        state.paid = state.paid + given;
+        save();
+        paintLifetime();
+        payBtn.textContent = payLabel();
+        payPanel.hidden = true;
+      }
+
+      go.addEventListener('click', submit);
+      code.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ submit(); } });
+    }
+
     payBtn.textContent = payLabel();
-    armButton(payBtn, 'Tap again to confirm you paid it', function(){
+    payBtn.addEventListener('click', function(){
       if(owedDollars() <= 0){ return; }
-      state.paid = earnedDollars();
-      save();
-      paintLifetime();
-      payBtn.textContent = payLabel();
+      if(!payPanel.hidden){ payPanel.hidden = true; return; }
+      openPayout();
     });
   }
 })();
 
 </script>
+
 
 
 
