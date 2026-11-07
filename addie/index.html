@@ -152,6 +152,8 @@ h1{
   font-family:var(--body);text-align:center;cursor:pointer;
 }
 .upnext:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
+/* display:flex above beats the hidden attribute, so an empty bank drew a blank pink bar. Keep this. */
+.upnext[hidden]{display:none}
 .upnext .cue{
   font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
   font-weight:600;opacity:.85;
@@ -243,7 +245,9 @@ h1{
 .unit:not([open]) > summary{border-left-color:var(--ground)}
 .unit-title{font-family:var(--display);font-size:27px;line-height:1.05;flex:1 1 220px;min-width:0}
 .unit-meta{flex:1 1 100%;font-size:13px;color:var(--soft);order:3}
-.unit-stars{display:flex;gap:5px;flex:0 0 auto;order:2}
+/* Its own full-width line, so the row can keep growing past the target without
+   squeezing the sheet's name. */
+.unit-stars{display:flex;gap:6px;flex:1 1 100%;flex-wrap:wrap;order:2}
 .unit-body{
   padding-left:max(18px,env(safe-area-inset-left,0px));
   padding-right:max(18px,env(safe-area-inset-right,0px));
@@ -441,12 +445,7 @@ input.code:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
 .unit-stars .star:nth-child(4n+3).on,.stars .star:nth-child(4n+3).on{background:var(--blue);border-color:var(--blue)}
 .unit-stars .star:nth-child(4n+4).on,.stars .star:nth-child(4n+4).on{background:var(--green);border-color:var(--green)}
 @keyframes pop{0%{transform:scale(.55)}55%{transform:scale(1.3)}100%{transform:scale(1)}}
-.star.pop,.extra.pop{animation:pop .5s ease}
-.extra{
-  font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:.02em;
-  color:var(--paper);background:var(--green);border-radius:999px;
-  padding:3px 9px;line-height:1.3;flex:0 0 auto;align-self:center;
-}
+.star.pop{animation:pop .5s ease}
 
 /* ---------------- footer ---------------- */
 
@@ -533,7 +532,18 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 
     <button class="upnext" type="button" id="upnext" hidden></button>
     <script type="application/json" id="upnext-bank">
-    []
+    [
+      {
+        "date": "2026-11-10",
+        "what": "Number dictée: numbers to 45",
+        "unit": "son-ou-2026-11-06"
+      },
+      {
+        "date": "2026-11-19",
+        "what": "French dictée: syllables and sight words",
+        "unit": "son-ou-2026-11-06"
+      }
+    ]
     </script>
     <script type="application/json" id="joke-bank">
       [
@@ -621,8 +631,181 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 
   <div class="units">
 
-  <!-- ===================== UNIT: sight words and Halloween words ===================== -->
+  <!-- ===================== UNIT: le son ou, numbers to 45, pair/impair ===================== -->
   <details class="unit" open
+           data-unit="son-ou-2026-11-06"
+           data-when="Nov 6"
+           data-subject="Le son ou"
+           data-topic="ou syllables &middot; dict&eacute;e numbers to 45 &middot; pair, impair"
+           data-stars="4">
+    <summary>
+      <span class="unit-title">Le son ou</span>
+      <span class="unit-stars"></span>
+      <span class="unit-meta">Number dict&eacute;e Tuesday &middot; from Mme Ashley's November 6 update</span>
+    </summary>
+
+    <div class="unit-body">
+
+      <section>
+        <p class="label">Bonjour Addie</p>
+        <h2>O and U make one sound</h2>
+        <p class="lede">In French, <b>ou</b> sounds like the &ldquo;oo&rdquo; in moon. Say <i>loup</i>!</p>
+      </section>
+
+      <section class="act" data-act="choice">
+        <p class="label">Le son ou</p>
+        <h2>Which word has ou?</h2>
+        <p class="hint">Look at the picture. Tap the word with ou.</p>
+        <script type="application/json" class="bank">
+        {
+          "take": 4,
+          "questions": [
+            { "ask": "🐺", "html": true, "options": ["le loup (wolf)", "le chat (cat)", "la lune (moon)"], "answer": 0, "why": "l-ou-p. loup has ou." },
+            { "ask": "🐔", "html": true, "options": ["la poule (hen)", "le lit (bed)", "le sac (bag)"], "answer": 0, "why": "p-ou-le. poule has ou." },
+            { "ask": "👄", "html": true, "options": ["la bouche (mouth)", "la main (hand)", "le nez (nose)"], "answer": 0, "why": "b-ou-che. bouche has ou." },
+            { "ask": "🍲", "html": true, "options": ["la soupe (soup)", "le riz (rice)", "la pomme (apple)"], "answer": 0, "why": "s-ou-pe. soupe has ou." },
+            { "ask": "🦉", "html": true, "options": ["le hibou (owl)", "le canard (duck)", "le lapin (rabbit)"], "answer": 0, "why": "hib-ou. hibou has ou." },
+            { "ask": "🐑", "html": true, "options": ["le mouton (sheep)", "la vache (cow)", "le cheval (horse)"], "answer": 0, "why": "m-ou-ton. mouton has ou." },
+            { "ask": "🐻", "html": true, "options": ["l'ours (bear)", "le chien (dog)", "le tigre (tiger)"], "answer": 0, "why": "ou-rs. ours has ou." },
+            { "ask": "🛞", "html": true, "options": ["la roue (wheel)", "la moto (motorbike)", "le vélo (bike)"], "answer": 0, "why": "r-ou-e. roue has ou." },
+            { "ask": "🪆", "html": true, "options": ["la poupée (doll)", "la balle (ball)", "le livre (book)"], "answer": 0, "why": "p-ou-pée. poupée has ou." },
+            { "ask": "🥬", "html": true, "options": ["le chou (cabbage)", "la carotte (carrot)", "le maïs (corn)"], "answer": 0, "why": "ch-ou. chou has ou." },
+            { "ask": "🦵", "html": true, "options": ["le genou (knee)", "le pied (foot)", "le bras (arm)"], "answer": 0, "why": "gen-ou. genou has ou." },
+            { "ask": "🛣️", "html": true, "options": ["la route (road)", "la rue (street)", "le parc (park)"], "answer": 0, "why": "r-ou-te. route has ou. rue has u, not ou." }
+          ]
+        }
+        </script>
+        <div class="choice"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">New pictures</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+      </section>
+
+      <section class="act" data-act="sort">
+        <p class="label">Les syllabes</p>
+        <h2>Ou or no ou?</h2>
+        <p class="hint">Read it out loud. Tap <b>Y</b> if it has ou. Tap <b>N</b> if not.</p>
+        <script type="application/json" class="bank">
+        {
+          "order": ["", "Y", "N"],
+          "take": { "Y": 2, "N": 2 },
+          "items": {
+            "Y": ["tou", "mou", "lou", "pou", "sou", "rou", "nou", "fou", "oum", "our", "bou", "jou"],
+            "N": ["ta", "mi", "la", "po", "tu", "ni", "sa", "mo", "li", "pa", "ru", "lu"]
+          }
+        }
+        </script>
+        <div class="sort"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">New syllables</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+        <p class="rule">Careful: <b>u</b> alone is not <b>ou</b>. <i>tu</i> and <i>tou</i> sound different.</p>
+      </section>
+
+      <section class="act" data-act="choice">
+        <p class="label">Dict&eacute;e de nombres</p>
+        <h2>Which number is it?</h2>
+        <p class="hint">Ask a grown-up to read the French word. Tap the number.</p>
+        <script type="application/json" class="bank">
+        {
+          "take": 4,
+          "questions": [
+            { "ask": "douze", "options": ["12", "21", "2"], "answer": 0, "why": "douze is 12." },
+            { "ask": "quinze", "options": ["15", "51", "5"], "answer": 0, "why": "quinze is 15." },
+            { "ask": "dix-sept", "options": ["17", "71", "7"], "answer": 0, "why": "dix-sept is ten and seven: 17." },
+            { "ask": "vingt", "options": ["20", "2", "12"], "answer": 0, "why": "vingt is 20." },
+            { "ask": "vingt-trois", "options": ["23", "32", "13"], "answer": 0, "why": "vingt-trois is 20 and 3: 23." },
+            { "ask": "vingt-huit", "options": ["28", "82", "18"], "answer": 0, "why": "vingt-huit is 20 and 8: 28." },
+            { "ask": "trente", "options": ["30", "13", "3"], "answer": 0, "why": "trente is 30." },
+            { "ask": "trente et un", "options": ["31", "13", "21"], "answer": 0, "why": "trente et un is 30 and 1: 31." },
+            { "ask": "trente-quatre", "options": ["34", "43", "24"], "answer": 0, "why": "trente-quatre is 30 and 4: 34." },
+            { "ask": "trente-neuf", "options": ["39", "93", "29"], "answer": 0, "why": "trente-neuf is 30 and 9: 39." },
+            { "ask": "quarante", "options": ["40", "4", "14"], "answer": 0, "why": "quarante is 40." },
+            { "ask": "quarante-deux", "options": ["42", "24", "32"], "answer": 0, "why": "quarante-deux is 40 and 2: 42." },
+            { "ask": "quarante-cinq", "options": ["45", "54", "35"], "answer": 0, "why": "quarante-cinq is 40 and 5: 45." },
+            { "ask": "quarante et un", "options": ["41", "14", "31"], "answer": 0, "why": "quarante et un is 40 and 1: 41." },
+            { "ask": "dix-neuf", "options": ["19", "91", "9"], "answer": 0, "why": "dix-neuf is ten and nine: 19." },
+            { "ask": "vingt-six", "options": ["26", "62", "16"], "answer": 0, "why": "vingt-six is 20 and 6: 26." }
+          ]
+        }
+        </script>
+        <div class="choice"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">New numbers</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+      </section>
+
+      <section class="act" data-act="choice">
+        <p class="label">Pair ou impair</p>
+        <h2>Even or odd?</h2>
+        <p class="hint">Make pairs of dots. One left over? It is impair.</p>
+        <script type="application/json" class="bank">
+        {
+          "take": 4,
+          "questions": [
+            { "ask": "Pair ou impair?", "dots": 4,  "keepOrder": true, "options": ["pair (even)", "impair (odd)"], "answer": 0, "why": "4 makes two pairs. None left over." },
+            { "ask": "Pair ou impair?", "dots": 5,  "keepOrder": true, "options": ["pair (even)", "impair (odd)"], "answer": 1, "why": "5 makes two pairs and one left over." },
+            { "ask": "Pair ou impair?", "dots": 6,  "keepOrder": true, "options": ["pair (even)", "impair (odd)"], "answer": 0, "why": "6 makes three pairs." },
+            { "ask": "Pair ou impair?", "dots": 7,  "keepOrder": true, "options": ["pair (even)", "impair (odd)"], "answer": 1, "why": "7 has one left over." },
+            { "ask": "Pair ou impair?", "dots": 8,  "keepOrder": true, "options": ["pair (even)", "impair (odd)"], "answer": 0, "why": "8 makes four pairs." },
+            { "ask": "Pair ou impair?", "dots": 3,  "keepOrder": true, "options": ["pair (even)", "impair (odd)"], "answer": 1, "why": "3 has one left over." },
+            { "ask": "Pair ou impair?", "dots": 10, "keepOrder": true, "options": ["pair (even)", "impair (odd)"], "answer": 0, "why": "10 makes five pairs." },
+            { "ask": "Pair ou impair?", "dots": 9,  "keepOrder": true, "options": ["pair (even)", "impair (odd)"], "answer": 1, "why": "9 has one left over." },
+            { "ask": "Pair ou impair?", "dots": 2,  "keepOrder": true, "options": ["pair (even)", "impair (odd)"], "answer": 0, "why": "2 is one pair." },
+            { "ask": "Pair ou impair?", "dots": 1,  "keepOrder": true, "options": ["pair (even)", "impair (odd)"], "answer": 1, "why": "1 has no partner." },
+            { "ask": "Pair ou impair?", "dots": 12, "keepOrder": true, "options": ["pair (even)", "impair (odd)"], "answer": 0, "why": "12 makes six pairs." },
+            { "ask": "Pair ou impair?", "dots": 11, "keepOrder": true, "options": ["pair (even)", "impair (odd)"], "answer": 1, "why": "11 has one left over." }
+          ]
+        }
+        </script>
+        <div class="choice"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">New dots</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+      </section>
+
+      <section class="act" data-act="write" data-write="nov06-ou" data-sentences="2">
+        <p class="label">&Eacute;crire</p>
+        <h2>Write two sentences</h2>
+        <p class="hint">Use a word with ou. Capital, spaces, period.</p>
+        <textarea class="scribe" id="write-nov06-ou" rows="5"
+          placeholder="Le loup mange la soupe&hellip;"></textarea>
+        <p class="writebar" aria-live="polite"></p>
+      </section>
+
+      <section>
+        <div class="tint d">
+          <b>NOT ON THIS SHEET</b>
+          <p>Adding and taking away to 10 starts after fall break.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="tint b">
+          <b>FOR MOM AND DAD &middot; WHAT MME ASHLEY ASKED FOR</b>
+          <p>Weekly dict&eacute;es: numbers on Tuesdays (now up to 45), French syllables and sight words on Thursdays starting soon &middot; she asks families to keep practising at home: say a number or a syllable, Addie writes it &middot; the sound &laquo; ou &raquo; and short syllables like tou, oum, ami &middot; pair / impair (even / odd) continues &middot; November sight words are taped in her agenda; they are not in her Grade 1 folder, so none are on this sheet &middot; assessments before conferences: counting, number ID, patterns, letter names and sounds, sight words, syllables &middot; Remembrance Day assembly Tue Nov 10, 10:30 &middot; fall break Nov 11&ndash;15 (only Mon and Tue next week) &middot; crazy colourful day Nov 19 &middot; conferences Nov 26&ndash;27 &middot; December: Holidays Around the World, a couple of small treats; email her if that is a concern.</p>
+        </div>
+      </section>
+
+    </div>
+  </details>
+
+
+
+  <!-- ===================== UNIT: sight words and Halloween words ===================== -->
+  <details class="unit"
            data-unit="mots-frequents-2026-11-02"
            data-when="Nov 2"
            data-subject="Mots fr&eacute;quents"
@@ -1183,18 +1366,16 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
     var box = unit.querySelector('.unit-stars');
     var max = unitMax(unit);
     var earned = earnedFor(id);
-    var lit = Math.min(earned, max);
-    var extra = Math.max(0, earned - max);
+
+    /* The row GROWS. Empty slots show what is still to aim for; once she passes
+       the target there are no empty slots left, just more stars. A kid wants to
+       see the row get longer, not read a "+2" badge. */
+    var slots = Math.max(earned, max);
 
     if(box){
-      starRow(box, lit, max);
-      if(extra > 0){
-        var more = el('span', 'extra', '+' + extra);
-        more.setAttribute('aria-label', extra + ' more beyond the target');
-        box.appendChild(more);
-      }
-      if(justWon){
-        var pop = extra > 0 ? box.lastChild : box.children[lit - 1];
+      starRow(box, earned, slots);
+      if(justWon && earned > 0){
+        var pop = box.children[earned - 1];
         if(pop){
           pop.classList.remove('pop');
           void pop.offsetWidth;
@@ -1958,6 +2139,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 })();
 
 </script>
+
 
 
 

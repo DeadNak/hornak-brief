@@ -152,6 +152,8 @@ h1{
   font-family:var(--body);text-align:center;cursor:pointer;
 }
 .upnext:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
+/* display:flex above beats the hidden attribute, so an empty bank drew a blank pink bar. Keep this. */
+.upnext[hidden]{display:none}
 .upnext .cue{
   font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
   font-weight:600;opacity:.85;
@@ -243,7 +245,9 @@ h1{
 .unit:not([open]) > summary{border-left-color:var(--ground)}
 .unit-title{font-family:var(--display);font-size:27px;line-height:1.05;flex:1 1 220px;min-width:0}
 .unit-meta{flex:1 1 100%;font-size:13px;color:var(--soft);order:3}
-.unit-stars{display:flex;gap:5px;flex:0 0 auto;order:2}
+/* Its own full-width line, so the row can keep growing past the target without
+   squeezing the sheet's name. */
+.unit-stars{display:flex;gap:6px;flex:1 1 100%;flex-wrap:wrap;order:2}
 .unit-body{
   padding-left:max(18px,env(safe-area-inset-left,0px));
   padding-right:max(18px,env(safe-area-inset-right,0px));
@@ -441,12 +445,7 @@ input.code:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
 .unit-stars .star:nth-child(4n+3).on,.stars .star:nth-child(4n+3).on{background:var(--blue);border-color:var(--blue)}
 .unit-stars .star:nth-child(4n+4).on,.stars .star:nth-child(4n+4).on{background:var(--green);border-color:var(--green)}
 @keyframes pop{0%{transform:scale(.55)}55%{transform:scale(1.3)}100%{transform:scale(1)}}
-.star.pop,.extra.pop{animation:pop .5s ease}
-.extra{
-  font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:.02em;
-  color:var(--paper);background:var(--green);border-radius:999px;
-  padding:3px 9px;line-height:1.3;flex:0 0 auto;align-self:center;
-}
+.star.pop{animation:pop .5s ease}
 
 /* ---------------- footer ---------------- */
 
@@ -621,8 +620,276 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 
   <div class="units">
 
-  <!-- ===================== UNIT: addition with regrouping ===================== -->
+  <!-- ===================== UNIT: FLSZ, o ouvert and editing ===================== -->
   <details class="unit" open
+           data-unit="flsz-2026-11-06"
+           data-when="Nov 6"
+           data-subject="Spelling &amp; Editing"
+           data-topic="FLSZ rule &middot; le son o ouvert &middot; facts to 20"
+           data-stars="6">
+    <summary>
+      <span class="unit-title">Spelling &amp; Editing</span>
+      <span class="unit-stars"></span>
+      <span class="unit-meta">For fall break &middot; from Mme Seychelle's November 6 newsletter</span>
+    </summary>
+
+    <div class="unit-body">
+
+      <section>
+        <p class="label">Bonjour Ellie</p>
+        <h2>Spell it, check it, fix it</h2>
+        <p class="lede">Good writers read their work again. This sheet is all about spotting and fixing.</p>
+      </section>
+
+      <section>
+        <div class="tint d">
+          <b>FOR MOM AND DAD &middot; STAND-IN WORDS</b>
+          <p>Mme Seychelle posted this week&rsquo;s FLSZ and &laquo; o ouvert &raquo; passages and practice words in Classroom &rsaquo; For Parents &middot; they are not in Ellie&rsquo;s Grade 3 folder yet, so every word on this sheet is a stand-in that follows the same rule &middot; save the November files into her folder and the next sheet will use the real lists.</p>
+        </div>
+      </section>
+
+      <section>
+        <p class="label">English &middot; the FLSZ rule</p>
+        <h2>Double the last letter</h2>
+        <p class="lede">A short word with one short vowel, ending in <b>f, l, s</b> or <b>z</b>? Double that last letter.</p>
+        <div class="cards two">
+          <div class="tint a"><b>FLOSS</b><p>cli<b>ff</b> &middot; be<b>ll</b> &middot; me<b>ss</b> &middot; bu<b>zz</b></p></div>
+          <div class="tint c"><b>NOT FLSZ</b><p>ca<b>t</b> &middot; ju<b>mp</b> &middot; ra<b>in</b> &middot; bu<b>s</b> (a rule-breaker)</p></div>
+        </div>
+      </section>
+
+      <section class="act" data-act="choice">
+        <p class="label">FLSZ</p>
+        <h2>Which spelling is right?</h2>
+        <p class="hint">Read the sentence. Tap the right spelling.</p>
+        <script type="application/json" class="bank">
+        {
+          "take": 6,
+          "questions": [
+            { "ask": "The school ___ rang at noon.", "options": ["bell", "bel"], "answer": 0, "why": "Short e, ends in l: double it. bell." },
+            { "ask": "We climbed up the ___.", "options": ["hill", "hil"], "answer": 0, "why": "Short i, ends in l: hill." },
+            { "ask": "My room is a big ___.", "options": ["mess", "mes"], "answer": 0, "why": "Short e, ends in s: mess." },
+            { "ask": "The bee went ___.", "options": ["buzz", "buz"], "answer": 0, "why": "Short u, ends in z: buzz." },
+            { "ask": "The goat stood on the ___.", "options": ["cliff", "clif"], "answer": 0, "why": "Short i, ends in f: cliff." },
+            { "ask": "Please ___ the salt.", "options": ["pass", "pas"], "answer": 0, "why": "Short a, ends in s: pass." },
+            { "ask": "She hugged her ___.", "options": ["doll", "dol"], "answer": 0, "why": "Short o, ends in l: doll." },
+            { "ask": "Turn the light ___.", "options": ["off", "of"], "answer": 0, "why": "off has a short o and ends in f. (of is a different word.)" },
+            { "ask": "The soda will ___.", "options": ["fizz", "fiz"], "answer": 0, "why": "Short i, ends in z: fizz." },
+            { "ask": "Can you ___ your name?", "options": ["spell", "spel"], "answer": 0, "why": "Short e, ends in l: spell." },
+            { "ask": "The dog likes to ___ the grass.", "options": ["sniff", "snif"], "answer": 0, "why": "Short i, ends in f: sniff." },
+            { "ask": "I wore my new ___.", "options": ["dress", "dres"], "answer": 0, "why": "Short e, ends in s: dress." },
+            { "ask": "Pack your ___ in the bag.", "options": ["stuff", "stuf"], "answer": 0, "why": "Short u, ends in f: stuff." },
+            { "ask": "Sit ___ and listen.", "options": ["still", "stil"], "answer": 0, "why": "Short i, ends in l: still." },
+            { "ask": "Fill the ___ with milk.", "options": ["glass", "glas"], "answer": 0, "why": "Short a, ends in s: glass." },
+            { "ask": "Don't make a ___ about it.", "options": ["fuss", "fus"], "answer": 0, "why": "Short u, ends in s: fuss." },
+            { "ask": "What is that bad ___?", "options": ["smell", "smel"], "answer": 0, "why": "Short e, ends in l: smell." },
+            { "ask": "Our ___ went to the library.", "options": ["class", "clas"], "answer": 0, "why": "Short a, ends in s: class." }
+          ]
+        }
+        </script>
+        <div class="choice"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">New sentences</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+      </section>
+
+      <section class="act" data-act="sort">
+        <p class="label">Be the editor</p>
+        <h2>Right, or fix it?</h2>
+        <p class="hint">Tap <b>R</b> if the word is spelled right. Tap <b>F</b> if it needs fixing.</p>
+        <script type="application/json" class="bank">
+        {
+          "order": ["", "R", "F"],
+          "take": { "R": 4, "F": 4 },
+          "items": {
+            "R": ["bell", "cliff", "mess", "buzz", "doll", "stuff", "grass", "spill",
+                  "kiss", "puff", "dress", "jazz", "fill", "toss", "chill", "sniff"],
+            "F": ["hil", "pas", "fuz", "snif", "dres", "smel", "stuf", "glas",
+                  "wel", "mis", "bluf", "fris", "tel", "los", "clif", "yel"]
+          }
+        }
+        </script>
+        <div class="sort"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">New words</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+      </section>
+
+      <section>
+        <p class="label">Fran&ccedil;ais &middot; le son o ouvert</p>
+        <h2>Open o, closed o</h2>
+        <p class="lede">The <b>o ouvert</b> is the open o in <i>porte</i> and <i>pomme</i>. The <b>au</b> and <b>eau</b> you learned make the closed o, like <i>bateau</i>.</p>
+        <div class="cards two">
+          <div class="tint a"><b>O OUVERT</b><p>la porte &middot; la pomme &middot; la robe &middot; le bol</p></div>
+          <div class="tint c"><b>O FERM&Eacute;</b><p>le bateau &middot; jaune &middot; le v&eacute;lo &middot; la rose</p></div>
+        </div>
+      </section>
+
+      <section class="act" data-act="choice">
+        <p class="label">O ouvert</p>
+        <h2>Which word has the open o?</h2>
+        <p class="hint">Say each word out loud. Tap the one with the open o.</p>
+        <script type="application/json" class="bank">
+        {
+          "take": 4,
+          "questions": [
+            { "ask": "Which one?", "options": ["la porte (door)", "le bateau (boat)", "le chapeau (hat)"], "answer": 0, "why": "porte has the open o. eau is the closed o." },
+            { "ask": "Which one?", "options": ["la pomme (apple)", "jaune (yellow)", "le gâteau (cake)"], "answer": 0, "why": "pomme has the open o." },
+            { "ask": "Which one?", "options": ["la robe (dress)", "l’auto (car)", "le vélo (bike)"], "answer": 0, "why": "robe has the open o." },
+            { "ask": "Which one?", "options": ["le bol (bowl)", "beau (beautiful)", "le stylo (pen)"], "answer": 0, "why": "bol has the open o." },
+            { "ask": "Which one?", "options": ["l’école (school)", "l’eau (water)", "chaud (hot)"], "answer": 0, "why": "école has the open o." },
+            { "ask": "Which one?", "options": ["la botte (boot)", "le piano (piano)", "le dos (back)"], "answer": 0, "why": "botte has the open o." },
+            { "ask": "Which one?", "options": ["la poche (pocket)", "le château (castle)", "le mot (word)"], "answer": 0, "why": "poche has the open o." },
+            { "ask": "Which one?", "options": ["le sport (sport)", "le manteau (coat)", "la rose (rose)"], "answer": 0, "why": "sport has the open o." },
+            { "ask": "Which one?", "options": ["octobre (October)", "le cadeau (gift)", "gros (big)"], "answer": 0, "why": "octobre has the open o." },
+            { "ask": "Which one?", "options": ["l’homme (man)", "le seau (bucket)", "le rideau (curtain)"], "answer": 0, "why": "homme has the open o." },
+            { "ask": "Which one?", "options": ["la note (note)", "l’oiseau (bird)", "la photo (photo)"], "answer": 0, "why": "note has the open o. photo ends with a closed o." },
+            { "ask": "Which one?", "options": ["fort (strong)", "autre (other)", "le zéro (zero)"], "answer": 0, "why": "fort has the open o." }
+          ]
+        }
+        </script>
+        <div class="choice"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">New words</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+      </section>
+
+      <section class="act" data-act="choice">
+        <p class="label">Corriger &middot; edit like Mme Seychelle</p>
+        <h2>Which sentence is ready?</h2>
+        <p class="hint">Check for a capital at the start and a period at the end.</p>
+        <script type="application/json" class="bank">
+        {
+          "take": 4,
+          "questions": [
+            { "ask": "Pick the edited sentence.", "options": ["Mon chat est noir.", "mon chat est noir.", "Mon chat est noir"], "answer": 0, "why": "Capital M at the start, period at the end." },
+            { "ask": "Pick the edited sentence.", "options": ["La pomme est rouge.", "la pomme est rouge", "La pomme est rouge"], "answer": 0, "why": "Capital L, and a period." },
+            { "ask": "Pick the edited sentence.", "options": ["Le grand chien court vite.", "le grand chien court vite.", "Le grand chien court vite"], "answer": 0, "why": "Capital L, and a period." },
+            { "ask": "Pick the edited sentence.", "options": ["J’aime la neige.", "j’aime la neige.", "J’aime la neige"], "answer": 0, "why": "Capital J, and a period." },
+            { "ask": "Pick the edited sentence.", "options": ["The red bird sings.", "the red bird sings.", "The red bird sings"], "answer": 0, "why": "Capital T, and a period." },
+            { "ask": "Pick the edited sentence.", "options": ["My little sister is funny.", "my little sister is funny", "My little sister is funny"], "answer": 0, "why": "Capital M, and a period." },
+            { "ask": "Pick the edited sentence.", "options": ["Où est mon sac?", "où est mon sac?", "Où est mon sac."], "answer": 0, "why": "It is a question, so it ends with a question mark." },
+            { "ask": "Pick the edited sentence.", "options": ["Can we go to the hill?", "can we go to the hill?", "Can we go to the hill."], "answer": 0, "why": "A question ends with a question mark." },
+            { "ask": "Pick the edited sentence.", "options": ["Nous allons à Calgary.", "Nous allons à calgary.", "nous allons à Calgary."], "answer": 0, "why": "A capital to start, and Calgary is a place name, so it gets a capital too." },
+            { "ask": "Pick the edited sentence.", "options": ["Ellie and Addie play outside.", "ellie and addie play outside.", "Ellie and addie play outside."], "answer": 0, "why": "Names always get capitals." }
+          ]
+        }
+        </script>
+        <div class="choice"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">New sentences</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+      </section>
+
+      <section>
+        <p class="label">&Eacute;crire</p>
+        <h2>D&eacute;cris un paysage</h2>
+        <div class="act" data-act="write" data-write="nov06-paysage" data-sentences="3">
+          <h3>En fran&ccedil;ais</h3>
+          <p class="hint">Write <b>three sentences</b> about your landscape drawing. Then reread: capitals, periods, one nom, verbe and adjectif each.</p>
+          <textarea class="scribe" id="write-nov06-paysage" rows="6"
+            placeholder="Le champ est rouge et vert&hellip;"></textarea>
+          <p class="writebar" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="act" data-act="choice">
+        <p class="label">Math facts</p>
+        <h2>Find the missing number</h2>
+        <p class="hint">Adding and taking away are partners. Use one to solve the other.</p>
+        <script type="application/json" class="bank">
+        {
+          "take": 6,
+          "questions": [
+            { "ask": "8 + ? = 15", "options": ["7", "6", "8"], "answer": 0, "why": "15 − 8 = 7." },
+            { "ask": "? + 9 = 16", "options": ["7", "8", "6"], "answer": 0, "why": "16 − 9 = 7." },
+            { "ask": "6 + ? = 13", "options": ["7", "6", "8"], "answer": 0, "why": "13 − 6 = 7." },
+            { "ask": "14 − ? = 9", "options": ["5", "6", "4"], "answer": 0, "why": "9 + 5 = 14." },
+            { "ask": "? − 8 = 9", "options": ["17", "16", "18"], "answer": 0, "why": "9 + 8 = 17." },
+            { "ask": "7 + ? = 12", "options": ["5", "6", "4"], "answer": 0, "why": "12 − 7 = 5." },
+            { "ask": "18 − ? = 9", "options": ["9", "8", "10"], "answer": 0, "why": "9 + 9 = 18." },
+            { "ask": "? + 6 = 11", "options": ["5", "6", "4"], "answer": 0, "why": "11 − 6 = 5." },
+            { "ask": "15 − ? = 6", "options": ["9", "8", "7"], "answer": 0, "why": "6 + 9 = 15." },
+            { "ask": "9 + ? = 14", "options": ["5", "4", "6"], "answer": 0, "why": "14 − 9 = 5." },
+            { "ask": "? − 7 = 6", "options": ["13", "12", "14"], "answer": 0, "why": "6 + 7 = 13." },
+            { "ask": "4 + ? = 12", "options": ["8", "7", "9"], "answer": 0, "why": "12 − 4 = 8." },
+            { "ask": "16 − ? = 8", "options": ["8", "7", "9"], "answer": 0, "why": "8 + 8 = 16." },
+            { "ask": "? + 8 = 19", "options": ["11", "10", "12"], "answer": 0, "why": "19 − 8 = 11." },
+            { "ask": "13 − ? = 4", "options": ["9", "8", "7"], "answer": 0, "why": "4 + 9 = 13." },
+            { "ask": "5 + ? = 14", "options": ["9", "8", "10"], "answer": 0, "why": "14 − 5 = 9." },
+            { "ask": "? − 9 = 8", "options": ["17", "16", "18"], "answer": 0, "why": "8 + 9 = 17." },
+            { "ask": "20 − ? = 13", "options": ["7", "6", "8"], "answer": 0, "why": "13 + 7 = 20." }
+          ]
+        }
+        </script>
+        <div class="choice"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">New facts</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+      </section>
+
+      <section class="act" data-act="flip">
+        <p class="label">Social studies &middot; talk it over</p>
+        <h2>Questions from Mme Seychelle</h2>
+        <p class="hint">Answer out loud to Mom or Dad. Flip for some ideas.</p>
+        <script type="application/json" class="bank">
+        {
+          "take": 4,
+          "cards": [
+            { "front": "Who lived in Alberta before Europeans arrived?", "back": "First Nations peoples, like the Blackfoot, Tsuut’ina, Stoney Nakoda, Cree and Dene." },
+            { "front": "How did First Nations use the land to meet their needs?", "back": "Hunting bison, fishing, gathering plants and berries, and using hides and wood for homes and clothes." },
+            { "front": "Why was the land so important to First Nations?", "back": "It gave them food, shelter and medicine. It is part of who they are and their stories." },
+            { "front": "How did First Nations share knowledge and stories?", "back": "By telling them out loud, through Elders, songs, ceremonies and art." },
+            { "front": "Why did Europeans come to the land we call Alberta?", "back": "Mostly for the fur trade. Later, to farm and build towns." },
+            { "front": "What did the two groups learn from each other?", "back": "Europeans learned how to survive here. First Nations got new tools, like metal pots and knives." },
+            { "front": "Why were treaties created?", "back": "So First Nations and the Crown could agree on how to share the land and live together." },
+            { "front": "What did First Nations leaders hope to protect?", "back": "Their way of life, hunting and fishing, and a good future for their children." },
+            { "front": "Why is it important to honour treaties today?", "back": "Treaties are promises. They still matter, and we are all treaty people." }
+          ]
+        }
+        </script>
+        <div class="flips"></div>
+        <div class="btnrow">
+          <button class="toggle ghost" type="button" data-role="shuffle">Mix them up</button>
+        </div>
+      </section>
+
+      <section>
+        <div class="tint d">
+          <b>NOT ON THIS SHEET</b>
+          <p>Two-digit subtraction with regrouping starts after fall break. This sheet keeps to the facts that make it easy.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="tint b">
+          <b>FOR MOM AND DAD &middot; WHAT MME SEYCHELLE ASKED FOR</b>
+          <p>Keep practising addition and subtraction facts at home (Math Snap works) &middot; FLSZ spelling rule and the French &laquo; o ouvert &raquo; sound: passages and practice words in Classroom &rsaquo; For Parents &middot; editing habits: reread, check capitals and punctuation, underline nouns, verbs, adjectives &middot; talk through the First Nations and treaty questions on the flip cards &middot; Remembrance Day assembly Tue Nov 10 &middot; fall break Nov 11&ndash;15 &middot; library visit Nov 18 &middot; parent-teacher conferences Thu Nov 26, 4&ndash;8 pm &middot; no school Fri Nov 27.</p>
+        </div>
+      </section>
+
+    </div>
+  </details>
+
+
+
+  <!-- ===================== UNIT: addition with regrouping ===================== -->
+  <details class="unit"
            data-unit="regrouping-2026-11-02"
            data-when="Nov 2"
            data-subject="Math Snap &amp; Regrouping"
@@ -1470,18 +1737,16 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
     var box = unit.querySelector('.unit-stars');
     var max = unitMax(unit);
     var earned = earnedFor(id);
-    var lit = Math.min(earned, max);
-    var extra = Math.max(0, earned - max);
+
+    /* The row GROWS. Empty slots show what is still to aim for; once she passes
+       the target there are no empty slots left, just more stars. A kid wants to
+       see the row get longer, not read a "+2" badge. */
+    var slots = Math.max(earned, max);
 
     if(box){
-      starRow(box, lit, max);
-      if(extra > 0){
-        var more = el('span', 'extra', '+' + extra);
-        more.setAttribute('aria-label', extra + ' more beyond the target');
-        box.appendChild(more);
-      }
-      if(justWon){
-        var pop = extra > 0 ? box.lastChild : box.children[lit - 1];
+      starRow(box, earned, slots);
+      if(justWon && earned > 0){
+        var pop = box.children[earned - 1];
         if(pop){
           pop.classList.remove('pop');
           void pop.offsetWidth;
@@ -2245,6 +2510,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 })();
 
 </script>
+
 
 
 
