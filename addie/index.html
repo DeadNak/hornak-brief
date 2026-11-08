@@ -416,6 +416,15 @@ a.site:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
 a.site .name{font-family:var(--display);font-size:21px;line-height:1.1;color:var(--lead)}
 a.site .what{font-size:14px;color:var(--soft);line-height:1.35}
 
+/* ---------------- mixed practice ---------------- */
+
+.fromwhere{
+  font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;
+  color:var(--lead);margin:0;
+}
+.act[data-act="mixed"] .sort[hidden],
+.act[data-act="mixed"] .choice[hidden]{display:none!important}
+
 /* ---------------- alert ----------------
    Something needs a parent's hands before the next run. Loud on purpose. */
 
@@ -564,7 +573,43 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 
+/* ---------------- grown-ups panel ----------------
+   Star management behind the parent code: give, take back, correct, and the
+   ledger that explains the number. Styled plainly - this one is not for kids. */
 
+.grownups{
+  display:flex;flex-direction:column;gap:12px;align-items:stretch;text-align:left;
+  background:var(--paper);border:2px solid var(--ground);border-radius:12px;
+  padding:16px;max-width:520px;width:100%;
+}
+.grownups[hidden]{display:none!important}
+.grownups .btnrow{justify-content:flex-start}
+.grownups .nope{font-size:14px;color:var(--pink);font-weight:500;margin:0}
+
+.ghead{display:flex;flex-direction:column;gap:7px}
+.gbig{font-family:var(--display);font-size:30px;line-height:1.1;margin:0;color:var(--lead)}
+
+.gsplit{display:grid;grid-template-columns:1fr auto;gap:3px 14px;margin:0;font-size:15px}
+.gsplit dt{color:var(--soft)}
+.gsplit dd{margin:0;text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+
+select.code{
+  font-family:var(--body);font-size:16px;color:var(--ink);
+  background:var(--paper);border:2px solid var(--ground);border-radius:10px;
+  padding:9px 10px;min-height:44px;
+}
+.gform{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.gform .gpick{width:auto}
+.gform .gwhy{flex:1 1 150px;width:auto;letter-spacing:0;min-width:0}
+
+.glog .label{margin-bottom:6px}
+.glist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px;font-size:14px}
+.glist li{display:flex;gap:9px;align-items:baseline;border-bottom:1px solid var(--ground);padding-bottom:5px}
+.glist li b{flex:0 0 auto;font-weight:600;font-variant-numeric:tabular-nums}
+.glist li span{flex:1 1 auto;color:var(--soft);min-width:0}
+.glist li time{flex:0 0 auto;color:var(--soft);font-size:13px}
+
+.gdone{align-self:flex-start}
 
 </style>
 <style>:root{--lead:var(--purple)}</style>
@@ -858,13 +903,6 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
         </div>
       </section>
 
-      <section>
-        <div class="tint b">
-          <b>FOR MOM AND DAD &middot; WHAT MME ASHLEY ASKED FOR</b>
-          <p>Weekly dict&eacute;es: numbers on Tuesdays (now up to 45), French syllables and sight words on Thursdays starting soon &middot; she asks families to keep practising at home: say a number or a syllable, Addie writes it &middot; the sound &laquo; ou &raquo; and short syllables like tou, oum, ami &middot; pair / impair (even / odd) continues &middot; November sight words are taped in her agenda; they are not in her Grade 1 folder, so none are on this sheet &middot; assessments before conferences: counting, number ID, patterns, letter names and sounds, sight words, syllables &middot; Remembrance Day assembly Tue Nov 10, 10:30 &middot; fall break Nov 11&ndash;15 (only Mon and Tue next week) &middot; crazy colourful day Nov 19 &middot; conferences Nov 26&ndash;27 &middot; December: Holidays Around the World, a couple of small treats; email her if that is a concern.</p>
-        </div>
-      </section>
-
     </div>
   </details>
 
@@ -891,12 +929,6 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
         <p class="lede">Sight words do not follow the sound rules. You just have to know them.</p>
       </section>
 
-      <section>
-        <div class="tint d">
-          <b>FOR MOM AND DAD</b>
-          <p>These are Mme Ashley&rsquo;s real November ten, from <em>Les Mots Fr&eacute;quents &mdash; novembre</em>: se &middot; ce &middot; sur &middot; plus &middot; tu &middot; chaque &middot; ou &middot; par &middot; je &middot; elle. They are tested monthly and she is expected to know them by the end of Grade 1.</p>
-        </div>
-      </section>
 
       <section class="act" data-act="choice">
         <p class="label">Les mots fr&eacute;quents</p>
@@ -992,13 +1024,6 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
         <textarea class="scribe" id="write-nov02-halloween" rows="5"
           placeholder="Il y a une citrouille dans&hellip;"></textarea>
         <p class="writebar" aria-live="polite"></p>
-      </section>
-
-      <section>
-        <div class="tint b">
-          <b>FOR MOM AND DAD &middot; WHAT MME ASHLEY ASKED FOR</b>
-          <p>Sight-word practice as part of the home routine &middot; the list is taped into her agenda each month and goes up in Classroom &middot; November calendar, newsletter and book orders came home Oct 30 &middot; bottle drive Thu Nov 5 &middot; Remembrance Day assembly Nov 10, 10:30 &middot; fall break Nov 11&ndash;15.</p>
-        </div>
       </section>
 
     </div>
@@ -1245,16 +1270,42 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
         <p class="writebar" aria-live="polite"></p>
       </section>
 
-      <section>
-        <div class="tint d">
-          <b>WHAT MME ASHLEY ASKED FOR THIS MONTH</b>
-          <p>Letter and number reversals &middot; the October sight words, tested monthly &middot; counting to 20 &middot; the Ll and Mm reading sheets sent home &middot; naming a pattern and finding its core, clapping games included.</p>
-        </div>
-      </section>
 
     </div>
   </details>
 
+  <!-- ===================== UNIT: practice (cumulative, uncapped) ===================== -->
+  <details class="unit"
+           data-unit="practice"
+           data-when="Any time"
+           data-subject="Practice"
+           data-topic="Anything from any sheet &middot; extra stars"
+           data-stars="6">
+    <summary>
+      <span class="unit-title">Practice</span>
+      <span class="unit-stars"></span>
+      <span class="unit-meta">Everything you have learned, mixed up &mdash; and more stars</span>
+    </summary>
+
+    <div class="unit-body">
+
+      <section class="act" data-act="mixed">
+        <p class="label">Keep going</p>
+        <h2>Anything, from any sheet</h2>
+        <p class="hint">This picks a round at random from everything you have done. Get it all right and you win a star. Tap <b>Something else</b> for a different one.</p>
+        <p class="fromwhere"></p>
+        <div class="sort"></div>
+        <div class="choice"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">Something else</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+      </section>
+
+    </div>
+  </details>
   <!-- ===================== UNIT: for parents (evergreen, no stars) ===================== -->
   <details class="unit"
            data-unit="for-parents"
@@ -1298,7 +1349,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
         <p class="label">From Mme Ashley</p>
         <h2>What she has asked for</h2>
         <div class="tint d">
-          <p>Practise the monthly sight words at home &mdash; tested monthly, and expected to be known by the end of Grade 1 &middot; practise writing letters and numbers, because the Grade 1 classes are seeing a lot of reversals &middot; keep counting to 20 &middot; work the reading sheets that come home &middot; dress for the weather: coat, ski pants, hat, scarf, mittens, and a pair of indoor shoes that stay at school.</p>
+          <p><b>Weekly dict&eacute;es:</b> numbers on Tuesdays, now up to 45 &middot; French syllables and sight words on Thursdays. She asks us to practise the same way at home: say a number or a syllable, Addie writes it.<br><b>French:</b> the sound &laquo; ou &raquo; and short syllables like <em>tou, oum, ami</em> &middot; the monthly sight words, taped into her agenda and posted in Classroom, tested monthly and expected to be known by the end of Grade 1.<br><b>Maths:</b> numbers to 40, counting backwards from 20, <em>pair / impair</em>, and simple addition and subtraction within 10.<br><b>Writing:</b> letters and numbers the right way round &mdash; the Grade 1 classes are seeing a lot of reversals.<br><b>Before conferences</b> she assesses counting, number ID, patterns, letter names and sounds, sight words and syllables.<br><b>Also:</b> dress for the weather &mdash; coat, ski pants, hat, scarf, mittens, and indoor shoes that stay at school. In December the class does Holidays Around the World with a couple of small treats; email her if that is a concern.</p>
         </div>
       </section>
 
@@ -1315,7 +1366,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
             <p>Writing earns a star only when one of us reads it and enters our four-digit code. If she rewrites it, it can earn again. The same code covers paying out. The digits are deliberately not written here &mdash; this page is public, and the girls can read it.</p>
           </div>
         </div>
-        <p class="rule">Stars are saved in the browser on <b>her</b> device. Open the <a href="../progress/" target="_blank" rel="noopener">progress report</a> on that same iPad to see both girls and settle up.</p>
+        <p class="rule">Stars are saved in the browser on <b>her</b> device. Open the <a href="../progress/" target="_blank" rel="noopener">progress report</a> on that same iPad to see both girls and settle up. The logins on Online Resources are shared school accounts rather than personal ones, and this page is public, so keep the link in the family.</p>
       </section>
 
     </div>
@@ -1365,13 +1416,6 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
         </div>
       </section>
 
-      <section>
-        <div class="tint d">
-          <b>FOR MUM AND DAD</b>
-          <p>Both came from Mme Ashley&rsquo;s Google Classroom. The logins are shared school accounts rather than personal ones, and this page is public, so treat the link as something to keep in the family.</p>
-        </div>
-      </section>
-
     </div>
   </details>
 
@@ -1381,7 +1425,8 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
     <div class="stripe"></div>
     <p class="note">Hornak family &middot; four stripes, one for each of us</p>
     <button class="reset no-print" type="button" id="record-payment">Record a payment</button>
-    <button class="reset no-print" type="button" id="reset-stars">Start the stars over</button>
+    <button class="reset no-print" type="button" id="open-grownups">Grown-ups</button>
+    <div class="grownups no-print" id="grownups" hidden></div>
   </div>
 
 </div>
@@ -1423,7 +1468,22 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
   var STARS_PER_PAYOUT = 20;
   var PAYOUT = 5;
 
-  var state = { lifetime: 0, units: {}, paid: 0 };
+  var state = { units: {}, paid: 0, bonus: 0, log: [] };
+
+  /* The total is DERIVED: stars won on sheets, plus whatever a grown-up has given
+     or taken by hand. Nothing stores a free-floating "lifetime" that one stray tap
+     could zero, and `bonus` keeps hand-given stars visible as their own number. */
+  function unitTotal(){
+    var t = 0;
+    for(var k in state.units){
+      if(Object.prototype.hasOwnProperty.call(state.units, k)){
+        t = t + Math.max(0, parseInt(state.units[k], 10) || 0);
+      }
+    }
+    return t;
+  }
+
+  function lifetime(){ return Math.max(0, unitTotal() + state.bonus); }
 
   function load(){
     try{
@@ -1431,15 +1491,26 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
       if(!raw){ return; }
       var parsed = JSON.parse(raw);
       if(parsed && typeof parsed === 'object'){
-        state.lifetime = Math.max(0, parseInt(parsed.lifetime, 10) || 0);
         state.units = (parsed.units && typeof parsed.units === 'object') ? parsed.units : {};
         state.paid = Math.max(0, parseInt(parsed.paid, 10) || 0);
+        state.log = Object.prototype.toString.call(parsed.log) === '[object Array]' ? parsed.log : [];
+        if(parsed.bonus != null){
+          state.bonus = parseInt(parsed.bonus, 10) || 0;
+        } else {
+          /* Saved before hand-given stars existed: the total was stored outright.
+             Keep whatever it held above the sheet count rather than losing it. */
+          state.bonus = Math.max(0, Math.max(0, parseInt(parsed.lifetime, 10) || 0) - unitTotal());
+        }
       }
     } catch(e){ /* private window, blocked storage — carry on unsaved */ }
   }
 
   function save(){
-    try{ window.localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){}
+    /* `lifetime` is written out for the progress page, which reads these records
+       straight from storage. Inside this file the total is always lifetime(). */
+    var out = { lifetime: lifetime(), units: state.units, paid: state.paid,
+                bonus: state.bonus, log: state.log };
+    try{ window.localStorage.setItem(KEY, JSON.stringify(out)); } catch(e){}
   }
 
   function earnedFor(id){ return Math.max(0, parseInt(state.units[id], 10) || 0); }
@@ -1503,8 +1574,9 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
   }
 
   function paintLifetime(){
-    if(lifeCount){ lifeCount.textContent = String(state.lifetime); }
-    if(lifeWord){ lifeWord.textContent = state.lifetime === 1 ? 'star earned' : 'stars earned'; }
+    var total = lifetime();
+    if(lifeCount){ lifeCount.textContent = String(total); }
+    if(lifeWord){ lifeWord.textContent = total === 1 ? 'star earned' : 'stars earned'; }
     paintBank();
   }
 
@@ -1517,7 +1589,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
   var bankTogo = document.getElementById('bank-togo');
 
   function earnedDollars(){
-    return Math.floor(state.lifetime / STARS_PER_PAYOUT) * PAYOUT;
+    return Math.floor(lifetime() / STARS_PER_PAYOUT) * PAYOUT;
   }
 
   function owedDollars(){
@@ -1530,13 +1602,13 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
     bankOwed.textContent = '$' + owedDollars();
 
     if(bankStars){
-      bankStars.textContent = state.lifetime + (state.lifetime === 1 ? ' star' : ' stars');
+      bankStars.textContent = lifetime() + (lifetime() === 1 ? ' star' : ' stars');
     }
     if(bankEarned){
       bankEarned.textContent = '$' + earnedDollars();
     }
 
-    var intoNext = state.lifetime % STARS_PER_PAYOUT;
+    var intoNext = lifetime() % STARS_PER_PAYOUT;
     if(bankMeter){
       bankMeter.style.width = Math.round((intoNext / STARS_PER_PAYOUT) * 100) + '%';
     }
@@ -1546,7 +1618,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
       var strong = el('b', null, togo + (togo === 1 ? ' more star' : ' more stars'));
       bankTogo.appendChild(strong);
       bankTogo.appendChild(document.createTextNode(
-        state.lifetime < STARS_PER_PAYOUT ? ' to your first $' + PAYOUT
+        lifetime() < STARS_PER_PAYOUT ? ' to your first $' + PAYOUT
                                           : ' to the next $' + PAYOUT
       ));
     }
@@ -1645,7 +1717,6 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
   function award(unit){
     var id = unit.getAttribute('data-unit');
     state.units[id] = earnedFor(id) + 1;
-    state.lifetime = state.lifetime + 1;
     save();
     paintUnit(unit, true);
     paintLifetime();
@@ -1911,6 +1982,133 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 
     if(swapBtn){ swapBtn.addEventListener('click', fresh); }
     fresh();
+  }
+
+  /* ---------------- activity: mixed ----------------
+     Cumulative practice. Rather than copying questions, it borrows a whole
+     activity at random from any other sheet on the page and plays it here, so
+     old work stays in circulation and every new sheet joins the pool the day it
+     lands. Stars earned here belong to the practice sheet. */
+
+  function wireMixed(act, unit){
+    var grid = act.querySelector('.sort');
+    var box = act.querySelector('.choice');
+    var from = act.querySelector('.fromwhere');
+    var score = act.querySelector('.score');
+    var checkBtn = act.querySelector('[data-role="check"]');
+    var swapBtn = act.querySelector('[data-role="shuffle"]');
+    var peekBtn = act.querySelector('[data-role="peek"]');
+    if(!grid || !box){ return; }
+
+    var sources = Array.prototype.slice.call(
+      document.querySelectorAll('.act[data-act="sort"], .act[data-act="choice"]')
+    ).filter(function(s){ return !unit.contains(s); });
+
+    var kind = null, order = [], awarded = false, peeked = false;
+
+    function pick(){
+      if(!sources.length){
+        if(from){ from.textContent = 'Nothing to practise yet — this fills up as sheets are added.'; }
+        return;
+      }
+      var src = sources[Math.floor(Math.random() * sources.length)];
+      var bank = bankOf(src);
+      if(!bank){ return; }
+
+      var srcUnit = src.closest('details.unit');
+      var heading = src.querySelector('h2');
+      if(from){
+        from.textContent = (heading ? heading.textContent.trim() : 'Practice') +
+          (srcUnit ? '  ·  ' + (srcUnit.getAttribute('data-subject') || '') : '');
+      }
+
+      kind = src.getAttribute('data-act');
+      if(kind === 'sort'){
+        order = bank.order || ['', 'A', 'B'];
+        renderSort(grid, draw(bank));
+        grid.hidden = false;
+        box.hidden = true;
+      } else {
+        renderChoice(box, drawChoice(bank));
+        box.hidden = false;
+        grid.hidden = true;
+      }
+
+      grid.classList.remove('reveal');
+      box.classList.remove('reveal');
+      if(peekBtn){ peekBtn.textContent = 'Show the answers'; }
+      if(score){ score.hidden = true; }
+      awarded = false;
+      peeked = false;
+    }
+
+    function live(){ return kind === 'sort' ? grid : box; }
+
+    function clearMarks(){
+      Array.prototype.slice.call(live().querySelectorAll('.item, .qa')).forEach(function(n){
+        n.classList.remove('right', 'wrong');
+      });
+      if(score){ score.hidden = true; }
+      awarded = false;
+    }
+
+    grid.addEventListener('click', function(e){
+      var btn = e.target.closest('.item');
+      if(!btn){ return; }
+      var cur = btn.getAttribute('data-pick') || '';
+      var next = order[(order.indexOf(cur) + 1) % order.length];
+      if(next){ btn.setAttribute('data-pick', next); }
+      else { btn.removeAttribute('data-pick'); }
+      btn.querySelector('.slot').textContent = next;
+      clearMarks();
+    });
+
+    box.addEventListener('click', function(e){
+      var opt = e.target.closest('.opt');
+      if(!opt){ return; }
+      var card = opt.closest('.qa');
+      card.querySelectorAll('.opt').forEach(function(o){
+        o.setAttribute('aria-pressed', String(o === opt));
+      });
+      card.setAttribute('data-pick', opt.getAttribute('data-index'));
+      clearMarks();
+    });
+
+    if(swapBtn){ swapBtn.addEventListener('click', pick); }
+
+    if(peekBtn){
+      peekBtn.addEventListener('click', function(){
+        var on = live().classList.toggle('reveal');
+        if(on){ peeked = true; }
+        peekBtn.textContent = on ? 'Hide the answers' : 'Show the answers';
+      });
+    }
+
+    if(checkBtn && score){
+      checkBtn.addEventListener('click', function(){
+        live().classList.remove('reveal');
+        if(peekBtn){ peekBtn.textContent = 'Show the answers'; }
+
+        var nodes = Array.prototype.slice.call(
+          live().querySelectorAll(kind === 'sort' ? '.item' : '.qa')
+        );
+        var total = nodes.length, done = 0, right = 0;
+
+        nodes.forEach(function(n){
+          n.classList.remove('right', 'wrong');
+          var pickVal = n.getAttribute('data-pick');
+          if(pickVal === null || pickVal === ''){ return; }
+          done++;
+          if(pickVal === n.getAttribute('data-answer')){ right++; n.classList.add('right'); }
+          else { n.classList.add('wrong'); }
+        });
+
+        score.textContent = verdict(total, done, right, peeked, awarded, unit, function(){ awarded = true; });
+        score.hidden = false;
+      });
+    }
+
+    pick();
   }
 
   /* ---------------- activity: write ----------------
@@ -2245,46 +2443,244 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
       else if(kind === 'choice'){ wireChoice(act, unit); }
       else if(kind === 'flip'){ wireFlip(act); }
       else if(kind === 'write'){ wireWrite(act, unit); }
+      else if(kind === 'mixed'){ wireMixed(act, unit); }
     });
   });
 
   markCurrent();
 
-  /* Grown-up controls. Both need two taps, so nobody wipes a term's stars or
-     cashes out the piggy bank with one stray finger. */
-  function armButton(btn, confirmLabel, run){
-    if(!btn){ return; }
-    var armed = false, timer = null;
-    var label = btn.textContent;
-    btn.addEventListener('click', function(){
-      if(!armed){
-        armed = true;
-        btn.textContent = confirmLabel;
-        timer = window.setTimeout(function(){
-          armed = false;
-          btn.textContent = label;
-        }, 4000);
-        return;
-      }
-      window.clearTimeout(timer);
-      armed = false;
-      btn.textContent = label;
-      run();
-    });
+  /* ---------------- grown-ups ----------------
+
+     A star is a record of something a girl actually did, so nothing in here
+     destroys one by accident. A grown-up can GIVE stars for anything at all (kind
+     to her sister, helped without being asked, a good week), TAKE some back, or
+     SET the total outright when a device goes wrong. Each of those leaves a dated
+     line with its reason, so the number on the page can always be explained.
+
+     There is deliberately no "start over". Paying out is what settles the piggy
+     bank, and it leaves every star standing. Removing that button is the whole
+     point of this panel: the old one wiped a term's work in two taps, and did. */
+
+  function logEntry(kind, n, why){
+    state.log.unshift({ t: new Date().toISOString(), k: kind, n: n, why: why || '' });
+    if(state.log.length > 120){ state.log.length = 120; }
   }
 
-  armButton(
-    document.getElementById('reset-stars'),
-    'Tap again to clear every star',
-    function(){
-      state.lifetime = 0;
-      state.units = {};
-      state.paid = 0;
-      save();
-      units.forEach(function(u){ paintUnit(u, false); });
-      paintLifetime();
+  function logLine(entry){
+    var n = parseInt(entry.n, 10) || 0;
+    if(entry.k === 'pay'){ return '$' + n + ' paid out'; }
+    if(entry.k === 'set'){ return 'Total set to ' + n; }
+    if(entry.k === 'take'){ return '-' + n + (n === 1 ? ' star' : ' stars'); }
+    return '+' + n + (n === 1 ? ' star' : ' stars');
+  }
+
+  function logWhen(iso){
+    var d = new Date(iso);
+    if(isNaN(d.getTime())){ return ''; }
+    try{ return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' }); }
+    catch(e){ return ''; }
+  }
+
+  var grownBtn = document.getElementById('open-grownups');
+  var grownPanel = document.getElementById('grownups');
+
+  if(grownBtn && grownPanel){
+    var unlocked = false;
+
+    function closeGrown(){
+      grownPanel.hidden = true;
+      grownPanel.innerHTML = '';
+      grownBtn.textContent = 'Grown-ups';
     }
-  );
+
+    function askCode(){
+      grownPanel.innerHTML = '';
+      grownPanel.hidden = false;
+      grownBtn.textContent = 'Close';
+      grownPanel.appendChild(el('p', 'hint', 'Grown-ups only.'));
+
+      var row = el('div', 'btnrow');
+      var code = document.createElement('input');
+      code.type = 'password';
+      code.inputMode = 'numeric';
+      code.autocomplete = 'off';
+      code.className = 'code';
+      code.placeholder = 'code';
+      code.setAttribute('aria-label', 'Parent code');
+      row.appendChild(code);
+
+      var go = el('button', 'toggle');
+      go.type = 'button';
+      go.textContent = 'Open';
+      row.appendChild(go);
+
+      var cancel = el('button', 'toggle ghost');
+      cancel.type = 'button';
+      cancel.textContent = 'Cancel';
+      cancel.addEventListener('click', closeGrown);
+      row.appendChild(cancel);
+
+      grownPanel.appendChild(row);
+      var msg = el('p', 'hint', '');
+      grownPanel.appendChild(msg);
+      code.focus();
+
+      function submit(){
+        if(textHash(code.value.trim()) !== PARENT_CODE_HASH){
+          msg.className = 'nope';
+          msg.textContent = 'That is not the code.';
+          code.value = '';
+          return;
+        }
+        unlocked = true;
+        openGrown();
+      }
+      go.addEventListener('click', submit);
+      code.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ submit(); } });
+    }
+
+    function openGrown(){
+      grownPanel.innerHTML = '';
+      grownPanel.hidden = false;
+      grownBtn.textContent = 'Close';
+
+      var total = lifetime();
+
+      /* Where the money stands, stacked and labelled, because earned, paid and
+         owed are three different numbers and the piggy bank only shows two. */
+      var head = el('div', 'ghead');
+      head.appendChild(el('p', 'gbig', total + (total === 1 ? ' star' : ' stars')));
+      var rows = el('dl', 'gsplit');
+      function money(label, value){
+        rows.appendChild(el('dt', null, label));
+        rows.appendChild(el('dd', null, '$' + value));
+      }
+      money('Earned all year', earnedDollars());
+      money('Paid out so far', state.paid);
+      money('Owed right now', owedDollars());
+      head.appendChild(rows);
+      head.appendChild(el('p', 'hint',
+        unitTotal() + ' won on sheets, ' +
+        (state.bonus === 0 ? 'none given by hand'
+          : (state.bonus > 0 ? state.bonus + ' given by hand'
+                             : (-state.bonus) + ' taken back')) +
+        '. ' + STARS_PER_PAYOUT + ' stars = $' + PAYOUT + '.'));
+      grownPanel.appendChild(head);
+
+      /* One row, three jobs. */
+      var form = el('div', 'gform');
+
+      var pick = document.createElement('select');
+      pick.className = 'code gpick';
+      pick.setAttribute('aria-label', 'What to do');
+      [['give', 'Give stars'], ['take', 'Take stars back'], ['set', 'Set the total to']]
+        .forEach(function(o){
+          var opt = document.createElement('option');
+          opt.value = o[0];
+          opt.textContent = o[1];
+          pick.appendChild(opt);
+        });
+      form.appendChild(pick);
+
+      var num = document.createElement('input');
+      num.type = 'number';
+      num.min = '0';
+      num.step = '1';
+      num.className = 'code amount';
+      num.value = '1';
+      num.setAttribute('aria-label', 'How many stars');
+      form.appendChild(num);
+
+      var why = document.createElement('input');
+      why.type = 'text';
+      why.className = 'code gwhy';
+      why.placeholder = 'What for?';
+      why.setAttribute('aria-label', 'Reason');
+      form.appendChild(why);
+
+      var apply = el('button', 'toggle');
+      apply.type = 'button';
+      apply.textContent = 'Save';
+      form.appendChild(apply);
+
+      grownPanel.appendChild(form);
+      var note = el('p', 'hint', 'Stars can be given for anything at all, not just sheets.');
+      grownPanel.appendChild(note);
+
+      pick.addEventListener('change', function(){
+        note.className = 'hint';
+        if(pick.value === 'set'){
+          num.value = String(lifetime());
+          why.placeholder = 'Why the change?';
+          note.textContent = 'Sets the total outright. This is how a count goes back after a mishap.';
+        } else if(pick.value === 'take'){
+          num.value = '1';
+          why.placeholder = 'What for?';
+          note.textContent = 'Comes off the total. Her sheets keep the stars they show.';
+        } else {
+          num.value = '1';
+          why.placeholder = 'What for?';
+          note.textContent = 'Stars can be given for anything at all, not just sheets.';
+        }
+      });
+
+      apply.addEventListener('click', function(){
+        var n = Math.floor(Number(num.value));
+        if(isNaN(n) || n < 0){
+          note.className = 'nope';
+          note.textContent = 'Put in a number.';
+          return;
+        }
+        if(pick.value === 'set'){
+          state.bonus = state.bonus + (n - lifetime());
+          logEntry('set', n, why.value.trim() || 'Total corrected');
+        } else if(n === 0){
+          return;
+        } else if(pick.value === 'take'){
+          n = Math.min(n, lifetime());
+          state.bonus = state.bonus - n;
+          logEntry('take', n, why.value.trim());
+        } else {
+          state.bonus = state.bonus + n;
+          logEntry('give', n, why.value.trim());
+        }
+        save();
+        paintLifetime();
+        openGrown();
+      });
+
+      /* The ledger. What the number is made of, so it is never a mystery again. */
+      var hist = el('div', 'glog');
+      hist.appendChild(el('p', 'label', 'What has happened'));
+      if(!state.log.length){
+        hist.appendChild(el('p', 'hint',
+          'Stars given or taken back, and payments, all land here with the date.'));
+      } else {
+        var list = el('ul', 'glist');
+        state.log.slice(0, 15).forEach(function(entry){
+          var li = el('li');
+          li.appendChild(el('b', null, logLine(entry)));
+          li.appendChild(el('span', null, entry.why || ''));
+          li.appendChild(el('time', null, logWhen(entry.t)));
+          list.appendChild(li);
+        });
+        hist.appendChild(list);
+      }
+      grownPanel.appendChild(hist);
+
+      var done = el('button', 'toggle ghost gdone');
+      done.type = 'button';
+      done.textContent = 'Done';
+      done.addEventListener('click', closeGrown);
+      grownPanel.appendChild(done);
+    }
+
+    grownBtn.addEventListener('click', function(){
+      if(!grownPanel.hidden){ closeGrown(); return; }
+      if(unlocked){ openGrown(); return; }
+      askCode();
+    });
+  }
 
   /* Paying out takes an amount, because real payments are rarely the whole tin:
      a fiver now, the rest at the weekend. Behind the same code as a review, so a
@@ -2361,6 +2757,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
         }
         given = Math.min(given, owedDollars());
         state.paid = state.paid + given;
+        logEntry('pay', given, '');
         save();
         paintLifetime();
         payBtn.textContent = payLabel();
@@ -2381,6 +2778,10 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 })();
 
 </script>
+
+
+
+
 
 
 

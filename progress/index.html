@@ -152,8 +152,6 @@ h1{
   font-family:var(--body);text-align:center;cursor:pointer;
 }
 .upnext:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
-/* display:flex above beats the hidden attribute, so an empty bank drew a blank pink bar. Keep this. */
-.upnext[hidden]{display:none}
 .upnext .cue{
   font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
   font-weight:600;opacity:.85;
@@ -404,6 +402,70 @@ button.toggle:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
 button.toggle.ghost{background:transparent;color:var(--green);border:2px solid var(--ground);padding:8px 16px}
 .score{font-family:var(--display);font-size:21px;line-height:1.25;color:var(--purple);margin:0}
 
+/* ---------------- link list ---------------- */
+
+.links{display:grid;grid-template-columns:1fr;gap:9px}
+@media(min-width:620px){.links{grid-template-columns:1fr 1fr}}
+a.site{
+  display:flex;flex-direction:column;gap:3px;min-width:0;
+  border:2px solid var(--ground);border-radius:12px;padding:12px 14px;
+  text-decoration:none;color:var(--ink);background:var(--paper);
+}
+a.site:hover{border-color:var(--lead)}
+a.site:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
+a.site .name{font-family:var(--display);font-size:21px;line-height:1.1;color:var(--lead)}
+a.site .what{font-size:14px;color:var(--soft);line-height:1.35}
+
+/* ---------------- mixed practice ---------------- */
+
+.fromwhere{
+  font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;
+  color:var(--lead);margin:0;
+}
+.act[data-act="mixed"] .sort[hidden],
+.act[data-act="mixed"] .choice[hidden]{display:none!important}
+
+/* ---------------- alert ----------------
+   Something needs a parent's hands before the next run. Loud on purpose. */
+
+.alert{
+  background:var(--pink);color:var(--paper);
+  border-radius:12px;padding:15px 17px;
+  display:flex;flex-direction:column;gap:6px;
+}
+.alert b{
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:600;opacity:.9;
+}
+.alert p{font-size:16px;line-height:1.45;margin:0}
+.alert p a{color:var(--paper);text-decoration:underline}
+
+/* ---------------- video ---------------- */
+
+.watch{display:flex;flex-direction:column;gap:8px}
+.watch video{
+  width:100%;max-width:560px;display:block;
+  border-radius:12px;background:var(--ink);
+  border:2px solid var(--ground);
+}
+
+/* ---------------- copyable codes ---------------- */
+
+.sitebox{display:flex;flex-direction:column;gap:7px;min-width:0}
+.creds{display:flex;flex-wrap:wrap;gap:7px}
+button.cred{
+  display:flex;flex-direction:column;align-items:flex-start;gap:1px;min-width:0;
+  font-family:var(--body);cursor:pointer;text-align:left;
+  background:var(--ground);border:2px solid transparent;border-radius:10px;
+  padding:7px 12px;min-height:44px;
+}
+button.cred:hover{border-color:var(--lead)}
+button.cred:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
+.cred .k{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--soft)}
+.cred .v{font-size:16px;font-weight:500;color:var(--ink);letter-spacing:.04em;overflow-wrap:anywhere}
+button.cred.copied{background:rgba(46,115,88,.14);border-color:var(--green)}
+button.cred.copied .v{color:var(--green)}
+
 /* ---------------- parent review + payout ---------------- */
 
 .review{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
@@ -511,7 +573,43 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 
+/* ---------------- grown-ups panel ----------------
+   Star management behind the parent code: give, take back, correct, and the
+   ledger that explains the number. Styled plainly - this one is not for kids. */
 
+.grownups{
+  display:flex;flex-direction:column;gap:12px;align-items:stretch;text-align:left;
+  background:var(--paper);border:2px solid var(--ground);border-radius:12px;
+  padding:16px;max-width:520px;width:100%;
+}
+.grownups[hidden]{display:none!important}
+.grownups .btnrow{justify-content:flex-start}
+.grownups .nope{font-size:14px;color:var(--pink);font-weight:500;margin:0}
+
+.ghead{display:flex;flex-direction:column;gap:7px}
+.gbig{font-family:var(--display);font-size:30px;line-height:1.1;margin:0;color:var(--lead)}
+
+.gsplit{display:grid;grid-template-columns:1fr auto;gap:3px 14px;margin:0;font-size:15px}
+.gsplit dt{color:var(--soft)}
+.gsplit dd{margin:0;text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+
+select.code{
+  font-family:var(--body);font-size:16px;color:var(--ink);
+  background:var(--paper);border:2px solid var(--ground);border-radius:10px;
+  padding:9px 10px;min-height:44px;
+}
+.gform{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.gform .gpick{width:auto}
+.gform .gwhy{flex:1 1 150px;width:auto;letter-spacing:0;min-width:0}
+
+.glog .label{margin-bottom:6px}
+.glist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px;font-size:14px}
+.glist li{display:flex;gap:9px;align-items:baseline;border-bottom:1px solid var(--ground);padding-bottom:5px}
+.glist li b{flex:0 0 auto;font-weight:600;font-variant-numeric:tabular-nums}
+.glist li span{flex:1 1 auto;color:var(--soft);min-width:0}
+.glist li time{flex:0 0 auto;color:var(--soft);font-size:13px}
+
+.gdone{align-self:flex-start}
 
 </style>
 <style>
@@ -614,17 +712,23 @@ table.sheets tr.full td .got{color:var(--green);font-weight:500}
 
   function keyFor(girl){ return 'hornak-homework:' + girl; }
 
+  /* Every field a girl's page stores. write() posts this object back whole, so a
+     field missing from here is a field quietly deleted from her record. */
+  function blank(){ return { lifetime: 0, units: {}, paid: 0, bonus: 0, log: [] }; }
+
   function read(girl){
     try{
       var raw = window.localStorage.getItem(keyFor(girl));
       var parsed = raw ? JSON.parse(raw) : null;
-      if(!parsed || typeof parsed !== 'object'){ return { lifetime: 0, units: {}, paid: 0 }; }
+      if(!parsed || typeof parsed !== 'object'){ return blank(); }
       return {
         lifetime: Math.max(0, parseInt(parsed.lifetime, 10) || 0),
         units: (parsed.units && typeof parsed.units === 'object') ? parsed.units : {},
-        paid: Math.max(0, parseInt(parsed.paid, 10) || 0)
+        paid: Math.max(0, parseInt(parsed.paid, 10) || 0),
+        bonus: parseInt(parsed.bonus, 10) || 0,
+        log: Object.prototype.toString.call(parsed.log) === '[object Array]' ? parsed.log : []
       };
-    } catch(e){ return { lifetime: 0, units: {}, paid: 0 }; }
+    } catch(e){ return blank(); }
   }
 
   function write(girl, state){
@@ -726,7 +830,9 @@ table.sheets tr.full td .got{color:var(--green);font-weight:500}
         return a + Math.max(0, parseInt(state.units[s.unit], 10) || 0);
       }, 0);
       card.appendChild(el('p', 'empty',
-        totalGot + ' of ' + possible + ' stars collected on the sheets published so far.'));
+        totalGot + ' of ' + possible + ' stars collected on the sheets published so far.' +
+        (state.bonus > 0 ? ' ' + state.bonus + ' more given by hand.'
+          : (state.bonus < 0 ? ' ' + (-state.bonus) + ' taken back by hand.' : ''))));
     }
 
     var row = el('div', 'payrow');
@@ -753,7 +859,11 @@ table.sheets tr.full td .got{color:var(--green);font-weight:500}
       }
       window.clearTimeout(timer);
       armed = false;
+      var given = e2 - fresh.paid;
       fresh.paid = e2;
+      fresh.log.unshift({ t: new Date().toISOString(), k: 'pay', n: given,
+                          why: 'Recorded on the progress page' });
+      if(fresh.log.length > 120){ fresh.log.length = 120; }
       write(girl, fresh);
       render(card);
     });
