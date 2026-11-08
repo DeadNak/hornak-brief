@@ -152,8 +152,6 @@ h1{
   font-family:var(--body);text-align:center;cursor:pointer;
 }
 .upnext:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
-/* display:flex above beats the hidden attribute, so an empty bank drew a blank pink bar. Keep this. */
-.upnext[hidden]{display:none}
 .upnext .cue{
   font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
   font-weight:600;opacity:.85;
@@ -403,6 +401,20 @@ button.toggle{
 button.toggle:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
 button.toggle.ghost{background:transparent;color:var(--green);border:2px solid var(--ground);padding:8px 16px}
 .score{font-family:var(--display);font-size:21px;line-height:1.25;color:var(--purple);margin:0}
+
+/* ---------------- link list ---------------- */
+
+.links{display:grid;grid-template-columns:1fr;gap:9px}
+@media(min-width:620px){.links{grid-template-columns:1fr 1fr}}
+a.site{
+  display:flex;flex-direction:column;gap:3px;min-width:0;
+  border:2px solid var(--ground);border-radius:12px;padding:12px 14px;
+  text-decoration:none;color:var(--ink);background:var(--paper);
+}
+a.site:hover{border-color:var(--lead)}
+a.site:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
+a.site .name{font-family:var(--display);font-size:21px;line-height:1.1;color:var(--lead)}
+a.site .what{font-size:14px;color:var(--soft);line-height:1.35}
 
 /* ---------------- parent review + payout ---------------- */
 
@@ -1309,7 +1321,12 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
   var lifeWord = document.getElementById('lifetime-word');
   var shelf = document.getElementById('shelf');
 
-  function unitMax(unit){ return Math.max(1, parseInt(unit.getAttribute('data-stars'), 10) || 4); }
+  /* data-stars="0" marks a reference sheet — links, not work. No star row, no
+     count on its library line. */
+  function unitMax(unit){
+    var n = parseInt(unit.getAttribute('data-stars'), 10);
+    return isNaN(n) ? 4 : Math.max(0, n);
+  }
 
   function paintLifetime(){
     if(lifeCount){ lifeCount.textContent = String(state.lifetime); }
@@ -1371,6 +1388,16 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
        the target there are no empty slots left, just more stars. A kid wants to
        see the row get longer, not read a "+2" badge. */
     var slots = Math.max(earned, max);
+
+    if(max === 0 && earned === 0){
+      if(box){ box.innerHTML = ''; }
+      var refRow = shelf && shelf.querySelector('.row[data-for="' + id + '"]');
+      if(refRow){
+        var refGot = refRow.querySelector('.got');
+        if(refGot){ refGot.innerHTML = ''; }
+      }
+      return;
+    }
 
     if(box){
       starRow(box, earned, slots);
