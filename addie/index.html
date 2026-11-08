@@ -416,6 +416,15 @@ a.site:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
 a.site .name{font-family:var(--display);font-size:21px;line-height:1.1;color:var(--lead)}
 a.site .what{font-size:14px;color:var(--soft);line-height:1.35}
 
+/* ---------------- video ---------------- */
+
+.watch{display:flex;flex-direction:column;gap:8px}
+.watch video{
+  width:100%;max-width:560px;display:block;
+  border-radius:12px;background:var(--ink);
+  border:2px solid var(--ground);
+}
+
 /* ---------------- copyable codes ---------------- */
 
 .sitebox{display:flex;flex-direction:column;gap:7px;min-width:0}
@@ -676,6 +685,19 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
     <div class="unit-body">
 
       <section>
+        <p class="label">Novembre &middot; la lecture</p>
+        <h2>Les Couleurs d&rsquo;Automne</h2>
+        <p class="hint">Listen to it first. Then say the words along with her.</p>
+        <div class="watch">
+          <video controls preload="metadata" playsinline>
+            <source src="videos/les-couleurs-dautomne.mp4" type="video/mp4">
+            This video will not play on this device.
+          </video>
+        </div>
+      </section>
+
+
+      <section>
         <p class="label">Bonjour Addie</p>
         <h2>O and U make one sound</h2>
         <p class="lede">In French, <b>ou</b> sounds like the &ldquo;oo&rdquo; in moon. Say <i>loup</i>!</p>
@@ -856,8 +878,8 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 
       <section>
         <div class="tint d">
-          <b>FOR MOM AND DAD &middot; STAND-IN LIST</b>
-          <p>Mme Ashley taped the November sight words into Addie&rsquo;s agenda on Oct 30. They are not in the Classroom folder yet &middot; this sheet uses the real October ten as review &middot; read her November list aloud with her from the agenda &middot; save the November PDF into her Grade 1 folder and the next sheet will use it.</p>
+          <b>FOR MOM AND DAD</b>
+          <p>These are Mme Ashley&rsquo;s real November ten, from <em>Les Mots Fr&eacute;quents &mdash; novembre</em>: se &middot; ce &middot; sur &middot; plus &middot; tu &middot; chaque &middot; ou &middot; par &middot; je &middot; elle. They are tested monthly and she is expected to know them by the end of Grade 1.</p>
         </div>
       </section>
 
@@ -869,16 +891,16 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
         {
           "take": 4,
           "questions": [
-            { "ask": "Le chat est ___ la boîte. (The cat is in the box.)", "html": true, "options": ["dans", "pour", "qui"], "answer": 0, "why": "dans means in." },
-            { "ask": "___ mange une pomme. (He eats an apple.)", "options": ["Il", "Que", "Au"], "answer": 0, "why": "il means he." },
-            { "ask": "J'ai ___ pomme. (I have an apple.)", "options": ["une", "sont", "du"], "answer": 0, "why": "une means a." },
-            { "ask": "C'est ___ toi! (It is for you!)", "options": ["pour", "dans", "il"], "answer": 0, "why": "pour means for." },
-            { "ask": "Je vais ___ parc. (I go to the park.)", "options": ["au", "une", "qui"], "answer": 0, "why": "au means to the." },
-            { "ask": "Les chats ___ gris. (The cats are grey.)", "options": ["sont", "on", "du"], "answer": 0, "why": "sont means are." },
-            { "ask": "___ est là? (Who is there?)", "html": true, "options": ["Qui", "Pour", "Dans"], "answer": 0, "why": "qui means who." },
-            { "ask": "Je veux ___ lait. (I want some milk.)", "options": ["du", "une", "sont"], "answer": 0, "why": "du means some." },
-            { "ask": "___ joue dehors. (We play outside.)", "options": ["On", "Que", "Au"], "answer": 0, "why": "on means we." },
-            { "ask": "Je sais ___ tu es gentille. (I know that you are kind.)", "options": ["que", "dans", "au"], "answer": 0, "why": "que means that." }
+            { "ask": "Le livre est ___ la table. (The book is on the table.)", "options": ["sur", "par", "ce"], "answer": 0, "why": "sur means on." },
+            { "ask": "___ es mon amie. (You are my friend.)", "options": ["Tu", "Ce", "Par"], "answer": 0, "why": "tu means you." },
+            { "ask": "___ joue dehors. (She plays outside.)", "options": ["Elle", "Chaque", "Plus"], "answer": 0, "why": "elle means she." },
+            { "ask": "___ mange une pomme. (I eat an apple.)", "options": ["Je", "Ou", "Se"], "answer": 0, "why": "je means I." },
+            { "ask": "Veux-tu du lait ___ du jus? (Do you want milk or juice?)", "options": ["ou", "se", "par"], "answer": 0, "why": "ou means or." },
+            { "ask": "___ jour, je lis. (Each day, I read.)", "options": ["Chaque", "Plus", "Elle"], "answer": 0, "why": "chaque means each." },
+            { "ask": "J'en veux ___. (I want more.)", "options": ["plus", "par", "ce"], "answer": 0, "why": "plus means more." },
+            { "ask": "___ chien est gentil. (This dog is nice.)", "options": ["Ce", "Se", "Par"], "answer": 0, "why": "ce means this." },
+            { "ask": "Il ___ lave les mains. (He washes his hands.)", "options": ["se", "ce", "ou"], "answer": 0, "why": "se goes with the verb: he washes himself." },
+            { "ask": "Le gâteau est fait ___ maman. (The cake is made by mum.)", "options": ["par", "sur", "plus"], "answer": 0, "why": "par means by." }
           ]
         }
         </script>
@@ -1149,16 +1171,16 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
         {
           "take": 10,
           "cards": [
-            { "front": "il",   "back": "he" },
-            { "front": "une",  "back": "a, one" },
-            { "front": "dans", "back": "in" },
-            { "front": "du",   "back": "of the, some" },
-            { "front": "pour", "back": "for" },
-            { "front": "que",  "back": "that" },
-            { "front": "qui",  "back": "who" },
-            { "front": "au",   "back": "to the" },
-            { "front": "sont", "back": "are" },
-            { "front": "on",   "back": "we" }
+            { "front": "se",     "back": "himself, herself" },
+            { "front": "ce",     "back": "this, that" },
+            { "front": "sur",    "back": "on" },
+            { "front": "plus",   "back": "more" },
+            { "front": "tu",     "back": "you" },
+            { "front": "chaque", "back": "each" },
+            { "front": "ou",     "back": "or" },
+            { "front": "par",    "back": "by" },
+            { "front": "je",     "back": "I" },
+            { "front": "elle",   "back": "she" }
           ]
         }
         </script>
@@ -1166,7 +1188,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
         <div class="btnrow">
           <button class="toggle ghost" type="button" data-role="shuffle">New words</button>
         </div>
-        <p class="hint">All ten words from Mme Ashley's October list.</p>
+        <p class="hint">All ten words from Mme Ashley's November list.</p>
       </section>
 
       <section class="act" data-act="choice">
@@ -1177,16 +1199,16 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
         {
           "take": 5,
           "questions": [
-            { "ask": "Which is the real word for “a, one”?", "options": ["une", "unne", "uen"], "answer": 0 },
-            { "ask": "Which is the real word for “in”?", "options": ["dans", "dens", "danz"], "answer": 0 },
-            { "ask": "Which is the real word for “for”?", "options": ["pour", "poure", "por"], "answer": 0 },
-            { "ask": "Which is the real word for “that”?", "options": ["que", "qeu", "kue"], "answer": 0 },
-            { "ask": "Which is the real word for “who”?", "options": ["qui", "qii", "kui"], "answer": 0 },
-            { "ask": "Which is the real word for “of the, some”?", "options": ["du", "doo", "dhu"], "answer": 0 },
-            { "ask": "Which is the real word for “we”?", "options": ["on", "onn", "aon"], "answer": 0 },
-            { "ask": "Which is the real word for “he”?", "options": ["il", "ill", "iil"], "answer": 0 },
-            { "ask": "Which is the real word for “are”?", "options": ["sont", "sonte", "sount"], "answer": 0 },
-            { "ask": "Which is the real word for “to the”?", "options": ["au", "aou", "auh"], "answer": 0 }
+            { "ask": "Which is the real word for “on”?", "options": ["sur", "suur", "surr"], "answer": 0 },
+            { "ask": "Which is the real word for “more”?", "options": ["plus", "pluss", "plue"], "answer": 0 },
+            { "ask": "Which is the real word for “you”?", "options": ["tu", "tou", "tuh"], "answer": 0 },
+            { "ask": "Which is the real word for “each”?", "options": ["chaque", "chaqu", "chak"], "answer": 0 },
+            { "ask": "Which is the real word for “or”?", "options": ["ou", "ouh", "oou"], "answer": 0 },
+            { "ask": "Which is the real word for “by”?", "options": ["par", "parr", "pahr"], "answer": 0 },
+            { "ask": "Which is the real word for “I”?", "options": ["je", "jje", "zhe"], "answer": 0 },
+            { "ask": "Which is the real word for “she”?", "options": ["elle", "ele", "elel"], "answer": 0 },
+            { "ask": "Which is the real word for “this, that”?", "options": ["ce", "ceu", "cse"], "answer": 0 },
+            { "ask": "Which is the real word for “himself, herself”?", "options": ["se", "seu", "ze"], "answer": 0 }
           ]
         }
         </script>
@@ -2279,6 +2301,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 })();
 
 </script>
+
 
 
 
