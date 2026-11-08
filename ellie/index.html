@@ -416,6 +416,21 @@ a.site:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
 a.site .name{font-family:var(--display);font-size:21px;line-height:1.1;color:var(--lead)}
 a.site .what{font-size:14px;color:var(--soft);line-height:1.35}
 
+/* ---------------- alert ----------------
+   Something needs a parent's hands before the next run. Loud on purpose. */
+
+.alert{
+  background:var(--pink);color:var(--paper);
+  border-radius:12px;padding:15px 17px;
+  display:flex;flex-direction:column;gap:6px;
+}
+.alert b{
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:600;opacity:.9;
+}
+.alert p{font-size:16px;line-height:1.45;margin:0}
+.alert p a{color:var(--paper);text-decoration:underline}
+
 /* ---------------- video ---------------- */
 
 .watch{display:flex;flex-direction:column;gap:8px}
