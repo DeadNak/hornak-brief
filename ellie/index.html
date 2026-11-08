@@ -416,6 +416,23 @@ a.site:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
 a.site .name{font-family:var(--display);font-size:21px;line-height:1.1;color:var(--lead)}
 a.site .what{font-size:14px;color:var(--soft);line-height:1.35}
 
+/* ---------------- copyable codes ---------------- */
+
+.sitebox{display:flex;flex-direction:column;gap:7px;min-width:0}
+.creds{display:flex;flex-wrap:wrap;gap:7px}
+button.cred{
+  display:flex;flex-direction:column;align-items:flex-start;gap:1px;min-width:0;
+  font-family:var(--body);cursor:pointer;text-align:left;
+  background:var(--ground);border:2px solid transparent;border-radius:10px;
+  padding:7px 12px;min-height:44px;
+}
+button.cred:hover{border-color:var(--lead)}
+button.cred:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
+.cred .k{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--soft)}
+.cred .v{font-size:16px;font-weight:500;color:var(--ink);letter-spacing:.04em;overflow-wrap:anywhere}
+button.cred.copied{background:rgba(46,115,88,.14);border-color:var(--green)}
+button.cred.copied .v{color:var(--green)}
+
 /* ---------------- parent review + payout ---------------- */
 
 .review{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
@@ -1610,27 +1627,48 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
       <section>
         <p class="label">Lecture et math</p>
         <h2>Reading and maths sites</h2>
-        <p class="hint">These need a code. Ask Mum &mdash; she has them written down.</p>
+        <p class="hint">Tap a code to copy it, then paste it into the website.</p>
         <div class="links">
-          <a class="site" href="https://student.lalilo.com/?curriculum=en#/login" target="_blank" rel="noopener">
-            <span class="name">Lalilo</span>
-            <span class="what">Reading practice. Needs the school code.</span>
-          </a>
-          <a class="site" href="https://www.tumblebooklibrary.com/login.aspx?ReturnUrl=/" target="_blank" rel="noopener">
-            <span class="name">TumbleBooks</span>
-            <span class="what">Picture books read aloud. Needs the school login.</span>
-          </a>
-          <a class="site" href="https://www.splashlearn.com/signin#/student" target="_blank" rel="noopener">
-            <span class="name">SplashLearn</span>
-            <span class="what">Maths games. Needs the class code and your password.</span>
-          </a>
+
+          <div class="sitebox">
+            <a class="site" href="https://student.lalilo.com/?curriculum=en#/login" target="_blank" rel="noopener">
+              <span class="name">Lalilo</span>
+              <span class="what">Reading practice.</span>
+            </a>
+            <div class="creds">
+              <button class="cred" type="button" data-copy="NIDUKW"><span class="k">School code</span><span class="v">NIDUKW</span></button>
+            </div>
+          </div>
+
+          <div class="sitebox">
+            <a class="site" href="https://www.tumblebooklibrary.com/login.aspx?ReturnUrl=/" target="_blank" rel="noopener">
+              <span class="name">TumbleBooks</span>
+              <span class="what">Picture books read aloud.</span>
+            </a>
+            <div class="creds">
+              <button class="cred" type="button" data-copy="williamreid"><span class="k">Username</span><span class="v">williamreid</span></button>
+              <button class="cred" type="button" data-copy="books"><span class="k">Password</span><span class="v">books</span></button>
+            </div>
+          </div>
+
+          <div class="sitebox">
+            <a class="site" href="https://www.splashlearn.com/signin#/student" target="_blank" rel="noopener">
+              <span class="name">SplashLearn</span>
+              <span class="what">Maths games.</span>
+            </a>
+            <div class="creds">
+              <button class="cred" type="button" data-copy="IAUNQW"><span class="k">Class code</span><span class="v">IAUNQW</span></button>
+              <button class="cred" type="button" data-copy="dream83"><span class="k">Password</span><span class="v">dream83</span></button>
+            </div>
+          </div>
+
         </div>
       </section>
 
       <section>
         <div class="tint d">
           <b>FOR MUM AND DAD</b>
-          <p>These all came from Mme Seychelle&rsquo;s Google Classroom. The logins are shared school accounts, so they are deliberately not written on this page &mdash; they are in Classroom, and in the chat where this sheet was built.</p>
+          <p>These all came from Mme Seychelle&rsquo;s Google Classroom. The logins are shared school accounts rather than personal ones, and this page is public, so treat the link as something to keep in the family.</p>
         </div>
       </section>
 
@@ -2449,12 +2487,53 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
     deal();
   }
 
+  /* ---------------- copyable codes ----------------
+     Tap a code to copy it. Clipboard access can be refused, so fall back to
+     selecting the text, which leaves her able to copy it by hand. */
+
+  function wireCopy(){
+    Array.prototype.slice.call(document.querySelectorAll('.cred[data-copy]')).forEach(function(btn){
+      var value = btn.querySelector('.v');
+      if(!value){ return; }
+
+      function selectIt(){
+        try{
+          var range = document.createRange();
+          range.selectNodeContents(value);
+          var sel = window.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range);
+        } catch(e){}
+      }
+
+      function flash(){
+        var was = value.textContent;
+        btn.classList.add('copied');
+        value.textContent = 'Copied';
+        window.setTimeout(function(){
+          value.textContent = was;
+          btn.classList.remove('copied');
+        }, 1300);
+      }
+
+      btn.addEventListener('click', function(){
+        var text = btn.getAttribute('data-copy') || '';
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(text).then(flash, selectIt);
+        } else {
+          selectIt();
+        }
+      });
+    });
+  }
+
   /* ---------------- boot ---------------- */
 
   load();
   buildLibrary();
   wireUpNext();
   wireJoke();
+  wireCopy();
   paintLifetime();
 
   units.forEach(function(unit){
@@ -2602,6 +2681,7 @@ button.reset:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 })();
 
 </script>
+
 
 
 
