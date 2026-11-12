@@ -718,8 +718,542 @@ select.code{
 
   <div class="units">
 
-  <!-- ===================== UNIT: FLSZ, o ouvert and editing ===================== -->
+  <!-- ===================== UNIT: two-digit subtraction and Metis Week ===================== -->
   <details class="unit" open
+           data-unit="soustraction-2026-11-16"
+           data-when="Nov 16"
+           data-subject="Soustraction"
+           data-topic="Two-digit subtraction &middot; regrouping &middot; la Semaine des M&eacute;tis"
+           data-stars="6">
+    <summary>
+      <span class="unit-title">Soustraction et la Semaine des M&eacute;tis</span>
+      <span class="unit-stars"></span>
+      <span class="unit-meta">What starts Monday &middot; from the November 6 newsletter</span>
+    </summary>
+
+    <div class="unit-body">
+
+      <section>
+        <p class="label">Bonjour Ellie</p>
+        <h2>A head start on Monday</h2>
+        <p class="lede">Two new things begin when you go back. In maths, two-digit subtraction. At school, la Semaine des M&eacute;tis.</p>
+        <p class="hint">You have not been taught either one yet. Walking in already knowing a bit is the whole point.</p>
+      </section>
+
+      <section class="act" data-act="sort">
+        <p class="label">Regrouper, ou non?</p>
+        <h2>Does this one need a regroup?</h2>
+        <p class="lede">Look only at the ones column. If the top digit is too small to take the bottom one away, you have to borrow a ten.</p>
+        <p class="hint">Tap a box until it shows <b>Oui</b> or <b>Non</b>. Do not work the answer out — just look at the ones.</p>
+        <script type="application/json" class="bank">
+        {
+          "order": ["", "Oui", "Non"],
+          "take": { "Oui": 3, "Non": 3 },
+          "items": {
+            "Oui": ["52 − 27", "63 − 38", "71 − 46", "45 − 28", "84 − 59", "36 − 19", "90 − 47", "62 − 35", "43 − 17", "81 − 24", "74 − 56", "50 − 18"],
+            "Non": ["68 − 34", "79 − 25", "86 − 42", "57 − 23", "95 − 61", "48 − 16", "77 − 54", "89 − 37", "66 − 25", "94 − 73", "58 − 46", "76 − 52"]
+          }
+        }
+        </script>
+        <div class="sort"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">New examples</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+        <p class="rule">68 &minus; 34: the 8 is bigger than the 4, so no borrowing. 52 &minus; 27: the 2 is smaller than the 7, so a ten has to come across.</p>
+      </section>
+
+      <section class="act" data-act="choice">
+        <p class="label">Sans regrouper</p>
+        <h2>The easy kind first</h2>
+        <p class="hint">Take the ones away, then the tens. Nothing has to move.</p>
+        <script type="application/json" class="bank">
+        {
+          "take": 4,
+          "questions": [
+                    {
+                              "ask": "68 − 34 = ?",
+                              "options": [
+                                        "34",
+                                        "44",
+                                        "24"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "79 − 25 = ?",
+                              "options": [
+                                        "54",
+                                        "64",
+                                        "44"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "86 − 42 = ?",
+                              "options": [
+                                        "44",
+                                        "54",
+                                        "34"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "57 − 23 = ?",
+                              "options": [
+                                        "34",
+                                        "44",
+                                        "24"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "95 − 61 = ?",
+                              "options": [
+                                        "34",
+                                        "44",
+                                        "24"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "48 − 16 = ?",
+                              "options": [
+                                        "32",
+                                        "42",
+                                        "22"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "77 − 54 = ?",
+                              "options": [
+                                        "23",
+                                        "33",
+                                        "13"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "89 − 37 = ?",
+                              "options": [
+                                        "52",
+                                        "62",
+                                        "42"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "66 − 25 = ?",
+                              "options": [
+                                        "41",
+                                        "51",
+                                        "31"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "94 − 73 = ?",
+                              "options": [
+                                        "21",
+                                        "31",
+                                        "11"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "58 − 46 = ?",
+                              "options": [
+                                        "12",
+                                        "22",
+                                        "2"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "85 − 31 = ?",
+                              "options": [
+                                        "54",
+                                        "64",
+                                        "44"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "76 − 52 = ?",
+                              "options": [
+                                        "24",
+                                        "34",
+                                        "14"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "69 − 48 = ?",
+                              "options": [
+                                        "21",
+                                        "31",
+                                        "11"
+                              ],
+                              "answer": 0
+                    }
+          ]
+        }
+        </script>
+        <div class="choice"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">New questions</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+      </section>
+
+      <section class="act" data-act="choice">
+        <p class="label">Avec regrouper</p>
+        <h2>Now the borrowing kind</h2>
+        <p class="hint">Cross out a ten from the tens column. Carry it over as ten more ones. Then subtract.</p>
+        <script type="application/json" class="bank">
+        {
+          "take": 4,
+          "questions": [
+                    {
+                              "ask": "52 − 27 = ?",
+                              "options": [
+                                        "25",
+                                        "35",
+                                        "26"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "63 − 38 = ?",
+                              "options": [
+                                        "25",
+                                        "35",
+                                        "26"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "71 − 46 = ?",
+                              "options": [
+                                        "25",
+                                        "35",
+                                        "26"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "84 − 59 = ?",
+                              "options": [
+                                        "25",
+                                        "35",
+                                        "26"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "45 − 28 = ?",
+                              "options": [
+                                        "17",
+                                        "23",
+                                        "27"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "93 − 67 = ?",
+                              "options": [
+                                        "26",
+                                        "34",
+                                        "36"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "36 − 19 = ?",
+                              "options": [
+                                        "17",
+                                        "23",
+                                        "27"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "82 − 55 = ?",
+                              "options": [
+                                        "27",
+                                        "33",
+                                        "37"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "74 − 36 = ?",
+                              "options": [
+                                        "38",
+                                        "42",
+                                        "48"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "61 − 23 = ?",
+                              "options": [
+                                        "38",
+                                        "42",
+                                        "48"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "55 − 29 = ?",
+                              "options": [
+                                        "26",
+                                        "34",
+                                        "36"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "90 − 47 = ?",
+                              "options": [
+                                        "43",
+                                        "57",
+                                        "53"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "43 − 17 = ?",
+                              "options": [
+                                        "26",
+                                        "34",
+                                        "36"
+                              ],
+                              "answer": 0
+                    },
+                    {
+                              "ask": "87 − 48 = ?",
+                              "options": [
+                                        "39",
+                                        "41",
+                                        "49"
+                              ],
+                              "answer": 0
+                    }
+          ]
+        }
+        </script>
+        <div class="choice"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">New questions</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+        <p class="rule">The commonest mistake is taking the small digit from the big one to avoid borrowing. 52 &minus; 27 is <b>not</b> 35.</p>
+      </section>
+
+      <section class="act" data-act="flip">
+        <p class="label">La Semaine des M&eacute;tis</p>
+        <h2>Read the card, then check</h2>
+        <p class="hint">Say what you think it means. Then tap to see.</p>
+        <script type="application/json" class="bank">
+        {
+          "take": 6,
+          "cards": [
+                    {
+                              "front": "Les Métis",
+                              "back": "One of Canada's three Indigenous peoples, with the First Nations and the Inuit."
+                    },
+                    {
+                              "front": "Où ils commencent",
+                              "back": "In the fur trade. French-speaking traders and First Nations women — Cree, Ojibwe, Saulteaux, Dene — made families, and those families became a new nation."
+                    },
+                    {
+                              "front": "Le michif",
+                              "back": "The Métis language. It takes its nouns from French and its verbs from Cree. Nothing else in the world works like that."
+                    },
+                    {
+                              "front": "Un voyageur",
+                              "back": "A canoe man of the fur trade. They paddled enormous distances, carried the loads over land, and sang to keep the rhythm."
+                    },
+                    {
+                              "front": "La ceinture fléchée",
+                              "back": "The finger-woven arrow sash. It held a coat shut, carried tools, and today it says: I am Métis."
+                    },
+                    {
+                              "front": "Le drapeau métis",
+                              "back": "A white infinity sign on a plain background. Two peoples joined together, going on forever."
+                    },
+                    {
+                              "front": "La charrette de la rivière Rouge",
+                              "back": "The Red River cart. All wood, no metal, so it squealed for miles — and it floated across rivers."
+                    },
+                    {
+                              "front": "La gigue",
+                              "back": "The Métis jig. Fiddle music and very fast feet."
+                    },
+                    {
+                              "front": "Louis Riel",
+                              "back": "A Métis leader who stood up for his people's land and language. He is remembered as a founder of Manitoba."
+                    },
+                    {
+                              "front": "La Semaine des Métis",
+                              "back": "The week around November 16, the day Louis Riel died in 1885. Our school marks it the week you go back."
+                    }
+          ]
+        }
+        </script>
+        <div class="flips"></div>
+        <div class="btnrow">
+          <button class="toggle ghost" type="button" data-role="shuffle">More cards</button>
+        </div>
+      </section>
+
+      <section class="act" data-act="choice">
+        <p class="label">Les M&eacute;tis</p>
+        <h2>What do you remember?</h2>
+        <p class="hint">Read the cards above first. Then come back and try these.</p>
+        <script type="application/json" class="bank">
+        {
+          "take": 4,
+          "questions": [
+                    {
+                              "ask": "The Métis are one of Canada's three Indigenous peoples. Who are the other two?",
+                              "options": [
+                                        "First Nations and Inuit",
+                                        "French and English",
+                                        "Cree and Blackfoot"
+                              ],
+                              "answer": 0,
+                              "why": "First Nations, Inuit and Métis. All three."
+                    },
+                    {
+                              "ask": "The Métis Nation began during which time?",
+                              "options": [
+                                        "The fur trade",
+                                        "The gold rush",
+                                        "The building of the railway"
+                              ],
+                              "answer": 0,
+                              "why": "Fur trade families are where the nation starts."
+                    },
+                    {
+                              "ask": "Michif takes its nouns from French. Where do its verbs come from?",
+                              "options": [
+                                        "Cree",
+                                        "English",
+                                        "Latin"
+                              ],
+                              "answer": 0,
+                              "why": "French nouns, Cree verbs. One language out of two."
+                    },
+                    {
+                              "ask": "What is a ceinture fléchée?",
+                              "options": [
+                                        "A woven sash worn at the waist",
+                                        "A hunting knife",
+                                        "A kind of canoe"
+                              ],
+                              "answer": 0,
+                              "why": "A finger-woven sash. It was useful first and a symbol after."
+                    },
+                    {
+                              "ask": "What is on the Métis flag?",
+                              "options": [
+                                        "An infinity sign",
+                                        "A maple leaf",
+                                        "A bison"
+                              ],
+                              "answer": 0,
+                              "why": "The infinity sign: two peoples joined forever."
+                    },
+                    {
+                              "ask": "Why did the Red River cart squeal so loudly?",
+                              "options": [
+                                        "It was made entirely of wood, with no grease",
+                                        "The wheels were made of stone",
+                                        "It was pulled by birds"
+                              ],
+                              "answer": 0,
+                              "why": "All wood, no metal and no grease. You could hear one coming a long way off."
+                    },
+                    {
+                              "ask": "A voyageur spent most of the day doing what?",
+                              "options": [
+                                        "Paddling a canoe and carrying loads",
+                                        "Farming wheat",
+                                        "Teaching school"
+                              ],
+                              "answer": 0,
+                              "why": "Paddling, portaging, and singing while they did it."
+                    },
+                    {
+                              "ask": "Louis Riel is remembered as a founder of which province?",
+                              "options": [
+                                        "Manitoba",
+                                        "Alberta",
+                                        "Quebec"
+                              ],
+                              "answer": 0,
+                              "why": "Manitoba. He led the Métis as it joined Canada."
+                    },
+                    {
+                              "ask": "La gigue is a Métis …",
+                              "options": [
+                                        "dance",
+                                        "soup",
+                                        "boat"
+                              ],
+                              "answer": 0,
+                              "why": "A dance, to fiddle music, very fast."
+                    },
+                    {
+                              "ask": "Alberta is the only province with something no other province has for the Métis. What?",
+                              "options": [
+                                        "Métis Settlements — land that belongs to the Métis",
+                                        "A Métis airport",
+                                        "A Métis university"
+                              ],
+                              "answer": 0,
+                              "why": "Alberta has the only Métis land base in Canada."
+                    }
+          ]
+        }
+        </script>
+        <div class="choice"></div>
+        <div class="btnrow">
+          <button class="toggle" type="button" data-role="check">Check my answers</button>
+          <button class="toggle ghost" type="button" data-role="shuffle">New questions</button>
+          <button class="toggle ghost" type="button" data-role="peek">Show the answers</button>
+        </div>
+        <p class="score" aria-live="polite" hidden></p>
+      </section>
+
+      <section class="act" data-act="write" data-write="nov16-metis" data-sentences="3">
+        <p class="label">&Eacute;crire et corriger</p>
+        <h2>Write three sentences, then edit them</h2>
+        <p class="hint">Write three sentences about one thing you learned about the M&eacute;tis.</p>
+        <div class="tint c">
+          <b>MME SEYCHELLE&rsquo;S EDITING CHECK</b>
+          <p>Reread it out loud &middot; capital at the start, punctuation at the end &middot; underline your nouns, verbs and adjectives &middot; do not start all three sentences the same way &middot; read it to somebody.</p>
+        </div>
+        <textarea class="scribe" id="write-nov16-metis" rows="7"
+          placeholder="Le drapeau m&eacute;tis a un signe d&rsquo;infini&hellip;"></textarea>
+        <p class="writebar" aria-live="polite"></p>
+      </section>
+
+    </div>
+  </details>
+
+
+  <!-- ===================== UNIT: FLSZ, o ouvert and editing ===================== -->
+  <details class="unit"
            data-unit="flsz-2026-11-06"
            data-when="Nov 6"
            data-subject="Spelling &amp; Editing"
@@ -1682,24 +2216,31 @@ select.code{
     <div class="unit-body">
 
       <section>
-        <p class="label">Next two weeks &middot; as of Sunday 8 November</p>
+        <div class="alert">
+          <b>Needs you before next Friday</b>
+          <p>I could not reach Chrome on Thursday 12 November, so no Google Classroom sweep ran and this sheet was built from the newsletters and the November pack already in Dropbox. Nothing is likely to have been posted over Fall Break, but nothing was checked either. Open Chrome with the Claude side panel signed in and next Friday&rsquo;s run picks up where it left off.</p>
+        </div>
+      </section>
+
+      <section>
+        <p class="label">Next two weeks &middot; as of Thursday 12 November</p>
         <h2>Coming up</h2>
         <div class="cards two">
           <div class="tint a">
             <b>NEEDS DOING</b>
-            <p><b>Tue 10</b> &mdash; choir Purdy&rsquo;s fundraiser closes &middot; <b>around Fri 20</b> &mdash; conference booking opens, watch William&rsquo;s Weekly &middot; <b>Sat 21</b> &mdash; Healthy Hunger orders close for the lunch on the 26th &middot; <b>Mon 23</b> &mdash; school store closes for Christmas delivery.</p>
+            <p><b>Sat 21, 8:00am</b> &mdash; conference booking opens on MyCBE and closes 6pm Wed 25 &middot; <b>Sat 21</b> &mdash; Healthy Hunger orders close for the lunch on the 26th &middot; <b>Mon 23</b> &mdash; school store closes for Christmas delivery &middot; <b>any time before Dec 8</b> &mdash; gently used &ldquo;treasures&rdquo; for the Winter Market.</p>
           </div>
           <div class="tint b">
             <b>NO SCHOOL</b>
-            <p><b>Wed 11 &ndash; Sun 15</b> &mdash; Fall Break. You are in Banff from Thursday the 12th, three nights at the Moose Hotel. Back to school Monday the 16th.</p>
+            <p><b>Thu 12 &ndash; Sun 15</b> &mdash; Fall Break, back Monday the 16th &middot; <b>Fri 27</b> &mdash; no school, conference morning.</p>
           </div>
           <div class="tint c">
             <b>AT SCHOOL</b>
-            <p><b>Tue 10, 10:30</b> &mdash; Remembrance Day assembly; students and invited veterans only, poppy donations at the office &middot; <b>Thu 19</b> &mdash; Colourful, Funky, Wacky Day, so outfits the night before.</p>
+            <p><b>Mon 16</b> &mdash; back, and la Semaine des M&eacute;tis begins &middot; <b>Wed 18</b> &mdash; Calgary Public Library visit &middot; <b>Thu 19</b> &mdash; Colourful, Funky, Wacky Day, so outfits the night before &middot; <b>Thu 26</b> &mdash; Healthy Hunger lunch.</p>
           </div>
           <div class="tint d">
             <b>FOR US</b>
-            <p><b>Fri 13 and Sat 21</b> &mdash; picture retakes, now at the Lifetouch studio in SE Calgary and booked online &middot; <b>Mon 16, 6:30pm</b> &mdash; choir board &middot; <b>Tue 17, 7&ndash;8:30pm</b> &mdash; School Council, online &middot; <b>Thu 26, 4&ndash;8pm</b> and <b>Fri 27, 8:30am&ndash;1pm</b> &mdash; conferences &middot; <b>Nov 27&ndash;28</b> &mdash; casino fundraiser, still short volunteers.</p>
+            <p><b>Tue 17, 7&ndash;8:30pm</b> &mdash; School Council, online only &middot; <b>Thu 26, 4&ndash;8pm</b> in person and <b>Fri 27, 8:30am&ndash;1pm</b> online &mdash; conferences &middot; <b>Nov 27&ndash;28</b> &mdash; casino fundraiser, six volunteer spots still open.</p>
           </div>
         </div>
         <p class="rule">All of this is on the Family calendar too. Dance kit, swim and the daily run-around stay in the Evening Brief &mdash; this is the school and deadline view.</p>
@@ -1709,7 +2250,7 @@ select.code{
         <p class="label">From Mme Seychelle</p>
         <h2>What she has asked for</h2>
         <div class="tint d">
-          <p><b>Maths:</b> keep practising addition and subtraction facts &mdash; Math Snap with a deck, face cards out, 5&ndash;10 minutes a few times a week; sums to 20, then subtraction, then three-card Snap. Three-digit addition with regrouping, shown with base-ten blocks, money and the column method.<br><b>French and English:</b> the FLSZ spelling rule and the sound &laquo; o ouvert &raquo; &middot; the <em>au / eau</em> spellings, which give no clue by sound &middot; passages, practice words and the 300-word lists are in Classroom &rsaquo; <b>For Parents</b>.<br><b>Writing:</b> she is marked on capitals, punctuation, spacing, descriptive detail, and not starting every sentence the same way. Editing habits: reread, check capitals and punctuation, underline nouns, verbs and adjectives.<br><b>Also:</b> talk through the First Nations and treaty questions on her flip cards.</p>
+          <p><b>Maths:</b> &ldquo;Please continue encouraging your child to practise addition and subtraction math facts.&rdquo; Three-digit addition with regrouping is done; <b>two-digit subtraction starts Monday</b>, with and without regrouping. That is what the new sheet is.<br><b>French and English:</b> the FLSZ spelling rule and the sound &laquo; o ouvert &raquo; &middot; the <em>au / eau</em> spellings, which give no clue by sound &middot; passages, practice words and the 300-word lists are in Classroom &rsaquo; <b>For Parents</b>.<br><b>Writing:</b> reread it aloud, check capitals and punctuation, underline the nouns, verbs and adjectives, and have somebody else read it. She is marked on that process, not just the finished sentence.<br><b>Social:</b> First Nations peoples of Alberta, the arrival of Europeans and the treaties. Her flip cards carry Mme Seychelle&rsquo;s own discussion questions.</p>
         </div>
       </section>
 
@@ -1719,11 +2260,11 @@ select.code{
         <div class="cards two">
           <div class="tint a">
             <b>STARS AND POCKET MONEY</b>
-            <p>A whole round correct earns a star. <b>20 stars is $5.</b> The piggy bank shows what is owed now and what has been earned all year. <b>Pay out</b> at the foot of the page takes an amount, so a part payment works.</p>
+            <p>A whole round correct earns a star. <b>20 stars is $5.</b> The piggy bank shows what is owed now and what has been earned all year. There is no ceiling &mdash; more rounds keep paying.</p>
           </div>
           <div class="tint b">
-            <b>THE PARENT CODE</b>
-            <p>Writing earns a star only when one of us reads it and enters our four-digit code. If she rewrites it, it can earn again. The same code covers paying out. The digits are deliberately not written here &mdash; this page is public, and the girls can read it.</p>
+            <b>GROWN-UPS, AT THE FOOT</b>
+            <p>Behind our four-digit code: give stars for anything at all, take some back, correct the total, record a payment of any amount, and read the dated ledger of every one of those. The digits are deliberately not written here &mdash; this page is public and the girls can read it.</p>
           </div>
         </div>
         <p class="rule">Stars are saved in the browser on <b>her</b> device. Open the <a href="../progress/" target="_blank" rel="noopener">progress report</a> on that same iPad to see both girls and settle up. The logins on Online Resources are shared school accounts rather than personal ones, and this page is public, so keep the link in the family.</p>
@@ -1731,6 +2272,7 @@ select.code{
 
     </div>
   </details>
+
   <!-- ===================== UNIT: online resources (evergreen, no stars) ===================== -->
   <details class="unit"
            data-unit="online-resources"
